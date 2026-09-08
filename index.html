@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broker Protection Program | RSK TRUST & TRADE</title>
+    <style>
+        :root {
+            --bg-dark: #0F172A;
+            --bg-card: #1E293B;
+            --accent-gold: #D97706;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding-bottom: 3rem; }
+        header { background-color: rgba(15, 23, 42, 0.95); border-bottom: 1px solid var(--border-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.25rem; font-weight: bold; color: var(--accent-gold); text-decoration: none; letter-spacing: 1px; }
+        .lang-switch { display: flex; gap: 0.5rem; }
+        .lang-btn { background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); padding: 0.4rem 0.8rem; border-radius: 4px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
+        .lang-btn.active, .lang-btn:hover { color: var(--bg-dark); background-color: var(--accent-gold); border-color: var(--accent-gold); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .hero { text-align: center; margin-bottom: 3rem; padding: 2rem 0; }
+        .hero h1 { color: var(--accent-gold); font-size: 2.2rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
+        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.8rem; position: relative; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); }
+        .card-number { font-size: 0.85rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
+        .card h2 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-main); border-bottom: 2px solid var(--accent-gold); padding-bottom: 0.5rem; display: inline-block; }
+        .card p, .card ul { color: var(--text-muted); font-size: 0.95rem; }
+        .card ul { list-style: none; margin-top: 0.5rem; }
+        .card ul li { margin-bottom: 0.8rem; position: relative; padding-left: 1.2rem; }
+        .card ul li::before { content: "■"; color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem; top: 0.1rem; }
+        .cta-section { background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); border: 1px solid var(--accent-gold); border-radius: 8px; padding: 2.5rem 1.5rem; text-align: center; margin-top: 2rem; }
+        .cta-section h3 { color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-section p { color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 4px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
+        .btn-primary { background-color: var(--accent-gold); color: var(--bg-dark); }
+        .btn-primary:hover { background-color: #b46205; }
+        .btn-secondary { background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">RSK TRUST & TRADE</a>
+        <div class="lang-switch">
+            <button class="lang-btn active" id="btn-de" onclick="setLanguage('de')">DE</button>
+            <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" id="btn-es" onclick="setLanguage('es')">ES</button>
+        </div>
+    </header>
+    <div class="container">
+        <!-- DE -->
+        <div id="content-de" class="lang-content active">
+            <div class="hero"><h1>Broker Protection Program</h1><p>Das Treuhand-System für den Rohstoffhandel: Maximaler Provisionsschutz, volle Kontrolle und rechtssichere Abwicklung ohne Umgehungsrisiko.</p></div>
+            <div class="grid grid-3">
+                <div class="card"><span class="card-number">Teil 1</span><h2>Warum Deals platzen</h2><p><strong>90% aller Rohstoff-Geschäfte scheitern nicht am Preis, sondern an fehlendem Vertrauen.</strong></p><br><ul><li><strong>Der Verkäufer fürchtet:</strong> Der Käufer ist nicht real.</li><li><strong>Der Käufer fürchtet:</strong> Keine reale Ware oder kein POP.</li><li><strong>Der Broker fürchtet:</strong> Umgehung und Provisionsverlust.</li></ul></div>
+                <div class="card"><span class="card-number">Teil 2</span><h2>Die RSK-Methode</h2><ul><li><strong>Schritt 1: Verifikation:</strong> Wir prüfen Firma, Ware und Logistik.</li><li><strong>Schritt 2: Absicherung:</strong> NCNDA + Beratungsvertrag. Erst DANACH Infos.</li><li><strong>Schritt 3: Gegenseite sichern:</strong> Provision via IMFPA im Escrow verankert.</li></ul></div>
+                <div class="card"><span class="card-number">Teil 3</span><h2>Dein Vorteil</h2><ul><li><strong>Kein direkter Kontakt</strong> ohne Verträge.</li><li><strong>Schutz Ihrer Kontakte</strong></li><li><strong>Neutraler Treuhänder</strong></li><li><strong>Vom Kontakt zum Deal</strong></li></ul></div>
+            </div>
+            <div class="cta-section"><h3>Sichern Sie Ihren nächsten Deal ab</h3><div class="btn-group"><a href="https://wa.me/573138734968" class="btn btn-primary" target="_blank">Deal per WhatsApp einreichen</a><a href="mailto:info@rsktrustandtrade.com" class="btn btn-secondary">Per E-Mail kontaktieren</a></div></div>
+        </div>
+        <!-- EN -->
+        <div id="content-en" class="lang-content">
+            <div class="hero"><h1>Broker Protection Program</h1><p>The Fiduciary Framework for Commodity Trading: Maximum commission protection, total control, and legally compliant settlement.</p></div>
+            <div class="grid grid-3">
+                <div class="card"><span class="card-number">Part 1</span><h2>Why Deals Fail</h2><p><strong>90% of deals fail due to lack of trust.</strong></p><ul><li>Seller fears buyer not real</li><li>Buyer fears no real product</li><li>Broker fears circumvention</li></ul></div>
+                <div class="card"><span class="card-number">Part 2</span><h2>The RSK Method</h2><ul><li>Step 1: Verification</li><li>Step 2: NCNDA + Agreement</li><li>Step 3: IMFPA in Escrow</li></ul></div>
+                <div class="card"><span class="card-number">Part 3</span><h2>Your Advantage</h2><ul><li>No Direct Contact</li><li>Contact Protection</li><li>Neutral Paymaster</li></ul></div>
+            </div>
+            <div class="cta-section"><h3>Protect Your Next Deal</h3><div class="btn-group"><a href="https://wa.me/573138734968" class="btn btn-primary" target="_blank">Submit via WhatsApp</a><a href="mailto:info@rsktrustandtrade.com" class="btn btn-secondary">Contact via Email</a></div></div>
+        </div>
+        <!-- ES -->
+        <div id="content-es" class="lang-content">
+            <div class="hero"><h1>Broker Protection Program</h1><p>El Sistema de Protección para Intermediarios de Commodities: Máxima seguridad para sus comisiones.</p></div>
+            <div class="grid grid-3">
+                <div class="card"><span class="card-number">Parte 1</span><h2>Por qué fracasan</h2><ul><li>Vendedor teme comprador no real</li><li>Comprador teme sin producto</li><li>Broker teme elusión</li></ul></div>
+                <div class="card"><span class="card-number">Parte 2</span><h2>El Método RSK</h2><ul><li>Paso 1: Verificación</li><li>Paso 2: Protección Legal</li><li>Paso 3: Blindaje</li></ul></div>
+                <div class="card"><span class="card-number">Parte 3</span><h2>Su Ventaja</h2><ul><li>Sin Contacto Directo</li><li>Protección de Contactos</li><li>Pagador Neutral</li></ul></div>
+            </div>
+            <div class="cta-section"><h3>Asegure su próxima operación</h3><div class="btn-group"><a href="https://wa.me/573138734968" class="btn btn-primary" target="_blank">Enviar por WhatsApp</a><a href="mailto:info@rsktrustandtrade.com" class="btn btn-secondary">Contacto Email</a></div></div>
+        </div>
+    </div>
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
+</body>
+              </html>
