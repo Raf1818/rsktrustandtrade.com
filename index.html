@@ -7,93 +7,277 @@
     <style>
         :root {
             --bg-dark: #0F172A;
-            --bg-card: #1E293B;
+            --bg-card: rgba(30, 41, 59, 0.85); /* Leicht transparent für den Hintergrund-Effekt */
             --accent-gold: #D97706;
             --text-main: #F8FAFC;
             --text-muted: #94A3B8;
             --border-color: #334155;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding-bottom: 3rem; }
-        header { background-color: rgba(15, 23, 42, 0.95); border-bottom: 1px solid var(--border-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.25rem; font-weight: bold; color: var(--accent-gold); text-decoration: none; letter-spacing: 1px; }
-        .lang-switch { display: flex; gap: 0.5rem; }
-        .lang-btn { background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); padding: 0.4rem 0.8rem; border-radius: 4px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
-        .lang-btn.active, .lang-btn:hover { color: var(--bg-dark); background-color: var(--accent-gold); border-color: var(--accent-gold); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
-        .hero { text-align: center; margin-bottom: 3rem; padding: 2rem 0; }
-        .hero h1 { color: var(--accent-gold); font-size: 2.2rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
-        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.8rem; position: relative; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); }
-        .card-number { font-size: 0.85rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
-        .card h2 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-main); border-bottom: 2px solid var(--accent-gold); padding-bottom: 0.5rem; display: inline-block; }
-        .card p, .card ul { color: var(--text-muted); font-size: 0.95rem; }
-        .card ul { list-style: none; margin-top: 0.5rem; }
-        .card ul li { margin-bottom: 0.8rem; position: relative; padding-left: 1.2rem; }
-        .card ul li::before { content: "■"; color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem; top: 0.1rem; }
-        .cta-section { background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); border: 1px solid var(--accent-gold); border-radius: 8px; padding: 2.5rem 1.5rem; text-align: center; margin-top: 2rem; }
-        .cta-section h3 { color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-section p { color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 4px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
-        .btn-primary { background-color: var(--accent-gold); color: var(--bg-dark); }
-        .btn-primary:hover { background-color: #b46205; }
-        .btn-secondary { background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
-        .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+
+            /* 
+               HINTERGRUND-EINRICHTUNG:
+               1. Ein dunkler Verlaufs-Schleier (88% Deckkraft), der die Lesbarkeit garantiert.
+               2. Das Logo zentriert im Hintergrund (Passe 'logo.png' an deinen Dateinamen an).
+            */
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)),
+                url('logo.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: contain; /* oder 'cover', je nachdem wie groß das Logo wirken soll */
+        }
+
+        header {
+            background-color: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(51, 65, 85, 0.5);
+            padding: 0.25rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background-color: var(--accent-gold);
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 25px rgba(217, 119, 6, 0.15);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            border-radius: 0.375rem;
+            margin-top: 1.25rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #b45309;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* Verstecke inaktive Sprachen */
+        [lang="en"] {
+            display: none;
+        }
+
+        body.lang-en [lang="de"] {
+            display: none;
+        }
+
+        body.lang-en [lang="en"] {
+            display: block;
+        }
+
+        body.lang-en span[lang="en"] {
+            display: inline;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <a href="#" class="logo">RSK TRUST & TRADE</a>
-        <div class="lang-switch">
-            <button class="lang-btn active" id="btn-de" onclick="setLanguage('de')">DE</button>
-            <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
-            <button class="lang-btn" id="btn-es" onclick="setLanguage('es')">ES</button>
+        <div class="header-container">
+            <div class="logo">RSK <span>TRUST & TRADE</span></div>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('de')">DE</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            </div>
         </div>
     </header>
+
     <div class="container">
-        <!-- DE -->
-        <div id="content-de" class="lang-content active">
-            <div class="hero"><h1>Broker Protection Program</h1><p>Das Treuhand-System für den Rohstoffhandel: Maximaler Provisionsschutz, volle Kontrolle und rechtssichere Abwicklung ohne Umgehungsrisiko.</p></div>
-            <div class="grid grid-3">
-                <div class="card"><span class="card-number">Teil 1</span><h2>Warum Deals platzen</h2><p><strong>90% aller Rohstoff-Geschäfte scheitern nicht am Preis, sondern an fehlendem Vertrauen.</strong></p><br><ul><li><strong>Der Verkäufer fürchtet:</strong> Der Käufer ist nicht real.</li><li><strong>Der Käufer fürchtet:</strong> Keine reale Ware oder kein POP.</li><li><strong>Der Broker fürchtet:</strong> Umgehung und Provisionsverlust.</li></ul></div>
-                <div class="card"><span class="card-number">Teil 2</span><h2>Die RSK-Methode</h2><ul><li><strong>Schritt 1: Verifikation:</strong> Wir prüfen Firma, Ware und Logistik.</li><li><strong>Schritt 2: Absicherung:</strong> NCNDA + Beratungsvertrag. Erst DANACH Infos.</li><li><strong>Schritt 3: Gegenseite sichern:</strong> Provision via IMFPA im Escrow verankert.</li></ul></div>
-                <div class="card"><span class="card-number">Teil 3</span><h2>Dein Vorteil</h2><ul><li><strong>Kein direkter Kontakt</strong> ohne Verträge.</li><li><strong>Schutz Ihrer Kontakte</strong></li><li><strong>Neutraler Treuhänder</strong></li><li><strong>Vom Kontakt zum Deal</strong></li></ul></div>
+        <section class="hero">
+            <h1 lang="de">Broker Protection Program</h1>
+            <h1 lang="en">Broker Protection Program</h1>
+            
+            <p lang="de">Maximaler Schutz, Transparenz und faire Konditionen für verlässliche Zwischenhändler und Vermittler im internationalen Rohstoffhandel.</p>
+            <p lang="en">Maximum protection, transparency, and fair conditions for reliable intermediaries and brokers in international commodity trading.</p>
+        </section>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3 lang="de">100% Provisionsschutz</h3>
+                <h3 lang="en">100% Commission Protection</h3>
+                <p lang="de">Verbindliche NCNDA/IMFPA-Vereinbarungen sichern Ihre Ansprüche rechtssicher ab vor dem ersten Käufer- oder Verkäuferkontakt.</p>
+                <p lang="en">Legally binding NCNDA/IMFPA agreements secure your claims before any buyer or seller contact is made.</p>
             </div>
-            <div class="cta-section"><h3>Sichern Sie Ihren nächsten Deal ab</h3><div class="btn-group"><a href="https://wa.me/573138734968" class="btn btn-primary" target="_blank">Deal per WhatsApp einreichen</a><a href="mailto:info@rsktrustandtrade.com" class="btn btn-secondary">Per E-Mail kontaktieren</a></div></div>
-        </div>
-        <!-- EN -->
-        <div id="content-en" class="lang-content">
-            <div class="hero"><h1>Broker Protection Program</h1><p>The Fiduciary Framework for Commodity Trading: Maximum commission protection, total control, and legally compliant settlement.</p></div>
-            <div class="grid grid-3">
-                <div class="card"><span class="card-number">Part 1</span><h2>Why Deals Fail</h2><p><strong>90% of deals fail due to lack of trust.</strong></p><ul><li>Seller fears buyer not real</li><li>Buyer fears no real product</li><li>Broker fears circumvention</li></ul></div>
-                <div class="card"><span class="card-number">Part 2</span><h2>The RSK Method</h2><ul><li>Step 1: Verification</li><li>Step 2: NCNDA + Agreement</li><li>Step 3: IMFPA in Escrow</li></ul></div>
-                <div class="card"><span class="card-number">Part 3</span><h2>Your Advantage</h2><ul><li>No Direct Contact</li><li>Contact Protection</li><li>Neutral Paymaster</li></ul></div>
+
+            <div class="card">
+                <h3 lang="de">Direkte Abwicklung</h3>
+                <h3 lang="en">Direct Execution</h3>
+                <p lang="de">Klare Kommunikationswege und direkte Auszahlungen bei erfolgreichem Geschäftsabschluss ohne Umwege.</p>
+                <p lang="en">Clear channels of communication and direct payouts upon successful transaction completion with no detours.</p>
             </div>
-            <div class="cta-section"><h3>Protect Your Next Deal</h3><div class="btn-group"><a href="https://wa.me/573138734968" class="btn btn-primary" target="_blank">Submit via WhatsApp</a><a href="mailto:info@rsktrustandtrade.com" class="btn btn-secondary">Contact via Email</a></div></div>
-        </div>
-        <!-- ES -->
-        <div id="content-es" class="lang-content">
-            <div class="hero"><h1>Broker Protection Program</h1><p>El Sistema de Protección para Intermediarios de Commodities: Máxima seguridad para sus comisiones.</p></div>
-            <div class="grid grid-3">
-                <div class="card"><span class="card-number">Parte 1</span><h2>Por qué fracasan</h2><ul><li>Vendedor teme comprador no real</li><li>Comprador teme sin producto</li><li>Broker teme elusión</li></ul></div>
-                <div class="card"><span class="card-number">Parte 2</span><h2>El Método RSK</h2><ul><li>Paso 1: Verificación</li><li>Paso 2: Protección Legal</li><li>Paso 3: Blindaje</li></ul></div>
-                <div class="card"><span class="card-number">Parte 3</span><h2>Su Ventaja</h2><ul><li>Sin Contacto Directo</li><li>Protección de Contactos</li><li>Pagador Neutral</li></ul></div>
+
+            <div class="card">
+                <h3 lang="de">Langfristige Partnerschaft</h3>
+                <h3 lang="en">Long-term Partnership</h3>
+                <p lang="de">Wir bauen auf vertrauensvolle, nachhaltige Handelsbeziehungen mit fairen und transparenten Abläufen.</p>
+                <p lang="en">We build on trustful, sustainable trading relationships with fair and transparent procedures.</p>
             </div>
-            <div class="cta-section"><h3>Asegure su próxima operación</h3><div class="btn-group"><a href="https://wa.me/573138734968" class="btn btn-primary" target="_blank">Enviar por WhatsApp</a><a href="mailto:info@rsktrustandtrade.com" class="btn btn-secondary">Contacto Email</a></div></div>
         </div>
+
+        <section class="cta-section">
+            <h2 lang="de">Jetzt Partner-Vereinbarung anfordern</h2>
+            <h2 lang="en">Request Partner Agreement Now</h2>
+            
+            <p lang="de">Treten Sie mit uns in Kontakt, um Ihre Deals sicher und professionell über unser Netzwerk abzuwickeln.</p>
+            <p lang="en">Get in touch with us to execute your deals securely and professionally through our network.</p>
+            
+            <a href="mailto:info@rsktrustandtrade.com" class="cta-btn">
+                <span lang="de">Kontakt aufnehmen</span>
+                <span lang="en">Contact Us</span>
+            </a>
+        </section>
     </div>
+
+    <footer>
+        &copy; RSK TRUST & TRADE. Alle Rechte vorbehalten. / All rights reserved.
+    </footer>
+
     <script>
         function setLanguage(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById('content-' + lang).classList.add('active');
-            document.getElementById('btn-' + lang).classList.add('active');
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (lang === 'en') {
+                document.body.classList.add('lang-en');
+                buttons[1].classList.add('active');
+            } else {
+                document.body.classList.remove('lang-en');
+                buttons[0].classList.add('active');
+            }
         }
     </script>
+
 </body>
-              </html>
+            </html>
+    
