@@ -1,464 +1,126 @@
- 
-
-<!DOCTYPE html>
-<html lang="de">
+  <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSK - TRUST & TRADE | Institutional Commodity Trade & Global Advisory</title>
-  <meta name="description" content="RSK - TRUST & TRADE: Ihr Partner für globale Rohstoffhandelsstrukturen, Supply Chain Origination und Broker Protection.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSK - TRUST & TRADE | Global Commodity Sourcing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap');
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter', sans-serif; background:#fdfcf9; color:#1a2a44; position:relative; overflow-x:hidden; }
+  
+  /* WATERMARK - DEIN FILE */
+  body::before {
+    content:'';
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    background-image: url('watermark_rsk_100926.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: min(80vw, 600px);
+    opacity:0.04;
+    z-index:-1;
+    pointer-events:none;
+  }
 
-  <style>
-    /* ==========================================================================
-       1. BASE & RESET STYLES
-       ========================================================================== */
-    :root {
-      --primary-color: #1a2332;       /* Edles Dunkelblau / Marine */
-      --accent-gold: #c5a059;         /* Subtiles Gold */
-      --accent-gold-hover: #b08d46;
-      --text-dark: #2b2b2b;
-      --text-muted: #5a6578;
-      --bg-light: #fcfbf9;            /* Heller, warmer Hintergrund */
-      --card-bg: rgba(255, 255, 255, 0.85);
-      --border-color: #e2e8f0;
-      --font-heading: 'Cinzel', serif;
-      --font-body: 'Inter', sans-serif;
-    }
+  header { padding:20px 5%; display:flex; justify-content:space-between; align-items:center; background:rgba(253,252,249,0.9); backdrop-filter:blur(10px); position:sticky; top:0; border-bottom:1px solid #eee; }
+  
+  /* LOGO IN EINER ZEILE - FIX */
+  .logo { font-family:'Cinzel', serif; font-size:28px; font-weight:600; letter-spacing:4px; color:#1a2a44; white-space:nowrap; }
+  .logo span { font-size:14px; font-weight:400; color:#c9a86a; letter-spacing:3px; margin-left:8px; }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  nav { display:flex; gap:28px; align-items:center; }
+  nav a { text-decoration:none; color:#1a2a44; font-size:15px; font-weight:500; }
+  nav a:hover { color:#c9a86a; }
+  
+  select { padding:6px 12px; border:1px solid #ddd; background:#fff; border-radius:4px; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  .hero { text-align:center; padding:120px 8% 80px; max-width:900px; margin:0 auto; }
+  .hero h5 { color:#c9a86a; letter-spacing:4px; font-size:13px; margin-bottom:20px; font-weight:400; }
+  .hero h1 { font-family:'Cinzel', serif; font-size:clamp(28px, 5vw, 42px); line-height:1.2; margin-bottom:30px; }
+  .hero p { color:#5a6a80; line-height:1.8; font-size:18px; max-width:650px; margin:0 auto; }
 
-    body {
-      font-family: var(--font-body);
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-      position: relative;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+  section { padding:80px 8%; max-width:1100px; margin:0 auto; }
+  .broker-box { background:#fff; border:1px solid #eee; padding:40px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.03); text-align:center; }
+  .broker-box h2 { font-family:'Cinzel', serif; margin-bottom:15px; }
+  .broker-box p { color:#5a6a80; margin-bottom:30px; line-height:1.6; }
 
-    /* ==========================================================================
-       2. WASSERZEICHEN HINTERGRUND (BUGFIX: background-size syntax)
-       ========================================================================== */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('watermark_rsk_100926.jpg'); 
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: min(580px, 80vw) auto; /* BUGFIX: 'auto' hinzugefügt für korrekte Aspect Ratio */
-      opacity: 0.06;
-      pointer-events: none;
-      z-index: 0;
-    }
+  .btn-group { display:flex; gap:15px; justify-content:center; flex-wrap:wrap; }
+  .btn { padding:12px 28px; border:1px solid #1a2a44; color:#fff; background:#1a2a44; text-decoration:none; border-radius:6px; font-size:14px; letter-spacing:1px; transition:0.3s; display:inline-block; }
+  .btn:hover { background:#c9a86a; border-color:#c9a86a; }
+  .btn-outline { background:transparent; color:#1a2a44; }
+  .btn-outline:hover { background:#1a2a44; color:#fff; }
 
-    .main-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ==========================================================================
-       3. NAVIGATION & HEADER
-       ========================================================================== */
-    header {
-      background-color: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 1rem 0;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-logo {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-    }
-
-    .brand-title {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      letter-spacing: 2px;
-    }
-
-    .brand-subtitle {
-      font-size: 0.65rem;
-      letter-spacing: 3px;
-      color: var(--accent-gold);
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--primary-color);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent-gold);
-    }
-
-    .lang-select {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: var(--primary-color);
-      cursor: pointer;
-      outline: none;
-    }
-
-    /* ==========================================================================
-       4. HERO SECTION & ÜBER UNS (BUGFIX: #about ID hinzugefügt)
-       ========================================================================== */
-    .hero {
-      padding: 6rem 1.5rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .hero-subtitle {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--accent-gold);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--primary-color);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      max-width: 750px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.1rem;
-      color: var(--text-muted);
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: #ffffff;
-      padding: 0.9rem 2.2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      border: 1px solid var(--primary-color);
-    }
-
-    .cta-button:hover {
-      background-color: var(--accent-gold);
-      border-color: var(--accent-gold);
-    }
-
-    /* ==========================================================================
-       5. SEKTIONEN & CARDS
-       ========================================================================== */
-    .section-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 3rem;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 2px;
-      background-color: var(--accent-gold);
-      margin: 0.8rem auto 0;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 2.5rem 2rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-    }
-
-    .card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .highlight-box {
-      background: var(--primary-color);
-      color: #ffffff;
-      border-radius: 8px;
-      padding: 3.5rem 2rem;
-      text-align: center;
-      margin: 3rem 0;
-    }
-
-    .highlight-box h2 {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      color: var(--accent-gold);
-      margin-bottom: 1rem;
-    }
-
-    .highlight-box p {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      color: #e2e8f0;
-      font-size: 1.05rem;
-    }
-
-    /* ==========================================================================
-       6. FORMULAR & FOOTER
-       ========================================================================== */
-    .contact-form {
-      max-width: 650px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent-gold);
-    }
-
-    footer {
-      background-color: var(--primary-color);
-      color: #a0aec0;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    footer a {
-      color: #e2e8f0;
-      text-decoration: none;
-    }
-
-    /* BUGFIX: Mobile Responsive Navigation */
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-    }
-  </style>
+  /* Mobile */
+  @media (max-width:768px) {
+    header { flex-direction:column; gap:15px; }
+    .logo { font-size:22px; }
+    .logo span { font-size:12px; }
+    nav { gap:15px; flex-wrap:wrap; justify-content:center; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="main-content">
+<header>
+  <div class="logo">RSK <span>- TRUST & TRADE</span></div>
+  <nav>
+    <a href="#about" data-de="Über uns" data-en="About us">About us</a>
+    <a href="#trade" data-de="Handel & Origination" data-en="Trade & Origination">Trade & Origination</a>
+    <a href="#broker" data-de="Broker Protection" data-en="Broker Protection">Broker Protection</a>
+    <a href="#contact" data-de="Kontakt" data-en="Contact">Contact</a>
+    <select id="langSwitch">
+      <option value="en" selected>EN</option>
+      <option value="de">DE</option>
+    </select>
+  </nav>
+</header>
 
-    <!-- HEADER / NAVIGATION -->
-    <header>
-      <div class="nav-container">
-        <a href="#" class="brand-logo">
-          <span class="brand-title">RSK</span>
-          <span class="brand-subtitle">TRUST & TRADE</span>
-        </a>
+<div class="hero">
+  <h5 data-de="GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY" data-en="GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY">GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY</h5>
+  <h1 data-de="INTEGRITÄT, SICHERHEIT & EXZELLENZ IM INTERNATIONALEN HANDEL" data-en="INTEGRITY, SECURITY & EXCELLENCE IN INTERNATIONAL TRADE">INTEGRITY, SECURITY & EXCELLENCE IN INTERNATIONAL TRADE</h1>
+  <p data-de="RSK - TRUST & TRADE verbindet weltweite Rohstoffmärkte mit strukturierten Abwicklungen, erstklassigen Compliance-Standards und verlässlichem Schutz für Partner und Broker." 
+     data-en="RSK - TRUST & TRADE connects global commodity markets with structured execution, premium compliance standards and reliable protection for partners and brokers.">
+     RSK - TRUST & TRADE connects global commodity markets with structured execution, premium compliance standards and reliable protection for partners and brokers.
+  </p>
+</div>
 
-        <nav>
-          <ul>
-            <li><a href="#about">Über uns</a></li>
-            <li><a href="#services">Handel & Origination</a></li>
-            <li><a href="#protection">Broker Protection</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-            <li>
-              <select class="lang-select" aria-label="Sprachauswahl">
-                <option value="de">DE</option>
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-                <option value="ar">AR</option>
-                <option value="zh">ZH</option>
-              </select>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- HERO SECTION / ÜBER UNS (BUGFIX: id="about" hinzugefügt) -->
-    <section id="about" class="hero">
-      <div class="hero-subtitle">Global Commodity Sourcing & Financial Advisory</div>
-      <h1>Integrität, Sicherheit & Exzellenz im internationalen Handel</h1>
-      <p>RSK - TRUST & TRADE verbindet weltweite Rohstoffmärkte mit strukturierten Abwicklungen, erstklassigen Compliance-Standards und verlässlichem Schutz für Partner und Broker.</p>
-      <a href="#contact" class="cta-button">Partnerschaft Anfragen</a>
-    </section>
-
-    <!-- KERNKOMPETENZEN / SERVICES -->
-    <section id="services" class="section-container">
-      <h2 class="section-title">Unsere Leistungsschwerpunkte</h2>
-      
-      <div class="grid-3">
-        <div class="card">
-          <h3>Commodity Origination</h3>
-          <p>Direkte Anbindung an Produzenten und Raffinerien weltweit. Spezialisierte Beschaffung und Belieferung für Agrar- und Industriegüter unter strikter Qualitätsprüfung.</p>
-        </div>
-
-        <div class="card">
-          <h3>Transaction Structuring</h3>
-          <p>Mustergültige Vertrags- und Abwicklungsstrukturen für internationale Handelsgeschäfte. Höchste Standards bei Akkreditiven (L/C), Bankgarantien und Zahlungsabsicherungen.</p>
-        </div>
-
-        <div class="card">
-          <h3>Compliance & KYC</h3>
-          <p>Lückenlose Prüfung aller Handelspartner nach internationalen Tier-1-Standards. Schutz vor Kontrahentenrisiken durch professionelle Legal- & Due-Diligence-Prozesse.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BROKER PROTECTION PROGRAM -->
-    <section id="protection" class="section-container">
-      <div class="highlight-box">
-        <h2>Broker Protection Program</h2>
-        <p>Wir schützen die Interessen von Vermittlern und Intermediären durch verbindliche NCNDA (Non-Circumvention, Non-Disclosure Agreements) und IMFPA (Irrevocable Master Fee Protection Agreements). Transparenz und gegenseitiges Vertrauen bilden das Fundament unseres weltweiten Netzwerks.</p>
-        <a href="#contact" class="cta-button" style="background-color: var(--accent-gold); border-color: var(--accent-gold);">Protokoll Anfordern</a>
-      </div>
-    </section>
-
-    <!-- KONTAKTFORMULAR -->
-    <section id="contact" class="section-container">
-      <h2 class="section-title">Kontaktieren Sie uns</h2>
-      
-      <div class="contact-form">
-        <form action="#" method="POST">
-          <div class="form-group">
-            <label for="name">Vollständiger Name / Unternehmen</label>
-            <input type="text" id="name" name="name" placeholder="z. B. Max Mustermann / Muster AG" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-Mail-Adresse</label>
-            <input type="email" id="email" name="email" placeholder="name@company.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Anliegen</label>
-            <input type="text" id="subject" name="subject" placeholder="z. B. Commodity Anfrage / Broker Vereinbarung">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Ihre Nachricht</label>
-            <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
-          </div>
-
-          <button type="submit" class="cta-button" style="width: 100%; cursor: pointer;">Nachricht Senden</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2026 RSK - TRUST & TRADE. Alle Rechte vorbehalten. | <a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
-    </footer>
-
+<section id="broker">
+  <div class="broker-box">
+    <h2 data-de="Broker Protection Program" data-en="Broker Protection Program">Broker Protection Program</h2>
+    <p data-de="Transparente Prozesse und geschützte Abwicklung. Laden Sie hier unsere Standard-Dokumente herunter." 
+       data-en="Transparent processes and protected execution. Download our standard documents here.">
+       Transparent processes and protected execution. Download our standard documents here.
+    </p>
+    <div class="btn-group">
+      <a href="NCNDA.pdf" download class="btn" data-de="NCNDA Download" data-en="Download NCNDA">Download NCNDA</a>
+      <a href="IMFPA.pdf" download class="btn btn-outline" data-de="IMFPA Download" data-en="Download IMFPA">Download IMFPA</a>
+    </div>
   </div>
+</section>
+
+<script>
+  // DEFAULT ENGLISH
+  let currentLang = 'en';
+  const switcher = document.getElementById('langSwitch');
+  
+  function updateLang(lang){
+    currentLang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('rsk-lang', lang);
+  }
+  
+  switcher.addEventListener('change', (e) => updateLang(e.target.value));
+  
+  // Load saved or default EN
+  const saved = localStorage.getItem('rsk-lang') || 'en';
+  switcher.value = saved;
+  updateLang(saved);
+</script>
 
 </body>
-  </html> 
+</html>                  
