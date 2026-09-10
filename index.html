@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,11 +6,8 @@
 <title>RSK - TRUST & TRADE | Global Commodity Sourcing</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap');
-  
     * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Inter', sans-serif; background:#fdfcf9; color:#1a2a44; position:relative; overflow-x:hidden; }
-  
-  /* WATERMARK - DEIN FILE */
   body::before {
     content:'';
     position:fixed;
@@ -23,36 +20,26 @@
     z-index:-1;
     pointer-events:none;
   }
-
   header { padding:20px 5%; display:flex; justify-content:space-between; align-items:center; background:rgba(253,252,249,0.9); backdrop-filter:blur(10px); position:sticky; top:0; border-bottom:1px solid #eee; }
-  
-  /* LOGO IN EINER ZEILE - FIX */
   .logo { font-family:'Cinzel', serif; font-size:28px; font-weight:600; letter-spacing:4px; color:#1a2a44; white-space:nowrap; }
   .logo span { font-size:14px; font-weight:400; color:#c9a86a; letter-spacing:3px; margin-left:8px; }
-
   nav { display:flex; gap:28px; align-items:center; }
   nav a { text-decoration:none; color:#1a2a44; font-size:15px; font-weight:500; }
   nav a:hover { color:#c9a86a; }
-  
-  select { padding:6px 12px; border:1px solid #ddd; background:#fff; border-radius:4px; }
-
+  select { padding:6px 12px; border:1px solid #ddd; background:#fff; border-radius:4px; font-weight:600; }
   .hero { text-align:center; padding:120px 8% 80px; max-width:900px; margin:0 auto; }
   .hero h5 { color:#c9a86a; letter-spacing:4px; font-size:13px; margin-bottom:20px; font-weight:400; }
   .hero h1 { font-family:'Cinzel', serif; font-size:clamp(28px, 5vw, 42px); line-height:1.2; margin-bottom:30px; }
   .hero p { color:#5a6a80; line-height:1.8; font-size:18px; max-width:650px; margin:0 auto; }
-
   section { padding:80px 8%; max-width:1100px; margin:0 auto; }
   .broker-box { background:#fff; border:1px solid #eee; padding:40px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.03); text-align:center; }
   .broker-box h2 { font-family:'Cinzel', serif; margin-bottom:15px; }
   .broker-box p { color:#5a6a80; margin-bottom:30px; line-height:1.6; }
-
   .btn-group { display:flex; gap:15px; justify-content:center; flex-wrap:wrap; }
   .btn { padding:12px 28px; border:1px solid #1a2a44; color:#fff; background:#1a2a44; text-decoration:none; border-radius:6px; font-size:14px; letter-spacing:1px; transition:0.3s; display:inline-block; }
   .btn:hover { background:#c9a86a; border-color:#c9a86a; }
   .btn-outline { background:transparent; color:#1a2a44; }
   .btn-outline:hover { background:#1a2a44; color:#fff; }
-
-  /* Mobile */
   @media (max-width:768px) {
     header { flex-direction:column; gap:15px; }
     .logo { font-size:22px; }
@@ -66,69 +53,84 @@
 <header>
   <div class="logo">RSK <span>- TRUST & TRADE</span></div>
   <nav>
-    <a href="#about" data-de="Über uns" data-en="About us">About us</a>
-    <a href="#trade" data-de="Handel & Origination" data-en="Trade & Origination">Trade & Origination</a>
-    <a href="#broker" data-de="Broker Protection" data-en="Broker Protection">Broker Protection</a>
-    <a href="#contact" data-de="Kontakt" data-en="Contact">Contact</a>
+    <a href="#about" 
+       data-en="About us" data-de="Über uns" data-ru="О нас" data-ar="معلومات عنا" data-fr="À propos" data-zh="关于我们">About us</a>
+    <a href="#trade" 
+       data-en="Trade & Origination" data-de="Handel & Origination" data-ru="Торговля и происхождение" data-ar="التجارة والمنشأ" data-fr="Commerce & Origination" data-zh="贸易与产地">Trade & Origination</a>
+    <a href="#broker" 
+       data-en="Broker Protection" data-de="Broker Protection" data-ru="Защита брокера" data-ar="حماية الوسيط" data-fr="Protection des courtiers" data-zh="经纪人保护">Broker Protection</a>
+    <a href="#contact" 
+       data-en="Contact" data-de="Kontakt" data-ru="Контакт" data-ar="اتصل بنا" data-fr="Contact" data-zh="联系我们">Contact</a>
     <select id="langSwitch">
-    
-  <option value="en" selected>EN</option>
-  <option value="de">DE</option>
-  <option value="ru">RU</option>
-  <option value="ar">AR</option>
-  <option value="fr">FR</option>
-  <option value="zh">中文</option>
-      </select>
-      
-    
+      <option value="en" selected>EN</option>
+      <option value="de">DE</option>
+      <option value="ru">RU</option>
+      <option value="ar">AR</option>
+      <option value="fr">FR</option>
+      <option value="zh">中文</option>
     </select>
   </nav>
 </header>
 
 <div class="hero">
-  <h5 data-de="GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY" data-en="GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY">GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY</h5>
-  <h1 data-de="INTEGRITÄT, SICHERHEIT & EXZELLENZ IM INTERNATIONALEN HANDEL" data-en="INTEGRITY, SECURITY & EXCELLENCE IN INTERNATIONAL TRADE">INTEGRITY, SECURITY & EXCELLENCE IN INTERNATIONAL TRADE</h1>
-  <p data-de="RSK - TRUST & TRADE verbindet weltweite Rohstoffmärkte mit strukturierten Abwicklungen, erstklassigen Compliance-Standards und verlässlichem Schutz für Partner und Broker." 
-     data-en="RSK - TRUST & TRADE connects global commodity markets with structured execution, premium compliance standards and reliable protection for partners and brokers.">
-     RSK - TRUST & TRADE connects global commodity markets with structured execution, premium compliance standards and reliable protection for partners and brokers.
-  </p>
+  <h5 data-en="GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY" 
+      data-de="GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY"
+      data-ru="ГЛОБАЛЬНЫЙ СОРСИНГ СЫРЬЯ И ФИНАНСОВЫЙ КОНСАЛТИНГ"
+      data-ar="مصادر السلع العالمية والاستشارات المالية"
+      data-fr="APPROVISIONNEMENT MONDIAL ET CONSEIL FINANCIER"
+      data-zh="全球大宗商品采购与金融咨询">GLOBAL COMMODITY SOURCING & FINANCIAL ADVISORY</h5>
+  <h1 data-en="INTEGRITY, SECURITY & EXCELLENCE IN INTERNATIONAL TRADE"
+      data-de="INTEGRITÄT, SICHERHEIT & EXZELLENZ IM INTERNATIONALEN HANDEL"
+      data-ru="ЦЕЛОСТНОСТЬ, БЕЗОПАСНОСТЬ И СОВЕРШЕНСТВО В МЕЖДУНАРОДНОЙ ТОРГОВЛЕ"
+      data-ar="النزاهة والأمن والتميز في التجارة الدولية"
+      data-fr="INTÉGRITÉ, SÉCURITÉ ET EXCELLENCE DANS LE COMMERCE INTERNATIONAL"
+      data-zh="国际贸易中的诚信、安全与卓越">INTEGRITY, SECURITY & EXCELLENCE IN INTERNATIONAL TRADE</h1>
+  <p data-en="RSK - TRUST & TRADE connects global commodity markets with structured execution, premium compliance standards and reliable protection for partners and brokers."
+     data-de="RSK - TRUST & TRADE verbindet weltweite Rohstoffmärkte mit strukturierten Abwicklungen, erstklassigen Compliance-Standards und verlässlichem Schutz für Partner und Broker."
+     data-ru="RSK - TRUST & TRADE объединяет мировые товарные рынки со структурированным исполнением, премиальными стандартами соответствия и надежной защитой для партнеров и брокеров."
+     data-ar="RSK - TRUST & TRADE تربط أسواق السلع العالمية بتنفيذ منظم ومعايير امتثال متميزة وحماية موثوقة للشركاء والوسطاء."
+     data-fr="RSK - TRUST & TRADE connecte les marchés mondiaux avec une exécution structurée, des standards de conformité premium et une protection fiable pour les partenaires et courtiers."
+     data-zh="RSK - TRUST & TRADE 将全球大宗商品市场与结构化执行、优质合规标准以及对合作伙伴和经纪人的可靠保护连接起来。">RSK - TRUST & TRADE connects global commodity markets with structured execution, premium compliance standards and reliable protection for partners and brokers.</p>
 </div>
 
 <section id="broker">
   <div class="broker-box">
-    <h2 data-de="Broker Protection Program" data-en="Broker Protection Program">Broker Protection Program</h2>
-    <p data-de="Transparente Prozesse und geschützte Abwicklung. Laden Sie hier unsere Standard-Dokumente herunter." 
-       data-en="Transparent processes and protected execution. Download our standard documents here.">
-       Transparent processes and protected execution. Download our standard documents here.
-    </p>
+    <h2 data-en="Broker Protection Program" data-de="Broker Protection Program" data-ru="Программа защиты брокера" data-ar="برنامج حماية الوسيط" data-fr="Programme de protection des courtiers" data-zh="经纪人保护计划">Broker Protection Program</h2>
+    <p data-en="Transparent processes and protected execution. Download our standard documents here."
+       data-de="Transparente Prozesse und geschützte Abwicklung. Laden Sie hier unsere Standard-Dokumente herunter."
+       data-ru="Прозрачные процессы и защищенное исполнение. Загрузите наши стандартные документы здесь."
+       data-ar="عمليات شفافة وتنفيذ محمي. قم بتنزيل مستنداتنا القياسية هنا."
+       data-fr="Processus transparents et exécution protégée. Téléchargez nos documents standards ici."
+       data-zh="透明的流程和受保护的执行。在此处下载我们的标准文件。">Transparent processes and protected execution. Download our standard documents here.</p>
     <div class="btn-group">
-      <a href="NCNDA.pdf" download class="btn" data-de="NCNDA Download" data-en="Download NCNDA">Download NCNDA</a>
-      <a href="IMFPA.pdf" download class="btn btn-outline" data-de="IMFPA Download" data-en="Download IMFPA">Download IMFPA</a>
+      <a href="NCNDA.pdf" download class="btn" 
+         data-en="Download NCNDA" data-de="NCNDA Download" data-ru="Скачать NCNDA" data-ar="تحميل NCNDA" data-fr="Télécharger NCNDA" data-zh="下载 NCNDA">Download NCNDA</a>
+      <a href="IMFPA.pdf" download class="btn btn-outline" 
+         data-en="Download IMFPA" data-de="IMFPA Download" data-ru="Скачать IMFPA" data-ar="تحميل IMFPA" data-fr="Télécharger IMFPA" data-zh="下载 IMFPA">Download IMFPA</a>
     </div>
   </div>
 </section>
 
 <script>
-  // DEFAULT ENGLISH
   let currentLang = 'en';
   const switcher = document.getElementById('langSwitch');
   
   function updateLang(lang){
     currentLang = lang;
     document.querySelectorAll('[data-en]').forEach(el => {
-      el.textContent = el.getAttribute('data-' + lang);
+      const t = el.getAttribute('data-' + lang);
+      if(t) el.textContent = t;
     });
     document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
     localStorage.setItem('rsk-lang', lang);
   }
   
   switcher.addEventListener('change', (e) => updateLang(e.target.value));
-  
-  // Load saved or default EN
   const saved = localStorage.getItem('rsk-lang') || 'en';
   switcher.value = saved;
   updateLang(saved);
 </script>
 
 </body>
-</html>                  
+    </html>
