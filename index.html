@@ -1,179 +1,103 @@
-<!-- ===== RSK FINAL: FIXED BUGFREE VERSION ===== -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSK TRUST & TRADE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-.f{width:20px;height:20px;border-radius:50%;display:inline-block;flex-shrink:0;background-size:cover;background-position:center;box-shadow:0 0 0 1px rgba(0,0,0,0.07) inset}
-.f-en{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0L60 30M60 0L0 30' stroke='white' stroke-width='6'/%3E%3Cpath d='M0 0L60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='white' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}
-.f-de{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 3'%3E%3Crect width='5' height='1' y='0' fill='black'/%3E%3Crect width='5' height='1' y='1' fill='%23DD0000'/%3E%3Crect width='5' height='1' y='2' fill='%23FFCE00'/%3E%3C/svg%3E")}
-.f-es{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='0.5' fill='%23C60B1E'/%3E%3Crect y='0.5' width='3' height='1' fill='%23FFC400'/%3E%3Crect y='1.5' width='3' height='0.5' fill='%23C60B1E'/%3E%3C/svg%3E")}
-.f-pt{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23006C4E'/%3E%3Crect width='220' height='400' fill='%23FF0000'/%3E%3C/svg%3E")}
-.f-fr{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='1' height='2' x='0' fill='%23002395'/%3E%3Crect width='1' height='2' x='1' fill='white'/%3E%3Crect width='1' height='2' x='2' fill='%23ED2939'/%3E%3C/svg%3E")}
-.f-ru{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='0.66' fill='white'/%3E%3Crect y='0.66' width='3' height='0.67' fill='%230039A6'/%3E%3Crect y='1.33' width='3' height='0.67' fill='%23D52B1E'/%3E%3C/svg%3E")}
-.f-ar{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23006C35'/%3E%3C/svg%3E")}
-.f-zh{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='%23DE2910'/%3E%3Cpath d='M5 2l1 3 3 0 -2.5 2 1 3 -2.5-1.8L3 10l1-3L1.5 5 4.5 5z' fill='%23FFDE00'/%3E%3C/svg%3E")}
+:root { --black: #0f0f0f; --gray: #555; --light: #fcfcfc; --gold: #c9a86a; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { height: 100%; }
+body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--black); min-height: 100vh; position: relative; overflow-x: hidden; }
+/* WASSERZEICHEN VOLLSEITIG - GANZE SEITE */
+body::before { content: ""; position: fixed; inset: 0; background-image: url('./assets/rsk-watermark-oak.png'); background-position: center center; background-repeat: no-repeat; background-size: 88% auto; opacity: 0.09; pointer-events: none; z-index: 0; }
+header, nav, .hero, #docs, .lang-wrap { position: relative; z-index: 1; }
+/* 1 BUTTON - 8 SPRACHEN */
+.lang-wrap { position: fixed; top: 18px; right: 22px; z-index: 9999; }
+.lang-btn { border: 1.5px solid #111; background: white; padding: 10px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 13px; letter-spacing: 1px; }
+.lang-dropdown { display: none; position: absolute; top: 110%; right: 0; background: white; border: 1.5px solid #111; width: 210px; box-shadow: 0 15px 35px rgba(0,0,0,.2); }
+.lang-dropdown.open { display: block; }
+.lang-item { padding: 13px 14px; display: flex; gap: 12px; align-items: center; cursor: pointer; font-size: 13px; border-bottom: 1px solid #eee; transition: .15s; }
+.lang-item:last-child { border-bottom: none; }
+.lang-item:hover { background: #111; color: white; }
+.flag { font-size: 18px; }
+header { text-align: center; padding: 85px 20px 15px; }
+header h1 { font-family: 'Playfair Display', serif; font-size: 115px; letter-spacing: 20px; font-weight: 900; line-height: .9; }
+header h2 { font-weight: 300; letter-spacing: 12px; font-size: 18px; margin-top: 8px; }
+nav { display: flex; justify-content: space-between; max-width: 1200px; margin: 45px auto 0; padding: 18px 50px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background: rgba(255, 255, 255, .85); backdrop-filter: blur(6px); }
+nav a { text-decoration: none; color: var(--black); font-size: 13px; letter-spacing: 1px; margin: 0 14px; font-weight: 600; }
+nav a:hover { color: var(--gold); }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; max-width: 1200px; margin: 80px auto; padding: 0 50px; }
+.hero h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 16px; letter-spacing: .5px; }
+.hero p { font-size: 14.5px; line-height: 1.7; color: var(--gray); }
+#docs { background: #111; color: white; margin-top: 120px; padding: 80px 20px; }
+.deal-rescue-card { background: #0F172A; color: #F8FAFC; padding: 2.5rem; border-radius: 10px; border: 1px solid #D97706; max-width: 800px; margin: 0 auto; box-sizing: border-box; }
+.deal-rescue-card h2 { color: #D97706; margin-top: 0; font-size: 1.6rem; letter-spacing: 0.5px; }
+.deal-rescue-card p { color: #94A3B8; font-size: 13px; line-height: 1.6; }
+.deal-rescue-card .form-group { margin-bottom: 1.2rem; }
+.deal-rescue-card label { display: block; margin-bottom: 0.4rem; font-size: 12px; color: #CBD5E1; }
+.deal-rescue-card .form-control { width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid #334155; background: #1E293B; color: #fff; font-size: 13px; box-sizing: border-box; }
+.deal-rescue-card textarea.form-control { height: 140px; resize: vertical; }
+.deal-rescue-card .btn-rescue { background: #D97706; color: #fff; padding: 0.9rem 2rem; border: none; border-radius: 5px; font-weight: 800; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; width: 100%; margin-top: 0.5rem; }
+.deal-rescue-card .btn-rescue:hover { background: #B45309; }
+.deal-rescue-card .disclaimer { font-size: 10px; color: #64748B; margin-top: 1.2rem; line-height: 1.4; border-top: 1px solid #334155; padding-top: 1rem; }
+@media(max-width:900px){
+  body::before{background-size:165% auto;background-position:center 38%;opacity:0.06}
+  header h1{font-size:54px;letter-spacing:10px} .lang-wrap{top:10px;right:10px}
+  nav{flex-direction:column;padding:0} nav a{margin:6px 10px}
+  .hero{grid-template-columns:1fr;gap:40px;padding:0 22px} #docs{padding:50px 15px}
+  .deal-rescue-card{padding:1.5rem}
+}
 </style>
+</head>
+<body>
 
-<!-- 1. DOCUMENT MAGNET -->
-<section id="doc-magnet" style="padding:80px 20px;background:#fff;border-top:1px solid #efe8d8">
-  <div style="max-width:1200px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:36px">
-      <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#9a854a;border:1px solid #efe8d8;padding:5px 12px;border-radius:999px;background:#faf7f1">DOCUMENT MAGNET</span>
-      <h2 style="font-family:Cinzel,serif;font-size:32px;font-weight:700;color:#0f172a;margin:16px 0 8px">Free Trading Documents</h2>
-      <p style="font-size:13px;color:#64748b;max-width:600px;margin:16px auto">Direct from ./downloads/ - GitHub hosted, SEO optimized, fast CDN.</p>
-
-      <!-- SVG FLAG DROPDOWN -->
-      <div style="position:relative;display:inline-block;margin-top:8px">
-        <button id="langBtn" onclick="toggleLangMenu()" style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #efe8d8;border-radius:999px;padding:7px 14px;cursor:pointer;font-size:12px;font-weight:700;color:#1c2b44;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
-          <span id="currentFlag" class="f f-en"></span>
-          <span id="currentLang">EN</span>
-          <span style="font-size:9px;color:#9a854a">▼</span>
-        </button>
-        <div id="langMenu" style="display:none;position:absolute;top:115%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #efe8d8;border-radius:14px;box-shadow:0 12px 35px rgba(28,43,68,0.12);padding:6px;min-width:175px;z-index:999">
-          <button onclick="setL('en')" data-l="en" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:#faf7f1;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-en"></span> English</button>
-          <button onclick="setL('de')" data-l="de" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-de"></span> Deutsch</button>
-          <button onclick="setL('es')" data-l="es" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-es"></span> Español</button>
-          <button onclick="setL('pt')" data-l="pt" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-pt"></span> Português</button>
-          <button onclick="setL('fr')" data-l="fr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-fr"></span> Français</button>
-          <button onclick="setL('ru')" data-l="ru" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-ru"></span> Русский</button>
-          <button onclick="setL('ar')" data-l="ar" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-ar"></span> العربية</button>
-          <button onclick="setL('zh')" data-l="zh" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-zh"></span> 中文</button>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
-      <div style="border:1px solid #efe8d8;border-radius:14px;padding:18px;background:#faf7f1">
-        <h4 style="font-size:13px;font-weight:700">Secure Trade Checklist 2026</h4>
-        <p style="font-size:11px;color:#64748b;margin:6px 0 10px">10 checks before money moves.</p>
-        <div class="dPath" id="path-checklist" style="font-size:9px;color:#94a3b8;margin-bottom:10px">./downloads/en/rsk-trust-trade-secure-commodity-trade-checklist-2026.pdf</div>
-        <button onclick="openM('checklist')" style="width:100%;background:#1c2b44;color:#fff;border:none;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Free Download</button>
-      </div>
-
-      <div style="border:1.5px solid #9a854a;border-radius:14px;padding:18px;background:#faf7f1">
-        <h4 style="font-size:13px;font-weight:700">LOI / ICPO / SPA Templates</h4>
-        <p style="font-size:11px;color:#64748b;margin:6px 0 10px">Real deal patterns, anonymized.</p>
-        <div class="dPath" id="path-templates" style="font-size:9px;color:#94a3b8;margin-bottom:10px">./downloads/en/rsk-trust-trade-loi-icpo-spa-template.pdf</div>
-        <button onclick="openM('templates')" style="width:100%;background:#9a854a;color:#fff;border:none;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Download Pack</button>
-      </div>
-
-      <div style="border:1px solid #efe8d8;border-radius:14px;padding:18px;background:#faf7f1">
-        <h4 style="font-size:13px;font-weight:700">Incoterms 2026 Guide</h4>
-        <p style="font-size:11px;color:#64748b;margin:6px 0 10px">FOB, CIF, DDP - who pays what.</p>
-        <div class="dPath" id="path-incoterms" style="font-size:9px;color:#94a3b8;margin-bottom:10px">./downloads/en/rsk-trust-trade-incoterms-2026-guide.pdf</div>
-        <button onclick="openM('incoterms')" style="width:100%;background:#fff;color:#1c2b44;border:1px solid #1c2b44;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Download Guide</button>
-      </div>
+  <!-- 1 BUTTON MIT 8 SPRACHEN + FLAGGEN -->
+  <div class="lang-wrap">
+    <button class="lang-btn" onclick="toggleDropdown()">
+      <span class="flag" id="currentFlag">🇺🇸</span> <span id="currentLangLabel">EN</span> <span>▼</span>
+    </button>
+    <div class="lang-dropdown" id="langDropdown">
+      <div class="lang-item" onclick="setLanguage('en')"><span class="flag">🇺🇸</span> English</div>
+      <div class="lang-item" onclick="setLanguage('de')"><span class="flag">🇩🇪</span> Deutsch</div>
+      <div class="lang-item" onclick="setLanguage('es')"><span class="flag">🇪🇸</span> Español</div>
+      <div class="lang-item" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span> Português</div>
+      <div class="lang-item" onclick="setLanguage('zh')"><span class="flag">🇨🇳</span> 中文</div>
+      <div class="lang-item" onclick="setLanguage('ru')"><span class="flag">🇷🇺</span> Русский</div>
+      <div class="lang-item" onclick="setLanguage('fr')"><span class="flag">🇫🇷</span> Français</div>
+      <div class="lang-item" onclick="setLanguage('it')"><span class="flag">🇮🇹</span> Italiano</div>
     </div>
   </div>
-</section>
 
-<!-- MODAL -->
-<div id="dlModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.6);z-index:9999;align-items:center;justify-content:center">
-  <div style="background:#fff;border-radius:16px;padding:24px;max-width:400px;width:90%;border:1px solid #9a854a;position:relative">
-    <span onclick="closeM()" style="position:absolute;top:12px;right:16px;cursor:pointer;font-weight:bold;color:#64748b">&times;</span>
-    <h3 style="font-size:16px;font-weight:700">Download Resource</h3>
-    <form onsubmit="executeDownload(event)">
-      <input id="modalDocId" type="hidden">
-      <input required placeholder="Full Name*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:10px">
-      <input required placeholder="Company*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:10px">
-      <input required type="email" placeholder="Business Email*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:14px">
-      <button type="submit" style="width:100%;background:#1c2b44;color:#fff;border:none;padding:12px;border-radius:999px;font-size:12px;font-weight:600;cursor:pointer">Download PDF Now</button>
-    </form>
-  </div>
-</div>
+  <header>
+    <h1>RSK</h1>
+    <h2>TRUST &amp; TRADE</h2>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#docs">DOCUMENTS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-<script>
-let currentLang = 'en';
+  <section class="hero">
+    <div><h3>Integrity in Global Trade</h3><p>We provide discreet, high-stakes compliance and transaction guidance for commodity trading and corporate structuring.</p></div>
+    <div><h3>Expertise &amp; Security</h3><p>Our tailored approaches minimize operational risk while preserving seamless deal execution across international jurisdictions.</p></div>
+  </section>
 
-const langData = {
-  en: 'f-en', de: 'f-de', es: 'f-es', pt: 'f-pt',
-  fr: 'f-fr', ru: 'f-ru', ar: 'f-ar', zh: 'f-zh'
-};
-
-// Relative paths for GitHub Pages compatibility
-const docPaths = {
-  checklist: {
-    en: './downloads/en/rsk-trust-trade-secure-commodity-trade-checklist-2026.pdf',
-    de: './downloads/de/rsk-trust-trade-sichere-handels-checkliste-2026.pdf',
-    es: './downloads/es/rsk-trust-trade-lista-de-verificacion-comercio-2026.pdf',
-    pt: './downloads/pt/rsk-trust-trade-guia-check-list-comercio-commodities-2026.pdf',
-    fr: './downloads/fr/rsk-trust-trade-liste-controle-commerce-2026.pdf',
-    ru: './downloads/ru/rsk-trust-trade-kontrolnyj-spisok-torgovli-2026.pdf',
-    ar: './downloads/ar/rsk-trust-trade-qaimat-fahs-tijara-2026.pdf',
-    zh: './downloads/zh/rsk-trust-trade-anquan-maoyi-jiancha-2026.pdf'
-  },
-  templates: {
-    en: './downloads/en/rsk-trust-trade-loi-icpo-spa-template.pdf',
-    de: './downloads/de/rsk-trust-trade-loi-icpo-spa-vorlage.pdf',
-    es: './downloads/es/rsk-trust-trade-plantilla-loi-icpo-spa.pdf',
-    pt: './downloads/pt/rsk-trust-trade-modelo-loi-icpo-spa.pdf',
-    fr: './downloads/fr/rsk-trust-trade-modele-loi-icpo-spa.pdf',
-    ru: './downloads/ru/rsk-trust-trade-shablon-loi-icpo-spa.pdf',
-    ar: './downloads/ar/rsk-trust-trade-namudhaj-loi-icpo-spa.pdf',
-    zh: './downloads/zh/rsk-trust-trade-loi-icpo-spa-moban-2026.pdf'
-  },
-  incoterms: {
-    en: './downloads/en/rsk-trust-trade-incoterms-2026-guide.pdf',
-    de: './downloads/de/rsk-trust-trade-incoterms-2026-leitfaden.pdf',
-    es: './downloads/es/rsk-trust-trade-guia-incoterms-2026.pdf',
-    pt: './downloads/pt/rsk-trust-trade-guia-incoterms-2026.pdf',
-    fr: './downloads/fr/rsk-trust-trade-guide-incoterms-2026.pdf',
-    ru: './downloads/ru/rsk-trust-trade-rukovodstvo-incoterms-2026.pdf',
-    ar: './downloads/ar/rsk-trust-trade-dalil-incoterms-2026.pdf',
-    zh: './downloads/zh/rsk-trust-trade-incoterms-zhinan-2026.pdf'
-  }
-};
-
-function toggleLangMenu() {
-  const m = document.getElementById('langMenu');
-  m.style.display = (m.style.display === 'block') ? 'none' : 'block';
-}
-
-function setL(lang) {
-  currentLang = lang;
-  document.getElementById('currentFlag').className = 'f ' + langData[lang];
-  document.getElementById('currentLang').innerText = lang.toUpperCase();
-  
-  document.querySelectorAll('#langMenu button').forEach(b => {
-    b.style.background = (b.getAttribute('data-l') === lang) ? '#faf7f1' : 'transparent';
-  });
-
-  // Fixed path reference
-  document.getElementById('path-checklist').innerText = docPaths.checklist[lang];
-  document.getElementById('path-templates').innerText = docPaths.templates[lang];
-  document.getElementById('path-incoterms').innerText = docPaths.incoterms[lang];
-  
-  document.getElementById('langMenu').style.display = 'none';
-}
-
-function openM(id) {
-  document.getElementById('modalDocId').value = id;
-  document.getElementById('dlModal').style.display = 'flex';
-}
-
-function closeM() {
-  document.getElementById('dlModal').style.display = 'none';
-}
-
-function executeDownload(e) {
-  e.preventDefault();
-  const id = document.getElementById('modalDocId').value;
-  const url = docPaths[id][currentLang];
-  
-  // Safe cross-browser trigger
-  const a = document.createElement('a');
-  a.href = url;
-  a.target = '_blank';
-  a.setAttribute('download', '');
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  
-  closeM();
-}
-
-document.addEventListener('click', e => {
-  if (!e.target.closest('#langBtn') && !e.target.closest('#langMenu')) {
-    document.getElementById('langMenu').style.display = 'none';
-  }
-});
-  </script>
-  
+  <section id="docs">
+    <div class="deal-rescue-card">
+      <h2 id="t_h2">Deal-Rescue & Compliance Review</h2>
+      <p style="margin-top:-10px;"><em id="t_sub_tag">RSK – Your Silent Partner in High-Stakes Commodity Deals.</em><br><span id="t_sub">Wir begleiten Sie diskret durch kritische Verhandlungsphasen...</span></p>
+      
+      <form action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
+          <input type="hidden" name="lang" id="form_lang" value="en">
+          <div class="form-group"><label id="t_lbl_topic">Dokument / Bereich *</label>
+              <select name="topic" class="form-control" required>
+                  <option value="" id="t_opt_select">Please select...</option>
+                  <option value="NCNDA / Protection">NCNDA / Quellenschutz & Provisionen</option>
+                  <option value="Payment / DLC / SBLC">Zahlung DLC / SBLC / MT760</option>
+                  <option value="POP / Verification">POP / SGS / Verifikation</option>
+                  <option value="SPA Clauses">SPA - Risikoklauseln</option>
+                  
