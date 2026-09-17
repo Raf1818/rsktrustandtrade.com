@@ -1,4 +1,4 @@
-<!-- ===== RSK FINAL: 8 LANGUAGES WITH SVG FLAGS - NO LAB DIAMONDS ===== -->
+<!-- ===== RSK FINAL: FIXED BUGFREE VERSION ===== -->
 
 <style>
 .f{width:20px;height:20px;border-radius:50%;display:inline-block;flex-shrink:0;background-size:cover;background-position:center;box-shadow:0 0 0 1px rgba(0,0,0,0.07) inset}
@@ -18,9 +18,9 @@
     <div style="text-align:center;margin-bottom:36px">
       <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#9a854a;border:1px solid #efe8d8;padding:5px 12px;border-radius:999px;background:#faf7f1">DOCUMENT MAGNET</span>
       <h2 style="font-family:Cinzel,serif;font-size:32px;font-weight:700;color:#0f172a;margin:16px 0 8px">Free Trading Documents</h2>
-      <p style="font-size:13px;color:#64748b;max-width:600px;margin:16px auto">Direct from /downloads/ - GitHub hosted, SEO optimized, fast CDN.</p>
+      <p style="font-size:13px;color:#64748b;max-width:600px;margin:16px auto">Direct from ./downloads/ - GitHub hosted, SEO optimized, fast CDN.</p>
 
-      <!-- NEW: SVG FLAG DROPDOWN -->
+      <!-- SVG FLAG DROPDOWN -->
       <div style="position:relative;display:inline-block;margin-top:8px">
         <button id="langBtn" onclick="toggleLangMenu()" style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #efe8d8;border-radius:999px;padding:7px 14px;cursor:pointer;font-size:12px;font-weight:700;color:#1c2b44;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
           <span id="currentFlag" class="f f-en"></span>
@@ -28,49 +28,152 @@
           <span style="font-size:9px;color:#9a854a">▼</span>
         </button>
         <div id="langMenu" style="display:none;position:absolute;top:115%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #efe8d8;border-radius:14px;box-shadow:0 12px 35px rgba(28,43,68,0.12);padding:6px;min-width:175px;z-index:999">
-          <button onclick="setL('en')" data-l="en" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:#faf7f1;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-en"></span> English</button>
-          <button onclick="setL('de')" data-l="de" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-de"></span> Deutsch</button>
-          <button onclick="setL('es')" data-l="es" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-es"></span> Español</button>
-          <button onclick="setL('pt')" data-l="pt" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-pt"></span> Português</button>
-          <button onclick="setL('fr')" data-l="fr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-fr"></span> Français</button>
-          <button onclick="setL('ru')" data-l="ru" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-ru"></span> Русский</button>
-          <button onclick="setL('ar')" data-l="ar" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-ar"></span> العربية</button>
-          <button onclick="setL('zh')" data-l="zh" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-zh"></span> 中文</button>
+          <button onclick="setL('en')" data-l="en" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:#faf7f1;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-en"></span> English</button>
+          <button onclick="setL('de')" data-l="de" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-de"></span> Deutsch</button>
+          <button onclick="setL('es')" data-l="es" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-es"></span> Español</button>
+          <button onclick="setL('pt')" data-l="pt" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-pt"></span> Português</button>
+          <button onclick="setL('fr')" data-l="fr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-fr"></span> Français</button>
+          <button onclick="setL('ru')" data-l="ru" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-ru"></span> Русский</button>
+          <button onclick="setL('ar')" data-l="ar" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-ar"></span> العربية</button>
+          <button onclick="setL('zh')" data-l="zh" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:none;background:transparent;border-radius:999px;cursor:pointer;font-size:12px;font-weight:600;text-align:left"><span class="f f-zh"></span> 中文</button>
         </div>
       </div>
     </div>
+
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
-      <div style="border:1px solid #efe8d8;border-radius:14px;padding:18px;background:#faf7f1"><h4 style="font-size:13px;font-weight:700">Secure Trade Checklist 2026</h4><p style="font-size:11px;color:#64748b;margin:6px 0 10px">10 checks before money moves.</p><div class="dPath" id="path-checklist" style="font-size:9px;color:#94a3b8;margin-bottom:10px">/downloads/en/...</div><button onclick="openM('checklist')" style="width:100%;background:#1c2b44;color:#fff;border:none;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Free Download</button></div>
-      <div style="border:1.5px solid #9a854a;border-radius:14px;padding:18px;background:#faf7f1"><h4 style="font-size:13px;font-weight:700">LOI / ICPO / SPA Templates</h4><p style="font-size:11px;color:#64748b;margin:6px 0 10px">Real deal patterns, anonymized.</p><div class="dPath" id="path-templates" style="font-size:9px;color:#94a3b8;margin-bottom:10px">/downloads/en/...</div><button onclick="openM('templates')" style="width:100%;background:#9a854a;color:#fff;border:none;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Download Pack</button></div>
-      <div style="border:1px solid #efe8d8;border-radius:14px;padding:18px;background:#faf7f1"><h4 style="font-size:13px;font-weight:700">Incoterms 2026 Guide</h4><p style="font-size:11px;color:#64748b;margin:6px 0 10px">FOB, CIF, DDP - who pays what.</p><div class="dPath" id="path-incoterms" style="font-size:9px;color:#94a3b8;margin-bottom:10px">/downloads/en/...</div><button onclick="openM('incoterms')" style="width:100%;background:#fff;color:#1c2b44;border:1px solid #1c2b44;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Download Guide</button></div>
+      <div style="border:1px solid #efe8d8;border-radius:14px;padding:18px;background:#faf7f1">
+        <h4 style="font-size:13px;font-weight:700">Secure Trade Checklist 2026</h4>
+        <p style="font-size:11px;color:#64748b;margin:6px 0 10px">10 checks before money moves.</p>
+        <div class="dPath" id="path-checklist" style="font-size:9px;color:#94a3b8;margin-bottom:10px">./downloads/en/rsk-trust-trade-secure-commodity-trade-checklist-2026.pdf</div>
+        <button onclick="openM('checklist')" style="width:100%;background:#1c2b44;color:#fff;border:none;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Free Download</button>
+      </div>
+
+      <div style="border:1.5px solid #9a854a;border-radius:14px;padding:18px;background:#faf7f1">
+        <h4 style="font-size:13px;font-weight:700">LOI / ICPO / SPA Templates</h4>
+        <p style="font-size:11px;color:#64748b;margin:6px 0 10px">Real deal patterns, anonymized.</p>
+        <div class="dPath" id="path-templates" style="font-size:9px;color:#94a3b8;margin-bottom:10px">./downloads/en/rsk-trust-trade-loi-icpo-spa-template.pdf</div>
+        <button onclick="openM('templates')" style="width:100%;background:#9a854a;color:#fff;border:none;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Download Pack</button>
+      </div>
+
+      <div style="border:1px solid #efe8d8;border-radius:14px;padding:18px;background:#faf7f1">
+        <h4 style="font-size:13px;font-weight:700">Incoterms 2026 Guide</h4>
+        <p style="font-size:11px;color:#64748b;margin:6px 0 10px">FOB, CIF, DDP - who pays what.</p>
+        <div class="dPath" id="path-incoterms" style="font-size:9px;color:#94a3b8;margin-bottom:10px">./downloads/en/rsk-trust-trade-incoterms-2026-guide.pdf</div>
+        <button onclick="openM('incoterms')" style="width:100%;background:#fff;color:#1c2b44;border:1px solid #1c2b44;padding:10px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer">Download Guide</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MODAL + CONSULTING BLEIBT GLEICH -->
-<div id="dlModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.6);z-index:9999;align-items:center;justify-content:center"><div style="background:#fff;border-radius:16px;padding:24px;max-width:400px;width:90%;border:1px solid #9a854a;position:relative"><span onclick="closeM()" style="position:absolute;top:12px;right:16px;cursor:pointer;font-weight:bold;color:#64748b">&times;</span><h3 style="font-size:16px;font-weight:700">Download Resource</h3><form onsubmit="executeDownload(event)"><input id="modalDocId" type="hidden"><input required placeholder="Full Name*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:10px"><input required placeholder="Company*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:10px"><input required type="email" placeholder="Business Email*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:14px"><button type="submit" style="width:100%;background:#1c2b44;color:#fff;border:none;padding:12px;border-radius:999px;font-size:12px;font-weight:600;cursor:pointer">Download PDF Now</button></form></div></div>
+<!-- MODAL -->
+<div id="dlModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.6);z-index:9999;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:16px;padding:24px;max-width:400px;width:90%;border:1px solid #9a854a;position:relative">
+    <span onclick="closeM()" style="position:absolute;top:12px;right:16px;cursor:pointer;font-weight:bold;color:#64748b">&times;</span>
+    <h3 style="font-size:16px;font-weight:700">Download Resource</h3>
+    <form onsubmit="executeDownload(event)">
+      <input id="modalDocId" type="hidden">
+      <input required placeholder="Full Name*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:10px">
+      <input required placeholder="Company*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:10px">
+      <input required type="email" placeholder="Business Email*" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:14px">
+      <button type="submit" style="width:100%;background:#1c2b44;color:#fff;border:none;padding:12px;border-radius:999px;font-size:12px;font-weight:600;cursor:pointer">Download PDF Now</button>
+    </form>
+  </div>
+</div>
 
 <script>
-let currentLang='en';
-const langData={en:'f-en',de:'f-de',es:'f-es',pt:'f-pt',fr:'f-fr',ru:'f-ru',ar:'f-ar',zh:'f-zh'};
-const docPaths={
-  checklist:{en:'/downloads/en/rsk-trust-trade-secure-commodity-trade-checklist-2026.pdf',de:'/downloads/de/rsk-trust-trade-sichere-handels-checkliste-2026.pdf',es:'/downloads/es/rsk-trust-trade-lista-de-verificacion-comercio-2026.pdf',pt:'/downloads/pt/rsk-trust-trade-guia-check-list-comercio-commodities-2026.pdf',fr:'/downloads/fr/rsk-trust-trade-liste-controle-commerce-2026.pdf',ru:'/downloads/ru/rsk-trust-trade-kontrolnyj-spisok-torgovli-2026.pdf',ar:'/downloads/ar/rsk-trust-trade-qaimat-fahs-tijara-2026.pdf',zh:'/downloads/zh/rsk-trust-trade-anquan-maoyi-jiancha-2026.pdf'},
-  templates:{en:'/downloads/en/rsk-trust-trade-loi-icpo-spa-template.pdf',de:'/downloads/de/rsk-trust-trade-loi-icpo-spa-vorlage.pdf',es:'/downloads/es/rsk-trust-trade-plantilla-loi-icpo-spa.pdf',pt:'/downloads/pt/rsk-trust-trade-modelo-loi-icpo-spa.pdf',fr:'/downloads/fr/rsk-trust-trade-modele-loi-icpo-spa.pdf',ru:'/downloads/ru/rsk-trust-trade-shablon-loi-icpo-spa.pdf',ar:'/downloads/ar/rsk-trust-trade-namudhaj-loi-icpo-spa.pdf',zh:'/downloads/zh/rsk-trust-trade-loi-icpo-spa-moban-2026.pdf'},
-  incoterms:{en:'/downloads/en/rsk-trust-trade-incoterms-2026-guide.pdf',de:'/downloads/de/rsk-trust-trade-incoterms-2026-leitfaden.pdf',es:'/downloads/es/rsk-trust-trade-guia-incoterms-2026.pdf',pt:'/downloads/pt/rsk-trust-trade-guia-incoterms-2026.pdf',fr:'/downloads/fr/rsk-trust-trade-guide-incoterms-2026.pdf',ru:'/downloads/ru/rsk-trust-trade-rukovodstvo-incoterms-2026.pdf',ar:'/downloads/ar/rsk-trust-trade-dalil-incoterms-2026.pdf',zh:'/downloads/zh/rsk-trust-trade-incoterms-zhinan-2026.pdf'}
+let currentLang = 'en';
+
+const langData = {
+  en: 'f-en', de: 'f-de', es: 'f-es', pt: 'f-pt',
+  fr: 'f-fr', ru: 'f-ru', ar: 'f-ar', zh: 'f-zh'
 };
-function toggleLangMenu(){const m=document.getElementById('langMenu');m.style.display=m.style.display==='block'?'none':'block'}
-function setL(lang){
-  currentLang=lang;
-  document.getElementById('currentFlag').className='f '+langData[lang];
-  document.getElementById('currentLang').innerText=lang.toUpperCase();
-  document.querySelectorAll('#langMenu button').forEach(b=>b.style.background=b.getAttribute('data-l')===lang?'#faf7f1':'transparent');
-  document.getElementById('path-checklist').innerText=docPaths.checklist[lang];
-  document.getElementById('path-templates').innerText=docPaths.templates[lang];
-  document.getElementById('path-incoterms').innerText=docPaths.incoterms[lang];
-  document.getElementById('langMenu').style.display='none';
+
+// Relative paths for GitHub Pages compatibility
+const docPaths = {
+  checklist: {
+    en: './downloads/en/rsk-trust-trade-secure-commodity-trade-checklist-2026.pdf',
+    de: './downloads/de/rsk-trust-trade-sichere-handels-checkliste-2026.pdf',
+    es: './downloads/es/rsk-trust-trade-lista-de-verificacion-comercio-2026.pdf',
+    pt: './downloads/pt/rsk-trust-trade-guia-check-list-comercio-commodities-2026.pdf',
+    fr: './downloads/fr/rsk-trust-trade-liste-controle-commerce-2026.pdf',
+    ru: './downloads/ru/rsk-trust-trade-kontrolnyj-spisok-torgovli-2026.pdf',
+    ar: './downloads/ar/rsk-trust-trade-qaimat-fahs-tijara-2026.pdf',
+    zh: './downloads/zh/rsk-trust-trade-anquan-maoyi-jiancha-2026.pdf'
+  },
+  templates: {
+    en: './downloads/en/rsk-trust-trade-loi-icpo-spa-template.pdf',
+    de: './downloads/de/rsk-trust-trade-loi-icpo-spa-vorlage.pdf',
+    es: './downloads/es/rsk-trust-trade-plantilla-loi-icpo-spa.pdf',
+    pt: './downloads/pt/rsk-trust-trade-modelo-loi-icpo-spa.pdf',
+    fr: './downloads/fr/rsk-trust-trade-modele-loi-icpo-spa.pdf',
+    ru: './downloads/ru/rsk-trust-trade-shablon-loi-icpo-spa.pdf',
+    ar: './downloads/ar/rsk-trust-trade-namudhaj-loi-icpo-spa.pdf',
+    zh: './downloads/zh/rsk-trust-trade-loi-icpo-spa-moban-2026.pdf'
+  },
+  incoterms: {
+    en: './downloads/en/rsk-trust-trade-incoterms-2026-guide.pdf',
+    de: './downloads/de/rsk-trust-trade-incoterms-2026-leitfaden.pdf',
+    es: './downloads/es/rsk-trust-trade-guia-incoterms-2026.pdf',
+    pt: './downloads/pt/rsk-trust-trade-guia-incoterms-2026.pdf',
+    fr: './downloads/fr/rsk-trust-trade-guide-incoterms-2026.pdf',
+    ru: './downloads/ru/rsk-trust-trade-rukovodstvo-incoterms-2026.pdf',
+    ar: './downloads/ar/rsk-trust-trade-dalil-incoterms-2026.pdf',
+    zh: './downloads/zh/rsk-trust-trade-incoterms-zhinan-2026.pdf'
+  }
+};
+
+function toggleLangMenu() {
+  const m = document.getElementById('langMenu');
+  m.style.display = (m.style.display === 'block') ? 'none' : 'block';
 }
-function openM(id){document.getElementById('modalDocId').value=id;document.getElementById('dlModal').style.display='flex'}
-function closeM(){document.getElementById('dlModal').style.display='none'}
-function executeDownload(e){e.preventDefault();const id=document.getElementById('modalDocId').value;const url=docPaths[id][currentLang];const a=document.createElement('a');a.href=url;a.download=url.split('/').pop();document.body.appendChild(a);a.click();a.remove();closeM()}
-document.addEventListener('click',e=>{if(!e.target.closest('#langBtn')&&!e.target.closest('#langMenu')){document.getElementById('langMenu').style.display='none'}});
+
+function setL(lang) {
+  currentLang = lang;
+  document.getElementById('currentFlag').className = 'f ' + langData[lang];
+  document.getElementById('currentLang').innerText = lang.toUpperCase();
+  
+  document.querySelectorAll('#langMenu button').forEach(b => {
+    b.style.background = (b.getAttribute('data-l') === lang) ? '#faf7f1' : 'transparent';
+  });
+
+  // Fixed path reference
+  document.getElementById('path-checklist').innerText = docPaths.checklist[lang];
+  document.getElementById('path-templates').innerText = docPaths.templates[lang];
+  document.getElementById('path-incoterms').innerText = docPaths.incoterms[lang];
+  
+  document.getElementById('langMenu').style.display = 'none';
+}
+
+function openM(id) {
+  document.getElementById('modalDocId').value = id;
+  document.getElementById('dlModal').style.display = 'flex';
+}
+
+function closeM() {
+  document.getElementById('dlModal').style.display = 'none';
+}
+
+function executeDownload(e) {
+  e.preventDefault();
+  const id = document.getElementById('modalDocId').value;
+  const url = docPaths[id][currentLang];
+  
+  // Safe cross-browser trigger
+  const a = document.createElement('a');
+  a.href = url;
+  a.target = '_blank';
+  a.setAttribute('download', '');
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  
+  closeM();
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('#langBtn') && !e.target.closest('#langMenu')) {
+    document.getElementById('langMenu').style.display = 'none';
+  }
+});
   </script>
+  
