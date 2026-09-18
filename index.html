@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,23 +10,34 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { height: 100%; }
 body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--black); min-height: 100vh; position: relative; overflow-x: hidden; }
-/* WASSERZEICHEN VERSTÄRKT - GUT SICHTBAR */
+/* WASSERZEICHEN FINAL - DOPPEL LAYER - SOFORT SICHTBAR */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: url('./image.jpg');
-  background-position: center center;
+  background-position: center 45%;
   background-repeat: no-repeat;
-  background-size: 92% auto;
-  opacity: 0.24;
-  filter: contrast(1.15) brightness(1.05) grayscale(0.1);
-  mix-blend-mode: multiply;
+  background-size: 96% auto;
+  opacity: 0.38;
+  filter: contrast(1.9) brightness(0.85);
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('./image.jpg');
+  background-position: center 45%;
+  background-repeat: no-repeat;
+  background-size: 96% auto;
+  opacity: 0.22;
+  filter: contrast(2.2) brightness(0.75);
   pointer-events: none;
   z-index: 0;
 }
 header, nav,.hero, #docs,.lang-wrap { position: relative; z-index: 1; }
-/* 1 BUTTON - 8 SPRACHEN */
 .lang-wrap { position: fixed; top: 18px; right: 22px; z-index: 9999; }
 .lang-btn { border: 1.5px solid #111; background: white; padding: 10px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 13px; letter-spacing: 1px; }
 .lang-dropdown { display: none; position: absolute; top: 110%; right: 0; background: white; border: 1.5px solid #111; width: 210px; box-shadow: 0 15px 35px rgba(0,0,0,.2); }
@@ -38,7 +49,7 @@ header, nav,.hero, #docs,.lang-wrap { position: relative; z-index: 1; }
 header { text-align: center; padding: 85px 20px 15px; }
 header h1 { font-family: 'Playfair Display', serif; font-size: 115px; letter-spacing: 20px; font-weight: 900; line-height:.9; }
 header h2 { font-weight: 300; letter-spacing: 12px; font-size: 18px; margin-top: 8px; }
-nav { display: flex; justify-content: space-between; max-width: 1200px; margin: 45px auto 0; padding: 18px 50px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background: rgba(255, 255, 255,.85); backdrop-filter: blur(6px); }
+nav { display: flex; justify-content: space-between; max-width: 1200px; margin: 45px auto 0; padding: 18px 50px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background: rgba(255, 255, 255,0.45); backdrop-filter: blur(3px); }
 nav a { text-decoration: none; color: var(--black); font-size: 13px; letter-spacing: 1px; margin: 0 14px; font-weight: 600; }
 nav a:hover { color: var(--gold); }
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; max-width: 1200px; margin: 80px auto; padding: 0 50px; }
@@ -56,7 +67,8 @@ nav a:hover { color: var(--gold); }
 .deal-rescue-card.btn-rescue:hover { background: #B45309; }
 .deal-rescue-card.disclaimer { font-size: 10px; color: #64748B; margin-top: 1.2rem; line-height: 1.4; border-top: 1px solid #334155; padding-top: 1rem; }
 @media(max-width:900px){
-  body::before{background-size:165% auto;background-position:center 38%;opacity:0.18}
+  body::before{background-size:180% auto;background-position:center 38%;opacity:0.30}
+  body::after{background-size:180% auto;background-position:center 38%;opacity:0.18}
   header h1{font-size:54px;letter-spacing:10px}.lang-wrap{top:10px;right:10px}
   nav{flex-direction:column;padding:0} nav a{margin:6px 10px}
 .hero{grid-template-columns:1fr;gap:40px;padding:0 22px} #docs{padding:50px 15px}
@@ -160,8 +172,8 @@ nav a:hover { color: var(--gold); }
       document.getElementById("form_lang").value = lang;
       const data = i18n[lang];
       for (let key in data) { let el = document.getElementById(key); if (el) { el.innerText = data[key]; } }
-      document.getElementById("langDropdown").classList.remove("open");
+      document.getElementById("langDropdown").classList.remove('open');
     }
   </script>
 </body>
-       </html>   
+         </html>     
