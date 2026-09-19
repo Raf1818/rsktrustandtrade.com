@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSK Trust & Trade - Compliance Documents Portal 48 PDFs</title>
+<meta name="description" content="RSK Trust & Trade 6 compliance documents in 8 languages - NCNDA, SPA LOI, POF RWA, ICPO BCL, KYC KYT, Deal-Rescue - info@rsktrustandtrade.com - ICC Arbitration London">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f4f6f9;margin:0;padding:25px;color:#1a1a1a;line-height:1.5}
+.container{max-width:1000px;margin:auto;background:#fff;padding:35px;border-radius:12px;box-shadow:0 4px 25px rgba(0,0,0,.08);border:1px solid #e1e4e8}
+.header{border-bottom:2px solid #111;padding-bottom:18px;margin-bottom:25px}
+h1{margin:0 0 6px;font-size:26px;font-weight:700;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.sub{color:#555;font-size:14px}
+.controls{display:flex;gap:14px;flex-wrap:wrap;background:#f8f9fa;padding:18px;border-radius:8px;margin-bottom:25px;border:1px solid #e9ecef;align-items:center}
+.control-group{display:flex;align-items:center;gap:8px}
+label{font-size:14px;font-weight:600}
+select,button{padding:10px 14px;border-radius:6px;border:1px solid #ccc;font-size:14px;background:#fff}
+button{background:#111;color:#fff;cursor:pointer;border:none;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+button:hover{background:#333}
+.doc-card{background:#fafafa;border:1px solid #e2e8f0;border-radius:8px;padding:30px}
+#doc-title{font-size:20px;font-weight:700;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #e2e8f0}
+#doc-body{white-space:pre-wrap;font-family:"Courier New",monospace;font-size:13.5px;line-height:1.7;background:#fff;padding:20px;border-radius:6px;border:1px solid #edf2f7;color:#2d3748}
+.footer{margin-top:30px;font-size:11.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:18px;text-align:center}
+.badge{background:#111;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.5px}
+@media print{body{background:#fff;padding:0}.container{box-shadow:none;border:none;padding:0}.controls{display:none!important}#doc-body{border:none;padding:0;background:transparent;font-family:inherit;font-size:12pt}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>RSK Trust & Trade <span class="badge">48 PDFs / 8 LANGUAGES</span></h1>
+<div class="sub">Official Compliance Documents - NCNDA SPA LOI POF RWA ICPO BCL KYC KYT Deal-Rescue - info@rsktrustandtrade.com</div>
+</div>
+<div class="controls">
+<div class="control-group"><label for="lang">Language:</label><select id="lang" onchange="update()"><option value="en">English EN</option><option value="de">Deutsch DE</option><option value="es">Español ES</option><option value="fr">Français FR</option><option value="pt">Português PT</option><option value="ru">Русский RU</option><option value="zh">中文 ZH</option><option value="it">Italiano IT</option></select></div>
+<div class="control-group"><label for="doc">Document:</label><select id="doc" onchange="update()"><option value="ncnda">NCNDA Working Agreement</option><option value="spa">SPA / LOI Review</option><option value="pof">POF / RWA Verification</option><option value="icpo">ICPO / BCL Review</option><option value="kyc">Compliance KYC / KYT</option><option value="deal">Deal-Rescue Negotiation</option></select></div>
+<button onclick="downloadPDF()">⬇ Download PDF</button><button onclick="window.print()">🖨 Print</button>
+</div>
+<div class="doc-card"><div id="doc-title"></div><div id="doc-body"></div></div>
+<div class="footer">RSK Trust & Trade | Governing Law: England & Wales | ICC Arbitration London | Contact: info@rsktrustandtrade.com | SEO: NCNDA SPA LOI POF RWA ICPO BCL KYC KYT</div>
+</div>
+<script>
+const {jsPDF}=window.jspdf;
+const DB={
+en:{
+ncnda:{t:"NCNDA Working Agreement 2026-001 - Non-Circumvention & Non-Disclosure",c:"COMMERCIAL WORKING AGREEMENT (NCNDA)\nRef: RSK-NCNDA-2026-001\nEffective Date: [Date]\n\n1. PURPOSE\nNon-Circumvention, Non-Disclosure & Working Agreement between Disclosing Party and Recipient.\n\n2. NON-CIRCUMVENTION\nRecipient shall not circumvent Disclosing Party with introduced buyers/sellers.\n\n3. NON-DISCLOSURE\nConfidential for 5 years - SCO, pricing, identities.\n\n4. TERM\n24 months, 30 days notice.\n\n5. GOVERNING LAW\nEngland & Wales, ICC Arbitration London.\n\n6. SIGNATURES\nDisclosing: ________________ Recipient: ________________\nName: ________________ Name: ________________\nDate: ________________ Date: ________________"},
+spa:{t:"SPA / LOI Review 2026-002",c:"SPA / LOI REVIEW\nRef: RSK-SPA-2026-002\n\n1. SCOPE\nReview of SPA/LOI for ICC compliance and risk.\n\n2. DELIVERABLE\nLegal memo + redlines.\n\n3. LAW\nEngland & Wales / ICC London."},
+pof:{t:"POF / RWA Verification 2026-003",c:"POF / RWA VERIFICATION\nRef: RSK-POF-2026-003\n\n1. VERIFICATION\nVerify Proof of Funds / RWA per banking standards.\n\n2. COMPLIANCE\nKYC/AML screening."},
+icpo:{t:"ICPO / BCL Review 2026-004",c:"ICPO / BCL REVIEW\nRef: RSK-ICPO-2026-004\n\n1. SCOPE\nEvaluation per UCP600 ICC.\n\n2. RISK\nBanking coordinates, authority."},
+kyc:{t:"Compliance & KYC / KYT 2026-005",c:"COMPLIANCE KYC/KYT\nRef: RSK-KYC-2026-005\n\n1. KYC/KYT\nFull screening, sanctions, source of funds.\n\n2. LAW\nEngland & Wales."},
+deal:{t:"Deal-Rescue Negotiation 2026-006",c:"DEAL-RESCUE MANDATE\nRef: RSK-DEAL-2026-006\n\n1. MANDATE\nRescue stalled commodity deals.\n\n2. FEE\nSuccess-based under IMFPA.\n\n3. PROTECTION\nUnder ICC NCNDA."}
+},
+de:{
+ncnda:{t:"NCNDA Arbeitsvereinbarung 2026-001 - Geheimhaltung & Quellenschutz",c:"VERTRAULICHKEITS- UND QUELLENSCHUTZVEREINBARUNG\nRef: RSK-NCNDA-2026-001-DE\nDatum: [Datum]\n\n1. ZWECK\nSchutz vertraulicher Geschäftsinformationen.\n\n2. QUELLENSCHUTZ\nKein Umgehen der offenlegenden Partei.\n\n3. GEHEIMHALTUNG\n5 Jahre vertraulich.\n\n4. RECHT\nEngland & Wales, ICC London.\n\nUnterschriften:\nOffenlegend: ________________ Empfänger: ________________"},
+spa:{t:"SPA / LOI Prüfung 2026-002",c:"SPA / LOI PRÜFUNG\nRef: RSK-SPA-2026-002-DE\n\n1. Umfang\nPrüfung auf Risiken und ICC Standards."},
+pof:{t:"POF / RWA Verifizierung 2026-003",c:"POF / RWA VERIFIZIERUNG\nRef: RSK-POF-2026-003-DE\n\n1. Verfahren\nPrüfung nach Bankstandards."},
+icpo:{t:"ICPO / BCL Prüfung 2026-004",c:"ICPO / BCL PRÜFUNG\nRef: RSK-ICPO-2026-004-DE\n\n1. Evaluierung\nPer UCP600 ICC."},
+kyc:{t:"Compliance & KYC / KYT 2026-005",c:"COMPLIANCE KYC/KYT\nRef: RSK-KYC-2026-005-DE\n\n1. Prüfung\nKYC, KYT, Sanktionslisten."},
+deal:{t:"Deal-Rescue Verhandlung 2026-006",c:"DEAL-RESCUE MANDAT\nRef: RSK-DEAL-2026-006-DE\n\n1. Ziel\nRettung festgefahrener Deals."}
+},
+es:{
+ncnda:{t:"NCNDA Acuerdo 2026-001 - No Circunvención y Confidencialidad",c:"ACUERDO NCNDA\nRef: RSK-NCNDA-2026-001-ES\n\n1. PROPÓSITO\nProtección de fuentes comerciales.\n\n2. LEY\nInglaterra y Gales, ICC Londres."},
+spa:{t:"SPA / LOI Revisión 2026-002",c:"SPA / LOI\nRef: RSK-SPA-2026-002-ES\nRevisión bajo estándares ICC."},
+pof:{t:"POF / RWA Verificación 2026-003",c:"POF / RWA\nRef: RSK-POF-2026-003-ES\nVerificación bancaria."},
+icpo:{t:"ICPO / BCL Revisión 2026-004",c:"ICPO / BCL\nRef: RSK-ICPO-2026-004-ES\nEvaluación UCP600."},
+kyc:{t:"Compliance KYC / KYT 2026-005",c:"COMPLIANCE KYC\nRef: RSK-KYC-2026-005-ES"},
+deal:{t:"Deal-Rescue Negociación 2026-006",c:"DEAL-RESCUE\nRef: RSK-DEAL-2026-006-ES"}
+},
+fr:{
+ncnda:{t:"NCNDA Accord 2026-001 - Non-Contournement & Confidentialité",c:"ACCORD NCNDA\nRef: RSK-NCNDA-2026-001-FR\n\n1. OBJECTIF\nProtection des sources.\n\n2. LOI\nAngleterre & Pays de Galles, CCI Londres."},
+spa:{t:"SPA / LOI Révision 2026-002",c:"SPA / LOI\nRef: RSK-SPA-2026-002-FR"},
+pof:{t:"POF / RWA Vérification 2026-003",c:"POF / RWA\nRef: RSK-POF-2026-003-FR"},
+icpo:{t:"ICPO / BCL Révision 2026-004",c:"ICPO / BCL\nRef: RSK-ICPO-2026-004-FR"},
+kyc:{t:"Compliance KYC / KYT 2026-005",c:"COMPLIANCE KYC\nRef: RSK-KYC-2026-005-FR"},
+deal:{t:"Deal-Rescue Négociation 2026-006",c:"DEAL-RESCUE\nRef: RSK-DEAL-2026-006-FR"}
+},
+pt:{
+ncnda:{t:"NCNDA Acordo 2026-001 - Não Circunvenção e Confidencialidade",c:"ACORDO NCNDA\nRef: RSK-NCNDA-2026-001-PT\n\n1. OBJETO\nProteção de fontes.\n\n2. LEI\nInglaterra e Gales, ICC Londres."},
+spa:{t:"SPA / LOI Revisão 2026-002",c:"SPA / LOI\nRef: RSK-SPA-2026-002-PT"},
+pof:{t:"POF / RWA Verificação 2026-003",c:"POF / RWA\nRef: RSK-POF-2026-003-PT"},
+icpo:{t:"ICPO / BCL Revisão 2026-004",c:"ICPO / BCL\nRef: RSK-ICPO-2026-004-PT"},
+kyc:{t:"Compliance KYC / KYT 2026-005",c:"COMPLIANCE KYC\nRef: RSK-KYC-2026-005-PT"},
+deal:{t:"Deal-Rescue Negociação 2026-006",c:"DEAL-RESCUE\nRef: RSK-DEAL-2026-006-PT"}
+},
+ru:{
+ncnda:{t:"NCNDA Соглашение 2026-001 - Необход и Конфиденциальность",c:"СОГЛАШЕНИЕ NCNDA\nRef: RSK-NCNDA-2026-001-RU\n\n1. ЦЕЛЬ\nЗащита источников.\n\n2. ПРАВО\nАнглия и Уэльс, ICC Лондон."},
+spa:{t:"SPA / LOI Проверка 2026-002",c:"SPA / LOI\nRef: RSK-SPA-2026-002-RU"},
+pof:{t:"POF / RWA Верификация 2026-003",c:"POF / RWA\nRef: RSK-POF-2026-003-RU"},
+icpo:{t:"ICPO / BCL Анализ 2026-004",c:"ICPO / BCL\nRef: RSK-ICPO-2026-004-RU"},
+kyc:{t:"Compliance KYC / KYT 2026-005",c:"COMPLIANCE KYC\nRef: RSK-KYC-2026-005-RU"},
+deal:{t:"Deal-Rescue Переговоры 2026-006",c:"DEAL-RESCUE\nRef: RSK-DEAL-2026-006-RU"}
+},
+zh:{
+ncnda:{t:"NCNDA 工作协议 2026-001 - 保密与防绕道",c:"NCNDA 协议\n编号: RSK-NCNDA-2026-001-ZH\n\n1. 目的\n保护商业来源。\n\n2. 法律\n英格兰和威尔士，ICC伦敦。"},
+spa:{t:"SPA / LOI 审查 2026-002",c:"SPA / LOI\n编号: RSK-SPA-2026-002-ZH"},
+pof:{t:"POF / RWA 验证 2026-003",c:"POF / RWA\n编号: RSK-POF-2026-003-ZH"},
+icpo:{t:"ICPO / BCL 评估 2026-004",c:"ICPO / BCL\n编号: RSK-ICPO-2026-004-ZH"},
+kyc:{t:"合规 KYC / KYT 2026-005",c:"合规 KYC\n编号: RSK-KYC-2026-005-ZH"},
+deal:{t:"交易挽救 2026-006",c:"DEAL-RESCUE\n编号: RSK-DEAL-2026-006-ZH"}
+},
+it:{
+ncnda:{t:"NCNDA Accordo 2026-001 - Non Circonvenzione e Riservatezza",c:"ACCORDO NCNDA\nRif: RSK-NCNDA-2026-001-IT\n\n1. SCOPO\nProtezione fonti commerciali.\n\n2. LEGGE\nInghilterra e Galles, ICC Londra."},
+spa:{t:"SPA / LOI Revisione 2026-002",c:"SPA / LOI\nRif: RSK-SPA-2026-002-IT\nRevisione per standard ICC."},
+pof:{t:"POF / RWA Verifica 2026-003",c:"POF / RWA VERIFICA\nRif: RSK-POF-2026-003-IT\n\n1. Verifica\nVerifica fondi secondo standard bancari."},
+icpo:{t:"ICPO / BCL Revisione 2026-004",c:"ICPO / BCL REVISIONE\nRif: RSK-ICPO-2026-004-IT\n\n1. Valutazione\nPer UCP600 ICC."},
+kyc:{t:"Compliance KYC / KYT 2026-005",c:"COMPLIANCE KYC / KYT\nRif: RSK-KYC-2026-005-IT\n\n1. Verifica\nKYC, KYT, liste sanzioni."},
+deal:{t:"Deal-Rescue Negoziazione 2026-006",c:"DEAL-RESCUE MANDATO\nRif: RSK-DEAL-2026-006-IT\n\n1. Mandato\nRecupero operazioni bloccate."}
+}
+};
+function update(){
+ const lang=document.getElementById('lang').value;
+ const doc=document.getElementById('doc').value;
+ const d=DB[lang][doc];
+ document.getElementById('doc-title').innerText=d.t+" ["+lang.toUpperCase()+"]";
+ document.getElementById('doc-body').innerText=d.c+"\n\n---\nContact: info@rsktrustandtrade.com\nICC-Style Confidential | England & Wales | ICC Arbitration London";
+ document.documentElement.lang=lang;
+}
+function downloadPDF(){
+ const lang=document.getElementById('lang').value;
+ const doc=document.getElementById('doc').value;
+ const d=DB[lang][doc];
+ const pdf=new jsPDF();
+ pdf.setFontSize(13);pdf.text(d.t,10,15);
+ pdf.setFontSize(8);pdf.text("Language: "+lang.toUpperCase()+" | info@rsktrustandtrade.com | ICC Confidential | Ref: RSK-"+doc+"-2026",10,22);
+ pdf.line(10,24,200,24);
+ pdf.setFontSize(9);pdf.text(pdf.splitTextToSize(d.c+"\n\nContact: info@rsktrustandtrade.com",180),10,32);
+ pdf.setFontSize(6);pdf.setTextColor(130);pdf.text("RSK Trust & Trade - rsk-"+doc+"-"+lang+".pdf - Page 1/1",10,285);
+ pdf.save("rsk-"+doc+"-"+lang+".pdf");
+}
+update();
+</script>
+</body>
+  </html>
