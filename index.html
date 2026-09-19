@@ -1,3 +1,55 @@
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSK TRUST & TRADE</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
+:root{--navy:#0a1931;--gold:#c9a86a;--parch:#f5f1e8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--parch);font-family:'Inter',sans-serif;position:relative}
+body::before{content:"";position:fixed;inset:0;background-image:url('./rsk-logo.png');background-position:center 40%;background-repeat:no-repeat;background-size:75% auto;opacity:0.50;pointer-events:none;z-index:0}
+header,nav,.hero,.card,footer{position:relative;z-index:2}
+header{display:flex;align-items:center;padding:10px 18px;background:var(--parch);border-bottom:1.5px solid var(--gold)}
+.logo-small{width:78px;height:auto}
+.brand{margin-left:14px}
+.brand h1{font-family:'Playfair Display';font-size:23px;letter-spacing:4px;color:var(--navy)}
+.brand h2{font-size:9px;letter-spacing:2px;color:var(--gold);margin-top:3px}
+.lang{margin-left:auto;position:relative}
+.lang-btn{border:1.5px solid var(--gold);background:#fdfaf3;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:13px}
+.lang-menu{display:none;position:absolute;right:0;top:44px;background:#fff;border:1.5px solid var(--gold);width:220px;border-radius:10px;box-shadow:0 15px 35px rgba(0,0,0,.18)}
+.lang-menu.open{display:block}
+.lang-menu div{padding:12px 14px;cursor:pointer;font-size:14px;border-bottom:1px solid #f0e6d3;display:flex;gap:10px}
+nav{display:flex;justify-content:center;gap:28px;padding:13px;border-bottom:1px solid rgba(201,168,106,.3)}
+nav a{text-decoration:none;color:#111;font-size:11px;font-weight:700;letter-spacing:1.2px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;margin:70px auto;padding:0 28px}
+.card{max-width:850px;margin:60px auto;background:#fdfaf3;border:1.5px solid var(--gold);border-radius:18px;padding:34px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+<img src="./rsk-logo.png" class="logo-small" alt="RSK">
+<div class="brand"><h1>RSK TRUST & TRADE</h1><h2>INTERNATIONAL COMMODITIES • LATAM • EUROPE • UAE • ASIA</h2></div>
+<div class="lang">
+<button class="lang-btn" onclick="document.getElementById('lm').classList.toggle('open')">🌐 Sprache ▼</button>
+<div class="lang-menu" id="lm">
+<div>🇬🇧 English</div>
+<div>🇪🇸 Español</div>
+<div>🇩🇪 Deutsch</div>
+<div>🇫🇷 Français</div>
+<div>🇧🇷 Português</div>
+<div>🇷🇺 Русский</div>
+<div>🇨🇳 中文</div>
+<div>🇮🇹 Italiano</div>
+</div>
+</div>
+</header>
+<nav><a href="#">ABOUT</a><a href="#">SERVICES</a><a href="#">DOCUMENTS</a><a href="#">CONTACT</a></nav>
+<section class="hero"><div><h3>Integrity in Global Trade</h3></div><div><h3>Expertise & Security</h3></div></section>
+<section><div class="card"><h2 style="font-family:'Playfair Display';font-size:34px;color:var(--navy)">Deal-Rescue & Compliance</h2><p>info@rsktrustandtrade.com</p></div></section>
+<script>document.addEventListener('click',e=>{if(!e.target.closest('.lang'))document.getElementById('lm').classList.remove('open')})</script>
+</body>
+</html></nav>
 
 
