@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -44,51 +44,72 @@ textarea.form-control{height:140px;resize:vertical}
 </style>
 </head>
 <body>
+
 <div class="lang-wrap">
-<button class="lang-btn" onclick="toggleDropdown()"><span class="flag" id="currentFlag">🇺🇸</span> <span id="currentLangLabel">EN</span> <span>▼</span></button>
-<div class="lang-dropdown" id="langDropdown">
-<div class="lang-item" onclick="setLanguage('en')"><span class="flag">🇺🇸</span> English</div>
-<div class="lang-item" onclick="setLanguage('de')"><span class="flag">🇩🇪</span> Deutsch</div>
-<div class="lang-item" onclick="setLanguage('es')"><span class="flag">🇪🇸</span> Español</div>
-<div class="lang-item" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span> Português</div>
-<div class="lang-item" onclick="setLanguage('zh')"><span class="flag">🇨🇳</span> 中文</div>
+  <button class="lang-btn" onclick="toggleDropdown()"><span class="flag" id="currentFlag">🇺🇸</span> <span id="currentLangLabel">EN</span> <span>▼</span></button>
+  <div class="lang-dropdown" id="langDropdown">
+    <div class="lang-item" onclick="setLanguage('en')"><span class="flag">🇺🇸</span> English</div>
+    <div class="lang-item" onclick="setLanguage('de')"><span class="flag">🇩🇪</span> Deutsch</div>
+    <div class="lang-item" onclick="setLanguage('es')"><span class="flag">🇪🇸</span> Español</div>
+    <div class="lang-item" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span> Português</div>
+    <div class="lang-item" onclick="setLanguage('zh')"><span class="flag">🇨🇳</span> 中文</div>
+  </div>
 </div>
-</div>
+
 <header>
-<h1>RSK</h1>
-<h2>TRUST &amp; TRADE</h2>
-<nav>
-<a href="#about" id="nav_about">ABOUT</a>
-<a href="#services" id="nav_services">SERVICES</a>
-<a href="#docs" id="nav_docs">DOCUMENTS</a>
-<a href="#contact" id="nav_contact">CONTACT</a>
-</nav>
+  <h1>RSK</h1>
+  <h2>TRUST &amp; TRADE</h2>
+  <nav>
+    <a href="#about" id="nav_about">ABOUT</a>
+    <a href="#services" id="nav_services">SERVICES</a>
+    <a href="#docs" id="nav_docs">DOCUMENTS</a>
+    <a href="#contact" id="nav_contact">CONTACT</a>
+  </nav>
 </header>
+
 <section class="hero">
-<div><h3 id="hero_h1">Integrity in Global Trade</h3><p id="hero_p1">We provide discreet, high-stakes compliance and transaction guidance for commodity trading and corporate structuring.</p></div>
-<div><h3 id="hero_h2">Expertise &amp; Security</h3><p id="hero_p2">Our tailored approaches minimize operational risk while preserving seamless deal execution across international jurisdictions.</p></div>
+  <div><h3 id="hero_h1">Integrity in Global Trade</h3><p id="hero_p1">We provide discreet, high-stakes compliance and transaction guidance for commodity trading and corporate structuring.</p></div>
+  <div><h3 id="hero_h2">Expertise &amp; Security</h3><p id="hero_p2">Our tailored approaches minimize operational risk while preserving seamless deal execution across international jurisdictions.</p></div>
 </section>
+
 <section id="docs">
-<div class="deal-rescue-card">
-<h2 id="t_h2">Deal-Rescue <span class="gold">&amp;</span> Compliance Review</h2>
-<p style="margin:8px 0 28px"><em id="t_sub_tag">RSK – Your Silent Partner in High-Stakes Commodity Deals.</em><br><span id="t_sub">We discreetly guide you through critical negotiation phases...</span></p>
-<form action="https://formspree.io/f/xboqqwzy" method="POST">
-<input type="hidden" name="lang" id="form_lang" value="en">
-<div class="form-group"><label id="t_lbl_topic">Document / Area *</label><select name="topic" class="form-control" required><option value="" id="t_opt_select">Please select...</option><option value="NCNDA / Protection" id="t_opt_1">NCNDA / Source Protection &amp; Commissions</option><option value="Payment / DLC / SBLC" id="t_opt_2">Payment DLC / SBLC / MT760</option><option value="POP / Verification" id="t_opt_3">POP / SGS / Verification</option><option value="SPA Clauses" id="t_opt_4">SPA - Risk Clauses</option></select></div>
-<div class="form-group"><label id="t_lbl_email">Your Email *</label><input type="email" name="email" class="form-control" required placeholder="name@company.com"></div>
-<div class="form-group"><label id="t_lbl_msg">Issue Description *</label><textarea name="message" class="form-control" required placeholder="Brief description of the issue..."></textarea></div>
-<button type="submit" class="btn-rescue" id="t_btn">Submit Request</button>
-<p class="disclaimer" id="t_disclaimer">* RSK provides specialized transaction support. Strict confidentiality assured. Secure • Confidential • Compliant</p>
-</form>
-</div>
+  <div class="deal-rescue-card">
+    <h2 id="t_h2">Deal-Rescue <span class="gold">&amp;</span> Compliance Review</h2>
+    <p style="margin:8px 0 28px"><em id="t_sub_tag">RSK – Your Silent Partner in High-Stakes Commodity Deals.</em><br><span id="t_sub">We discreetly guide you through critical negotiation phases...</span></p>
+    <form action="https://formspree.io/f/xboqqwzy" method="POST">
+      <input type="hidden" name="lang" id="form_lang" value="en">
+      <div class="form-group">
+        <label id="t_lbl_topic">Document / Area *</label>
+        <select name="topic" class="form-control" required>
+          <option value="" id="t_opt_select">Please select...</option>
+          <option value="NCNDA / Protection" id="t_opt_1">NCNDA / Source Protection &amp; Commissions</option>
+          <option value="Payment / DLC / SBLC" id="t_opt_2">Payment DLC / SBLC / MT760</option>
+          <option value="POP / Verification" id="t_opt_3">POP / SGS / Verification</option>
+          <option value="SPA Clauses" id="t_opt_4">SPA - Risk Clauses</option>
+        </select>
+      </div>
+      <div class="form-group"><label id="t_lbl_email">Your Email *</label><input type="email" name="email" class="form-control" required placeholder="name@company.com"></div>
+      <div class="form-group"><label id="t_lbl_msg">Issue Description *</label><textarea name="message" class="form-control" required placeholder="Brief description of the issue..."></textarea></div>
+      <button type="submit" class="btn-rescue" id="t_btn">Submit Request</button>
+      <p class="disclaimer" id="t_disclaimer">* RSK provides specialized transaction support. Strict confidentiality assured. Secure • Confidential • Compliant</p>
+    </form>
+  </div>
 </section>
 
 <script>
-function toggleDropdown(){document.getElementById("langDropdown").classList.toggle("open")}
-window.onclick=function(e){if(!e.target.matches('.lang-btn')&&!e.target.matches('.lang-btn *')){var d=document.getElementById("langDropdown");if(d&&d.classList.contains('open'))d.classList.remove('open')}}
+function toggleDropdown(){
+  document.getElementById("langDropdown").classList.toggle("open");
+}
 
-const flags={en:'🇺🇸',de:'🇩🇪',es:'🇪🇸',pt:'🇧🇷',zh:'🇨🇳'};
-const i18n={
+window.onclick = function(e){
+  if(!e.target.matches('.lang-btn') && !e.target.matches('.lang-btn *')){
+    var d = document.getElementById("langDropdown");
+    if(d && d.classList.contains('open')) d.classList.remove('open');
+  }
+};
+
+const flags = {en:'🇺🇸', de:'🇩🇪', es:'🇪🇸', pt:'🇧🇷', zh:'🇨🇳'};
+const i18n = {
   en:{nav_about:"ABOUT",nav_services:"SERVICES",nav_docs:"DOCUMENTS",nav_contact:"CONTACT",hero_h1:"Integrity in Global Trade",hero_p1:"We provide discreet, high-stakes compliance and transaction guidance for commodity trading and corporate structuring.",hero_h2:"Expertise & Security",hero_p2:"Our tailored approaches minimize operational risk while preserving seamless deal execution across international jurisdictions.",t_h2:"Deal-Rescue & Compliance Review",t_sub_tag:"RSK – Your Silent Partner in High-Stakes Commodity Deals.",t_sub:"We discreetly guide you through critical negotiation phases...",t_lbl_topic:"Document / Area *",t_opt_select:"Please select...",t_opt_1:"NCNDA / Source Protection & Commissions",t_opt_2:"Payment DLC / SBLC / MT760",t_opt_3:"POP / SGS / Verification",t_opt_4:"SPA - Risk Clauses",t_lbl_email:"Your Email *",t_lbl_msg:"Issue Description *",t_btn:"Submit Request",t_disclaimer:"* RSK provides specialized transaction support. Strict confidentiality assured. Secure • Confidential • Compliant"},
   de:{nav_about:"ÜBER UNS",nav_services:"LEISTUNGEN",nav_docs:"DOKUMENTE",nav_contact:"KONTAKT",hero_h1:"Integrität im globalen Handel",hero_p1:"Wir bieten diskrete Compliance- und Transaktionsberatung für den Rohstoffhandel und Unternehmensstrukturierung.",hero_h2:"Expertise & Sicherheit",hero_p2:"Unsere maßgeschneiderten Ansätze minimieren operative Risiken und sichern reibungslose Handelsabläufe.",t_h2:"Deal-Rescue & Compliance Review",t_sub_tag:"RSK – Ihr stiller Partner bei komplexen Rohstoffgeschäften.",t_sub:"Wir begleiten Sie diskret durch kritische Verhandlungsphasen...",t_lbl_topic:"Dokument / Bereich *",t_opt_select:"Bitte wählen...",t_opt_1:"NCNDA / Quellenschutz & Provisionen",t_opt_2:"Zahlung DLC / SBLC / MT760",t_opt_3:"POP / SGS / Verifikation",t_opt_4:"SPA - Risikoklauseln",t_lbl_email:"Ihre E-Mail *",t_lbl_msg:"Problembeschreibung *",t_btn:"Anfrage absenden",t_disclaimer:"* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten höchste Vertraulichkeit. Sicher • Vertraulich • Konform"},
   es:{nav_about:"NOSOTROS",nav_services:"SERVICIOS",nav_docs:"DOCUMENTOS",nav_contact:"CONTACTO",hero_h1:"Integridad en el Comercio Global",hero_p1:"Ofrecemos asesoramiento discreto en cumplimiento y transacciones para el comercio de materias primas.",hero_h2:"Experiencia y Seguridad",hero_p2:"Nuestros enfoques personalizados minimizan el riesgo operativo y garantizan la ejecución fluida de acuerdos.",t_h2:"Rescate de Negocios y Revisión de Cumplimiento",t_sub_tag:"RSK – Su socio silencioso en operaciones complejas de materias primas.",t_sub:"Le guiamos discretamente en fases críticas de negociación...",t_lbl_topic:"Documento / Área *",t_opt_select:"Por favor seleccione...",t_opt_1:"NCNDA / Protección de Fuente y Comisiones",t_opt_2:"Pago DLC / SBLC / MT760",t_opt_3:"POP / SGS / Verificación",t_opt_4:"Cláusulas de Riesgo SPA",t_lbl_email:"Su Correo Electrónico *",t_lbl_msg:"Descripción del Problema *",t_btn:"Enviar Solicitud",t_disclaimer:"* RSK ofrece soporte especializado en transacciones. Confidencialidad garantizada."},
@@ -98,9 +119,14 @@ const i18n={
 
 function setLanguage(lang){
   if(!i18n[lang]) return;
-  document.getElementById('currentFlag').textContent = flags[lang];
-  document.getElementById('currentLangLabel').textContent = lang.toUpperCase();
-  document.getElementById('form_lang').value = lang;
+  
+  const flagEl = document.getElementById('currentFlag');
+  const labelEl = document.getElementById('currentLangLabel');
+  const langInput = document.getElementById('form_lang');
+  
+  if(flagEl) flagEl.textContent = flags[lang];
+  if(labelEl) labelEl.textContent = lang.toUpperCase();
+  if(langInput) langInput.value = lang;
   
   const dict = i18n[lang];
   for(let key in dict){
@@ -116,6 +142,6 @@ function setLanguage(lang){
   toggleDropdown();
 }
 </script>
+
 </body>
-        </html>
-                                                            
+</html>
