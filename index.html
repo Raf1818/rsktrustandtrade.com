@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -6,207 +6,32 @@
 <title>RSK TRUST & TRADE</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
-
-:root {
-  --navy: #0a1931;
-  --gold: #c9a86a;
-  --parch: #f5f1e8;
-  --cream: #fdfaf3;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--parch);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('./IMG-20260918-WA8261.jpg');
-  background-position: center 45%;
-  background-repeat: no-repeat;
-  background-size: 75% auto;
-  opacity: 0.13;
-  pointer-events: none;
-  z-index: 0;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 18px;
-  background: var(--parch);
-  border-bottom: 1.5px solid var(--gold);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo-small {
-  width: 78px;
-  height: auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  display: block;
-}
-
-.brand {
-  margin-left: 14px;
-  position: relative;
-  z-index: 3;
-}
-
-.brand h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  letter-spacing: 4px;
-  color: var(--navy);
-  line-height: 1;
-}
-
-.brand h2 {
-  font-size: 8px;
-  letter-spacing: 1.5px;
-  color: var(--gold);
-  margin-top: 4px;
-  max-width: 260px;
-  line-height: 1.2;
-}
-
-.lang {
-  margin-left: auto;
-  position: relative;
-  z-index: 10000;
-}
-
-.lang-btn {
-  border: 1.5px solid var(--gold);
-  background: var(--cream);
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 13px;
-  position: relative;
-  z-index: 10001;
-}
-
-.lang-menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 46px;
-  background: #ffffff;
-  border: 1.5px solid var(--gold);
-  width: 230px;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  z-index: 99999 !important;
-  overflow: hidden;
-}
-
-.lang-menu.open {
-  display: block;
-}
-
-.lang-menu div {
-  padding: 13px 14px;
-  cursor: pointer;
-  font-size: 14px;
-  border-bottom: 1px solid #f0e6d3;
-  display: flex;
-  gap: 10px;
-  color: #111;
-  background: #fff;
-}
-
-.lang-menu div:hover {
-  background: var(--parch);
-  color: var(--navy);
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  padding: 13px;
-  border-bottom: 1px solid rgba(201, 168, 106, .3);
-  position: relative;
-  z-index: 2;
-  background: var(--parch);
-}
-
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  font-weight: 700;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  max-width: 1100px;
-  margin: 70px auto;
-  padding: 0 28px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  line-height: 1.1;
-}
-
-.card {
-  max-width: 850px;
-  margin: 60px auto;
-  background: var(--cream);
-  border: 1.5px solid var(--gold);
-  border-radius: 18px;
-  padding: 34px;
-  text-align: center;
-  box-shadow: 0 12px 40px rgba(201, 168, 106, .2);
-  position: relative;
-  z-index: 1;
-}
-
-footer {
-  text-align: center;
-  padding: 26px;
-  font-size: 11px;
-  border-top: 1px solid rgba(201, 168, 106, .4);
-  margin-top: 50px;
-  color: #666;
-  position: relative;
-  z-index: 1;
-}
-
-@media(max-width:700px) {
-  .hero { grid-template-columns: 1fr; }
-  .brand h1 { font-size: 17px; }
-  .brand h2 { font-size: 7px; max-width: 150px; }
-}
+:root { --navy: #0a1931; --gold: #c9a86a; --parch: #f5f1e8; --cream: #fdfaf3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
+body::before { content: ""; position: fixed; inset: 0; background-image: url('./IMG-20260918-WA8261.jpg'); background-position: center 45%; background-repeat: no-repeat; background-size: 75% auto; opacity: 0.13; pointer-events: none; z-index: 0; }
+header { display: flex; align-items: center; padding: 10px 18px; background: var(--parch); border-bottom: 1.5px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+.logo-small { width: 78px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; }
+.brand { margin-left: 14px; position: relative; z-index: 3; }
+.brand h1 { font-family: 'Playfair Display', serif; font-size: 22px; letter-spacing: 4px; color: var(--navy); line-height: 1; }
+.brand h2 { font-size: 8px; letter-spacing: 1.5px; color: var(--gold); margin-top: 4px; max-width: 260px; line-height: 1.2; }
+.lang { margin-left: auto; position: relative; z-index: 10000; }
+.lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 13px; position: relative; z-index: 10001; }
+.lang-menu { display: none; position: absolute; right: 0; top: 46px; background: #ffffff; border: 1.5px solid var(--gold); width: 230px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); z-index: 99999!important; overflow: hidden; }
+.lang-menu.open { display: block; }
+.lang-menu div { padding: 13px 14px; cursor: pointer; font-size: 14px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 10px; color: #111; background: #fff; }
+.lang-menu div:hover { background: var(--parch); color: var(--navy); }
+nav { display: flex; justify-content: center; gap: 28px; padding: 13px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); }
+nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1.2px; font-weight: 700; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1100px; margin: 70px auto; padding: 0 28px; position: relative; z-index: 1; }
+.hero h3 { font-family: 'Playfair Display', serif; font-size: 30px; line-height: 1.1; }
+.card { max-width: 850px; margin: 60px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 34px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
+footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201, 168, 106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; }
+@media(max-width:700px) {.hero { grid-template-columns: 1fr; }.brand h1 { font-size: 17px; }.brand h2 { font-size: 7px; max-width: 150px; } }
 </style>
 </head>
 <body>
-
 <header>
   <a href="#top"><img src="./IMG-20260918-WA8261.jpg" class="logo-small" alt="RSK Logo"></a>
   <div class="brand">
@@ -227,15 +52,12 @@ footer {
     </div>
   </div>
 </header>
-
 <nav>
   <a id="nav1" href="#about">ABOUT</a>
   <a id="nav2" href="#hero-sec">SERVICES</a>
   <a id="nav3" href="#docs">DOCUMENTS</a>
   <a id="nav4" href="#deal-rescue">DEAL-RESCUE</a>
 </nav>
-
-<!-- ================= SEITE 1 ================= -->
 <section class="hero" id="about">
   <div id="hero-sec">
     <h3 id="h1">Integrity in Global Trade</h3>
@@ -246,7 +68,6 @@ footer {
     <p id="p2" style="margin-top:10px;color:#444;line-height:1.5">Minimizing operational risk while preserving seamless execution.</p>
   </div>
 </section>
-
 <section id="docs">
   <div class="card">
     <h2 id="h3" style="font-family:'Playfair Display', serif;font-size:34px;color:var(--navy)">Deal-Rescue & Compliance</h2>
@@ -254,25 +75,17 @@ footer {
     <p style="margin-top:16px;font-size:11px;color:#888">info@rsktrustandtrade.com</p>
   </div>
 </section>
-
-<!-- ================= SEITE 2 ================= -->
 <section id="deal-rescue" style="max-width:850px;margin:80px auto;padding:50px 36px;background:var(--cream);border:1.5px solid var(--gold);border-radius:22px;box-shadow:0 18px 50px rgba(201,168,106,.18);position:relative;z-index:1">
-
   <div style="text-align:center;margin-bottom:28px">
     <img src="./IMG-20260918-WA8261.jpg" style="width:92px;height:auto;mix-blend-mode:multiply;background:var(--cream)" alt="RSK">
     <div style="font-family:'Playfair Display';font-size:34px;letter-spacing:6px;color:var(--navy);font-weight:900;margin-top:8px">RSK</div>
     <div style="font-size:12px;letter-spacing:5px;color:var(--gold);margin-top:2px">TRUST & TRADE</div>
     <hr style="border:none;border-top:1px solid var(--gold);margin:22px auto;width:180px;opacity:.6">
   </div>
-
   <h2 style="font-family:'Playfair Display';font-size:44px;line-height:1.1;color:var(--navy);text-align:center">Deal-Rescue &<br><span style="color:var(--gold)">&</span> Compliance Review</h2>
-
   <p style="text-align:center;font-style:italic;font-size:18px;color:var(--navy);margin-top:18px;line-height:1.4" id="dr-sub">RSK – Your Silent Partner in High-Stakes Commodity Deals.</p>
-
   <div style="text-align:center;margin:22px 0;color:var(--gold)">— ◆ —</div>
-
   <p style="text-align:center;font-size:16px;color:#333;line-height:1.5" id="dr-p1">Wir begleiten Sie diskret durch kritische Verhandlungsphasen.</p>
-
   <form style="margin-top:36px;text-align:left" action="#" method="POST">
     <label style="font-size:14px;font-weight:700;display:block;margin:18px 0 8px" id="lbl-doc">Dokument / Bereich *</label>
     <select required style="width:100%;padding:14px 12px;border:1.5px solid #0a1931;border-radius:10px;background:#fff;font-size:14px">
@@ -284,25 +97,24 @@ footer {
       <option>Deal-Rescue Verhandlung</option>
     </select>
 
+    <div style="text-align:center;background:#0a1931;padding:13px 0;border-radius:10px;margin:20px 0 22px 0;border:1.5px solid var(--gold)">
+      <a href="./docs/" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:14px;display:block;letter-spacing:0.5px">
+        📄 Download Compliance Dokumente in 8 Sprachen
+      </a>
+    </div>
+
     <label style="font-size:14px;font-weight:700;display:block;margin:18px 0 8px" id="lbl-email">Ihre E-Mail *</label>
     <input type="email" required placeholder="name@unternehmen.com" style="width:100%;padding:14px 12px;border:1.5px solid #0a1931;border-radius:10px;font-size:14px">
-
     <label style="font-size:14px;font-weight:700;display:block;margin:18px 0 8px" id="lbl-desc">Problembeschreibung *</label>
     <textarea required placeholder="Kurze Beschreibung des Konflikts..." rows="4" style="width:100%;padding:14px 12px;border:1.5px solid #0a1931;border-radius:10px;font-size:14px;resize:none"></textarea>
-
     <p style="font-size:11px;color:#666;margin-top:18px;line-height:1.4" id="lbl-note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p>
-
     <div style="text-align:center;margin-top:26px">
       <button type="submit" id="btn-submit" style="background:#0a1931;color:var(--gold);border:1.5px solid var(--gold);padding:14px 34px;border-radius:10px;font-weight:700;letter-spacing:1px;cursor:pointer;font-size:15px">Anfrage absenden</button>
     </div>
-
     <p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="lbl-footer-text">Diskret • Vertraulich • Professionell</p>
   </form>
-
 </section>
-
 <footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
-
 <script>
 const T = {
   en:{sub:"INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA",n1:"ABOUT",n2:"SERVICES",n3:"DOCUMENTS",n4:"DEAL-RESCUE",h1:"Integrity in Global Trade",p1:"Discreet compliance for sovereign buyers and institutions.",h2:"Expertise & Security",p2:"Minimizing operational risk while preserving seamless execution.",h3:"Deal-Rescue & Compliance",p3:"Documents in 8 languages - available from tomorrow",dr_sub:"RSK – Your Silent Partner in High-Stakes Commodity Deals.",dr_p1:"We quietly guide you through critical negotiation phases.",lbl_doc:"Document / Area *",lbl_email:"Your Email *",lbl_desc:"Problem Description *",lbl_note:"* RSK provides specialized transaction support. We guarantee confidentiality.",btn_submit:"Send Request",lbl_footer_text:"Discreet • Confidential • Professional",lbl:"Language"},
@@ -314,7 +126,6 @@ const T = {
   zh:{sub:"国际大宗商品 • 拉美 • 欧洲 • 阿联酋 • 亚洲",n1:"关于",n2:"服务",n3:"文件",n4:"交易救援",h1:"全球贸易的诚信",p1:"为主权买家和机构提供谨慎的合规服务。",h2:"专业与安全",p2:"在保持无缝执行的同时最大限度降低运营风险。",h3:"交易救援与合规",p3:"8种语言的文件 - 明天起可用",dr_sub:"RSK – 您在大宗商品高风险交易中的沉静合作伙伴。",dr_p1:"我们在关键谈判阶段为您提供谨慎的协助。",lbl_doc:"文件 / 领域 *",lbl_email:"您的电子邮件 *",lbl_desc:"问题描述 *",lbl_note:"* RSK 提供专业的交易支持。我们保证保密。",btn_submit:"提交请求",lbl_footer_text:"谨慎 • 保密 • 专业",lbl:"语言"},
   it:{sub:"COMMODITIES INTERNAZIONALI • LATAM • EUROPE • EAU • ASIA",n1:"CHI SIAMO",n2:"SERVIZI",n3:"DOCUMENTI",n4:"SALVATAGGIO DEAL",h1:"Integrità nel Commercio Globale",p1:"Compliance discreta per acquirenti sovrani e istituzioni.",h2:"Competenza e Sicurezza",p2:"Minimizzare il rischio operativo preservando l'esecuzione.",h3:"Salvataggio Deal & Compliance",p3:"Documenti in 8 lingue - disponibili da domani",dr_sub:"RSK – Il vostro partner discreto per operazioni su commodities ad alto rischio.",dr_p1:"Vi accompagniamo con discrezione nelle fasi critiche di negoziazione.",lbl_doc:"Documento / Area *",lbl_email:"La tua Email *",lbl_desc:"Descrizione del problema *",lbl_note:"* RSK offre supporto specializzato nelle transazioni. Garantiamo la massima riservatezza.",btn_submit:"Invia richiesta",lbl_footer_text:"Discreto • Riservato • Professionale",lbl:"Lingua"}
 };
-
 function setLang(l) {
   const t = T[l];
   if(!t) return;
@@ -341,30 +152,10 @@ function setLang(l) {
   document.getElementById('lm').classList.remove('open');
   localStorage.setItem('rsk_lang', l);
 }
-
-function selectLanguage(e, lang) {
-  e.stopPropagation();
-  setLang(lang);
-}
-
-document.getElementById('langBtn').addEventListener('click', e => {
-  e.stopPropagation();
-  document.getElementById('lm').classList.toggle('open');
-});
-
-document.addEventListener('click', () => {
-  document.getElementById('lm').classList.remove('open');
-});
-
-const saved = localStorage.getItem('rsk_lang');
-if (saved) setLang(saved);
+function selectLanguage(e, lang) { e.stopPropagation(); setLang(lang); }
+document.getElementById('langBtn').addEventListener('click', e => { e.stopPropagation(); document.getElementById('lm').classList.toggle('open'); });
+document.addEventListener('click', () => { document.getElementById('lm').classList.remove('open'); });
+const saved = localStorage.getItem('rsk_lang'); if (saved) setLang(saved);
 </script>
-
-<div style="text-align:center;position:relative;top:-90px;margin-bottom:-60px">
-<a href="./docs/" style="background:#0a1931;color:#c9a86a;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;display:inline-block;border:1.5px solid #c9a86a;letter-spacing:0.3px">
-📄 Download Compliance Dokumente in 8 Sprachen
-</a>
-</div>
-
 </body>
 </html>
