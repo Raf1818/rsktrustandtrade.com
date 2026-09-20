@@ -143,5 +143,28 @@ document.getElementById('langBtn').addEventListener('click', e => { e.stopPropag
 document.addEventListener('click', () => { document.getElementById('lm').classList.remove('open'); });
 const saved = localStorage.getItem('rsk_lang'); if (saved) setLang(saved);
 </script>
+ <script>
+document.getElementById('antragForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const NUMERO = "573054288667";
+
+  const nachricht = 
+`Neuer Antrag RSK Trust & Trade
+
+Name: ${document.getElementById('name').value}
+Tel: ${document.getElementById('tel').value}
+Email: ${document.getElementById('email').value}
+Betrag: ${document.getElementById('betrag').value}
+Nachricht: ${document.getElementById('msg').value}`;
+
+  const encodedText = encodeURIComponent(nachricht);
+  window.open(`https://wa.me/${NUMERO}?text=${encodedText}`, '_blank');
+});
+</script>
+
+</body>
+</html>
+
+ 
 </body>
 </html> 
