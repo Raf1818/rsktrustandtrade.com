@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -12,7 +12,7 @@ html { scroll-behavior: smooth; }
 body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
 body::before { content: ""; position: fixed; inset: 0; background-image: url('./IMG-20260918-WA8261.jpg'); background-position: center 45%; background-repeat: no-repeat; background-size: 75% auto; opacity: 0.13; pointer-events: none; z-index: 0; }
 
-/* Header Anpassung */
+/* Header */
 header { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: var(--parch); border-bottom: 1.5px solid var(--gold); position: sticky; top: 0; z-index: 1000; gap: 10px; }
 .logo-small { width: 65px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; flex-shrink: 0; }
 .brand { flex-grow: 1; position: relative; z-index: 3; }
@@ -32,13 +32,15 @@ nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px
 .hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
 .card { max-width: 850px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
 
-/* Formular-Optimierungen */
+/* Formular & Payment Grid Responsive */
 .antrag-card { max-width: 850px; margin: 40px auto; padding: 30px 20px; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 22px; box-shadow: 0 18px 50px rgba(201,168,106,.18); position: relative; z-index: 1; }
 .form-group { width: 100%; margin-bottom: 16px; text-align: left; }
 .antrag-card label { font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px; color: var(--navy); width: 100%; }
 .antrag-card input, .antrag-card textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1.5px solid var(--navy); border-radius: 10px; font-size: 14px; background: #fff; display: block; font-family: inherit; }
 .btn-whatsapp { width: 100%; padding: 16px; background: #25D366; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; margin-top: 20px; cursor: pointer; transition: background 0.3s; }
 .btn-whatsapp:hover { background: #1ea855; }
+
+.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
 footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201, 168, 106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; }
 
@@ -48,10 +50,11 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   .brand h1 { font-size: 15px; letter-spacing: 1px; }
   .brand h2 { font-size: 7px; }
   .antrag-card { margin: 20px 10px; padding: 25px 15px; }
+  .payment-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <a href="#top"><img src="./IMG-20260918-WA8261.jpg" class="logo-small" alt="RSK Logo"></a>
@@ -117,7 +120,6 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
     <a href="./docs/" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
   </div>
 
-  <!-- Formular sauber strukturiert -->
   <form id="antragForm">
     <div class="form-group">
       <label for="name" id="lbl-name">Name *</label>
@@ -150,11 +152,12 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   <p style="font-size:11px;color:#666;margin-top:18px;line-height:1.4;text-align:center" id="lbl-note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p>
   <p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="lbl-footer-text">Diskret • Vertraulich • Professionell</p>
 </section>
+
 <!-- RSK PAYMENT $5 - PayPal + BSC -->
 <section id="payment" style="max-width:900px;margin:40px auto;padding:20px;">
   <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;">Zahlung / Payment $5</h2>
   <p style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;">BSC (BEP20) • Gebühr ~$0.15</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+  <div class="payment-grid">
     <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
       <h3 style="font-size:22px;font-weight:bold;">Mit PayPal</h3>
       <p style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00</p>
@@ -171,7 +174,8 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
       <a href="https://wa.me/573138734968?text=Hallo%20RSK%20Trust%2C%20ich%20habe%20mit%20BSC%20bezahlt.%20Meine%20TXID%3A%20" target="_blank" style="margin-top:12px;background:#25D366;color:#fff;font-size:13px;font-weight:bold;padding:10px 16px;border-radius:999px;display:block;text-decoration:none;">Bezahlt → WhatsApp TXID senden</a>
     </div>
   </div>
-          </section>
+</section>
+
 <footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
 
 <script>
@@ -275,74 +279,4 @@ const T = {
     btn_docs:"📄 下载8种语言的合规文件",lbl:"语言"
   },
   it:{
-    sub:"COMMODITIES INTERNAZIONALI • LATAM • EUROPE • EAU • ASIA",n1:"CHI SIAMO",n2:"SERVIZI",n3:"DOCUMENTI",n4:"SALVATAGGIO DEAL",
-    h1:"Integrità nel Commercio Globale",p1:"Compliance discreta per acquirenti sovrani e istituzioni.",h2:"Competenza e Sicurezza",p2:"Minimizzare il rischio operativo preservando l'esecuzione.",
-    h3:"Salvataggio Deal & Compliance",p3:"Documenti in 8 lingue - disponibili da domani",dr_sub:"RSK – Il vostro partner discreto per operazioni su commodities ad alto rischio.",
-    dr_p1:"Vi accompagniamo con discrezione nelle fasi critiche di negoziazione.",
-    lbl_name:"Nome *",ph_name:"Il tuo nome completo",
-    lbl_tel:"Telefono / WhatsApp *",ph_tel:"+39 123 456 7890",
-    lbl_email:"La tua Email",ph_email:"nome@azienda.com",
-    lbl_betrag:"Importo / Volume",ph_betrag:"es. 500.000 EUR",
-    lbl_desc:"Messaggio / Descrizione del problema",ph_desc:"Breve descrizione della tua richiesta...",
-    lbl_note:"* RSK offre supporto specializzato nelle transazioni. Garantiamo la massima riservatezza.",
-    btn_submit:"Invia su WhatsApp 📲",lbl_footer_text:"Discreto • Riservato • Professionale",
-    btn_docs:"📄 Scarica Documenti Compliance in 8 Lingue",lbl:"Lingua"
-  }
-};
-
-// Toggle für das Sprachmenü
-const langBtn = document.getElementById('langBtn');
-const langMenu = document.getElementById('lm');
-
-langBtn.addEventListener('click', function(e) {
-  e.stopPropagation();
-  langMenu.classList.toggle('open');
-});
-
-// Menü schließen bei Klick außerhalb
-document.addEventListener('click', function() {
-  langMenu.classList.remove('open');
-});
-
-// Sprachauswahl verarbeiten
-function selectLanguage(e, langKey) {
-  e.stopPropagation();
-  setLang(langKey);
-  langMenu.classList.remove('open');
-}
-
-function setLang(l) {
-  const t = T[l]; if(!t) return;
-  document.getElementById('sub-title').innerText = t.sub;
-  document.getElementById('nav1').innerText = t.n1;
-  document.getElementById('nav2').innerText = t.n2;
-  document.getElementById('nav3').innerText = t.n3;
-  document.getElementById('nav4').innerText = t.n4;
-  document.getElementById('h1').innerText = t.h1;
-  document.getElementById('p1').innerText = t.p1;
-  document.getElementById('h2').innerText = t.h2;
-  document.getElementById('p2').innerText = t.p2;
-  document.getElementById('h3').innerText = t.h3;
-  document.getElementById('p3').innerText = t.p3;
-  document.getElementById('dr-sub').innerText = t.dr_sub;
-  document.getElementById('dr-p1').innerText = t.dr_p1;
-  
-  // Formular Labels & Placeholders
-  document.getElementById('lbl-name').innerText = t.lbl_name;
-  document.getElementById('name').placeholder = t.ph_name;
-  document.getElementById('lbl-tel').innerText = t.lbl_tel;
-  document.getElementById('tel').placeholder = t.ph_tel;
-  document.getElementById('lbl-email').innerText = t.lbl_email;
-  document.getElementById('email').placeholder = t.ph_email;
-  document.getElementById('lbl-betrag').innerText = t.lbl_betrag;
-  document.getElementById('betrag').placeholder = t.ph_betrag;
-  document.getElementById('lbl-desc').innerText = t.lbl_desc;
-  document.getElementById('msg').placeholder = t.ph_desc;
-  
-  document.getElementById('lbl-note').innerText = t.lbl_note;
-  document.getElementById('btn-submit').innerText = t.btn_submit;
-  document.getElementById('lbl-footer-text').innerText = t.lbl_footer_text;
-  document.getElementById('btn-docs').innerText = t.btn_docs;
-  document.getElementById('langLabel').innerText = t.lbl;
-}
-</script>
+    sub:"COMMODITIES INTERNAZIONALI • LATAM • EUROPE • EAU •     
