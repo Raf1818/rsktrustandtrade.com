@@ -31,8 +31,7 @@ nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px
 .form-group { width: 100%; margin-bottom: 16px; text-align: left; }
 .antrag-card label { font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px; color: var(--navy); width: 100%; }
 .antrag-card input,.antrag-card textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1.5px solid var(--navy); border-radius: 10px; font-size: 14px; background: #fff; display: block; font-family: inherit; }
-.btn-whatsapp { width: 100%; padding: 16px; background: #25D366; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; margin-top: 20px; cursor: pointer; transition: background 0.3s; }
-.btn-whatsapp:hover { background: #1ea855; }
+.btn-whatsapp { width: 100%; padding: 16px; background: #25D366; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; margin-top: 20px; cursor: pointer; }
 .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201,168,106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; }
 @media(max-width:700px){ header{padding:10px;}.hero{grid-template-columns:1fr;margin:20px auto;}.brand h1{font-size:15px;letter-spacing:1px;}.brand h2{font-size:7px;}.antrag-card{margin:20px 10px;padding:25px 15px;}.payment-grid{grid-template-columns:1fr;} }
@@ -57,7 +56,31 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 <form id="antragForm"><div class="form-group"><label for="name" id="lbl-name">Name *</label><input type="text" id="name" required placeholder="Ihr vollständiger Name"></div><div class="form-group"><label for="tel" id="lbl-tel">Telefon / WhatsApp *</label><input type="tel" id="tel" required placeholder="+49 123 456789"></div><div class="form-group"><label for="email" id="lbl-email">Ihre E-Mail</label><input type="email" id="email" placeholder="name@unternehmen.com"></div><div class="form-group"><label for="betrag" id="lbl-betrag">Betrag / Volumen</label><input type="text" id="betrag" placeholder="z. B. 500.000 EUR"></div><div class="form-group"><label for="msg" id="lbl-desc">Nachricht / Problembeschreibung</label><textarea id="msg" rows="4" placeholder="Kurze Beschreibung Ihres Anliegens..."></textarea></div><button type="submit" class="btn-whatsapp" id="btn-submit">An WhatsApp senden 📲</button></form>
 <p style="font-size:11px;color:#666;margin-top:18px;line-height:1.4;text-align:center" id="lbl-note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p><p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="lbl-footer-text">Diskret • Vertraulich • Professionell</p>
 </section>
-<section id="payment" style="max-width:900px;margin:40px auto;padding:20px;"><h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;color:#0a1931;">Zahlung / Payment $5</h2><p style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;">BSC (BEP20) • Gebühr ~$0.15 • Prüfung via BscScan</p><div class="payment-grid"><div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1.5px solid #c9a86a;"><h3 style="font-size:22px;font-weight:bold;color:#0a4fb3;">💳 Mit PayPal</h3><p style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00 • Käuferschutz</p><a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" rel="noopener noreferrer" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:12px 30px;border-radius:999px;text-decoration:none;display:block;font-size:18px;">Für $5 kaufen</a><p style="font-size:10px;color:#999;margin-top:12px;">Sicher via PayPal Payment Link</p></div><div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1.5px solid #c9a86a;"><h3 style="font-size:20px;font-weight:bold;display:flex;justify-content:center;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0b65ed"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4z"/></svg>Trust Wallet / Crypto</h3><p style="color:#16a34a;font-weight:600;font-size:13px;margin:5px 0 15px;">$5 USDT (BEP20) / BNB</p><div style="background:#fff;padding:8px;border-radius:16px;display:inline-block;border:1px solid #eee;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609" alt="BSC QR" style="width:200px;height:200px;display:block;"></div><p style="font-family:monospace;font-size:11px;word-break:break-all;background:#f8f8f8;padding:8px;border-radius:8px;margin:15px 0 10px;border:1px solid #eee;">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</p><button onclick="copyAddress(this)" style="font-size:12px;background:#0a1931;color:#c9a86a;padding:8px 16px;border-radius:999px;width:100%;border:1.5px solid #c9a86a;cursor:pointer;font-weight:700;">📋 Adresse kopieren</button><a href="https://wa.me/573138734968?text=Hallo%20RSK%20Trust%2C%20ich%20habe%20mit%20BSC%20bezahlt.%20Meine%20TXID%3A%20" target="_blank" rel="noopener noreferrer" style="margin-top:12px;background:#25D366;color:#fff;font-size:13px;font-weight:bold;padding:10px 16px;border-radius:999px;display:block;text-decoration:none;">Bezahlt → WhatsApp TXID senden</a></div></div></section>
+
+<!-- PAYMENT FIXED: LOKALER QR + SICHTBAR -->
+<section id="payment" style="max-width:900px;margin:40px auto;padding:20px;">
+<h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;color:#0a1931;">Zahlung / Payment $5</h2>
+<p style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;">BSC (BEP20) • Gebühr ~$0.15 • PayPal 23JD9HVB65WFY</p>
+<div class="payment-grid">
+<div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:2px solid #c9a86a;">
+<h3 style="font-size:22px;font-weight:bold;color:#0a4fb3;">💳 Mit PayPal</h3>
+<p style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00 • Käuferschutz</p>
+<a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" rel="noopener noreferrer" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:14px 30px;border-radius:999px;text-decoration:none;display:block;font-size:18px;">Für $5 kaufen</a>
+<p style="font-size:10px;color:#999;margin-top:12px;">paypal.com/ncp/payment/23JD9HVB65WFY</p>
+</div>
+<div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:2px solid #c9a86a;">
+<h3 style="font-size:18px;font-weight:bold;display:flex;justify-content:center;align-items:center;gap:8px;">Trust Wallet / Crypto</h3>
+<p style="color:#16a34a;font-weight:600;font-size:13px;margin:5px 0 15px;">$5 USDT (BEP20) / BNB</p>
+<div style="background:#fff;padding:8px;border-radius:16px;display:inline-block;border:1px solid #eee;">
+<img src="./rsk_qr_bsc.png" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609'" alt="BSC QR" style="width:200px;height:200px;display:block;">
+</div>
+<p style="font-family:monospace;font-size:11px;word-break:break-all;background:#f8f8f8;padding:8px;border-radius:8px;margin:15px 0 10px;border:1px solid #eee;">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</p>
+<button onclick="copyAddress(this)" style="font-size:12px;background:#0a1931;color:#c9a86a;padding:10px 16px;border-radius:999px;width:100%;border:1.5px solid #c9a86a;cursor:pointer;font-weight:700;">📋 Adresse kopieren</button>
+<a href="https://wa.me/573138734968?text=Hallo%20RSK%20Trust%2C%20ich%20habe%20mit%20BSC%20bezahlt.%20Meine%20TXID%3A%20" target="_blank" rel="noopener noreferrer" style="margin-top:12px;background:#25D366;color:#fff;font-size:13px;font-weight:bold;padding:10px 16px;border-radius:999px;display:block;text-decoration:none;">Bezahlt → WhatsApp TXID senden</a>
+</div>
+</div>
+</section>
+
 <footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
 <script>
 const T = {
@@ -95,4 +118,6 @@ function selectLanguage(e, lang) {
   document.getElementById('btn-docs').textContent = data.btn_docs;
   document.getElementById('lbl-name').textContent = data.lbl_name;
   document.getElementById('name').placeholder = data.ph_name;
-  document.getElementById('
+  document.getElementById('lbl-tel').textContent = data.lbl_tel;
+  document.getElementById('tel').placeholder = data.ph_tel;
+  document
