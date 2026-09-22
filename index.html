@@ -1,252 +1,199 @@
- <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSK Trust & Trade | Premium</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>RSK TRUST & TRADE</title>
 <style>
-:root {
-  --bg: #f3eee0;
-  --card: #fffdf6;
-  --dark: #0e1a2f;
-  --gold: #b89a5a;
-  --gold2: #a68b5a;
-  --line: #e8dfca;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--bg);
-  color: var(--dark);
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
-}
-
-header.top {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  border-bottom: 2px solid var(--gold);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.brand h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  letter-spacing: 2px;
-  line-height: 1.1;
-}
-
-.brand small {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--gold2);
-  text-transform: uppercase;
-  margin-top: 4px;
-  font-weight: 500;
-}
-
-.langbox {
-  border: 1.5px solid var(--gold);
-  border-radius: 12px;
-  padding: 6px 12px;
-  background: var(--card);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-}
-
-.langbox select {
-  border: 0;
-  background: transparent;
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--dark);
-  cursor: pointer;
-  outline: none;
-  font-family: inherit;
-}
-
-nav.nav {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  flex-wrap: wrap;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--line);
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-nav.nav a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-nav.nav a:hover {
-  color: var(--gold);
-}
-
-.hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 56px 20px 30px;
-  position: relative;
-}
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #5b5b5b;
-  max-width: 560px;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.card-big {
-  max-width: 1100px;
-  margin: 28px auto;
-  padding: 38px 24px;
-  border: 2px solid var(--gold);
-  border-radius: 22px;
-  background: var(--card);
-  text-align: center;
-}
-
-.card-big h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  line-height: 1.1;
-  margin-bottom: 14px;
-}
-
-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 20px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 10px;
-  color: #9a9590;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
+:root { --navy: #0a1931; --gold: #c9a86a; --parch: #f5f1e8; --cream: #fdfaf3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
+body::before { content: ""; position: fixed; inset: 0; background-image: url('./IMG-20260918-WA8261.jpg'); background-position: center 45%; background-repeat: no-repeat; background-size: 75% auto; opacity: 0.13; pointer-events: none; z-index: 0; }
+header { display: flex; align-items: center; padding: 10px 18px; background: var(--parch); border-bottom: 1.5px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+.logo-small { width: 78px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; }
+.brand { margin-left: 14px; position: relative; z-index: 3; }
+html[dir="rtl"] .brand { margin-left: 0; margin-right: 14px; }
+.brand h1 { font-family: 'Playfair Display', serif; font-size: 22px; letter-spacing: 4px; color: var(--navy); line-height: 1; }
+.brand h2 { font-size: 8px; letter-spacing: 1.5px; color: var(--gold); margin-top: 4px; max-width: 260px; line-height: 1.2; }
+.lang { margin-left: auto; position: relative; z-index: 10000; }
+html[dir="rtl"] .lang { margin-left: 0; margin-right: auto; }
+.lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 13px; }
+.lang-menu { display: none; position: absolute; right: 0; top: 46px; background: #ffffff; border: 1.5px solid var(--gold); width: 230px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); z-index: 99999!important; overflow: hidden; }
+html[dir="rtl"] .lang-menu { right: auto; left: 0; }
+.lang-menu.open { display: block; }
+.lang-menu div { padding: 13px 14px; cursor: pointer; font-size: 14px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 10px; color: #111; background: #fff; }
+.lang-menu div:hover { background: var(--parch); color: var(--navy); }
+nav { display: flex; justify-content: center; gap: 28px; padding: 13px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); }
+nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1.2px; font-weight: 700; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1100px; margin: 70px auto; padding: 0 28px; position: relative; z-index: 1; }
+.hero h3 { font-family: 'Playfair Display', serif; font-size: 30px; line-height: 1.1; }
+.card { max-width: 850px; margin: 60px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 34px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
+footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201, 168, 106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; }
+.form-input { width: 100%; padding: 14px 12px; border: 1.5px solid #0a1931; border-radius: 10px; font-size: 14px; margin-top: 6px; }
+@media(max-width:700px) {.hero { grid-template-columns: 1fr; }.brand h1 { font-size: 17px; }.brand h2 { font-size: 7px; max-width: 150px; } }
 </style>
 </head>
 <body>
-
-<header class="top">
+<header>
+  <a href="#top"><img src="./IMG-20260918-WA8261.jpg" class="logo-small" alt="RSK Logo"></a>
   <div class="brand">
-    <div>
-      <h1>RSK TRUST &amp;<br>TRADE</h1>
-      <small>International Commodities &amp; Trade • LATAM • Europe • UAE • Asia</small>
+    <h1>RSK TRUST & TRADE</h1>
+    <h2 id="sub-title">INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA</h2>
+  </div>
+  <div class="lang">
+    <button class="lang-btn" id="langBtn">🌐 <span id="langLabel">Sprache</span> ▼</button>
+    <div class="lang-menu" id="lm">
+      <div onclick="selectLanguage(event, 'en')">🇬🇧 English</div>
+      <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
+      <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
+      <div onclick="selectLanguage(event, 'fr')">🇫🇷 Français</div>
+      <div onclick="selectLanguage(event, 'pt')">🇧🇷 Português</div>
+      <div onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</div>
+      <div onclick="selectLanguage(event, 'zh')">🇨🇳 中文</div>
+      <div onclick="selectLanguage(event, 'ar')">🇸🇦 العربية</div>
     </div>
   </div>
-  
-  <div class="langbox">
-    <span>🌐</span>
-    <select id="langSel" aria-label="Sprache auswählen">
-      <option value="de">Deutsch</option>
-      <option value="en">English</option>
-      <option value="es">Español</option>
-      <option value="fr">Français</option>
-      <option value="pt">Português</option>
-      <option value="it">Italiano</option>
-      <option value="ru">Русский</option>
-      <option value="ar">العربية</option>
-    </select>
-  </div>
 </header>
-
-<nav class="nav">
-  <a href="#about" id="n1">About</a>
-  <a href="#services" id="n2">Services</a>
-  <a href="#documents" id="n3">Documents</a>
-  <a href="#deal-rescue" id="n4">Deal-Rescue</a>
-  <a href="#payment" id="n5">Payment</a>
+<nav>
+  <a id="nav1" href="#about">ABOUT</a>
+  <a id="nav2" href="#hero-sec">SERVICES</a>
+  <a id="nav3" href="#docs">DOCUMENTS</a>
+  <a id="nav4" href="#deal-rescue">DEAL-RESCUE</a>
 </nav>
-
-<main>
-  <section class="hero">
-    <h2 id="h1">Integrity in Global Trade</h2>
-    <p id="h1p">Discreet compliance for sovereign buyers.</p>
+<section class="hero" id="about">
+  <div id="hero-sec">
+    <h3 id="h1">Integrity in Global Trade</h3>
+    <p id="p1" style="margin-top:10px;color:#444;line-height:1.5">Discreet compliance for sovereign buyers and institutions.</p>
+  </div>
+  <div>
+    <h3 id="h2">Expertise & Security</h3>
+    <p id="p2" style="margin-top:10px;color:#444;line-height:1.5">Minimizing operational risk while preserving seamless execution.</p>
+  </div>
+</section>
+<section id="docs">
+  <div class="card">
+    <h2 id="h3" style="font-family:'Playfair Display', serif;font-size:34px;color:var(--navy)">Deal-Rescue & Compliance</h2>
+    <p id="p3" style="margin-top:10px;color:#333;font-weight:600">Dokumente in 8 Sprachen - sofort verfügbar</p>
+    <p style="margin-top:6px;font-size:11px;color:#666;letter-spacing:1px">ICC 619 • ICPO Only • Confidential</p>
+    <p style="margin-top:16px;font-size:11px;color:#888">info@rsktrustandtrade.com</p>
+  </div>
+</section>
+<section id="deal-rescue" style="max-width:850px;margin:80px auto;padding:50px 36px;background:var(--cream);border:1.5px solid var(--gold);border-radius:22px;box-shadow:0 18px 50px rgba(201,168,106,.18);position:relative;z-index:1">
+  <div style="text-align:center;margin-bottom:28px">
+    <img src="./IMG-20260918-WA8261.jpg" style="width:92px;height:auto;mix-blend-mode:multiply;background:var(--cream)" alt="RSK">
+    <div style="font-family:'Playfair Display';font-size:34px;letter-spacing:6px;color:var(--navy);font-weight:900;margin-top:8px">RSK</div>
+    <div style="font-size:12px;letter-spacing:5px;color:var(--gold);margin-top:2px">TRUST & TRADE</div>
+    <hr style="border:none;border-top:1px solid var(--gold);margin:22px auto;width:180px;opacity:.6">
+  </div>
+  <h2 style="font-family:'Playfair Display';font-size:44px;line-height:1.1;color:var(--navy);text-align:center">Deal-Rescue &<br><span style="color:var(--gold)">&</span> Compliance Review</h2>
+  <p style="text-align:center;font-style:italic;font-size:18px;color:var(--navy);margin-top:18px;line-height:1.4" id="dr-sub">RSK – Your Silent Partner in High-Stakes Commodity Deals.</p>
+  <div style="text-align:center;margin:22px 0;color:var(--gold)">— ◆ —</div>
+  <p style="text-align:center;font-size:16px;color:#333;line-height:1.5" id="dr-p1">Wir begleiten Sie diskret durch kritische Verhandlungsphasen.</p>
+  
+  <form id="antragForm" style="margin-top:36px;text-align:left">
+    <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:10px 0 28px 0;border:1.5px solid var(--gold)">
+      <a href="./docs/" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:14px;display:block;letter-spacing:0.4px;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
+    </div>
     
-    <h2 id="h2" style="margin-top:34px">Expertise &amp; Security</h2>
-    <p id="h2p">Minimizing operational risk.</p>
-  </section>
+    <label id="lbl-name" style="font-size:14px;font-weight:700;display:block;margin-top:18px">Name / Unternehmen *</label>
+    <input type="text" id="name" required placeholder="Ihr Name oder Firmenname" class="form-input">
 
-  <section class="card-big">
-    <h3 id="d1">Deal-Rescue &amp; Compliance</h3>
-    <p id="d1p">In 8 Sprachen verfügbar: DE, EN, ES, FR, PT, IT, RU, AR - sofort verfügbar.</p>
-  </section>
-</main>
+    <label id="lbl-tel" style="font-size:14px;font-weight:700;display:block;margin-top:18px">Telefon *</label>
+    <input type="tel" id="tel" required placeholder="+49 123 456789" class="form-input">
 
-<footer>
-  <span>© 2026 RSK Trust &amp; Trade</span>
-  <span>info@rsktrustandtrade.com</span>
-  <span>ICPO Only</span>
-</footer>
+    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-email">Ihre E-Mail *</label>
+    <input type="email" id="email" required placeholder="name@unternehmen.com" class="form-input">
+
+    <label id="lbl-betrag" style="font-size:14px;font-weight:700;display:block;margin-top:18px">Deal-Volumen / Betrag</label>
+    <input type="text" id="betrag" placeholder="z. B. 50.000 MT / USD $2.000.000" class="form-input">
+
+    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-desc">Problembeschreibung *</label>
+    <textarea id="msg" required placeholder="Kurze Beschreibung des Konflikts..." rows="4" class="form-input" style="resize:none"></textarea>
+
+    <p style="font-size:11px;color:#666;margin-top:18px;line-height:1.4" id="lbl-note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p>
+    
+    <div style="text-align:center;margin-top:26px">
+      <button type="submit" id="btn-submit" style="background:#0a1931;color:var(--gold);border:1.5px solid var(--gold);padding:14px 34px;border-radius:10px;font-weight:700;letter-spacing:1px;cursor:pointer;font-size:15px">Anfrage absenden</button>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="lbl-footer-text">Diskret • Vertraulich • Professionell</p>
+  </form>
+</section>
+
+<footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL • ICC 619 • ICPO Only • WhatsApp +57 313 8734968</footer>
 
 <script>
-// Funktionale Übersetzungsinfrastruktur
-const translations = {
-  de: {
-    n1: "Über Uns", n2: "Leistungen", n3: "Dokumente", n4: "Deal-Rescue", n5: "Zahlung",
-    h1: "Integrität im globalen Handel", h1p: "Diskrete Compliance für staatliche Käufer.",
-    h2: "Expertise & Sicherheit", h2p: "Minimierung von Betriebsrisiken.",
-    d1: "Deal-Rescue & Compliance", d1p: "Sofortige Unterstützung bei komplexen Handels- und Compliance-Anforderungen."
-  },
-  en: {
-    n1: "About", n2: "Services", n3: "Documents", n4: "Deal-Rescue", n5: "Payment",
-    h1: "Integrity in Global Trade", h1p: "Discreet compliance for sovereign buyers.",
-    h2: "Expertise & Security", h2p: "Minimizing operational risk.",
-    d1: "Deal-Rescue & Compliance", d1p: "Immediate support for complex trade and compliance requirements."
-  }
+const T = {
+  en:{sub:"INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA",n1:"ABOUT",n2:"SERVICES",n3:"DOCUMENTS",n4:"DEAL-RESCUE",h1:"Integrity in Global Trade",p1:"Discreet compliance for sovereign buyers and institutions.",h2:"Expertise & Security",p2:"Minimizing operational risk while preserving seamless execution.",h3:"Deal-Rescue & Compliance",p3:"Documents in 8 languages - available immediately",dr_sub:"RSK – Your Silent Partner in High-Stakes Commodity Deals.",dr_p1:"We quietly guide you through critical negotiation phases.",lbl_name:"Name / Company *",lbl_tel:"Phone *",lbl_email:"Your Email *",lbl_betrag:"Deal Volume / Amount",lbl_desc:"Problem Description *",lbl_note:"* RSK provides specialized transaction support. We guarantee confidentiality.",btn_submit:"Send Request",lbl_footer_text:"Discreet • Confidential • Professional",btn_docs:"📄 Download Compliance Documents in 8 Languages",lbl:"Language",ph_name:"Your Name or Company Name",ph_tel:"+1 123 456789",ph_email:"name@company.com",ph_betrag:"e.g. 50,000 MT / USD $2,000,000",ph_msg:"Brief description of the issue..."},
+  es:{sub:"COMMODITIES INTERNACIONALES • LATAM • EUROPA • EAU • ASIA",n1:"NOSOTROS",n2:"SERVICIOS",n3:"DOCUMENTOS",n4:"RESCATE",h1:"Integridad en el Comercio Global",p1:"Cumplimiento discreto para compradores soberanos e instituciones.",h2:"Pericia y Seguridad",p2:"Minimizando el riesgo operativo.",h3:"Rescate y Cumplimiento",p3:"Documentos en 8 idiomas - disponibles inmediatamente",dr_sub:"RSK – Su socio silencioso en operaciones de alto nivel.",dr_p1:"Le guiamos discretamente en fases críticas.",lbl_name:"Nombre / Empresa *",lbl_tel:"Teléfono *",lbl_email:"Su correo *",lbl_betrag:"Volumen / Monto",lbl_desc:"Descripción *",lbl_note:"* RSK ofrece apoyo especializado. Confidencialidad garantizada.",btn_submit:"Enviar solicitud",lbl_footer_text:"Discreto • Confidencial • Profesional",btn_docs:"📄 Descargar Documentos en 8 Idiomas",lbl:"Idioma",ph_name:"Su nombre o empresa",ph_tel:"+34 123 456789",ph_email:"nombre@empresa.com",ph_betrag:"ej. 50.000 MT / USD $2.000.000",ph_msg:"Breve descripción del conflicto..."},
+  de:{sub:"INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN",n1:"ÜBER UNS",n2:"LEISTUNGEN",n3:"DOKUMENTE",n4:"DEAL-RESCUE",h1:"Integrität im globalen Handel",p1:"Diskrete Compliance für staatliche Käufer und Institutionen.",h2:"Expertise & Sicherheit",p2:"Minimierung des operativen Risikos bei nahtloser Ausführung.",h3:"Deal-Rescue & Compliance",p3:"Dokumente in 8 Sprachen - sofort verfügbar",dr_sub:"RSK – Ihr stiller Partner bei anspruchsvollen Rohstoffgeschäften.",dr_p1:"Wir begleiten Sie diskret durch kritische Verhandlungsphasen.",lbl_name:"Name / Unternehmen *",lbl_tel:"Telefon *",lbl_email:"Ihre E-Mail *",lbl_betrag:"Deal-Volumen / Betrag",lbl_desc:"Problembeschreibung *",lbl_note:"* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.",btn_submit:"Anfrage absenden",lbl_footer_text:"Diskret • Vertraulich • Professionell",btn_docs:"📄 Download Compliance Dokumente in 8 Sprachen",lbl:"Sprache",ph_name:"Ihr Name oder Firmenname",ph_tel:"+49 123 456789",ph_email:"name@unternehmen.com",ph_betrag:"z. B. 50.000 MT / USD $2.000.000",ph_msg:"Kurze Beschreibung des Konflikts..."},
+  fr:{sub:"MATIÈRES PREMIÈRES • LATAM • EUROPE • EAU • ASIE",n1:"À PROPOS",n2:"SERVICES",n3:"DOCUMENTS",n4:"SAUVETAGE",h1:"Intégrité dans le Commerce Mondial",p1:"Conformité discrète pour acheteurs souverains.",h2:"Expertise et Sécurité",p2:"Minimiser le risque opérationnel.",h3:"Sauvetage & Conformité",p3:"Documents en 8 langues - disponible immédiatement",dr_sub:"RSK – Votre partenaire silencieux.",dr_p1:"Accompagnement discret en phases critiques.",lbl_name:"Nom / Entreprise *",lbl_tel:"Téléphone *",lbl_email:"Votre Email *",lbl_betrag:"Volume / Montant",lbl_desc:"Description *",lbl_note:"* RSK fournit un accompagnement spécialisé. Confidentialité garantie.",btn_submit:"Envoyer",lbl_footer_text:"Discret • Confidentiel • Professionnel",btn_docs:"📄 Télécharger Documents Compliance",lbl:"Langue",ph_name:"Votre nom ou entreprise",ph_tel:"+33 123 456789",ph_email:"nom@entreprise.com",ph_betrag:"ex. 50 000 MT / USD $2 000 000",ph_msg:"Brève description du problème..."},
+  pt:{sub:"COMMODITIES INTERNACIONAIS • LATAM • EUROPA • EAU • ÁSIA",n1:"SOBRE",n2:"SERVIÇOS",n3:"DOCUMENTOS",n4:"RESGATE",h1:"Integridade no Comércio Global",p1:"Compliance discreto para compradores soberanos.",h2:"Especialização e Segurança",p2:"Minimizando risco operacional.",h3:"Resgate & Compliance",p3:"Documentos em 8 idiomas - disponível imediatamente",dr_sub:"RSK – Seu parceiro silencioso.",dr_p1:"Acompanhamos com discrição.",lbl_name:"Nome / Empresa *",lbl_tel:"Telefone *",lbl_email:"Seu E-mail *",lbl_betrag:"Volume / Valor",lbl_desc:"Descrição *",lbl_note:"* RSK oferece suporte especializado. Confidencialidade garantida.",btn_submit:"Enviar",lbl_footer_text:"Discreto • Confidencial • Profissional",btn_docs:"📄 Baixar Documentos de Compliance",lbl:"Idioma",ph_name:"Seu nome ou empresa",ph_tel:"+55 123 456789",ph_email:"nome@empresa.com",ph_betrag:"ex. 50.000 MT / USD $2.000.000",ph_msg:"Breve descrição do problema..."},
+  ru:{sub:"МЕЖДУНАРОДНЫЕ ТОВАРЫ • ЛАТАМ • ЕВРОПА • ОАЭ • АЗИЯ",n1:"О НАС",n2:"УСЛУГИ",n3:"ДОКУМЕНТЫ",n4:"СПАСЕНИЕ",h1:"Честность в мировой торговле",p1:"Дискретный комплаенс для суверенных покупателей.",h2:"Экспертиза и Безопасность",p2:"Минимизация рисков.",h3:"Спасение и Комплаенс",p3:"Документы на 8 языках - доступно сразу",dr_sub:"RSK – Ваш негласный партнер.",dr_p1:"Конфиденциальное сопровождение.",lbl_name:"Имя / Компания *",lbl_tel:"Телефон *",lbl_email:"Ваш E-mail *",lbl_betrag:"Объем / Сумма",lbl_desc:"Описание *",lbl_note:"* RSK предоставляет сопровождение. Конфиденциальность гарантируется.",btn_submit:"Отправить",lbl_footer_text:"Дискретно • Конфиденциально • Профессионально",btn_docs:"📄 Скачать Документы",lbl:"Язык",ph_name:"Ваше имя или компания",ph_tel:"+7 123 456789",ph_email:"name@company.com",ph_betrag:"напр. 50 000 MT / USD $2 000 000",ph_msg:"Краткое описание проблемы..."},
+  zh:{sub:"国际大宗商品 • 拉美 • 欧洲 • 阿联酋 • 亚洲",n1:"关于",n2:"服务",n3:"文件",n4:"救援",h1:"全球贸易的诚信",p1:"为主权买家提供谨慎合规。",h2:"专业与安全",p2:"降低运营风险。",h3:"救援与合规",p3:"8种语言文件 - 立即提供",dr_sub:"RSK – 高风险交易的沉静伙伴。",dr_p1:"关键阶段的谨慎协助。",lbl_name:"姓名 / 公司 *",lbl_tel:"电话 *",lbl_email:"您的邮箱 *",lbl_betrag:"交易量 / 金额",lbl_desc:"问题描述 *",lbl_note:"* RSK 提供专业支持，保密保证。",btn_submit:"提交",lbl_footer_text:"谨慎 • 保密 • 专业",btn_docs:"📄 下载8种语言合规文件",lbl:"语言",ph_name:"您的姓名或公司名称",ph_tel:"+86 123 456789",ph_email:"name@company.com",ph_betrag:"例如 50,000 MT / USD $2,000,000",ph_msg:"问题简述..."},
+  ar:{sub:"السلع الدولية • أمريكا اللاتينية • أوروبا • الإمارات • آسيا",n1:"من نحن",n2:"خدمات",n3:"مستندات",n4:"إنقاذ",h1:"النزاهة في التجارة العالمية",p1:"امتثال سري للمشترين السياديين.",h2:"الخبرة والأمان",p2:"تقليل المخاطر التشغيلية.",h3:"إنقاذ والامتثال",p3:"مستندات بـ 8 لغات - متوفرة فوراً",dr_sub:"RSK – شريكك الصامت في صفقات السلع عالية المخاطر.",dr_p1:"نرافقك بسرية خلال المراحل الحرجة.",lbl_name:"الاسم / الشركة *",lbl_tel:"الهاتف *",lbl_email:"بريدك الإلكتروني *",lbl_betrag:"حجم الصفقة / المبلغ",lbl_desc:"وصف المشكلة *",lbl_note:"* RSK تقدم دعم متخصص. السرية مضمونة.",btn_submit:"إرسال الطلب",lbl_footer_text:"سري • موثوق • احترافي",btn_docs:"📄 تحميل مستندات الامتثال بـ 8 لغات",lbl:"اللغة",ph_name:"اسمك أو اسم الشركة",ph_tel:"+966 123 456789",ph_email:"name@company.com",ph_betrag:"مثال: 50,000 طن / 2,000,000 دولار",ph_msg:"وصف مختصر للمشكلة..."}
 };
 
-document.getElementById('langSel').addEventListener('change', function(e) {
-  const lang = e.target.value;
-  const data = translations[lang];
-  if (!data) return;
+function setLang(l) {
+  const t = T[l]; if(!t) return;
+  document.getElementById('sub-title').innerText = t.sub;
+  document.getElementById('nav1').innerText = t.n1;
+  document.getElementById('nav2').innerText = t.n2;
+  document.getElementById('nav3').innerText = t.n3;
+  document.getElementById('nav4').innerText = t.n4;
+  document.getElementById('h1').innerText = t.h1;
+  document.getElementById('p1').innerText = t.p1;
+  document.getElementById('h2').innerText = t.h2;
+  document.getElementById('p2').innerText = t.p2;
+  document.getElementById('h3').innerText = t.h3;
+  document.getElementById('p3').innerText = t.p3;
+  document.getElementById('dr-sub').innerText = t.dr_sub;
+  document.getElementById('dr-p1').innerText = t.dr_p1;
+  document.getElementById('lbl-name').innerText = t.lbl_name;
+  document.getElementById('lbl-tel').innerText = t.lbl_tel;
+  document.getElementById('lbl-email').innerText = t.lbl_email;
+  document.getElementById('lbl-betrag').innerText = t.lbl_betrag;
+  document.getElementById('lbl-desc').innerText = t.lbl_desc;
+  document.getElementById('lbl-note').innerText = t.lbl_note;
+  document.getElementById('btn-submit').innerText = t.btn_submit;
+  document.getElementById('lbl-footer-text').innerText = t.lbl_footer_text;
+  document.getElementById('btn-docs').innerText = t.btn_docs;
+  document.getElementById('langLabel').innerText = t.lbl;
+  
+  if (t.ph_name) document.getElementById('name').placeholder = t.ph_name;
+  if (t.ph_tel) document.getElementById('tel').placeholder = t.ph_tel;
+  if (t.ph_email) document.getElementById('email').placeholder = t.ph_email;
+  if (t.ph_betrag) document.getElementById('betrag').placeholder = t.ph_betrag;
+  if (t.ph_msg) document.getElementById('msg').placeholder = t.ph_msg;
 
-  // RTL-Unterstützung für Arabisch
-  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-  document.documentElement.lang = lang;
+  document.getElementById('lm').classList.remove('open');
+  document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  localStorage.setItem('rsk_lang', l);
+}
 
-  // Inhalte aktualisieren
-  Object.keys(data).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = data[id];
-  });
+function selectLanguage(e, lang) { e.stopPropagation(); setLang(lang); }
+
+document.getElementById('langBtn').addEventListener('click', e => { 
+  e.stopPropagation(); 
+  document.getElementById('lm').classList.toggle('open'); 
+});
+
+document.addEventListener('click', () => { 
+  document.getElementById('lm').classList.remove('open'); 
+});
+
+const saved = localStorage.getItem('rsk_lang'); 
+if (saved) setLang(saved);
+
+document.getElementById('antragForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const NUMERO = "573138734968";
+  const nachricht = `Neuer Antrag RSK Trust & Trade\n\nName: ${document.getElementById('name').value}\nTel: ${document.getElementById('tel').value}\nEmail: ${document.getElementById('email').value}\nBetrag/Volumen: ${document.getElementById('betrag').value}\nNachricht: ${document.getElementById('msg').value}`;
+  window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(nachricht)}`, '_blank');
 });
 </script>
-
 </body>
-</html>
+     </html>
+     
+  
