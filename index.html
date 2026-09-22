@@ -1,138 +1,252 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="de" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSK Trust & Trade</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<title>RSK Trust & Trade | Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3eee0;--card:#fffdf6;--dark:#1a1a1a;--gold:#a68b5a;--line:#e8dfca}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--dark);font-family:'Inter',sans-serif}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:12px}
-.logo{font-family:'Playfair Display',serif;letter-spacing:3px;font-weight:600}
-.lang{border:1px solid var(--line);background:var(--card);padding:8px 12px;font-size:12px;cursor:pointer}
-.hero{text-align:center;padding:70px 0 40px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,48px)}
-.sub{letter-spacing:4px;font-size:11px;color:var(--gold);text-transform:uppercase;margin:14px 0 22px}
-.desc{max-width:700px;margin:0 auto;color:#6b665e;font-weight:300;font-size:15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:40px 0}
-.card{background:var(--card);padding:28px}
-.card h3{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:8px}
-.card p{font-size:13px;color:#6b665e;line-height:1.6}
-.section{background:var(--card);border:1px solid var(--line);padding:40px;margin:24px 0}
-.compliance{border:1px dashed var(--gold);background:#fdf8ec;padding:18px;text-align:center;font-size:11px;margin:32px 0}
-footer{padding:28px 0;border-top:1px solid var(--line);font-size:10px;color:#9a9590;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.btn{display:inline-block;background:var(--dark);color:var(--bg);padding:11px 20px;font-size:11px;letter-spacing:2px;text-decoration:none;margin-top:14px}
+:root {
+  --bg: #f3eee0;
+  --card: #fffdf6;
+  --dark: #0e1a2f;
+  --gold: #b89a5a;
+  --gold2: #a68b5a;
+  --line: #e8dfca;
+}
 
-/* RTL Support */
-[dir="rtl"] {
-  text-align: right;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-[dir="rtl"] .hero {
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+header.top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--gold2);
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.langbox {
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 6px 12px;
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.langbox select {
+  border: 0;
+  background: transparent;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--dark);
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+nav.nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav.nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav.nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 20px 30px;
+  position: relative;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #5b5b5b;
+  max-width: 560px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.card-big {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 38px 24px;
+  border: 2px solid var(--gold);
+  border-radius: 22px;
+  background: var(--card);
   text-align: center;
 }
-[dir="rtl"] .compliance {
-  text-align: center;
+
+.card-big h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 10px;
+  color: #9a9590;
 }
 </style>
 </head>
 <body>
-<div class="container">
-<header>
-<div class="logo">RSK TRUST &amp; TRADE</div>
-<select class="lang" id="langSel">
-<option value="de">Deutsch (DE)</option>
-<option value="en">English (EN)</option>
-<option value="es">Español (ES)</option>
-<option value="fr">Français (FR)</option>
-<option value="pt">Português (PT)</option>
-<option value="it">Italiano (IT)</option>
-<option value="ru">Русский (RU)</option>
-<option value="ar">العربية (AR)</option>
-</select>
+
+<header class="top">
+  <div class="brand">
+    <div>
+      <h1>RSK TRUST &amp;<br>TRADE</h1>
+      <small>International Commodities &amp; Trade • LATAM • Europe • UAE • Asia</small>
+    </div>
+  </div>
+  
+  <div class="langbox">
+    <span>🌐</span>
+    <select id="langSel" aria-label="Sprache auswählen">
+      <option value="de">Deutsch</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="pt">Português</option>
+      <option value="it">Italiano</option>
+      <option value="ru">Русский</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
 </header>
 
-<div class="hero">
-<h1 id="h1">Integrity in Global Trade</h1>
-<div class="sub" id="hs">International Commodity Trading &amp; Deal Rescue Operations</div>
-<p class="desc" id="hd">RSK Trust &amp; Trade ist eine spezialisierte Handels- und Strukturierungsplattform für internationale Rohstofftransaktionen sowie globale Handelslogistik unter strengsten ICC/UNCITRAL Standards.</p>
-</div>
+<nav class="nav">
+  <a href="#about" id="n1">About</a>
+  <a href="#services" id="n2">Services</a>
+  <a href="#documents" id="n3">Documents</a>
+  <a href="#deal-rescue" id="n4">Deal-Rescue</a>
+  <a href="#payment" id="n5">Payment</a>
+</nav>
 
-<div class="section">
-<h2 id="at">Über RSK</h2>
-<p id="ab">RSK Trust &amp; Trade ist eine spezialisierte Handels- und Strukturierungsplattform für internationale Rohstofftransaktionen (u. a. Kohle, Erdölprodukte, Mineralien) sowie globale Handelslogistik. Wir verbinden verlässliche Lieferketten in Nord- und Südamerika, Europa, dem Nahen Osten und Asien unter strengsten internationalen Compliance- und Rechtsstandards (ICC/UNCITRAL). Zusätzlich agieren wir als neutraler Mediator bei komplexen, festgefahrenen Handelsgeschäften (RSK Deal Rescue).</p>
-</div>
+<main>
+  <section class="hero">
+    <h2 id="h1">Integrity in Global Trade</h2>
+    <p id="h1p">Discreet compliance for sovereign buyers.</p>
+    
+    <h2 id="h2" style="margin-top:34px">Expertise &amp; Security</h2>
+    <p id="h2p">Minimizing operational risk.</p>
+  </section>
 
-<div class="grid">
-<div class="card"><h3>Thermal Coal</h3><p id="s1">Industriekohle für Zementwerke &amp; Energie (5800-6500 kcal, kolumbianischer Ursprung, direkt ab Mine)</p></div>
-<div class="card"><h3>Petroleum Products</h3><p id="s2">Petrokoks, Kraftstoffe, Raffinerieprodukte (SGS, POP, bankfähig)</p></div>
-<div class="card"><h3>Minerals &amp; Metals</h3><p id="s3">Strategische Rohstoffe &amp; Industriemineralien</p></div>
-<div class="card"><h3>Deal Rescue</h3><p id="s4">Transaktionsrettung, NCNDA / IMFPA Compliance, Mediation</p></div>
-</div>
+  <section class="card-big">
+    <h3 id="d1">Deal-Rescue &amp; Compliance</h3>
+    <p id="d1p">In 8 Sprachen verfügbar: DE, EN, ES, FR, PT, IT, RU, AR - sofort verfügbar.</p>
+  </section>
+</main>
 
-<div class="section">
-<h2 id="dt">Deal-Rescue &amp; Compliance Center</h2>
-<p id="dx">Standarddokumente (NCNDA, IMFPA, ICPO Template) in 8 Sprachen verfügbar: DE, EN, ES, FR, PT, IT, RU, AR.</p>
-<a class="btn" href="/docs/" id="db">Dokumente ansehen</a>
-</div>
-
-<div class="section">
-<h2 id="rt">Deal Rescue</h2>
-<p id="rx">Neutraler Mediator für festgefahrene Deals. Wir strukturieren neu, sichern Compliance und führen zur bankfähigen Ausführung.</p>
-</div>
-
-<div class="compliance">Official transactions are processed exclusively upon receipt of an Irrevocable Corporate Purchase Order (ICPO) accompanied by full corporate credentials.</div>
-
-<footer><span>© 2026 RSK Trust &amp; Trade</span><span>info@rsktrustandtrade.com</span><span>rsktrustandtrade.com</span></footer>
-</div>
+<footer>
+  <span>© 2026 RSK Trust &amp; Trade</span>
+  <span>info@rsktrustandtrade.com</span>
+  <span>ICPO Only</span>
+</footer>
 
 <script>
-const L = {
-  de: {h1:"Integrity in Global Trade",hs:"International Commodity Trading & Deal Rescue Operations",hd:"RSK Trust & Trade ist eine spezialisierte Handels- und Strukturierungsplattform für internationale Rohstofftransaktionen sowie globale Handelslogistik unter strengsten ICC/UNCITRAL Standards.",at:"Über RSK",ab:"RSK Trust & Trade ist eine spezialisierte Handels- und Strukturierungsplattform für internationale Rohstofftransaktionen (u. a. Kohle, Erdölprodukte, Mineralien) sowie globale Handelslogistik. Wir verbinden verlässliche Lieferketten in Nord- und Südamerika, Europa, dem Nahen Osten und Asien unter strengsten internationalen Compliance- und Rechtsstandards (ICC/UNCITRAL). Zusätzlich agieren wir als neutraler Mediator bei komplexen, festgefahrenen Handelsgeschäften (RSK Deal Rescue).",s1:"Industriekohle für Zementwerke & Energie (5800-6500 kcal, kolumbianischer Ursprung, direkt ab Mine)",s2:"Petrokoks, Kraftstoffe, Raffinerieprodukte (SGS, POP, bankfähig)",s3:"Strategische Rohstoffe & Industriemineralien",s4:"Transaktionsrettung, NCNDA / IMFPA Compliance, Mediation",dt:"Deal-Rescue & Compliance Center",dx:"Standarddokumente (NCNDA, IMFPA, ICPO Template) in 8 Sprachen verfügbar: DE, EN, ES, FR, PT, IT, RU, AR.",db:"Dokumente ansehen",rt:"Deal Rescue",rx:"Neutraler Mediator für festgefahrene Deals. Wir strukturieren neu, sichern Compliance und führen zur bankfähigen Ausführung."},
-  en: {h1:"Integrity in Global Trade",hs:"International Commodity Trading & Deal Rescue Operations",hd:"RSK Trust & Trade is a specialized trading and structuring platform for international commodity transactions and global trade logistics under strictest ICC/UNCITRAL standards.",at:"About RSK",ab:"RSK Trust & Trade is a specialized trading and structuring platform for international commodity transactions (including thermal coal, petroleum products, minerals) and global trade logistics. We connect reliable supply chains in North and South America, Europe, the Middle East and Asia under strictest international compliance and legal standards (ICC/UNCITRAL). Additionally, we act as neutral mediator for complex, stalled trading operations (RSK Deal Rescue).",s1:"Industrial coal for cement plants & energy (5800-6500 kcal, Colombian origin, direct ex-mine)",s2:"Petroleum coke, fuels, refined products (SGS, POP, bankable)",s3:"Strategic raw materials & industrial minerals",s4:"Transaction rescue, NCNDA / IMFPA compliance, mediation",dt:"Deal-Rescue & Compliance Center",dx:"Standard documents available in 8 languages: DE, EN, ES, FR, PT, IT, RU, AR.",db:"View documents",rt:"Deal Rescue",rx:"Neutral mediator for stalled deals. We restructure, secure compliance and lead to bankable execution."},
-  es: {h1:"Integridad en el Comercio Global",hs:"Comercio Internacional y Rescate de Operaciones",hd:"Plataforma especializada bajo estándares ICC/UNCITRAL.",at:"Sobre RSK",ab:"RSK Trust & Trade es una plataforma especializada de comercio y estructuración para transacciones internacionales de materias primas y logística global bajo los más estrictos estándares ICC/UNCITRAL.",s1:"Carbón industrial (5800-6500 kcal, origen colombiano)",s2:"Coque de petróleo, combustibles (SGS, POP, bancable)",s3:"Materias primas estratégicas",s4:"Rescate de transacciones, NCNDA / IMFPA",dt:"Centro Deal-Rescue",dx:"Documentos estándar en 8 idiomas: DE, EN, ES, FR, PT, IT, RU, AR.",db:"Ver documentos",rt:"Deal Rescue",rx:"Mediador neutral para negocios estancados. Reestructuramos y llevamos a ejecución bancable."},
-  fr: {h1:"Intégrité dans le Commerce Mondial",hs:"Négoce International & Sauvetage de Transactions",hd:"Plateforme spécialisée selon normes ICC/UNCITRAL.",at:"À propos de RSK",ab:"RSK Trust & Trade est une plateforme spécialisée de trading et de structuration pour transactions internationales sous normes ICC/UNCITRAL.",s1:"Charbon industriel (5800-6500 kcal, origine colombienne)",s2:"Coke de pétrole, carburants (SGS, POP, bancable)",s3:"Matières premières stratégiques",s4:"Sauvetage de transactions, NCNDA / IMFPA",dt:"Centre Deal-Rescue",dx:"Documents standards en 8 langues: DE, EN, ES, FR, PT, IT, RU, AR.",db:"Voir documents",rt:"Deal Rescue",rx:"Médiateur neutre. Nous restructurons et menons à l'exécution bancable."},
-  pt: {h1:"Integridade no Comércio Global",hs:"Comércio Internacional e Resgate",hd:"Plataforma especializada sob padrões ICC/UNCITRAL.",at:"Sobre a RSK",ab:"RSK Trust & Trade é uma plataforma especializada de trading e estruturação para transações internacionais sob padrões ICC/UNCITRAL.",s1:"Carvão industrial (5800-6500 kcal, origem colombiana)",s2:"Coque de petróleo, combustíveis (SGS, POP, bancável)",s3:"Matérias-primas estratégicas",s4:"Resgate de transações, NCNDA / IMFPA",dt:"Centro Deal-Rescue",dx:"Documentos padrão em 8 idiomas: DE, EN, ES, FR, PT, IT, RU, AR.",db:"Ver documentos",rt:"Deal Rescue",rx:"Mediador neutro. Reestruturamos e levamos à execução bancária."},
-  it: {h1:"Integrità nel Commercio Globale",hs:"Trading Internazionale e Salvataggio",hd:"Piattaforma specializzata secondo standard ICC/UNCITRAL.",at:"Chi è RSK",ab:"RSK Trust & Trade è una piattaforma specializzata di trading e strutturazione per transazioni internazionali secondo standard ICC/UNCITRAL.",s1:"Carbone industriale (5800-6500 kcal, origine colombiana)",s2:"Pet coke, carburanti (SGS, POP, bancabile)",s3:"Materie prime strategiche",s4:"Salvataggio transazioni, NCNDA / IMFPA",dt:"Centro Deal-Rescue",dx:"Documenti standard in 8 lingue: DE, EN, ES, FR, PT, IT, RU, AR.",db:"Vedi documenti",rt:"Deal Rescue",rx:"Mediatore neutrale. Ristrutturiamo e portiamo all'esecuzione bancabile."},
-  ru: {h1:"Честность в мировой торговле",hs:"Международная торговля сырьем и спасение сделок",hd:"RSK Trust & Trade — специализированная платформа по строгим стандартам ICC/UNCITRAL.",at:"О RSK",ab:"RSK Trust & Trade — это специализированная торговая и структурирующая платформа для международных сделок с сырьевыми товарами (энергетический уголь, нефть и нефтепродукты, минералы), а также для глобальной торговой логистики. Мы объединяем надежные цепочки поставок в Северной и Южной Америке, Европе, на Ближнем Востоке и в Азии в соответствии со строгими международными юридическими стандартами и нормами комплаенса (ICC/UNCITRAL). Кроме того, мы выступаем в качестве нейтрального медиатора в сложных, зашедших в тупик торговых сделках (RSK Deal Rescue).",s1:"Промышленный уголь для цементных заводов и энергетики (5800–6500 ккал, Колумбия)",s2:"Нефтяной кокс, топливо, нефтепродукты (SGS, POP, bankable)",s3:"Стратегическое сырье и минералы",s4:"Спасение сделок, NCNDA/IMFPA, медиация",dt:"Центр спасения сделок и комплаенса",dx:"Документы доступны на 8 языках: DE, EN, ES, FR, PT, IT, RU, AR.",db:"Просмотреть",rt:"Deal Rescue",rx:"Нейтральный медиатор. Реструктуризация и доведение до банковского исполнения."},
-  ar: {h1:"النزاهة في التجارة العالمية",hs:"تجارة السلع الدولية وإنقاذ الصفقات",hd:"RSK Trust & Trade منصة متخصصة وفق معايير ICC/UNCITRAL.",at:"عن RSK",ab:"منصة RSK Trust & Trade هي منصة متخصصة في التجارة والهيكلة للعمليات التجارية الدولية وفقا لأعلى المعايير القانونية والامتثال الدولي (ICC/UNCITRAL). بالإضافة إلى ذلك، نعمل كوسيط محايد في الصفقات التجارية المعقدة والمتعثرة (RSK Deal Rescue).",s1:"الفحم الصناعي لمصانع الأسمنت والطاقة (5800-6500 كيلو كالوري، كولومبي)",s2:"فحم الكوك البترولي، الوقود (SGS, POP, قابل للتمويل البنكي)",s3:"المواد الخام الاستراتيجية والمعادن",s4:"إنقاذ الصفقات، الامتثال NCNDA/IMFPA",dt:"مركز إنقاذ الصفقات والامتثال",dx:"المستندات متوفرة بـ 8 لغات: DE, EN, ES, FR, PT, IT, RU, AR.",db:"عرض",rt:"إنقاذ الصفقات",rx:"وسيط محايد للصفقات المتعثرة. إعادة الهيكلة وضمان الامتثال."}
+// Funktionale Übersetzungsinfrastruktur
+const translations = {
+  de: {
+    n1: "Über Uns", n2: "Leistungen", n3: "Dokumente", n4: "Deal-Rescue", n5: "Zahlung",
+    h1: "Integrität im globalen Handel", h1p: "Diskrete Compliance für staatliche Käufer.",
+    h2: "Expertise & Sicherheit", h2p: "Minimierung von Betriebsrisiken.",
+    d1: "Deal-Rescue & Compliance", d1p: "Sofortige Unterstützung bei komplexen Handels- und Compliance-Anforderungen."
+  },
+  en: {
+    n1: "About", n2: "Services", n3: "Documents", n4: "Deal-Rescue", n5: "Payment",
+    h1: "Integrity in Global Trade", h1p: "Discreet compliance for sovereign buyers.",
+    h2: "Expertise & Security", h2p: "Minimizing operational risk.",
+    d1: "Deal-Rescue & Compliance", d1p: "Immediate support for complex trade and compliance requirements."
+  }
 };
 
-const sel = document.getElementById('langSel');
-
-function applyLanguage(langKey) {
-  const data = L[langKey]; 
+document.getElementById('langSel').addEventListener('change', function(e) {
+  const lang = e.target.value;
+  const data = translations[lang];
   if (!data) return;
-  
-  document.getElementById('h1').textContent = data.h1;
-  document.getElementById('hs').textContent = data.hs;
-  document.getElementById('hd').textContent = data.hd;
-  document.getElementById('at').textContent = data.at;
-  document.getElementById('ab').textContent = data.ab;
-  document.getElementById('s1').textContent = data.s1;
-  document.getElementById('s2').textContent = data.s2;
-  document.getElementById('s3').textContent = data.s3;
-  document.getElementById('s4').textContent = data.s4;
-  document.getElementById('dt').textContent = data.dt;
-  document.getElementById('dx').textContent = data.dx;
-  document.getElementById('db').textContent = data.db;
-  document.getElementById('rt').textContent = data.rt;
-  document.getElementById('rx').textContent = data.rx;
-  
-  document.documentElement.lang = langKey;
-  document.documentElement.dir = langKey === 'ar' ? 'rtl' : 'ltr';
-  localStorage.setItem('rsk_lang', langKey);
-}
 
-sel.addEventListener('change', () => applyLanguage(sel.value));
+  // RTL-Unterstützung für Arabisch
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.documentElement.lang = lang;
 
-// Initialization
-const initialLang = localStorage.getItem('rsk_lang') || 'de';
-sel.value = initialLang;
-applyLanguage(initialLang);
+  // Inhalte aktualisieren
+  Object.keys(data).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = data[id];
+  });
+});
 </script>
+
 </body>
-  </html>
-  
+</html>
