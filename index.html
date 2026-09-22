@@ -16,9 +16,9 @@ header { display: flex; align-items: center; justify-content: space-between; pad
 .brand { flex-grow: 1; position: relative; z-index: 3; }
 .brand h1 { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 2px; color: var(--navy); line-height: 1.1; }
 .brand h2 { font-size: 8px; letter-spacing: 1px; color: var(--gold); margin-top: 3px; line-height: 1.2; width: 100%; }
-.lang { position: relative; z-index: 1001; flex-shrink: 0; }
+.lang { position: relative; z-index: 10000; flex-shrink: 0; }
 .lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 6px 10px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; white-space: nowrap; }
-.lang-menu { display: none; position: absolute; right: 0; top: 40px; background: #ffffff; border: 1.5px solid var(--gold); width: 200px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); z-index: 1002; overflow: hidden; }
+.lang-menu { display: none; position: absolute; right: 0; top: 40px; background: #ffffff; border: 1.5px solid var(--gold); width: 200px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); z-index: 99999!important; overflow: hidden; }
 .lang-menu.open { display: block; }
 .lang-menu div { padding: 10px 12px; cursor: pointer; font-size: 13px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 8px; color: #111; background: #fff; }
 .lang-menu div:hover { background: var(--parch); color: var(--navy); }
@@ -110,5 +110,4 @@ function selectLanguage(e, lang) {
   document.getElementById('betrag').placeholder = data.ph_betrag;
   document.getElementById('lbl-desc').innerText = data.lbl_desc;
   document.getElementById('msg').placeholder = data.ph_desc;
-  document.getElementById('lbl-note').innerText = data.lbl_note;
- 
+  document.getElementById('lbl-note').innerText = data
