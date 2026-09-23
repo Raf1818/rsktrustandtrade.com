@@ -1,4 +1,4 @@
- .      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -56,7 +56,7 @@ header {
   border-bottom: 1.5px solid var(--gold);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .logo-small {
@@ -93,7 +93,7 @@ header {
 .lang {
   margin-left: auto;
   position: relative;
-  z-index: 10000;
+  z-index: 10001;
 }
 
 .lang-btn {
@@ -199,7 +199,6 @@ nav a {
   transition: transform 0.3s ease;
 }
 
-/* FIX: Leerzeichen zwischen .active und .accordion-icon */
 .accordion-header.active .accordion-icon {
   transform: rotate(180deg);
 }
@@ -289,11 +288,11 @@ footer {
     <h2 id="sub-title">INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA</h2>
   </div>
   <div class="lang">
-    <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">🌐 <span id="langLabel">Sprache</span> ▼</button>
+    <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">🌐 <span id="langLabel">Deutsch</span> ▼</button>
     <div class="lang-menu" id="lm">
+      <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
       <div onclick="selectLanguage(event, 'en')">🇬🇧 English</div>
       <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
-      <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
       <div onclick="selectLanguage(event, 'fr')">🇫🇷 Français</div>
       <div onclick="selectLanguage(event, 'pt')">🇧🇷 Português</div>
       <div onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</div>
@@ -304,36 +303,36 @@ footer {
 </header>
 
 <nav>
-  <a href="#about">ÜBER UNS</a>
-  <a href="#services">LEISTUNGEN</a>
-  <a href="#docs">DOKUMENTE</a>
-  <a href="#deal-rescue">DEAL-RESCUE</a>
+  <a href="#about" id="nav-about">ÜBER UNS</a>
+  <a href="#services" id="nav-services">LEISTUNGEN & EXPERTISE</a>
+  <a href="#docs" id="nav-docs">DOKUMENTE</a>
+  <a href="#deal-rescue" id="nav-rescue">DEAL-RESCUE</a>
 </nav>
 
 <div id="about" style="max-width:1100px; margin:30px auto; padding:0 18px; position:relative; z-index:1;">
   <div class="paper-card">
     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-      <span>ÜBER UNS</span>
+      <span id="accordion-about-title">ÜBER UNS</span>
       <span class="accordion-icon">▼</span>
     </button>
     <div class="accordion-content">
       <div class="accordion-body">
-        <h3>Willkommen bei RSK Trust & Trade</h3>
-        <p style="margin-top:12px;">Im dynamischen Umfeld des globalen Commodity-Handels sind Vertrauen, Präzision und rechtliche Verlässlichkeit die Fundamente. <strong>RSK Trust & Trade</strong> agiert als Partner zwischen Produzenten, Abnehmern und Institutionen über LATAM, Europa, VAE und Asien.</p>
+        <h3 id="about-heading">Willkommen bei RSK Trust & Trade</h3>
+        <p style="margin-top:12px;" id="about-text">Im dynamischen Umfeld des globalen Commodity-Handels sind Vertrauen, Präzision und rechtliche Verlässlichkeit die Fundamente. <strong>RSK Trust & Trade</strong> agiert als Partner zwischen Produzenten, Abnehmern und Institutionen über LATAM, Europa, VAE und Asien.</p>
       </div>
     </div>
   </div>
 
   <div class="paper-card" id="services">
     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-      <span>LEISTUNGEN & EXPERTISE</span>
+      <span id="accordion-services-title">LEISTUNGEN & EXPERTISE</span>
       <span class="accordion-icon">▼</span>
     </button>
     <div class="accordion-content">
       <div class="accordion-body">
-        <h3>Expertise & Sicherheit</h3>
-        <p style="margin-top:12px;">Minimierung des operativen Risikos bei nahtloser Ausführung.</p>
-        <ul>
+        <h3 id="services-heading">Expertise & Sicherheit</h3>
+        <p style="margin-top:12px;" id="services-intro">Minimierung des operativen Risikos bei nahtloser Ausführung.</p>
+        <ul id="services-list">
           <li>Deal-Rescue & Compliance Review</li>
           <li>ICPO / LOI / BCL / SGS Verifikation</li>
           <li>NCNDA / IMFPA Schutz</li>
@@ -346,8 +345,8 @@ footer {
 
 <section id="docs">
   <div class="card">
-    <h2 style="font-family:'Playfair Display',serif; font-size:34px; color:var(--navy);">Deal-Rescue & Compliance</h2>
-    <p style="margin-top:10px; color:#333; font-weight:600;">Dokumente in 8 Sprachen – sofort verfügbar</p>
+    <h2 style="font-family:'Playfair Display',serif; font-size:34px; color:var(--navy);" id="docs-title">Deal-Rescue & Compliance</h2>
+    <p style="margin-top:10px; color:#333; font-weight:600;" id="docs-subtitle">Dokumente in 8 Sprachen – sofort verfügbar</p>
     <a href="./docs/de/RSK_Document_Package.html" id="main-docs-btn" style="display:inline-block; margin-top:18px; background:#0a1931; color:#c9a86a; border:1.5px solid #c9a86a; padding:12px 24px; border-radius:10px; font-weight:700; text-decoration:none;">📄 Dokumente öffnen</a>
   </div>
 </section>
@@ -360,26 +359,26 @@ footer {
     <hr style="border:none; border-top:1px solid var(--gold); margin:22px auto; width:180px; opacity:.6;">
   </div>
 
-  <h2 style="font-family:'Playfair Display', serif; font-size:44px; line-height:1.1; color:var(--navy); text-align:center;">
+  <h2 style="font-family:'Playfair Display', serif; font-size:44px; line-height:1.1; color:var(--navy); text-align:center;" id="rescue-heading">
     Deal-Rescue &<br><span style="color:var(--gold)">&</span> Compliance Review
   </h2>
 
   <form id="antragForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:36px; text-align:left;">
     <div style="text-align:center; background:#0a1931; padding:14px 10px; border-radius:10px; margin:10px 0 28px 0; border:1.5px solid var(--gold);">
-      <a href="./docs/de/RSK_Document_Package.html" style="color:#c9a86a; text-decoration:none; font-weight:700; font-size:14px; display:block;">📄 Download Compliance Dokumente in 8 Sprachen</a>
+      <a href="./docs/de/RSK_Document_Package.html" id="form-docs-link" style="color:#c9a86a; text-decoration:none; font-weight:700; font-size:14px; display:block;">📄 Download Compliance Dokumente in 8 Sprachen</a>
     </div>
 
-    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;">Name / Unternehmen *</label>
-    <input type="text" name="name" required placeholder="Ihr Name" class="form-input">
+    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;" id="lbl-name">Name / Unternehmen *</label>
+    <input type="text" name="name" id="input-name" required placeholder="Ihr Name" class="form-input">
 
-    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;">E-Mail *</label>
-    <input type="email" name="email" required placeholder="name@unternehmen.com" class="form-input">
+    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;" id="lbl-email">E-Mail *</label>
+    <input type="email" name="email" id="input-email" required placeholder="name@unternehmen.com" class="form-input">
 
-    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;">Problembeschreibung *</label>
-    <textarea name="message" required placeholder="Kurze Beschreibung..." rows="4" class="form-input" style="resize:none"></textarea>
+    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;" id="lbl-message">Problembeschreibung *</label>
+    <textarea name="message" id="input-message" required placeholder="Kurze Beschreibung..." rows="4" class="form-input" style="resize:none"></textarea>
 
     <div style="text-align:center; margin-top:26px;">
-      <button type="submit" style="background:#0a1931; color:var(--gold); border:1.5px solid var(--gold); padding:14px 34px; border-radius:10px; font-weight:700; cursor:pointer;">Anfrage absenden</button>
+      <button type="submit" id="btn-submit" style="background:#0a1931; color:var(--gold); border:1.5px solid var(--gold); padding:14px 34px; border-radius:10px; font-weight:700; cursor:pointer;">Anfrage absenden</button>
     </div>
   </form>
 </section>
@@ -387,59 +386,199 @@ footer {
 <footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
 
 <script>
-function toggleAccordion(button) {
-  button.classList.toggle("active");
-  const isExpanded = button.classList.contains("active");
-  button.setAttribute("aria-expanded", isExpanded);
-
-  const content = button.nextElementSibling;
-  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-    content.style.maxHeight = null;
-  } else {
-    content.style.maxHeight = content.scrollHeight + "px";
-  }
-}
-
-document.getElementById('langBtn').addEventListener('click', function(e) {
-  e.stopPropagation();
-  const menu = document.getElementById('lm');
-  menu.classList.toggle('open');
-  this.setAttribute('aria-expanded', menu.classList.contains('open'));
-});
-
-document.addEventListener('click', function() {
-  const menu = document.getElementById('lm');
-  menu.classList.remove('open');
-  document.getElementById('langBtn').setAttribute('aria-expanded', 'false');
-});
-
-function selectLanguage(event, lang) {
-  event.stopPropagation();
-  document.getElementById('lm').classList.remove('open');
-  document.getElementById('langBtn').setAttribute('aria-expanded', 'false');
-
-  const map = {
-    de: './docs/de/RSK_Document_Package.html',
-    en: './docs/en/RSK_Document_Package.html',
-    es: './docs/es/RSK_Document_Package.html',
-    fr: './docs/fr/RSK_Document_Package.html',
-    pt: './docs/pt/RSK_Document_Package.html',
-    ru: './docs/ru/RSK_Document_Package.html',
-    zh: './docs/zh/RSK_Document_Package.html',
-    ar: './docs/ar/RSK_Document_Package.html'
-  };
-
-  if (map[lang]) {
-    window.location.href = map[lang];
-  }
-}
-
-document.getElementById('antragForm').addEventListener('submit', function(e) {
-  // Wenn Formspree nutzt wird, passe die Action URL oben an.
-  // e.preventDefault(); // Für Formspree auskommentiert lassen
-});
-</script>
-
-</body>
-   </html>
- 
+const translations = {
+  de: {
+    label: "Deutsch",
+    navAbout: "ÜBER UNS",
+    navServices: "LEISTUNGEN & EXPERTISE",
+    navDocs: "DOKUMENTE",
+    navRescue: "DEAL-RESCUE",
+    aboutHeader: "ÜBER UNS",
+    aboutHeading: "Willkommen bei RSK Trust & Trade",
+    aboutText: "Im dynamischen Umfeld des globalen Commodity-Handels sind Vertrauen, Präzision und rechtliche Verlässlichkeit die Fundamente. <strong>RSK Trust & Trade</strong> agiert als Partner zwischen Produzenten, Abnehmern und Institutionen über LATAM, Europa, VAE und Asien.",
+    servicesHeader: "LEISTUNGEN & EXPERTISE",
+    servicesHeading: "Expertise & Sicherheit",
+    servicesIntro: "Minimierung des operativen Risikos bei nahtloser Ausführung.",
+    servicesList: [
+      "Deal-Rescue & Compliance Review",
+      "ICPO / LOI / BCL / SGS Verifikation",
+      "NCNDA / IMFPA Schutz",
+      "Sofortige Dokumentenprüfung in 8 Sprachen"
+    ],
+    docsTitle: "Deal-Rescue & Compliance",
+    docsSubtitle: "Dokumente in 8 Sprachen – sofort verfügbar",
+    openDocsBtn: "📄 Dokumente öffnen",
+    downloadDocsLink: "📄 Download Compliance Dokumente in 8 Sprachen",
+    lblName: "Name / Unternehmen *",
+    phName: "Ihr Name",
+    lblEmail: "E-Mail *",
+    phEmail: "name@unternehmen.com",
+    lblMessage: "Problembeschreibung *",
+    phMessage: "Kurze Beschreibung...",
+    btnSubmit: "Anfrage absenden"
+  },
+  en: {
+    label: "English",
+    navAbout: "ABOUT US",
+    navServices: "SERVICES & EXPERTISE",
+    navDocs: "DOCUMENTS",
+    navRescue: "DEAL-RESCUE",
+    aboutHeader: "ABOUT US",
+    aboutHeading: "Welcome to RSK Trust & Trade",
+    aboutText: "In the dynamic environment of global commodity trading, trust, precision, and legal reliability are the foundations. <strong>RSK Trust & Trade</strong> acts as a partner between producers, buyers, and institutions across LATAM, Europe, UAE, and Asia.",
+    servicesHeader: "SERVICES & EXPERTISE",
+    servicesHeading: "Expertise & Security",
+    servicesIntro: "Minimizing operational risk with seamless execution.",
+    servicesList: [
+      "Deal-Rescue & Compliance Review",
+      "ICPO / LOI / BCL / SGS Verification",
+      "NCNDA / IMFPA Protection",
+      "Instant document verification in 8 languages"
+    ],
+    docsTitle: "Deal-Rescue & Compliance",
+    docsSubtitle: "Documents in 8 languages – available immediately",
+    openDocsBtn: "📄 Open Documents",
+    downloadDocsLink: "📄 Download Compliance Documents in 8 Languages",
+    lblName: "Name / Company *",
+    phName: "Your name",
+    lblEmail: "Email *",
+    phEmail: "name@company.com",
+    lblMessage: "Problem Description *",
+    phMessage: "Short description...",
+    btnSubmit: "Send Inquiry"
+  },
+  es: {
+    label: "Español",
+    navAbout: "NOSOTROS",
+    navServices: "SERVICIOS Y EXPERIENCIA",
+    navDocs: "DOCUMENTOS",
+    navRescue: "DEAL-RESCUE",
+    aboutHeader: "NOSOTROS",
+    aboutHeading: "Bienvenido a RSK Trust & Trade",
+    aboutText: "En el dinámico entorno del comercio mundial de materias primas, la confianza, la precisión y la seguridad jurídica son los cimientos. <strong>RSK Trust & Trade</strong> actúa como socio entre productores, compradores e instituciones en LATAM, Europa, EAU y Asia.",
+    servicesHeader: "SERVICIOS Y EXPERIENCIA",
+    servicesHeading: "Experiencia y Seguridad",
+    servicesIntro: "Minimización del riesgo operativo con una ejecución fluida.",
+    servicesList: [
+      "Deal-Rescue y Revisión de Compliance",
+      "Verificación ICPO / LOI / BCL / SGS",
+      "Protección NCNDA / IMFPA",
+      "Verificación inmediata de documentos en 8 idiomas"
+    ],
+    docsTitle: "Deal-Rescue & Compliance",
+    docsSubtitle: "Documentos en 8 idiomas – disponibles de inmediato",
+    openDocsBtn: "📄 Abrir Documentos",
+    downloadDocsLink: "📄 Descargar Documentos de Compliance en 8 Idiomas",
+    lblName: "Nombre / Empresa *",
+    phName: "Su nombre",
+    lblEmail: "Correo electrónico *",
+    phEmail: "nombre@empresa.com",
+    lblMessage: "Descripción del Problema *",
+    phMessage: "Breve descripción...",
+    btnSubmit: "Enviar Solicitud"
+  },
+  fr: {
+    label: "Français",
+    navAbout: "À PROPOS DE NOUS",
+    navServices: "SERVICES ET EXPERTISE",
+    navDocs: "DOCUMENTS",
+    navRescue: "DEAL-RESCUE",
+    aboutHeader: "À PROPOS DE NOUS",
+    aboutHeading: "Bienvenue chez RSK Trust & Trade",
+    aboutText: "Dans le secteur dynamique du commerce mondial des matières premières, la confiance, la précision et la sécurité juridique sont fondamentales. <strong>RSK Trust & Trade</strong> intervient en tant que partenaire entre producteurs, acheteurs et institutions en LATAM, Europe, EAU et Asie.",
+    servicesHeader: "SERVICES ET EXPERTISE",
+    servicesHeading: "Expertise & Sécurité",
+    servicesIntro: "Minimisation des risques opérationnels avec une exécution fluide.",
+    servicesList: [
+      "Deal-Rescue & Examen de Conformité",
+      "Vérification ICPO / LOI / BCL / SGS",
+      "Protection NCNDA / IMFPA",
+      "Vérification immédiate des documents en 8 langues"
+    ],
+    docsTitle: "Deal-Rescue & Conformité",
+    docsSubtitle: "Documents en 8 langues – disponibles immédiatement",
+    openDocsBtn: "📄 Ouvrir les Documents",
+    downloadDocsLink: "📄 Télécharger les Documents de Conformité en 8 Langues",
+    lblName: "Nom / Entreprise *",
+    phName: "Votre nom",
+    lblEmail: "E-mail *",
+    phEmail: "nom@entreprise.com",
+    lblMessage: "Description du Problème *",
+    phMessage: "Courte description...",
+    btnSubmit: "Envoyer la Demande"
+  },
+  pt: {
+    label: "Português",
+    navAbout: "SOBRE NÓS",
+    navServices: "SERVIÇOS E EXPERIÊNCIA",
+    navDocs: "DOCUMENTOS",
+    navRescue: "DEAL-RESCUE",
+    aboutHeader: "SOBRE NÓS",
+    aboutHeading: "Bem-vindo à RSK Trust & Trade",
+    aboutText: "No ambiente dinâmico do comércio global de commodities, confiança, precisão e segurança jurídica são as bases. A <strong>RSK Trust & Trade</strong> atua como parceira entre produtores, compradores e instituições na América Latina, Europa, EAU e Ásia.",
+    servicesHeader: "SERVIÇOS E EXPERIÊNCIA",
+    servicesHeading: "Experiência e Segurança",
+    servicesIntro: "Minimização do risco operacional com execução perfeita.",
+    servicesList: [
+      "Deal-Rescue e Análise de Conformidade",
+      "Verificação ICPO / LOI / BCL / SGS",
+      "Proteção NCNDA / IMFPA",
+      "Verificação imediata de documentos em 8 idiomas"
+    ],
+    docsTitle: "Deal-Rescue & Compliance",
+    docsSubtitle: "Documentos em 8 idiomas – disponíveis imediatamente",
+    openDocsBtn: "📄 Abrir Documentos",
+    downloadDocsLink: "📄 Baixar Documentos de Conformidade em 8 Idiomas",
+    lblName: "Nome / Empresa *",
+    phName: "Seu nome",
+    lblEmail: "E-mail *",
+    phEmail: "nome@empresa.com",
+    lblMessage: "Descrição do Problema *",
+    phMessage: "Breve descrição...",
+    btnSubmit: "Enviar Solicitação"
+  },
+  ru: {
+    label: "Русский",
+    navAbout: "О НАС",
+    navServices: "УСЛУГИ И ЭКСПЕРТИЗА",
+    navDocs: "ДОКУМЕНТЫ",
+    navRescue: "DEAL-RESCUE",
+    aboutHeader: "О НАС",
+    aboutHeading: "Добро пожаловать в RSK Trust & Trade",
+    aboutText: "В динамичной среде мировой торговли сырьевыми товарами доверие, точность и юридическая надежность являются основой. <strong>RSK Trust & Trade</strong> выступает в качестве партнера между производителями, покупателями и институтами в LATAM, Европе, ОАЭ и Азии.",
+    servicesHeader: "УСЛУГИ И ЭКСПЕРТИЗА",
+    servicesHeading: "Экспертиза и Безопасность",
+    servicesIntro: "Минимизация операционных рисков при безупречном исполнении.",
+    servicesList: [
+      "Deal-Rescue и проверка соответствия (Compliance)",
+      "Проверка ICPO / LOI / BCL / SGS",
+      "Защита NCNDA / IMFPA",
+      "Мгновенная проверка документов на 8 языках"
+    ],
+    docsTitle: "Deal-Rescue & Compliance",
+    docsSubtitle: "Документы на 8 языках – доступны немедленно",
+    openDocsBtn: "📄 Открыть документы",
+    downloadDocsLink: "📄 Скачать документы по комплаенсу на 8 языках",
+    lblName: "Имя / Компания *",
+    phName: "Ваше имя",
+    lblEmail: "Электронная почта *",
+    phEmail: "name@company.com",
+    lblMessage: "Описание проблемы *",
+    phMessage: "Краткое описание...",
+    btnSubmit: "Отправить запрос"
+  },
+  zh: {
+    label: "中文",
+    navAbout: "关于我们",
+    navServices: "服务与专业知识",
+    navDocs: "文档",
+    navRescue: "交易救援",
+    aboutHeader: "关于我们",
+    aboutHeading: "欢迎来到 RSK Trust & Trade",
+    aboutText: "在全球商品交易的动态环境中，信任、精准和法律可靠性是基石。<strong>RSK Trust & Trade</strong> 担任拉丁美洲、欧洲、阿联酋和亚洲的生产商、买家和机构之间的合作伙伴。",
+    servicesHeader: "服务与专业知识",
+    servicesHeading: "专业知识与安全",
+    servicesIntro: "在无缝执行的同时最大程度地降低运营风险。",
+    servicesList: [
+      "交易救援与合规审查",
+      "ICPO / LO
