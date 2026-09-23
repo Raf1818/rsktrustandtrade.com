@@ -416,22 +416,24 @@ function selectLanguage(e, langCode) {
     if (e.stopPropagation) e.stopPropagation();
     if (e.preventDefault) e.preventDefault();
   }
-  const base = window.location.hostname.includes('github.io') ? '/rsktrustandtrade.com' : '';
+  
   const map = {
-    de: `${base}/docs/de/RSK_Document_Package.html`,
-    en: `${base}/docs/en/RSK_Document_Package.html`,
-    es: `${base}/docs/es/RSK_Document_Package.html`,
-    fr: `${base}/docs/fr/RSK_Document_Package.html`,
-    pt: `${base}/docs/pt/RSK_Document_Package.html`,
-    ru: `${base}/docs/ru/RSK_Document_Package.html`,
-    zh: `${base}/docs/zh/RSK_Document_Package.html`,
-    ar: `${base}/docs/ar/RSK_Document_Package.html`
+    de: './docs/de/RSK_Document_Package.html',
+    en: './docs/en/RSK_Document_Package.html',
+    es: './docs/es/RSK_Document_Package.html',
+    fr: './docs/fr/RSK_Document_Package.html',
+    pt: './docs/pt/RSK_Document_Package.html',
+    ru: './docs/ru/RSK_Document_Package.html',
+    zh: './docs/zh/RSK_Document_Package.html',
+    ar: './docs/ar/RSK_Document_Package.html'
   };
+
   langMenu.classList.remove('open');
   langBtn.setAttribute('aria-expanded', 'false');
+
   const targetUrl = map[langCode];
   if (targetUrl) {
-    window.location.assign(targetUrl);
+    window.location.href = targetUrl;
   } else {
     console.error('Sprach-Pfad nicht gefunden:', langCode);
   }
@@ -450,5 +452,5 @@ function toggleAccordion(header) {
 }
 </script>
 </body>
-                                                                                                                     </html>
-  
+  </html>
+      
