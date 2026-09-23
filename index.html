@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+ .      <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -6,72 +6,276 @@
 <title>RSK TRUST & TRADE</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
-:root { 
-  --navy: #0a1931; 
-  --gold: #c9a86a; 
-  --parch: #F5EFDE; 
-  --cream: #fdfaf3; 
-  --paper: #F8F4E8; 
-  --paper-dark: #F2EAD6; 
-  --border-gold: #D9C398; 
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
-body::before { 
-  content: ""; 
-  position: fixed; 
-  inset: 0; 
-  background-image: url('./IMG-20260918-WA8261.jpg'); 
-  background-position: center 45%; 
-  background-repeat: no-repeat; 
-  background-size: 75% auto; 
-  opacity: 0.13; 
-  pointer-events: none; 
-  z-index: 0; 
-}
-header { 
-  display: flex; 
-  align-items: center; 
-  padding: 10px 18px; 
-  background: rgba(245, 239, 222, 0.92); 
-  backdrop-filter: blur(6px); 
-  border-bottom: 1.5px solid var(--gold); 
-  position: sticky; 
-  top: 0; 
-  z-index: 1000; 
-}
-.logo-small { width: 78px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; }
-.brand { margin-left: 14px; z-index: 3; }
-.brand h1 { font-family: 'Playfair Display', serif; font-size: 22px; letter-spacing: 4px; color: var(--navy); line-height: 1; }
-.brand h2 { font-size: 8px; letter-spacing: 1.5px; color: var(--gold); margin-top: 4px; max-width: 260px; line-height: 1.2; font-weight: 700; }
-.lang { margin-left: auto; position: relative; z-index: 10000; }
-.lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 13px; }
-.lang-menu { display: none; position: absolute; right: 0; top: 46px; background: #fff; border: 1.5px solid var(--gold); width: 230px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,.25); z-index: 99999 !important; overflow: hidden; }
-.lang-menu.open { display: block; }
-.lang-menu div { padding: 13px 14px; cursor: pointer; font-size: 14px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 10px; color: #111; background: #fff; }
-.lang-menu div:hover { background: var(--parch); color: var(--navy); }
-nav { display: flex; justify-content: center; gap: 28px; padding: 13px; border-bottom: 1px solid rgba(201,168,106,.3); position: relative; z-index: 2; background: var(--parch); }
-nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1.2px; font-weight: 700; }
 
-/* PERGAMENT AKKORDEON - ANGEPASSTE HINTERGRUNDFARBE */
-.paper-card { background-color: var(--paper); border: 1px solid var(--border-gold); border-radius: 6px; box-shadow: 0px 4px 12px rgba(0,0,0,0.05); margin: 15px auto; overflow: hidden; font-family: 'Times New Roman', Times, serif; max-width: 1100px; position: relative; z-index: 1; }
-.accordion-header { width: 100%; background: var(--paper-dark); border: none; border-bottom: 1px solid var(--border-gold); padding: 16px 20px; font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; color: #1A1A1A; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background-color 0.3s ease; font-family: 'Playfair Display', serif; }
-.accordion-header:hover { background-color: #EADCB9; }
-.accordion-icon { font-size: 0.8rem; color: #8C733E; transition: transform 0.3s ease; }
-.accordion-header.active .accordion-icon { transform: rotate(180deg); }
-.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1); background-color: var(--paper); color: #2B2B2B; line-height: 1.7; }
-.accordion-body { padding: 20px; font-family: 'Inter', sans-serif; background-color: var(--paper); }
-.accordion-body h3 { margin-top: 0; color: #000; font-size: 1.2rem; border-bottom: 1px solid #E0D4B8; padding-bottom: 8px; font-family: 'Playfair Display', serif; }
-.accordion-body ul { padding-left: 20px; margin: 15px 0 0 0; }
-.accordion-body li { margin-bottom: 8px; font-size: 14px; }
+:root {
+  --navy: #0a1931;
+  --gold: #c9a86a;
+  --parch: #F5EFDE;
+  --cream: #fdfaf3;
+  --paper: #F8F4E8;
+  --paper-dark: #F2EAD6;
+  --border-gold: #D9C398;
+}
 
-.card { max-width: 850px; margin: 60px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 34px; text-align: center; box-shadow: 0 12px 40px rgba(201,168,106,.2); position: relative; z-index: 1; }
-footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201,168,106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; letter-spacing: 1px; }
-.form-input { width: 100%; padding: 14px 12px; border: 1.5px solid #0a1931; border-radius: 10px; font-size: 14px; margin-top: 6px; }
-@media(max-width: 700px) { 
-  .brand h1 { font-size: 17px; } 
-  .brand h2 { font-size: 7px; max-width: 150px; } 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--parch);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('./IMG-20260918-WA8261.jpg');
+  background-position: center 45%;
+  background-repeat: no-repeat;
+  background-size: 75% auto;
+  opacity: 0.13;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: rgba(245, 239, 222, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1.5px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-small {
+  width: 78px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.brand {
+  margin-left: 14px;
+  z-index: 3;
+}
+
+.brand h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.brand h2 {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  margin-top: 4px;
+  max-width: 260px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.lang {
+  margin-left: auto;
+  position: relative;
+  z-index: 10000;
+}
+
+.lang-btn {
+  border: 1.5px solid var(--gold);
+  background: var(--cream);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 46px;
+  background: #fff;
+  border: 1.5px solid var(--gold);
+  width: 230px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  z-index: 99999 !important;
+  overflow: hidden;
+}
+
+.lang-menu.open {
+  display: block;
+}
+
+.lang-menu div {
+  padding: 13px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f0e6d3;
+  display: flex;
+  gap: 10px;
+  color: #111;
+  background: #fff;
+}
+
+.lang-menu div:hover {
+  background: var(--parch);
+  color: var(--navy);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 13px;
+  border-bottom: 1px solid rgba(201, 168, 106, 0.3);
+  position: relative;
+  z-index: 2;
+  background: var(--parch);
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+.paper-card {
+  background-color: var(--paper);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 15px auto;
+  overflow: hidden;
+  max-width: 1100px;
+  position: relative;
+  z-index: 1;
+}
+
+.accordion-header {
+  width: 100%;
+  background: var(--paper-dark);
+  border: none;
+  border-bottom: 1px solid var(--border-gold);
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1A1A1A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Playfair Display', serif;
+}
+
+.accordion-header:hover {
+  background-color: #EADCB9;
+}
+
+.accordion-icon {
+  font-size: 0.8rem;
+  color: #8C733E;
+  transition: transform 0.3s ease;
+}
+
+/* FIX: Leerzeichen zwischen .active und .accordion-icon */
+.accordion-header.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  background-color: var(--paper);
+  color: #2B2B2B;
+  line-height: 1.7;
+}
+
+.accordion-body {
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--paper);
+}
+
+.accordion-body h3 {
+  margin-top: 0;
+  color: #000;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #E0D4B8;
+  padding-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.accordion-body ul {
+  padding-left: 20px;
+  margin: 15px 0 0 0;
+}
+
+.accordion-body li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.card {
+  max-width: 850px;
+  margin: 60px auto;
+  background: var(--cream);
+  border: 1.5px solid var(--gold);
+  border-radius: 18px;
+  padding: 34px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(201, 168, 106, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 26px;
+  font-size: 11px;
+  border-top: 1px solid rgba(201, 168, 106, 0.4);
+  margin-top: 50px;
+  color: #666;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1.5px solid #0a1931;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 6px;
+  font-family: inherit;
+}
+
+@media(max-width: 700px) {
+  .brand h1 { font-size: 17px; }
+  .brand h2 { font-size: 7px; max-width: 150px; }
   nav { gap: 14px; }
 }
 </style>
@@ -85,66 +289,55 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
     <h2 id="sub-title">INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA</h2>
   </div>
   <div class="lang">
-    <button class="lang-btn" id="langBtn">🌐 <span id="langLabel">Sprache</span> ▼</button>
+    <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">🌐 <span id="langLabel">Sprache</span> ▼</button>
     <div class="lang-menu" id="lm">
-      <div onclick="selectLanguage(event,'en')">🇬🇧 English</div>
-      <div onclick="selectLanguage(event,'es')">🇪🇸 Español</div>
-      <div onclick="selectLanguage(event,'de')">🇩🇪 Deutsch</div>
-      <div onclick="selectLanguage(event,'fr')">🇫🇷 Français</div>
-      <div onclick="selectLanguage(event,'pt')">🇧🇷 Português</div>
-      <div onclick="selectLanguage(event,'ru')">🇷🇺 Русский</div>
-      <div onclick="selectLanguage(event,'zh')">🇨🇳 中文</div>
-      <div onclick="selectLanguage(event,'ar')">🇸🇦 العربية</div>
+      <div onclick="selectLanguage(event, 'en')">🇬🇧 English</div>
+      <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
+      <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
+      <div onclick="selectLanguage(event, 'fr')">🇫🇷 Français</div>
+      <div onclick="selectLanguage(event, 'pt')">🇧🇷 Português</div>
+      <div onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</div>
+      <div onclick="selectLanguage(event, 'zh')">🇨🇳 中文</div>
+      <div onclick="selectLanguage(event, 'ar')">🇸🇦 العربية</div>
     </div>
   </div>
 </header>
 
 <nav>
-  <a href="#about" id="nav-about">ÜBER UNS</a>
-  <a href="#services" id="nav-services">LEISTUNGEN</a>
-  <a href="#docs" id="nav-docs">DOKUMENTE</a>
-  <a href="#deal-rescue" id="nav-rescue">DEAL-RESCUE</a>
+  <a href="#about">ÜBER UNS</a>
+  <a href="#services">LEISTUNGEN</a>
+  <a href="#docs">DOKUMENTE</a>
+  <a href="#deal-rescue">DEAL-RESCUE</a>
 </nav>
 
-<!-- PERGAMENT AKKORDEON -->
-<div id="about" style="max-width:1100px;margin:30px auto;padding:0 18px;position:relative;z-index:1">
+<div id="about" style="max-width:1100px; margin:30px auto; padding:0 18px; position:relative; z-index:1;">
   <div class="paper-card">
-    <button class="accordion-header" onclick="toggleAccordion(this)">
-      <span id="acc1-title">ÜBER UNS</span>
+    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+      <span>ÜBER UNS</span>
       <span class="accordion-icon">▼</span>
     </button>
     <div class="accordion-content">
       <div class="accordion-body">
-        <h3 id="acc1-h">Willkommen bei RSK Trust & Trade</h3>
-        <p id="acc1-p" style="margin-top:12px">
-          Im dynamischen und komplexen Umfeld des globalen Commodity-Handels sind Vertrauen, Präzision und rechtliche Verlässlichkeit die Fundamente erfolgreicher Transaktionen. <strong>RSK Trust & Trade</strong> agiert als spezialisierter Partner und Brückenbauer zwischen internationalen Produzenten, industriellen Abnehmern und institutionellen Akteuren über die Regionen LATAM, Europa, VAE und Asien hinweg.
-        </p>
-        <ul>
-          <li id="li1"><strong>Integrität & Diskretion:</strong> Höchste Compliance-Standards für private und staatliche Käufer.</li>
-          <li id="li2"><strong>Transaktionssicherheit:</strong> Lückenlose Dokumentation und Absicherung (NCNDA, IMFPA, LOI, ICPO, SCO).</li>
-          <li id="li3"><strong>Rohstoff-Expertise:</strong> Industrielle Energieträger (wie Kesselkohle und Erdölkoks) mit strengen Qualitätsprüfungen.</li>
-          <li id="li4"><strong>Multilingual:</strong> Dokumente und Betreuung direkt in 8 Sprachen.</li>
-        </ul>
+        <h3>Willkommen bei RSK Trust & Trade</h3>
+        <p style="margin-top:12px;">Im dynamischen Umfeld des globalen Commodity-Handels sind Vertrauen, Präzision und rechtliche Verlässlichkeit die Fundamente. <strong>RSK Trust & Trade</strong> agiert als Partner zwischen Produzenten, Abnehmern und Institutionen über LATAM, Europa, VAE und Asien.</p>
       </div>
     </div>
   </div>
 
   <div class="paper-card" id="services">
-    <button class="accordion-header" onclick="toggleAccordion(this)">
-      <span id="acc2-title">LEISTUNGEN & EXPERTISE</span>
+    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+      <span>LEISTUNGEN & EXPERTISE</span>
       <span class="accordion-icon">▼</span>
     </button>
     <div class="accordion-content">
       <div class="accordion-body">
-        <h3 id="acc2-h">Expertise & Sicherheit</h3>
-        <p id="acc2-p" style="margin-top:12px">
-          Minimierung des operativen Risikos bei nahtloser Ausführung. Diskrete Compliance für souveräne Käufer und Institutionen.
-        </p>
+        <h3>Expertise & Sicherheit</h3>
+        <p style="margin-top:12px;">Minimierung des operativen Risikos bei nahtloser Ausführung.</p>
         <ul>
-          <li id="s1">Deal-Rescue & Compliance Review</li>
-          <li id="s2">ICPO / LOI / BCL / SGS Verifikation</li>
-          <li id="s3">NCNDA / IMFPA Schutz</li>
-          <li id="s4">Sofortige Dokumentenprüfung in 8 Sprachen</li>
+          <li>Deal-Rescue & Compliance Review</li>
+          <li>ICPO / LOI / BCL / SGS Verifikation</li>
+          <li>NCNDA / IMFPA Schutz</li>
+          <li>Sofortige Dokumentenprüfung in 8 Sprachen</li>
         </ul>
       </div>
     </div>
@@ -153,157 +346,100 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 
 <section id="docs">
   <div class="card">
-    <h2 style="font-family:'Playfair Display',serif;font-size:34px;color:var(--navy)" id="docs-title">Deal-Rescue & Compliance</h2>
-    <p style="margin-top:10px;color:#333;font-weight:600" id="docs-sub">Dokumente in 8 Sprachen - sofort verfügbar</p>
-    <p style="margin-top:6px;font-size:11px;color:#666;letter-spacing:1px">ICC 619 • ICPO Only • Confidential • #F5EFDE Pergament-Look</p>
-    <p style="margin-top:16px;font-size:11px;color:#888">info@rsktrustandtrade.com</p>
+    <h2 style="font-family:'Playfair Display',serif; font-size:34px; color:var(--navy);">Deal-Rescue & Compliance</h2>
+    <p style="margin-top:10px; color:#333; font-weight:600;">Dokumente in 8 Sprachen – sofort verfügbar</p>
+    <a href="./docs/de/RSK_Document_Package.html" id="main-docs-btn" style="display:inline-block; margin-top:18px; background:#0a1931; color:#c9a86a; border:1.5px solid #c9a86a; padding:12px 24px; border-radius:10px; font-weight:700; text-decoration:none;">📄 Dokumente öffnen</a>
   </div>
 </section>
 
-<section id="deal-rescue" style="max-width:850px;margin:80px auto;padding:50px 36px;background:var(--cream);border:1.5px solid var(--gold);border-radius:22px;box-shadow:0 18px 50px rgba(201,168,106,.18);position:relative;z-index:1">
-  <div style="text-align:center;margin-bottom:28px">
-    <img src="./IMG-20260918-WA8261.jpg" style="width:92px;height:auto;mix-blend-mode:multiply;background:var(--cream)" alt="RSK">
-    <div style="font-family:'Playfair Display';font-size:34px;letter-spacing:6px;color:var(--navy);font-weight:900;margin-top:8px">RSK</div>
-    <div style="font-size:12px;letter-spacing:5px;color:var(--gold);margin-top:2px">TRUST & TRADE</div>
-    <hr style="border:none;border-top:1px solid var(--gold);margin:22px auto;width:180px;opacity:.6">
+<section id="deal-rescue" style="max-width:850px; margin:80px auto; padding:50px 36px; background:var(--cream); border:1.5px solid var(--gold); border-radius:22px; box-shadow:0 18px 50px rgba(201,168,106,.18); position:relative; z-index:1;">
+  <div style="text-align:center; margin-bottom:28px;">
+    <img src="./IMG-20260918-WA8261.jpg" style="width:92px; height:auto; mix-blend-mode:multiply; background:var(--cream);" alt="RSK Logo">
+    <div style="font-family:'Playfair Display', serif; font-size:34px; letter-spacing:6px; color:var(--navy); font-weight:900; margin-top:8px;">RSK</div>
+    <div style="font-size:12px; letter-spacing:5px; color:var(--gold); margin-top:2px;">TRUST & TRADE</div>
+    <hr style="border:none; border-top:1px solid var(--gold); margin:22px auto; width:180px; opacity:.6;">
   </div>
-  <h2 style="font-family:'Playfair Display';font-size:44px;line-height:1.1;color:var(--navy);text-align:center">Deal-Rescue &<br><span style="color:var(--gold)">&</span> Compliance Review</h2>
-  <p style="text-align:center;font-style:italic;font-size:18px;color:var(--navy);margin-top:18px;line-height:1.4">RSK – Your Silent Partner in High-Stakes Commodity Deals.</p>
-  <div style="text-align:center;margin:22px 0;color:var(--gold)">— ◆ —</div>
-  <form id="antragForm" style="margin-top:36px;text-align:left">
-    <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:10px 0 28px 0;border:1.5px solid var(--gold)">
-      <a href="./docs/" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:14px;display:block" id="dl-link">📄 Download Compliance Dokumente in 8 Sprachen</a>
+
+  <h2 style="font-family:'Playfair Display', serif; font-size:44px; line-height:1.1; color:var(--navy); text-align:center;">
+    Deal-Rescue &<br><span style="color:var(--gold)">&</span> Compliance Review
+  </h2>
+
+  <form id="antragForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:36px; text-align:left;">
+    <div style="text-align:center; background:#0a1931; padding:14px 10px; border-radius:10px; margin:10px 0 28px 0; border:1.5px solid var(--gold);">
+      <a href="./docs/de/RSK_Document_Package.html" style="color:#c9a86a; text-decoration:none; font-weight:700; font-size:14px; display:block;">📄 Download Compliance Dokumente in 8 Sprachen</a>
     </div>
-    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-name">Name / Unternehmen *</label>
-    <input type="text" id="name" required placeholder="Ihr Name" class="form-input">
-    
-    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-tel">Telefon *</label>
-    <input type="tel" id="tel" required placeholder="+49 123 456789" class="form-input">
-    
-    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-email">Ihre E-Mail *</label>
-    <input type="email" id="email" required placeholder="name@unternehmen.com" class="form-input">
-    
-    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-betrag">Deal-Volumen / Betrag</label>
-    <input type="text" id="betrag" placeholder="z. B. 50.000 MT / USD $2.000.000" class="form-input">
-    
-    <label style="font-size:14px;font-weight:700;display:block;margin-top:18px" id="lbl-msg">Problembeschreibung *</label>
-    <textarea id="msg" required placeholder="Kurze Beschreibung..." rows="4" class="form-input" style="resize:none"></textarea>
-    
-    <div style="text-align:center;margin-top:26px">
-      <button type="submit" id="btn-submit" style="background:#0a1931;color:var(--gold);border:1.5px solid var(--gold);padding:14px 34px;border-radius:10px;font-weight:700;letter-spacing:1px;cursor:pointer;font-size:15px">Anfrage absenden</button>
+
+    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;">Name / Unternehmen *</label>
+    <input type="text" name="name" required placeholder="Ihr Name" class="form-input">
+
+    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;">E-Mail *</label>
+    <input type="email" name="email" required placeholder="name@unternehmen.com" class="form-input">
+
+    <label style="font-size:14px; font-weight:700; display:block; margin-top:18px;">Problembeschreibung *</label>
+    <textarea name="message" required placeholder="Kurze Beschreibung..." rows="4" class="form-input" style="resize:none"></textarea>
+
+    <div style="text-align:center; margin-top:26px;">
+      <button type="submit" style="background:#0a1931; color:var(--gold); border:1.5px solid var(--gold); padding:14px 34px; border-radius:10px; font-weight:700; cursor:pointer;">Anfrage absenden</button>
     </div>
-    <p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="form-foot">Diskret • Vertraulich • Professionell</p>
   </form>
 </section>
 
-<footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL • WhatsApp +57 313 8734968 • Pergament #F5EFDE</footer>
+<footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
 
 <script>
-function toggleAccordion(button){
+function toggleAccordion(button) {
   button.classList.toggle("active");
+  const isExpanded = button.classList.contains("active");
+  button.setAttribute("aria-expanded", isExpanded);
+
   const content = button.nextElementSibling;
-  if(content.style.maxHeight && content.style.maxHeight !== "0px"){
+  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
     content.style.maxHeight = null;
   } else {
     content.style.maxHeight = content.scrollHeight + "px";
   }
 }
 
-const T = {
-  de: {
-    sub: "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN",
-    acc1: "ÜBER UNS",
-    acc1h: "Willkommen bei RSK Trust & Trade",
-    acc1p: "Im dynamischen und komplexen Umfeld des globalen Commodity-Handels sind Vertrauen, Präzision und rechtliche Verlässlichkeit die Fundamente erfolgreicher Transaktionen.",
-    li1: "<strong>Integrität & Diskretion:</strong> Höchste Compliance-Standards für private und staatliche Käufer.",
-    li2: "<strong>Transaktionssicherheit:</strong> Lückenlose Dokumentation und Absicherung (NCNDA, IMFPA, LOI, ICPO, SCO).",
-    li3: "<strong>Rohstoff-Expertise:</strong> Industrielle Energieträger mit strengen Qualitätsprüfungen.",
-    li4: "<strong>Multilingual:</strong> Dokumente und Betreuung direkt in 8 Sprachen.",
-    acc2: "LEISTUNGEN & EXPERTISE",
-    acc2h: "Expertise & Sicherheit",
-    acc2p: "Minimierung des operativen Risikos bei nahtloser Ausführung. Diskrete Compliance für souveräne Käufer und Institutionen.",
-    s1: "Deal-Rescue & Compliance Review", s2: "ICPO / LOI / BCL / SGS Verifikation", s3: "NCNDA / IMFPA Schutz", s4: "Sofortige Dokumentenprüfung in 8 Sprachen"
-  },
-  en: {
-    sub: "INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA",
-    acc1: "ABOUT US",
-    acc1h: "Welcome to RSK Trust & Trade",
-    acc1p: "In the dynamic and complex environment of global commodity trading, trust, precision, and legal reliability are the foundations of successful transactions.",
-    li1: "<strong>Integrity & Discretion:</strong> Highest compliance standards for private and sovereign buyers.",
-    li2: "<strong>Transaction Security:</strong> Complete documentation and protection (NCNDA, IMFPA, LOI, ICPO, SCO).",
-    li3: "<strong>Commodity Expertise:</strong> Industrial energy products with strict quality checks.",
-    li4: "<strong>Multilingual:</strong> Documents and support available directly in 8 languages.",
-    acc2: "SERVICES & EXPERTISE",
-    acc2h: "Expertise & Security",
-    acc2p: "Minimizing operational risk with seamless execution. Discrete compliance for sovereign buyers and institutions.",
-    s1: "Deal-Rescue & Compliance Review", s2: "ICPO / LOI / BCL / SGS Verification", s3: "NCNDA / IMFPA Protection", s4: "Instant Document Review in 8 Languages"
-  },
-  es: {
-    sub: "COMMODITIES INTERNACIONALES • LATAM • EUROPA • EAU • ASIA",
-    acc1: "SOBRE NOSOTROS",
-    acc1h: "Bienvenido a RSK Trust & Trade",
-    acc1p: "En el entorno dinámico del comercio internacional de materias primas, la confianza, la precisión y la seguridad jurídica son fundamentales.",
-    li1: "<strong>Integridad y Discreción:</strong> Los más altos estándares de cumplimiento para compradores privados y soberanos.",
-    li2: "<strong>Seguridad Transaccional:</strong> Documentación y protección completa (NCNDA, IMFPA, LOI, ICPO, SCO).",
-    li3: "<strong>Experiencia en Materias Primas:</strong> Productos energéticos industriales con estrictos controles de calidad.",
-    li4: "<strong>Multilingüe:</strong> Documentos y atención directa en 8 idiomas.",
-    acc2: "SERVICIOS Y EXPERIENCIA",
-    acc2h: "Experiencia y Seguridad",
-    acc2p: "Minimización del riesgo operativo con una ejecución fluida. Cumplimiento discreto para compradores soberanos e instituciones.",
-    s1: "Rescate de Acuerdos y Revisión de Cumplimiento", s2: "Verificación ICPO / LOI / BCL / SGS", s3: "Protección NCNDA / IMFPA", s4: "Revisión inmediata de documentos en 8 idiomas"
-  },
-  fr: {
-    sub: "MATIÈRES PREMIÈRES INTERNATIONALES • LATAM • EUROPE • EAU • ASIE",
-    acc1: "À PROPOS DE NOUS",
-    acc1h: "Bienvenue chez RSK Trust & Trade",
-    acc1p: "Dans l'environnement dynamique du commerce mondial des matières premières, la confiance, la précision et la sécurité juridique sont essentielles.",
-    li1: "<strong>Intégrité et Discrétion:</strong> Les normes de conformité les plus élevées pour les acheteurs privés et étatiques.",
-    li2: "<strong>Sécurité des Transactions:</strong> Documentation complète et protection (NCNDA, IMFPA, LOI, ICPO, SCO).",
-    li3: "<strong>Expertise des Produits:</strong> Énergies industrielles avec contrôles de qualité stricts.",
-    li4: "<strong>Multilingue:</strong> Documents et assistance directement en 8 langues.",
-    acc2: "SERVICES ET EXPERTISE",
-    acc2h: "Expertise et Sécurité",
-    acc2p: "Minimisation du risque opérationnel avec une exécution fluide. Conformité discrète pour les acheteurs institutionnels.",
-    s1: "Sauvetage de Transactions & Conformité", s2: "Vérification ICPO / LOI / BCL / SGS", s3: "Protection NCNDA / IMFPA", s4: "Examen immédiat des documents en 8 langues"
-  },
-  pt: {
-    sub: "COMMODITIES INTERNACIONAIS • LATAM • EUROPA • EAU • ÁSIA",
-    acc1: "SOBRE NÓS",
-    acc1h: "Bem-vindo à RSK Trust & Trade",
-    acc1p: "No ambiente dinâmico do comércio global de commodities, confiança, precisão e segurança jurídica são fundamentais.",
-    li1: "<strong>Integridade e Discrição:</strong> Altos padrões de conformidade para compradores privados e governamentais.",
-    li2: "<strong>Segurança Transacional:</strong> Documentação completa e proteção (NCNDA, IMFPA, LOI, ICPO, SCO).",
-    li3: "<strong>Expertise em Commodities:</strong> Recursos energéticos industriais com rigoroso controle de qualidade.",
-    li4: "<strong>Multilíngue:</strong> Documentos e suporte direto em 8 idiomas.",
-    acc2: "SERVIÇOS E EXPERIÊNCIA",
-    acc2h: "Experiência e Segurança",
-    acc2p: "Minimização do risco operacional com execução contínua. Conformidade discreta para compradores institucionais.",
-    s1: "Resgate de Acordos e Conformidade", s2: "Verificação ICPO / LOI / BCL / SGS", s3: "Proteção NCNDA / IMFPA", s4: "Análise imediata de documentos em 8 idiomas"
-  },
-  ru: {
-    sub: "МЕЖДУНАРОДНЫЕ ТОВАРЫ • ЛАТАМ • ЕВРОПА • ОАЭ • АЗИЯ",
-    acc1: "О НАС",
-    acc1h: "Добро пожаловать в RSK Trust & Trade",
-    acc1p: "В динамичном мире мировой торговли сырьевыми товарами доверие, точность и юридическая надежность являются основой успеха.",
-    li1: "<strong>Честность и Конфиденциальность:</strong> Высочайшие стандарты комплаенса для частных и государственных покупателей.",
-    li2: "<strong>Безопасность Сделок:</strong> Полная документация и защита (NCNDA, IMFPA, LOI, ICPO, SCO).",
-    li3: "<strong>Экспертиза в Сырье:</strong> Промышленные энергоносители со строгим контролем качества.",
-    li4: "<strong>Многоязычность:</strong> Документы и поддержка непосредственно на 8 языках.",
-    acc2: "УСЛУГИ И ЭКСПЕРТИЗА",
-    acc2h: "Экспертиза и Безопасность",
-    acc2p: "Минимизация операционных рисков при безупречном исполнении. Конфиденциальный комплаенс.",
-    s1: "Спасение Сделок и Комплаенс", s2: "Проверка ICPO / LOI / BCL / SGS", s3: "Защита NCNDA / IMFPA", s4: "Мгновенная проверка документов на 8 языках"
-  },
-  zh: {
-    sub: "国际大宗商品与贸易 • 拉美 • 欧洲 • 阿联酋 • 亚洲",
-    acc1: "关于我们",
-    acc1h: "欢迎来到 RSK Trust & Trade",
-    acc1p: "在全球大宗商品交易的动态环境中，信任、精准和法律可靠性是成功交易的基石。",
-    li1: "<strong>诚信与保密：</strong> 为私人和政府买家提供最高合规标准。",
-    li2: "<strong>交易安全：</strong> 完整的法律文件与保障 (NCNDA, IMFPA, LOI, ICPO, SCO)。",
-    li3: "<strong>商品专业知识：</strong> 经过严格质量检测的工业能源产品。",
-    li4: "<strong>多语言支持：</strong> 直接提供 8 种语言的文件和客户支持。",
-    acc2: "服务与专业知识",
-    acc2h: "专业与安全",
-    acc2p: "在无缝执行的同时最大程度降低操作风险。为主权买家和机构提供保密合规服务。",
-    s1: "交易救援与合规审查", s2: "ICPO / LOI / BCL / SGS 验证", s3: "NCNDA 
+document.getElementById('langBtn').addEventListener('click', function(e) {
+  e.stopPropagation();
+  const menu = document.getElementById('lm');
+  menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', menu.classList.contains('open'));
+});
+
+document.addEventListener('click', function() {
+  const menu = document.getElementById('lm');
+  menu.classList.remove('open');
+  document.getElementById('langBtn').setAttribute('aria-expanded', 'false');
+});
+
+function selectLanguage(event, lang) {
+  event.stopPropagation();
+  document.getElementById('lm').classList.remove('open');
+  document.getElementById('langBtn').setAttribute('aria-expanded', 'false');
+
+  const map = {
+    de: './docs/de/RSK_Document_Package.html',
+    en: './docs/en/RSK_Document_Package.html',
+    es: './docs/es/RSK_Document_Package.html',
+    fr: './docs/fr/RSK_Document_Package.html',
+    pt: './docs/pt/RSK_Document_Package.html',
+    ru: './docs/ru/RSK_Document_Package.html',
+    zh: './docs/zh/RSK_Document_Package.html',
+    ar: './docs/ar/RSK_Document_Package.html'
+  };
+
+  if (map[lang]) {
+    window.location.href = map[lang];
+  }
+}
+
+document.getElementById('antragForm').addEventListener('submit', function(e) {
+  // Wenn Formspree nutzt wird, passe die Action URL oben an.
+  // e.preventDefault(); // Für Formspree auskommentiert lassen
+});
+</script>
+
+</body>
+   </html>
+ 
