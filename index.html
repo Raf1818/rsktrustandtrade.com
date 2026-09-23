@@ -124,19 +124,7 @@ header {
   display: block;
 }
 
-.lang-menu div {
-  padding: 13px 14px;
-  cursor: pointer;
-  font-size: 14px;
-  border-bottom: 1px solid #f0e6d3;
-  display: flex;
-  gap: 10px;
-  color: #111;
-  background: #fff;
-}
-
-.
-}.lang-menu button {
+.lang-menu button {
   width: 100%;
   text-align: left;
   background: transparent;
@@ -159,10 +147,6 @@ header {
   background: var(--parch);
   color: var(--navy);
 }
-  
-.lang
-}
-
 
 nav {
   display: flex;
@@ -314,14 +298,14 @@ footer {
   <div class="lang">
     <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">🌐 <span id="langLabel">Deutsch</span> ▼</button>
     <div class="lang-menu" id="lm">
-      <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
-      <div onclick="selectLanguage(event, 'en')">🇬🇧 English</div>
-      <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
-      <div onclick="selectLanguage(event, 'fr')">🇫🇷 Français</div>
-      <div onclick="selectLanguage(event, 'pt')">🇧🇷 Português</div>
-      <div onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</div>
-      <div onclick="selectLanguage(event, 'zh')">🇨🇳 中文</div>
-      <div onclick="selectLanguage(event, 'ar')">🇸🇦 العربية</div>
+      <button type="button" onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</button>
+      <button type="button" onclick="selectLanguage(event, 'en')">🇬🇧 English</button>
+      <button type="button" onclick="selectLanguage(event, 'es')">🇪🇸 Español</button>
+      <button type="button" onclick="selectLanguage(event, 'fr')">🇫🇷 Français</button>
+      <button type="button" onclick="selectLanguage(event, 'pt')">🇧🇷 Português</button>
+      <button type="button" onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</button>
+      <button type="button" onclick="selectLanguage(event, 'zh')">🇨🇳 中文</button>
+      <button type="button" onclick="selectLanguage(event, 'ar')">🇸🇦 العربية</button>
     </div>
   </div>
 </header>
@@ -414,36 +398,42 @@ const langBtn = document.getElementById('langBtn');
 const langMenu = document.getElementById('lm');
 
 langBtn.addEventListener('click', function(e) {
-  if(e && e.stopPropagation) e.stopPropagation();
+  e.stopPropagation();
   const isOpen = langMenu.classList.contains('open');
   langMenu.classList.toggle('open');
-  langBtn.setAttribute('aria-expanded',!isOpen);
+  langBtn.setAttribute('aria-expanded', !isOpen);
 });
 
 document.addEventListener('click', function(e) {
-  if (!langMenu.contains(e.target) &&!langBtn.contains(e.target)) {
+  if (langMenu && !langMenu.contains(e.target) && !langBtn.contains(e.target)) {
     langMenu.classList.remove('open');
     langBtn.setAttribute('aria-expanded', 'false');
   }
 });
 
 function selectLanguage(e, langCode) {
-  if (e && e.preventDefault) e.preventDefault();
-  if (e && e.stopPropagation) e.stopPropagation();
+  if (e) {
+    if (e.stopPropagation) e.stopPropagation();
+    if (e.preventDefault) e.preventDefault();
+  }
+  const base = window.location.hostname.includes('github.io') ? '/rsktrustandtrade.com' : '';
   const map = {
-    de: './docs/de/RSK_Document_Package.html',
-    en: './docs/en/RSK_Document_Package.html',
-    es: './docs/es/RSK_Document_Package.html',
-    fr: './docs/fr/RSK_Document_Package.html',
-    pt: './docs/pt/RSK_Document_Package.html',
-    ru: './docs/ru/RSK_Document_Package.html',
-    zh: './docs/zh/RSK_Document_Package.html',
-    ar: './docs/ar/RSK_Document_Package.html'
+    de: `${base}/docs/de/RSK_Document_Package.html`,
+    en: `${base}/docs/en/RSK_Document_Package.html`,
+    es: `${base}/docs/es/RSK_Document_Package.html`,
+    fr: `${base}/docs/fr/RSK_Document_Package.html`,
+    pt: `${base}/docs/pt/RSK_Document_Package.html`,
+    ru: `${base}/docs/ru/RSK_Document_Package.html`,
+    zh: `${base}/docs/zh/RSK_Document_Package.html`,
+    ar: `${base}/docs/ar/RSK_Document_Package.html`
   };
   langMenu.classList.remove('open');
   langBtn.setAttribute('aria-expanded', 'false');
-  if (map[langCode]) {
-    window.location.href = map[langCode];
+  const targetUrl = map[langCode];
+  if (targetUrl) {
+    window.location.assign(targetUrl);
+  } else {
+    console.error('Sprach-Pfad nicht gefunden:', langCode);
   }
 }
 
@@ -451,13 +441,14 @@ function toggleAccordion(header) {
   header.classList.toggle('active');
   const content = header.nextElementSibling;
   const isExpanded = header.getAttribute('aria-expanded') === 'true';
-  header.setAttribute('aria-expanded',!isExpanded);
-  if (content.style.maxHeight && content.style.maxHeight!== "0px") {
+  header.setAttribute('aria-expanded', !isExpanded);
+  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
     content.style.maxHeight = null;
   } else {
     content.style.maxHeight = content.scrollHeight + "px";
   }
 }
 </script>
-
-        
+</body>
+                                                                                                                     </html>
+  
