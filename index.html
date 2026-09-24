@@ -32,7 +32,7 @@ nav a{text-decoration:none;color:#111;font-size:11px;letter-spacing:1.2px;font-w
 .paper-card{background-color:var(--paper);border:1px solid var(--border-gold);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.05);margin:15px auto;overflow:hidden;max-width:1100px;position:relative;z-index:1}
 .accordion-header{width:100%;background:var(--paper-dark);border:none;border-bottom:1px solid var(--border-gold);padding:12px 18px;font-size:0.95rem;font-weight:bold;letter-spacing:1px;color:#1A1A1A;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Playfair Display',serif}
 .accordion-icon{font-size:0.8rem;color:#8C733E;transition:transform 0.3s ease}
-.accordion-header.active.accordion-icon{transform:rotate(180deg)}
+.accordion-header.active .accordion-icon{transform:rotate(180deg)}
 .accordion-content{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.25,1,0.5,1);background-color:var(--paper);color:#2B2B2B;line-height:1.7}
 .accordion-body{padding:20px}
 .accordion-body h3{color:#000;font-size:1.2rem;border-bottom:1px solid #E0D4B8;padding-bottom:8px;font-family:'Playfair Display',serif}
@@ -70,44 +70,8 @@ footer{text-align:center;padding:26px;font-size:11px;border-top:1px solid rgba(2
 </section>
 <footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
 <script>
-<script>
 const translations={de:{label:'Deutsch',dir:'ltr','doc-link':'./docs/de/RSK_Document_Package.html'},en:{label:'English',dir:'ltr','doc-link':'./docs/en/RSK_Document_Package.html'},es:{label:'Español',dir:'ltr','doc-link':'./docs/es/RSK_Document_Package.html'},fr:{label:'Français',dir:'ltr','doc-link':'./docs/fr/RSK_Document_Package.html'},pt:{label:'Português',dir:'ltr','doc-link':'./docs/pt/RSK_Document_Package.html'},ru:{label:'Русский',dir:'ltr','doc-link':'./docs/ru/RSK_Document_Package.html'},zh:{label:'中文',dir:'ltr','doc-link':'./docs/zh/RSK_Document_Package.html'},ar:{label:'العربية',dir:'rtl','doc-link':'./docs/ar/RSK_Document_Package.html'}};
 
-// WICHTIG: Das hier fehlte bei dir!
-const langBtn=document.getElementById('langBtn');
-const langMenu=document.getElementById('lm');
-if(langBtn&&langMenu){
-  langBtn.addEventListener('click',function(e){
-    e.stopPropagation();
-    langMenu.classList.toggle('open');
-    langBtn.setAttribute('aria-expanded',langMenu.classList.contains('open'));
-  });
-  document.addEventListener('click',function(e){
-    if(!langMenu.contains(e.target)&&!langBtn.contains(e.target)){
-      langMenu.classList.remove('open');
-    }
-  });
-}
-function setLanguage(lang){
-  const d=translations[lang]; if(!d) return;
-  document.documentElement.lang=lang;
-  document.documentElement.dir=d.dir;
-  localStorage.setItem('rsk_lang',lang);
-  document.getElementById('langLabel').textContent=d.label;
-  document.querySelectorAll('[data-i18n-href]').forEach(function(a){
-    const k=a.getAttribute('data-i18n-href'); if(d[k]) a.href=d[k];
-  });
-  langMenu.classList.remove('open');
-}
-function toggleAccordion(h){
-  h.classList.toggle('active');
-  const c=h.nextElementSibling;
-  c.style.maxHeight=c.style.maxHeight?null:c.scrollHeight+'px';
-}
-<script>
-const translations={de:{label:'Deutsch',dir:'ltr','doc-link':'./docs/de/RSK_Document_Package.html'},en:{label:'English',dir:'ltr','doc-link':'./docs/en/RSK_Document_Package.html'},es:{label:'Español',dir:'ltr','doc-link':'./docs/es/RSK_Document_Package.html'},fr:{label:'Français',dir:'ltr','doc-link':'./docs/fr/RSK_Document_Package.html'},pt:{label:'Português',dir:'ltr','doc-link':'./docs/pt/RSK_Document_Package.html'},ru:{label:'Русский',dir:'ltr','doc-link':'./docs/ru/RSK_Document_Package.html'},zh:{label:'中文',dir:'ltr','doc-link':'./docs/zh/RSK_Document_Package.html'},ar:{label:'العربية',dir:'rtl','doc-link':'./docs/ar/RSK_Document_Package.html'}};
-
-// WICHTIG: Das hier fehlte bei dir!
 const langBtn=document.getElementById('langBtn');
 const langMenu=document.getElementById('lm');
 if(langBtn&&langMenu){
@@ -139,3 +103,6 @@ function toggleAccordion(h){
   c.style.maxHeight=c.style.maxHeight?null:c.scrollHeight+'px';
 }
 </script>
+</body>
+  </html>
+  
