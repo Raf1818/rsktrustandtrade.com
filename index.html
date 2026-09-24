@@ -1,34 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSK TRUST & TRADE</title>
-<style>
-body{margin:0;background:#0E0E0E;color:#D8C4A0;font-family:'Times New Roman',serif;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center}
-.card{border:1px solid rgba(197,165,114,0.35);padding:50px 40px;max-width:600px;background:#141414}
-h1{letter-spacing:4px;font-weight:400;margin:0;color:#C5A572;font-size:18px}
-h2{letter-spacing:3px;font-weight:400;margin:28px 0 8px;color:#E8D5B5;font-size:22px}
-.sub{font-family:Inter,sans-serif;font-size:12px;color:#A99A80;letter-spacing:0.5px}
-.gold-line{width:100%;height:1px;background:rgba(197,165,114,0.25);margin:24px 0}
-.verified{letter-spacing:2px;font-size:12px;color:#E8D5B5;margin:20px 0 12px}
-.small{font-family:Inter,sans-serif;font-size:11px;color:#8A7F6B;line-height:1.6}
-.btn{display:inline-block;margin-top:18px;padding:10px 22px;background:linear-gradient(#C5A572,#8C6F4A);color:#000;font-family:Inter,sans-serif;font-size:11px;letter-spacing:1px;border-radius:4px;text-decoration:none;font-weight:700}
-.contact{margin-top:18px;font-family:Inter,sans-serif;font-size:12px;color:#C5A572}
-.footer{margin-top:18px;font-family:Inter,sans-serif;font-size:8px;letter-spacing:2px;color:#5A5245}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSK TRUST & TRADE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
+            color: #d4af37;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            border: 1px solid #332a15;
+            padding: 40px 30px;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(15, 15, 15, 0.85);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid #4a3d1c;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 26px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: #d4af37;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #f0e6d2;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        p.subtitle {
+            font-size: 13px;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            font-size: 12px;
+            color: #888888;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        .restriction {
+            font-size: 11px;
+            color: #666666;
+            margin-bottom: 25px;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn {
+            display: inline-block;
+            border: 1px solid #8c7336;
+            padding: 10px 24px;
+            border-radius: 20px;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+            background: linear-gradient(180deg, #1f1a10 0%, #0d0a05 100%);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            border-color: #d4af37;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .contact {
+            font-size: 13px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .footer {
+            font-size: 10px;
+            color: #444444;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-<div class="card">
-<h1>RSK TRUST & TRADE</h1>
-<h2>UNDER CONSTRUCTION</h2>
-<div class="sub">We are curating a refined selection of rare and fine commodities</div>
-<div class="gold-line"></div>
-<div class="verified">FOR VERIFIED BUYERS ONLY</div>
-<div class="small">Our private portal is currently being finalized to ensure the highest standard of service and exclusivity for approved partners.<br><br>🔒 Access is restricted — applications from verified buyers only are being reviewed</div>
-<a href="mailto:info@rsktrustandtrade.com" class="btn">Join the priority list • Launching Q1 2026</a>
-<div class="contact">Contact Us: info@rsktrustandtrade.com</div>
-<div class="footer">© 2026 RSK TRUST & TRADE • PRIVATE • COMMODITIES • CONFIDENTIAL</div>
-</div>
+
+    <div class="container">
+        <h1>RSK TRUST & TRADE</h1>
+        
+        <h2>UNDER CONSTRUCTION</h2>
+        <p class="subtitle">We are curating a refined selection of rare and fine commodities</p>
+        
+        <div class="section-title">FOR VERIFIED BUYERS ONLY</div>
+        <p class="description">Our private portal is currently being finalized to ensure the highest standard of service and exclusivity for approved partners.</p>
+        
+        <p class="restriction">&#128274; Access is restricted &mdash; applications from verified buyers only are being reviewed</p>
+        
+        <a href="mailto:info@rsktrustandtrade.com" class="btn">Join the priority list &bull; Launching Q1 2026</a>
+        
+        <div class="contact">Contact Us: <a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a></div>
+        
+        <div class="footer">&copy; 2026 RSK TRUST & TRADE &bull; PRIVATE &bull; COMMODITIES &bull; CONFIDENTIAL</div>
+    </div>
+
 </body>
 </html>
