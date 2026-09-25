@@ -30,7 +30,6 @@
       line-height: 1.45;
     }
 
-    /* Page Container for PDF Printing */
     .page {
       width: 210mm;
       min-height: 297mm;
@@ -46,7 +45,6 @@
       justify-content: space-between;
     }
 
-    /* Header Styling */
     .header {
       display: flex;
       justify-content: space-between;
@@ -82,7 +80,6 @@
       color: var(--navy);
     }
 
-    /* Document Titles */
     h1 {
       font-family: 'Cinzel', serif;
       font-size: 13pt;
@@ -101,7 +98,6 @@
       font-weight: 500;
     }
 
-    /* Section Styling */
     .section-title {
       font-size: 8.5pt;
       font-weight: 700;
@@ -115,7 +111,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Grid & Form Fields */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -152,7 +147,29 @@
       color: #111;
     }
 
-    /* Checkbox Options */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+      font-size: 8pt;
+    }
+
+    table th {
+      background-color: var(--navy);
+      color: #ffffff;
+      text-align: left;
+      padding: 5px 7px;
+      font-weight: 600;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+    }
+
+    table td {
+      border: 1px solid var(--border-grey);
+      padding: 5px 7px;
+      vertical-align: top;
+    }
+
     .checkbox-group {
       display: flex;
       gap: 12px;
@@ -174,7 +191,6 @@
       display: inline-block;
     }
 
-    /* Legal Text Blocks */
     .legal-text {
       font-size: 7.5pt;
       color: #333;
@@ -183,7 +199,18 @@
       margin-bottom: 6px;
     }
 
-    /* Signature Section */
+    .legal-list {
+      font-size: 7.5pt;
+      color: #333;
+      margin-left: 14px;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .legal-list li {
+      margin-bottom: 3px;
+    }
+
     .signature-container {
       margin-top: 15px;
       display: grid;
@@ -216,7 +243,6 @@
       padding-top: 3px;
     }
 
-    /* Footer */
     .footer {
       border-top: 1px solid var(--border-grey);
       padding-top: 6px;
@@ -233,7 +259,6 @@
       font-weight: 600;
     }
 
-    /* Print Setup */
     @media print {
       body {
         background: none;
@@ -254,9 +279,7 @@
 </head>
 <body>
 
-  <!-- ==========================================
-       DOCUMENT 1: COMPLIANCE & KYC / KYT FORM
-       ========================================== -->
+  <!-- PAGE 1: KYC / KYT -->
   <div class="page">
     <div>
       <div class="header">
@@ -269,40 +292,19 @@
           <strong>Status:</strong> ICC Confidential / Strict Compliance
         </div>
       </div>
-
       <h1>Client Due Diligence & KYC / KYT Compliance Form</h1>
       <div class="doc-subtitle">Mandatory Anti-Money Laundering (AML) & Sanctions Screening Protocol</div>
-
       <div class="section-title">1. Corporate & Principal Identification</div>
-      <div class="field">
-        <label>Full Registered Legal Entity Name</label>
-        <div class="value-box"></div>
-      </div>
+      <div class="field"><label>Full Registered Legal Entity Name</label><div class="value-box"></div></div>
       <div class="grid-3">
-        <div class="field">
-          <label>Company Reg. / Passport No.</label>
-          <div class="value-box"></div>
-        </div>
-        <div class="field">
-          <label>Date of Inc. / Incorporation</label>
-          <div class="value-box"></div>
-        </div>
-        <div class="field">
-          <label>Country of Tax Residence</label>
-          <div class="value-box"></div>
-        </div>
+        <div class="field"><label>Company Reg. / Passport No.</label><div class="value-box"></div></div>
+        <div class="field"><label>Date of Inc. / Incorporation</label><div class="value-box"></div></div>
+        <div class="field"><label>Country of Tax Residence</label><div class="value-box"></div></div>
       </div>
       <div class="grid-2">
-        <div class="field">
-          <label>Tax Identification Number (TIN / VAT)</label>
-          <div class="value-box"></div>
-        </div>
-        <div class="field">
-          <label>Full Physical & Registered Office Address</label>
-          <div class="value-box"></div>
-        </div>
+        <div class="field"><label>Tax Identification Number (TIN / VAT)</label><div class="value-box"></div></div>
+        <div class="field"><label>Full Physical & Registered Office Address</label><div class="value-box"></div></div>
       </div>
-
       <div class="section-title">2. Financial Integrity & Source of Funds (SOF / SOW)</div>
       <div class="grid-2">
         <div class="field">
@@ -324,17 +326,10 @@
         <label>Declared Source of Funds & Wealth Description</label>
         <div class="value-box" style="min-height: 35px;"></div>
       </div>
-
       <div class="section-title">3. International Statutory Framework & Jurisdiction</div>
-      <p class="legal-text">
-        This Due Diligence Document is executed in strict compliance with FATF (Financial Action Task Force) recommendations, EU Anti-Money Laundering Directives, and the US Bank Secrecy Act. This agreement and any non-contractual obligations arising out of it shall be governed by and construed in accordance with the laws of <strong>England & Wales</strong>. The parties submit to the exclusive jurisdiction of the Commercial Courts of London, UK.
-      </p>
-
+      <p class="legal-text">This Due Diligence Document is executed in strict compliance with FATF recommendations, EU Anti-Money Laundering Directives, and the US Bank Secrecy Act. Governed by the laws of <strong>England & Wales</strong>.</p>
       <div class="section-title">4. Statutory Declaration & Authorization</div>
-      <p class="legal-text">
-        I/We hereby declare under penalty of perjury that the information provided herein is complete, accurate, and true. I/We irrevocably confirm that the funds utilized in all commercial transactions with RSK Trust & Trade are derived from legitimate commercial operations, non-criminal in origin, and fully compliant with international CTF and AML standards.
-      </p>
-
+      <p class="legal-text">I/We hereby declare under penalty of perjury that the information provided herein is complete, accurate, and true.</p>
       <div class="signature-container">
         <div class="signature-box">
           <h4>Authorized Client Signatory</h4>
@@ -350,17 +345,13 @@
         </div>
       </div>
     </div>
-
     <div class="footer">
-      <span>RSK Trust & Trade • Legal & Compliance Division • Page 1 of 4</span>
+      <span>RSK Trust & Trade • Legal & Compliance Division • Page 1 of 7</span>
       <span>E-Mail: <a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a></span>
     </div>
   </div>
 
-
-  <!-- ==========================================
-       DOCUMENT 2: POF / RWA VERIFICATION FORM
-       ========================================== -->
+  <!-- PAGE 2: POF / RWA -->
   <div class="page">
     <div>
       <div class="header">
@@ -373,10 +364,8 @@
           <strong>Classification:</strong> Banking Confidential / ICC UCP 600
         </div>
       </div>
-
       <h1>Proof of Funds (POF) & RWA Verification Protocol</h1>
       <div class="doc-subtitle">Bank-to-Bank Readiness & Financial Capability Authorization</div>
-
       <div class="section-title">1. Account Holder & Corporate Details</div>
       <div class="grid-2">
         <div class="field"><label>Legal Corporate Name</label><div class="value-box"></div></div>
@@ -386,7 +375,6 @@
         <div class="field"><label>Authorized Representative</label><div class="value-box"></div></div>
         <div class="field"><label>Corporate Title / Executive Role</label><div class="value-box"></div></div>
       </div>
-
       <div class="section-title">2. Issuing Bank Specifications & Instrument Parameters</div>
       <div class="grid-2">
         <div class="field"><label>Issuing Financial Institution</label><div class="value-box"></div></div>
@@ -410,22 +398,12 @@
             <div class="checkbox-item"><span class="checkbox-square"></span> Bank Guarantee (SBLC)</div>
           </div>
         </div>
-        <div class="field">
-          <label>Facilitated Transaction Amount</label>
-          <div class="value-box"></div>
-        </div>
+        <div class="field"><label>Facilitated Transaction Amount</label><div class="value-box"></div></div>
       </div>
-
       <div class="section-title">3. Bank Communication & Verification Consent</div>
-      <p class="legal-text">
-        The Applicant hereby grants express, irrevocable authorization to RSK Trust & Trade and its designated compliance officers to contact and conduct bank-to-bank verification regarding the validity, availability, and legal status of the funds/instruments referenced herein via SWIFT MT199/MT799 or secure banking channels. The applicant explicitly waives banking secrecy protections solely for the purpose of trade authorization under this specific transaction.
-      </p>
-
+      <p class="legal-text">The Applicant hereby grants express, irrevocable authorization to RSK Trust & Trade to conduct bank-to-bank verification via SWIFT MT199/MT799.</p>
       <div class="section-title">4. Regulatory Compliance Commitment</div>
-      <p class="legal-text">
-        The applicant warrants that the underlying financial assets are unencumbered, legally acquired, and free of any liens, commercial disputes, or legal attachments. This authorization remains valid for ninety (90) calendar days from the execution date below.
-      </p>
-
+      <p class="legal-text">Assets are unencumbered, legally acquired, and free of liens. Authorization valid for 90 days.</p>
       <div class="signature-container">
         <div class="signature-box">
           <h4>Authorized Applicant Signatory</h4>
@@ -441,17 +419,13 @@
         </div>
       </div>
     </div>
-
     <div class="footer">
-      <span>RSK Trust & Trade • Banking Verification Desk • Page 2 of 4</span>
+      <span>RSK Trust & Trade • Banking Verification Desk • Page 2 of 7</span>
       <span>E-Mail: <a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a></span>
     </div>
   </div>
 
-
-  <!-- ==========================================
-       DOCUMENT 3: ICPO / BCL REVIEW FORMULAR
-       ========================================== -->
+  <!-- PAGE 3: ICPO / BCL EVALUATION -->
   <div class="page">
     <div>
       <div class="header">
@@ -461,13 +435,11 @@
         </div>
         <div class="doc-meta">
           <strong>Ref:</strong> RSK-ICPO-2026-005<br>
-          <strong>Status:</strong> ICC UCP 600 / International Trade Compliant
+          <strong>Status:</strong> ICC UCP 600 Compliant
         </div>
       </div>
-
       <h1>ICPO & BCL Review & Evaluation Form</h1>
       <div class="doc-subtitle">Standardized Banking Instrument Assessment Procedure</div>
-
       <div class="section-title">1. Buyer Corporate Profile & Purchase Scope</div>
       <div class="grid-2">
         <div class="field"><label>Buyer Legal Entity Name</label><div class="value-box"></div></div>
@@ -478,7 +450,6 @@
         <div class="field"><label>Title / Executive Position</label><div class="value-box"></div></div>
       </div>
       <div class="field"><label>Corporate Registered Address</label><div class="value-box"></div></div>
-
       <div class="section-title">2. Banking Coordinates & Credit Evaluation</div>
       <div class="grid-2">
         <div class="field"><label>Issuing Bank Name</label><div class="value-box"></div></div>
@@ -500,12 +471,8 @@
         <label>Trade Desk Evaluation Remarks & Conditions</label>
         <div class="value-box" style="min-height: 45px;"></div>
       </div>
-
       <div class="section-title">3. UCP 600 Legal Framework & Binding Undertaking</div>
-      <p class="legal-text">
-        All financial instruments associated with this ICPO evaluation are governed strictly by the Uniform Customs and Practice for Documentary Credits (ICC UCP 600, 2007 Revision). The applicant confirms that the submitted ICPO represents a firm, irrevocable commercial buying commitment backed by fully verified credit facilities.
-      </p>
-
+      <p class="legal-text">All financial instruments are governed strictly by ICC UCP 600 rules.</p>
       <div class="signature-container">
         <div class="signature-box">
           <h4>Buyer Representative Signature</h4>
@@ -519,17 +486,13 @@
         </div>
       </div>
     </div>
-
     <div class="footer">
-      <span>RSK Trust & Trade • Trade Facilitation Desk • Page 3 of 4</span>
+      <span>RSK Trust & Trade • Trade Facilitation Desk • Page 3 of 7</span>
       <span>E-Mail: <a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a></span>
     </div>
   </div>
 
-
-  <!-- ==========================================
-       DOCUMENT 4: ICC NCNDA
-       ========================================== -->
+  <!-- PAGE 4: NCNDA -->
   <div class="page">
     <div>
       <div class="header">
@@ -542,14 +505,42 @@
           <strong>Rules:</strong> ICC 500 / 600 Framework
         </div>
       </div>
-
       <h1>Non-Circumvention, Non-Disclosure & Working Agreement (NCNDA)</h1>
       <div class="doc-subtitle">International Chamber of Commerce (ICC) Standard Protection Framework</div>
-
       <div class="section-title">1. Contracting Parties</div>
       <div class="grid-2">
         <div class="field"><label>Party A (Facilitator / Principal)</label><div class="value-box">RSK Trust & Trade</div></div>
         <div class="field"><label>Party B (Counterparty / Client)</label><div class="value-box"></div></div>
       </div>
+      <div class="section-title">2. Non-Circumvention & Non-Disclosure Covenants</div>
+      <p class="legal-text">All exchanged technical, commercial, and financial information shall remain strictly confidential. Neither party shall bypass or circumvent the other. Duration: 5 years.</p>
+      <div class="section-title">3. Governing Law & Jurisdiction</div>
+      <p class="legal-text">Governed by laws of England & Wales under LCIA arbitration rules.</p>
+      <div class="signature-container">
+        <div class="signature-box">
+          <h4>Authorized Signatory - Party A</h4>
+          <div class="field"><label>Entity</label><div class="value-box">RSK Trust & Trade</div></div>
+          <div class="field"><label>Name & Title</label><div class="value-box"></div></div>
+          <div class="signature-line">Authorized Signature & Seal</div>
+        </div>
+        <div class="signature-box">
+          <h4>Authorized Signatory - Party B</h4>
+          <div class="field"><label>Entity</label><div class="value-box"></div></div>
+          <div class="field"><label>Name & Title</label><div class="value-box"></div></div>
+          <div class="signature-line">Authorized Signature & Seal</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>RSK Trust & Trade • Legal & Contracting Division • Page 4 of 7</span>
+      <span>E-Mail: <a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a></span>
+    </div>
+  </div>
 
-      
+  <!-- PAGE 5: IMFPA -->
+  <div class="page">
+    <div>
+      <div class="header">
+        <div>
+          <div class="brand-title">RSK TRUST & TRADE</div>
+        
