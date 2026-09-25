@@ -189,4 +189,32 @@ function selectLanguage(e, lang) {
   document.getElementById('name').placeholder = data.ph_name;
   document.getElementById('lbl-tel').innerText = data.lbl_tel;
   document.getElementById('tel').placeholder = data.ph_tel;
-  document.getElementById('lbl-email'
+  document.getElementById('lbl-email').innerText = data.lbl_email;
+  document.getElementById('email').placeholder = data.ph_email;
+  document.getElementById('lbl-betrag').innerText = data.lbl_betrag;
+  document.getElementById('betrag').placeholder = data.ph_betrag;
+  document.getElementById('lbl-desc').innerText = data.lbl_desc;
+  document.getElementById('msg').placeholder = data.ph_desc;
+  document.getElementById('lbl-note').innerText = data.lbl_note;
+  document.getElementById('btn-submit').innerText = data.btn_submit;
+  document.getElementById('lbl-footer-text').innerText = data.lbl_footer_text;
+  document.getElementById('btn-docs').innerText = data.btn_docs;
+  document.getElementById('langLabel').innerText = data.lbl;
+  document.documentElement.lang = lang;
+  localStorage.setItem('rsk-lang', lang);
+}
+function sendWhatsApp(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const tel=document.getElementById('tel').value;
+  const email=document.getElementById('email').value;
+  const betrag=document.getElementById('betrag').value;
+  const msg=document.getElementById('msg').value;
+  const text=`RSK Anfrage%0AName: ${name}%0ATel: ${tel}%0AEmail: ${email}%0ABetrag: ${betrag}%0AMsg: ${msg}`;
+  window.open(`https://wa.me/573138734968?text=${text}`,'_blank');
+}
+const saved=localStorage.getItem('rsk-lang');
+if(saved) selectLanguage(null,saved);
+</script>
+</body>
+</html>
