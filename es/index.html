@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSK Trust & Trade - Corporate Document Package</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f4e8c1;
+      --navy: #0a1931;
+      --dark-grey: #222222;
+      --light-grey: #f8f9fa;
+      --border-grey: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #eef2f5;
+      color: var(--dark-grey);
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 18mm 20mm 20mm 20mm;
+      margin: 20px auto;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      position: relative;
+      border-top: 5px solid var(--gold);
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-grey);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16pt;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 1.5px;
+    }
+
+    .brand-subtitle {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .doc-meta {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #666;
+    }
+
+    .doc-meta strong { color: var(--navy); }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 14pt;
+      color: var(--navy);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .doc-subtitle {
+      text-align: center;
+      font-size: 8.5pt;
+      color: #666;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--light-grey);
+      padding: 6px 10px;
+      border-left: 3px solid var(--gold);
+      margin-top: 15px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+    .field { margin-bottom: 8px; }
+    .field label {
+      display: block;
+      font-size: 7.5pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 3px;
+    }
+
+    .field .value-box {
+      width: 100%;
+      min-height: 26px;
+      border: 1px solid var(--border-grey);
+      background: #fafafa;
+      border-radius: 3px;
+      padding: 4px 8px;
+      font-size: 9pt;
+      color: #111;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 8.5pt; }
+    table th {
+      background-color: var(--navy);
+      color: #ffffff;
+      text-align: left;
+      padding: 6px 8px;
+      font-weight: 600;
+      font-size: 8pt;
+      text-transform: uppercase;
+    }
+    table td { border: 1px solid var(--border-grey); padding: 6px 8px; vertical-align: top; }
+
+    .checkbox-group { display: flex; gap: 15px; align-items: center; margin-top: 5px; font-size: 8.5pt; }
+    .checkbox-item { display: flex; align-items: center; gap: 5px; }
+    .checkbox-square { width: 12px; height: 12px; border: 1px solid var(--navy); display: inline-block; }
+
+    .legal-text { font-size: 8pt; color: #444; text-align: justify; line-height: 1.4; margin-bottom: 8px; }
+    .signature-container { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .signature-box { border: 1px solid var(--border-grey); padding: 12px; background: #fafafa; border-radius: 3px; }
+    .signature-box h4 {
+      font-size: 8.5pt;
+      color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-grey);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    .signature-line { margin-top: 35px; border-top: 1px dashed #888; text-align: center; font-size: 7.5pt; color: #666; padding-top: 4px; }
+
+    .footer { border-top: 1px solid var(--border-grey); padding-top: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: #777; }
+    .footer a { color: var(--navy); text-decoration: none; font-weight: 600; }
+
+    @media print {
+      body { background: none; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DOKUMENT 1: COMPLIANCE & KYC / KYT FORM -->
+  <div class="page">
+    <div>
+      <div class="header">
+        <div>
+          <div class="brand-title">RSK TRUST & TRADE</div>
+          <div class="brand-subtitle">Global Commodity Trading & Advisory</div>
+        </div>
+        <div class="doc-meta">
+          <strong>Ref:</strong> RSK-KYC-2026-005<br>
+          <strong>Language:</strong> <span class="lang-label">EN</span> | <strong>Status:</strong> ICC Confidential
+        </div>
+      </div>
+
+      <h1>Compliance & KYC / KYT Form</h1>
+      <div class="doc-subtitle">Standardized Customer & Transaction Due Diligence Protocol</div>
+
+      <div class="section-title">1. Entity & Individual Identification</div>
+      <div class="field"><label>Full Legal Name / Entity Name</label><div class="value-box"></div></div>
+      <div class="grid-3">
+        <div class="field"><label>Registration / Passport No.</label><div class="value-box"></div></div>
+        <div class="field"><label>Date of Birth / Incorporation</label><div class="value-box"></div></div>
+        <div class="field"><label>Country of Origin / Tax Jurisdiction</label><div class="value-box"></div></div>
+      </div>
+
+      <div class="section-title">2. KYC / KYT Verification & Screening</div>
+      <div class="field">
+        <label>Full Screening Status</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item"><span class="checkbox-square"></span> Passed</div>
+          <div class="checkbox-item"><span class="checkbox-square"></span> Pending</div>
+          <div class="checkbox-item"><span class="checkbox-square"></span> Flagged</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>RSK Trust & Trade • Corporate Package</span><span>Page 1 of 6</span></div>
+  </div>
+
+  <!-- DOKUMENT 2: NCNDA (NON-DISCLOSURE AGREEMENT) -->
+  <div class="page">
+    <div>
+      <div class="header">
+        <div>
+          <div class="brand-title">RSK TRUST & TRADE</div>
+          <div class="brand-subtitle">Global Commodity Trading & Advisory</div>
+        </div>
+        <div class="doc-meta">
+          <strong>Ref:</strong> RSK-NCNDA-2026-005<br>
+          <strong>Language:</strong> <span class="lang-label">EN</span> | <strong>Status:</strong> ICC Standard
+        </div>
+      </div>
+
+      <h1>Non-Circumvention & Non-Disclosure Agreement (NCNDA)</h1>
+      <div class="doc-subtitle">International Chamber of Commerce (ICC) Protection Framework</div>
+
+      <div class="section-title">1. Contracting Parties</div>
+      <div class="grid-2">
+        <div class="field"><label>Principal / Intermediary 1</label><div class="value-box">RSK Trust & Trade</div></div>
+        <div class="field"><label>Counterpart / Intermediary 2</label><div class="value-box"></div></div>
+      </div>
+
+      <div class="section-title">2. Terms of Non-Circumvention</div>
+      <div class="legal-text">
+        The parties accept and bind themselves to the standard non-circumvention rules as per the ICC regulations. This agreement is valid for a period of five (5) years from the effective date of signing. Information disclosed remains strictly confidential.
+      </div>
+
+      <div class="signature-container">
+        <div class="signature-box"><h4>For RSK Trust & Trade</h4><div class="signature-line">Authorized Signature & Stamp</div></div>
+        <div class="signature-box"><h4>For Counterpart</h4><div class="signature-line">Authorized Signature & Stamp</div></div>
+      </div>
+    </div>
+    <div class="footer"><span>RSK Trust & Trade • Corporate Package</span><span>Page 2 of 6</span></div>
+  </div>
+
+  <!-- DOKUMENT 3: IMFPA (IRREVOCABLE MASTER FEE PROTECTION AGREEMENT) -->
+  <div class="page">
+    <div>
+      <div class="header">
+        <div>
+          <div class="brand-title">RSK TRUST & TRADE</div>
+          <div class="brand-subtitle">Global Commodity Trading & Advisory</div>
+        </div>
+        <div class="doc-meta">
+          <strong>Ref:</strong> RSK-IMFPA-2026-005<br>
+          <strong>Language:</strong> <span class="lang-label">EN</span> | <strong>Status:</strong> Legally Binding
+        </div>
+      </div>
+
+      <h1>Irrevocable Master Fee Protection Agreement (IMFPA)</h1>
+      <div class="doc-subtitle">Secured Fee Allocation & Commission Pay-out Order</div>
+
+      <div class="section-title">1. Transaction Parameters</div>
+      <div class="grid-2">
+        <div class="field"><label>Commodity Type</label><div class="value-box">Steam Coal / Energy Products</div></div>
+        <div class="field"><label>Total Contract Volume</label><div class="value-box"></div></div>
+      </div>
+
+      <div class="section-title">2. Beneficiary Allocation Details</div>
+      <table>
+        <thead><tr><th>Beneficiary Name</th><th>Banking Institution</th><th>Pay-out Fee Metric</th></tr></thead>
+        <tbody>
+          <tr><td>RSK Trust & Trade</td><td>Specified Corporate Bank Account</td><td>As agreed per Metric Ton</td></tr>
+          <tr><td>Intermediary Partner</td><td>To be assigned</td><td>To be assigned</td></tr>
+                                                                                                    
