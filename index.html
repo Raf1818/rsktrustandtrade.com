@@ -52,21 +52,72 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
       <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
       <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
       <div onclick="selectLanguage(event, 'fr')">🇫🇷 Français</div>
-      <div onclick="selectLanguage(event, 'pt')">🇧🇷 Português</div>
-      <div onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</div>
-      <div onclick="selectLanguage(event, 'zh')">🇨🇳 中文</div>
-      <div onclick="selectLanguage(event, 'it')">🇮🇹 Italiano</div>
+      </header>
+
+<!-- AB HIER (Zeile 55) den neuen Akkordeon-Code einfügen -->
+<div class="accordion-container">
+
+  <!-- 1. ÜBER UNS -->
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion('ueber-uns')">
+      <span data-i18n="about_title">ÜBER UNS</span>
+      <span class="icon" id="icon-ueber-uns">+</span>
+    </button>
+    <div id="ueber-uns" class="accordion-content">
+      <p><strong data-i18n="about_subtitle">RSK Trust & Trade – Diskretion, Integrität und Verlässlichkeit im globalen Handel</strong></p>
+      <p style="margin-top: 10px;" data-i18n="about_desc">
+        Im internationalen Rohstoffhandel entscheiden Vertrauen, Schnelligkeit und absolute Regeltreue über den Erfolg komplexer Transaktionen. RSK Trust & Trade steht als verlässlicher Partner an der Seite staatlicher und privater Akteure in den Märkten LATAM, Europa, VAE und Asien.
+      </p>
+      <p style="margin-top: 12px;"><strong data-i18n="about_pillars_title">Unsere Philosophie basiert auf drei Säulen:</strong></p>
+      <ul style="margin: 8px 0 0 18px; padding: 0;">
+        <li data-i18n="about_pillar_1"><strong>Absolute Diskretion & Compliance:</strong> Höchste Standards bei der Einhaltung internationaler Sorgfaltspflichten zum Schutz Ihrer Interessen.</li>
+        <li data-i18n="about_pillar_2"><strong>Pragmatische Risikominimierung:</strong> Rechtssichere Strukturen und fundiertes Marktverständnis zur Absicherung von Handelsgeschäften.</li>
+        <li data-i18n="about_pillar_3"><strong>Effizienz & Handlungsschnelligkeit:</strong> Dokumente und lösungsorientierte Strategien stehen unverzüglich zur Verfügung – für reibungslose Abläufe.</li>
+      </ul>
     </div>
   </div>
-</header>
 
-<nav>
-  <a id="nav1" href="#about">ÜBER UNS</a>
-  <a id="nav2" href="#hero-sec">LEISTUNGEN</a>
-  <a id="nav3" href="#docs">DOKUMENTE</a>
-  <a id="nav4" href="#deal-rescue">DEAL-RESCUE</a>
-  <a id="nav5" href="#payment">ZAHLUNG</a>
-</nav>
+  <!-- 2. LEISTUNGEN -->
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion('leistungen')">
+      <span data-i18n="services_title">LEISTUNGEN</span>
+      <span class="icon" id="icon-leistungen">+</span>
+    </button>
+    <div id="leistungen" class="accordion-content">
+      <p data-i18n="services_desc">Abwicklung komplexer Handelsgeschäfte, Risikominimierung, weltweite Logistik und strukturiertes Deal-Management über LATAM, Europa, VAE und Asien.</p>
+    </div>
+  </div>
+
+  <!-- 3. DOKUMENTE -->
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion('dokumente')">
+      <span data-i18n="docs_title">DOKUMENTE</span>
+      <span class="icon" id="icon-dokumente">+</span>
+    </button>
+    <div id="dokumente" class="accordion-content">
+      <p data-i18n="docs_desc">Rechtssichere Verträge und Compliance-Dokumente in 8 Sprachen – ab morgen für Ihr Vorhaben verfügbar.</p>
+    </div>
+  </div>
+
+  <!-- 4. DEAL-RESCUE -->
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion('deal-rescue')">
+      <span data-i18n="rescue_title">DEAL-RESCUE</span>
+      <span class="icon" id="icon-deal-rescue">+</span>
+    </button>
+    <div id="deal-rescue" class="accordion-content">
+      <p data-i18n="rescue_desc">Schnelle Rettung und Umstrukturierung ins Stocken geratener Verhandlungen und Transaktionen unter Einhaltung höchster Diskretion.</p>
+    </div>
+  </div>
+
+</div>
+<!-- BIS HIER -->
+
+<section class="hero" id="about">
+                                                                                                                                                                                                       
+
+
+  
 
 <section class="hero" id="about">
   <div id="hero-sec">
