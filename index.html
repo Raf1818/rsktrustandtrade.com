@@ -30,7 +30,7 @@ nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px
 .antrag-card { max-width: 850px; margin: 40px auto; padding: 30px 20px; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 22px; box-shadow: 0 18px 50px rgba(201,168,106,.18); position: relative; z-index: 1; }
 .form-group { width: 100%; margin-bottom: 16px; text-align: left; }
 .antrag-card label { font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px; color: var(--navy); width: 100%; }
-.antrag-card input, .antrag-card textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1.5px solid var(--navy); border-radius: 10px; font-size: 14px; background: #fff; display: block; font-family: inherit; }
+.antrag-card input, .antrag-card textarea, .antrag-card select { width: 100%; box-sizing: border-box; padding: 12px; border: 1.5px solid var(--navy); border-radius: 10px; font-size: 14px; background: #fff; display: block; font-family: inherit; color: #111; }
 .btn-whatsapp { width: 100%; padding: 16px; background: #25D366; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; margin-top: 20px; cursor: pointer; }
 .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201, 168, 106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; }
@@ -46,7 +46,7 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
     <h2 id="sub-title">INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA</h2>
   </div>
   <div class="lang">
-    <button class="lang-btn" id="langBtn">🌐 <span id="langLabel">Sprache</span> ▼</button>
+    <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)">🌐 <span id="langLabel">Sprache</span> ▼</button>
     <div class="lang-menu" id="lm">
       <div onclick="selectLanguage(event, 'en')">🇬🇧 English</div>
       <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
@@ -94,21 +94,47 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
     <div style="font-size:11px;letter-spacing:4px;color:var(--gold);margin-top:2px">TRUST & TRADE</div>
     <hr style="border:none;border-top:1px solid var(--gold);margin:18px auto;width:140px;opacity:.6">
   </div>
-  <h2 style="font-family:'Playfair Display';font-size:32px;line-height:1.2;color:var(--navy);text-align:center" id="dr-title">Trade Desk &<br><span style="color:var(--gold)">&</span> Compliance Review</h2>
+  <h2 style="font-family:'Playfair Display';font-size:32px;line-height:1.2;color:var(--navy);text-align:center" id="dr-title">Erstberatung &<br><span style="color:var(--gold)">&</span> Transaktionssupport</h2>
   <p style="text-align:center;font-style:italic;font-size:16px;color:var(--navy);margin-top:14px;line-height:1.4" id="dr-sub">RSK – Direct Support in High-Stakes Commodity Deals.</p>
   <div style="text-align:center;margin:18px 0;color:var(--gold)">— ◆ —</div>
-  <p style="text-align:center;font-size:15px;color:#333;line-height:1.5" id="dr-p1">Wir begleiten Sie diskret durch kritische Verhandlungsphasen.</p>
+  <p style="text-align:center;font-size:15px;color:#333;line-height:1.5" id="dr-p1">Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.</p>
   
   <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:24px 0;border:1.5px solid var(--gold)">
     <a href="./docs/" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
   </div>
   
   <form id="antragForm" onsubmit="sendWhatsApp(event)">
-    <div class="form-group"><label for="name" id="lbl-name">Name *</label><input type="text" id="name" required placeholder="Ihr vollständiger Name"></div>
-    <div class="form-group"><label for="tel" id="lbl-tel">Telefon / WhatsApp *</label><input type="tel" id="tel" required placeholder="+49 123 456789"></div>
-    <div class="form-group"><label for="email" id="lbl-email">Ihre E-Mail</label><input type="email" id="email" placeholder="name@unternehmen.com"></div>
-    <div class="form-group"><label for="betrag" id="lbl-betrag">Betrag / Volumen</label><input type="text" id="betrag" placeholder="z. B. 500.000 EUR"></div>
-    <div class="form-group"><label for="msg" id="lbl-desc">Nachricht / Problembeschreibung</label><textarea id="msg" rows="4" placeholder="Kurze Beschreibung Ihres Anliegens..."></textarea></div>
+    <div class="form-group">
+      <label for="name" id="lbl-name">Name *</label>
+      <input type="text" id="name" required placeholder="Ihr vollständiger Name">
+    </div>
+    
+    <div class="form-group">
+      <label for="tel" id="lbl-tel">Telefon / WhatsApp *</label>
+      <input type="tel" id="tel" required placeholder="+49 123 456789">
+    </div>
+    
+    <div class="form-group">
+      <label for="email" id="lbl-email">Ihre E-Mail</label>
+      <input type="email" id="email" placeholder="name@unternehmen.com">
+    </div>
+    
+    <div class="form-group">
+      <label for="bizType" id="lbl-biz">Art des Geschäfts *</label>
+      <select id="bizType" required>
+        <option value="" disabled selected id="ph-biz">Bitte wählen Sie die Art der Transaktion...</option>
+        <option value="Rohstoffhandel (Kohle, Öl, Mineralien)" id="opt-biz1">Rohstoffhandel (Kohle, Öl, Mineralien)</option>
+        <option value="Paymaster & Abwicklungsdienstleistungen" id="opt-biz2">Paymaster & Abwicklungsdienstleistungen</option>
+        <option value="Rechtliche Beratung & Vertragsstrukturierung" id="opt-biz3">Rechtliche Beratung & Vertragsstrukturierung</option>
+        <option value="Sonstiges / Allgemeine Beratung" id="opt-biz4">Sonstiges / Allgemeine Beratung</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="msg" id="lbl-desc">Angaben zur Transaktion / Beratungswunsch</label>
+      <textarea id="msg" rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben..."></textarea>
+    </div>
+    
     <button type="submit" class="btn-whatsapp" id="btn-submit">An WhatsApp senden 📲</button>
   </form>
   
@@ -144,48 +170,120 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 
 <script>
 const T = {
-  en: { sub: "INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA", n1: "ABOUT", n2: "SERVICES", n3: "DOCUMENTS", n4: "TRADE DESK", n5: "PAYMENT", h1: "Integrity in Global Trade", p1: "Discreet compliance for sovereign buyers and institutions.", h2: "Expertise & Security", p2: "Minimizing operational risk while preserving seamless execution.", h3: "Trade Desk & Compliance", p3: "Documents in 8 languages - available tomorrow", dr_sub: "RSK – Direct Support in High-Stakes Commodity Deals.", dr_p1: "We quietly guide you through critical negotiation phases.", lbl_name: "Name *", ph_name: "Your Full Name", lbl_tel: "Phone / WhatsApp *", ph_tel: "+49 123 456 789", lbl_email: "Your Email", ph_email: "name@company.com", lbl_betrag: "Amount / Volume", ph_betrag: "e.g. 500,000 EUR", lbl_desc: "Message / Problem Description", ph_desc: "Brief description of your request...", lbl_note: "* RSK provides specialized transaction support. We guarantee confidentiality.", btn_submit: "Send to WhatsApp 📲", lbl_footer_text: "Discreet • Confidential • Professional", btn_docs: "📄 Download Compliance Documents in 8 Languages", lbl: "Language" },
-  es: { sub: "COMMODITIES INTERNACIONALES • LATAM • EUROPA • EAU • ASIA", n1: "NOSOTROS", n2: "SERVICIOS", n3: "DOCUMENTOS", n4: "TRADE DESK", n5: "PAGO", h1: "Integridad en el Comercio Global", p1: "Cumplimiento discreto para compradores soberanos.", h2: "Pericia y Seguridad", p2: "Minimizando el riesgo operativo.", h3: "Trade Desk & Compliance", p3: "Documentos en 8 idiomas - disponibles mañana", dr_sub: "RSK – Apoyo directo en operaciones.", dr_p1: "Le guiamos discretamente.", lbl_name: "Nombre *", ph_name: "Su nombre completo", lbl_tel: "Teléfono / WhatsApp *", ph_tel: "+34 123 456 789", lbl_email: "Su correo", ph_email: "nombre@empresa.com", lbl_betrag: "Monto / Volumen", ph_betrag: "ej. 500.000 EUR", lbl_desc: "Mensaje", ph_desc: "Breve descripción...", lbl_note: "* RSK ofrece apoyo especializado.", btn_submit: "Enviar a WhatsApp 📲", lbl_footer_text: "Discreto • Confidencial • Profesional", btn_docs: "📄 Descargar Documentos", lbl: "Idioma" },
-  de: { sub: "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN", n1: "ÜBER UNS", n2: "LEISTUNGEN", n3: "DOKUMENTE", n4: "TRADE DESK", n5: "ZAHLUNG", h1: "Integrität im globalen Handel", p1: "Diskrete Compliance für staatliche Käufer.", h2: "Expertise & Sicherheit", p2: "Minimierung des Risikos.", h3: "Trade Desk & Compliance", p3: "Dokumente in 8 Sprachen - ab morgen verfügbar", dr_sub: "RSK – Direct Support in High-Stakes Commodity Deals.", dr_p1: "Wir begleiten Sie diskret.", lbl_name: "Name *", ph_name: "Ihr Name", lbl_tel: "Telefon / WhatsApp *", ph_tel: "+49 123 456789", lbl_email: "Ihre E-Mail", ph_email: "name@unternehmen.com", lbl_betrag: "Betrag / Volumen", ph_betrag: "z. B. 500.000 EUR", lbl_desc: "Nachricht", ph_desc: "Kurze Beschreibung...", lbl_note: "* RSK bietet spezialisierte Begleitung.", btn_submit: "An WhatsApp senden 📲", lbl_footer_text: "Diskret • Vertraulich • Professionell", btn_docs: "📄 Download Compliance Dokumente", lbl: "Sprache" },
-  fr: { sub: "MATIÈRES PREMIÈRES INTERNATIONALES", n1: "À PROPOS", n2: "SERVICES", n3: "DOCUMENTS", n4: "TRADE DESK", n5: "PAIEMENT", h1: "Intégrité dans le Commerce Mondial", p1: "Conformité discrète.", h2: "Expertise", p2: "Minimiser le risque.", h3: "Trade Desk & Conformité", p3: "Documents en 8 langues", dr_sub: "RSK – Support direct dans les transactions.", dr_p1: "Nous vous accompagnons.", lbl_name: "Nom *", ph_name: "Votre nom", lbl_tel: "Téléphone *", ph_tel: "+33 1 23 45 67 89", lbl_email: "Email", ph_email: "nom@entreprise.com", lbl_betrag: "Montant", ph_betrag: "ex. 500k EUR", lbl_desc: "Message", ph_desc: "Description...", lbl_note: "* Support spécialisé.", btn_submit: "Envoyer WhatsApp 📲", lbl_footer_text: "Discret • Confidentiel", btn_docs: "📄 Télécharger Documents", lbl: "Langue" },
-  pt: { sub: "COMMODITIES INTERNACIONAIS", n1: "SOBRE", n2: "SERVIÇOS", n3: "DOCUMENTOS", n4: "TRADE DESK", n5: "PAGAMENTO", h1: "Integridade no Comércio Global", p1: "Compliance discreto.", h2: "Especialização", p2: "Minimizando risco.", h3: "Trade Desk & Compliance", p3: "Documentos em 8 idiomas", dr_sub: "RSK – Suporte direto em negócios.", dr_p1: "Acompanhamos você.", lbl_name: "Nome *", ph_name: "Seu nome", lbl_tel: "Telefone *", ph_tel: "+55 11 91234 5678", lbl_email: "E-mail", ph_email: "nome@empresa.com", lbl_betrag: "Valor", ph_betrag: "ex. 500k EUR", lbl_desc: "Mensagem", ph_desc: "Descrição...", lbl_note: "* Suporte especializado.", btn_submit: "Enviar WhatsApp 📲", lbl_footer_text: "Discreto • Confidencial", btn_docs: "📄 Baixar Documentos", lbl: "Idioma" },
-  ru: { sub: "МЕЖДУНАРОДНЫЕ ТОВАРЫ", n1: "О НАС", n2: "УСЛУГИ", n3: "ДОКУМЕНТЫ", n4: "TRADE DESK", n5: "ОПЛАТА", h1: "Честность в мировой торговле", p1: "Дискретный комплаенс.", h2: "Экспертиза", p2: "Минимизация рисков.", h3: "Trade Desk & Комплаенс", p3: "Документы на 8 языках", dr_sub: "RSK – Прямая поддержка в сделках.", dr_p1: "Мы проводим вас.", lbl_name: "Имя *", ph_name: "Ваше имя", lbl_tel: "Телефон *", ph_tel: "+7 912 345 6789", lbl_email: "Email", ph_email: "name@company.com", lbl_betrag: "Сумма", ph_betrag: "напр. 500k EUR", lbl_desc: "Сообщение", ph_desc: "Описание...", lbl_note: "* Спец. сопровождение.", btn_submit: "Отправить WhatsApp 📲", lbl_footer_text: "Дискретно • Конфиденциально", btn_docs: "📄 Скачать документы", lbl: "Язык" },
-  zh: { sub: "国际大宗商品 • 拉美 • 欧洲 • 阿联酋 • 亚洲", n1: "关于", n2: "服务", n3: "文件", n4: "交易台", n5: "支付", h1: "全球贸易的诚信", p1: "谨慎合规。", h2: "专业与安全", p2: "最小化风险。", h3: "交易台与合规", p3: "8种语言文件", dr_sub: "RSK – 交易中的直接支持。", dr_p1: "我们谨慎引导您。", lbl_name: "姓名 *", ph_name: "您的姓名", lbl_tel: "电话 *", ph_tel: "+86 123 4567 8910", lbl_email: "邮箱", ph_email: "name@company.com", lbl_betrag: "金额", ph_betrag: "例如 500k EUR", lbl_desc: "留言", ph_desc: "简要描述...", lbl_note: "* 专业支持。", btn_submit: "发送至 WhatsApp 📲", lbl_footer_text: "谨慎 • 保密", btn_docs: "📄 下载合规文件", lbl: "语言" },
-  it: { sub: "COMMODITIES INTERNAZIONALI", n1: "CHI SIAMO", n2: "SERVIZI", n3: "DOCUMENTI", n4: "TRADE DESK", n5: "PAGAMENTO", h1: "Integrità nel Commercio Globale", p1: "Compliance discreta.", h2: "Competenza", p2: "Minimizzare il rischio.", h3: "Trade Desk & Compliance", p3: "Documenti in 8 lingue", dr_sub: "RSK – Supporto diretto nelle operazioni.", dr_p1: "Vi guidiamo con discrezione.", lbl_name: "Nome *", ph_name: "Il tuo nome", lbl_tel: "Telefono *", ph_tel: "+39 123 4567890", lbl_email: "Email", ph_email: "nome@azienda.com", lbl_betrag: "Importo", ph_betrag: "es. 500k EUR", lbl_desc: "Messaggio", ph_desc: "Descrizione...", lbl_note: "* Supporto specialistico.", btn_submit: "Invia WhatsApp 📲", lbl_footer_text: "Discreto • Riservato", btn_docs: "📄 Scarica Documenti", lbl: "Lingua" }
+  en: { 
+    sub: "INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA", 
+    n1: "ABOUT", n2: "SERVICES", n3: "DOCUMENTS", n4: "TRADE DESK", n5: "PAYMENT", 
+    h1: "Integrity in Global Trade", p1: "Discreet compliance for sovereign buyers and institutions.", 
+    h2: "Expertise & Security", p2: "Minimizing operational risk while preserving seamless execution.", 
+    h3: "Trade Desk & Compliance", p3: "Documents in 8 languages - available tomorrow", 
+    dr_title: "Initial Consultation &<br><span style='color:var(--gold)'>&</span> Transaction Support",
+    dr_sub: "RSK – Direct Support in High-Stakes Commodity Deals.", 
+    dr_p1: "We provide support around your deal. Initial consultation is completely free of charge. Specialized lawyers and registered paymasters are consulted if requested.", 
+    lbl_name: "Name *", ph_name: "Your Full Name", 
+    lbl_tel: "Phone / WhatsApp *", ph_tel: "+49 123 456 789", 
+    lbl_email: "Your Email", ph_email: "name@company.com", 
+    lbl_biz: "Type of Business *", ph_biz: "Please select the type of transaction...",
+    biz_opt1: "Commodity Trading (Coal, Oil, Minerals)",
+    biz_opt2: "Paymaster & Settlement Services",
+    biz_opt3: "Legal Advisory & Deal Structuring",
+    biz_opt4: "Other / General Advisory",
+    lbl_desc: "Transaction Details / Request", ph_desc: "Brief description of your request...", 
+    lbl_note: "* RSK provides specialized transaction support. We guarantee confidentiality.", 
+    btn_submit: "Send to WhatsApp 📲", 
+    lbl_footer_text: "Discreet • Confidential • Professional", 
+    btn_docs: "📄 Download Compliance Documents in 8 Languages", 
+    lbl: "Language" 
+  },
+  de: { 
+    sub: "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN", 
+    n1: "ÜBER UNS", n2: "LEISTUNGEN", n3: "DOKUMENTE", n4: "TRADE DESK", n5: "ZAHLUNG", 
+    h1: "Integrität im globalen Handel", p1: "Diskrete Compliance für staatliche Käufer.", 
+    h2: "Expertise & Sicherheit", p2: "Minimierung des Risikos.", 
+    h3: "Trade Desk & Compliance", p3: "Dokumente in 8 Sprachen - ab morgen verfügbar", 
+    dr_title: "Erstberatung &<br><span style='color:var(--gold)'>&</span> Transaktionssupport",
+    dr_sub: "RSK – Direct Support in High-Stakes Commodity Deals.", 
+    dr_p1: "Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.", 
+    lbl_name: "Name *", ph_name: "Ihr Name", 
+    lbl_tel: "Telefon / WhatsApp *", ph_tel: "+49 123 456789", 
+    lbl_email: "Ihre E-Mail", ph_email: "name@unternehmen.com", 
+    lbl_biz: "Art des Geschäfts *", ph_biz: "Bitte wählen Sie die Art der Transaktion...",
+    biz_opt1: "Rohstoffhandel (Kohle, Öl, Mineralien)",
+    biz_opt2: "Paymaster & Abwicklungsdienstleistungen",
+    biz_opt3: "Rechtliche Beratung & Vertragsstrukturierung",
+    biz_opt4: "Sonstiges / Allgemeine Beratung",
+    lbl_desc: "Angaben zur Transaktion / Beratungswunsch", ph_desc: "Beschreiben Sie kurz Ihr Vorhaben...", 
+    lbl_note: "* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.", 
+    btn_submit: "An WhatsApp senden 📲", 
+    lbl_footer_text: "Diskret • Vertraulich • Professionell", 
+    btn_docs: "📄 Download Compliance Dokumente", 
+    lbl: "Sprache" 
+  },
+  es: { 
+    sub: "COMMODITIES INTERNACIONALES • LATAM • EUROPA • EAU • ASIA", 
+    n1: "NOSOTROS", n2: "SERVICIOS", n3: "DOCUMENTOS", n4: "TRADE DESK", n5: "PAGO", 
+    h1: "Integridad en el Comercio Global", p1: "Cumplimiento discreto para compradores soberanos.", 
+    h2: "Pericia y Seguridad", p2: "Minimizando el riesgo operativo.", 
+    h3: "Trade Desk & Compliance", p3: "Documentos en 8 idiomas", 
+    dr_title: "Consulta Inicial y<br><span style='color:var(--gold)'>&</span> Apoyo Transaccional",
+    dr_sub: "RSK – Apoyo directo en operaciones.", 
+    dr_p1: "Ofrecemos soporte integral para su transacción. La primera consulta es totalmente gratuita. Consultamos abogados especializados y paymasters registrados si es necesario.", 
+    lbl_name: "Nombre *", ph_name: "Su nombre completo", 
+    lbl_tel: "Teléfono / WhatsApp *", ph_tel: "+34 123 456 789", 
+    lbl_email: "Su correo", ph_email: "nombre@empresa.com", 
+    lbl_biz: "Tipo de Negocio *", ph_biz: "Seleccione el tipo de transacción...",
+    biz_opt1: "Comercio de Commodities (Carbón, Petróleo, Minerales)",
+    biz_opt2: "Servicios de Paymaster y Liquidación",
+    biz_opt3: "Asesoría Legal y Estructuración de Contratos",
+    biz_opt4: "Otros / Asesoría General",
+    lbl_desc: "Detalles de la Transacción", ph_desc: "Breve descripción...", 
+    lbl_note: "* RSK ofrece apoyo especializado.", 
+    btn_submit: "Enviar a WhatsApp 📲", 
+    lbl_footer_text: "Discreto • Confidencial • Profesional", 
+    btn_docs: "📄 Descargar Documentos", 
+    lbl: "Idioma" 
+  }
 };
 
-const langBtn = document.getElementById('langBtn');
-const langMenu = document.getElementById('lm');
-
-langBtn.addEventListener('click', function(e) { 
-  e.preventDefault();
-  e.stopPropagation(); 
-  langMenu.classList.toggle('open'); 
-});
+function toggleLangMenu(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const langMenu = document.getElementById('lm');
+  langMenu.classList.toggle('open');
+}
 
 document.addEventListener('click', function(e) { 
-  if (!e.target.closest('.lang')) {
+  const langMenu = document.getElementById('lm');
+  if (langMenu && !e.target.closest('.lang')) {
     langMenu.classList.remove('open'); 
   }
 });
 
 function selectLanguage(e, lang) {
   if (e) e.stopPropagation();
-  langMenu.classList.remove('open');
+  const langMenu = document.getElementById('lm');
+  if (langMenu) langMenu.classList.remove('open');
+  
   const data = T[lang] || T['de'];
   
-  document.getElementById('sub-title').innerText = data.sub;
-  document.getElementById('nav1').innerText = data.n1;
-  document.getElementById('nav2').innerText = data.n2;
-  document.getElementById('nav3').innerText = data.n3;
-  document.getElementById('nav4').innerText = data.n4;
-  document.getElementById('nav5').innerText = data.n5;
-  document.getElementById('h1').innerText = data.h1;
-  document.getElementById('p1').innerText = data.p1;
-  document.getElementById('h2').innerText = data.h2;
-  document.getElementById('p2').innerText = data.p2;
-  document.getElementById('h3').innerText = data.h3;
-  document.getElementById('p3').innerText = data.p3;
-  document.getElementById('dr-sub').innerText = data.dr_sub;
-  document.getElementById('dr-p1').innerText = data.dr_p1;
-  document.getElementById('lbl-name').inner
+  if (document.getElementById('sub-title')) document.getElementById('sub-title').innerText = data.sub;
+  if (document.getElementById('nav1')) document.getElementById('nav1').innerText = data.n1;
+  if (document.getElementById('nav2')) document.getElementById('nav2').innerText = data.n2;
+  if (document.getElementById('nav3')) document.getElementById('nav3').innerText = data.n3;
+  if (document.getElementById('nav4')) document.getElementById('nav4').innerText = data.n4;
+  if (document.getElementById('nav5')) document.getElementById('nav5').innerText = data.n5;
+  if (document.getElementById('h1')) document.getElementById('h1').innerText = data.h1;
+  if (document.getElementById('p1')) document.getElementById('p1').innerText = data.p1;
+  if (document.getElementById('h2')) document.getElementById('h2').innerText = data.h2;
+  if (document.getElementById('p2')) document.getElementById('p2').innerText = data.p2;
+  if (document.getElementById('h3')) document.getElementById('h3').innerText = data.h3;
+  if (document.getElementById('p3')) document.getElementById('p3').innerText = data.p3;
+  if (document.getElementById('dr-title')) document.getElementById('dr-title').innerHTML = data.dr_title;
+  if (document.getElementById('dr-sub')) document.getElementById('dr-sub').innerText = data.dr_sub;
+  if (document.getElementById('dr-p1')) document.getElementById('dr-p1').innerText = data.dr_p1;
+  
+  if (document.getElementById('lbl-name')) document.getElementById('lbl-name').innerText = data.lbl_name;
+  if (document.getElementById('name')) document.getElementById('name').placeholder = data.ph_name;
+  if (document.getElementById('lbl-tel')) document.getElementById('lbl-tel').innerText = data.lbl_tel;
+  if (document.getElementById('tel')) documen
