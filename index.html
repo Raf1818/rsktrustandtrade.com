@@ -12,14 +12,14 @@ html { scroll-behavior: smooth; }
 body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
 body::before { content: ""; position: fixed; inset: 0; background-image: url('./IMG-20260918-WA8261.jpg'); background-position: center 45%; background-repeat: no-repeat; background-size: 75% auto; opacity: 0.13; pointer-events: none; z-index: 0; }
 
-/* Header & Navigation Fixes */
+/* Header & Navigation */
 header { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: var(--parch); border-bottom: 1.5px solid var(--gold); position: sticky; top: 0; z-index: 1000; gap: 10px; }
 .logo-small { width: 65px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; flex-shrink: 0; }
 .brand { flex-grow: 1; position: relative; z-index: 1; }
 .brand h1 { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 2px; color: var(--navy); line-height: 1.1; }
 .brand h2 { font-size: 8px; letter-spacing: 1px; color: var(--gold); margin-top: 3px; line-height: 1.2; width: 100%; }
 
-/* Sprachmenü - Saubere Positionierung & Z-Index */
+/* Sprachmenü */
 .lang { position: relative; z-index: 9999; flex-shrink: 0; }
 .lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; user-select: none; }
 .lang-menu { display: none; position: absolute; right: 0; top: 100%; margin-top: 6px; background: #ffffff; border: 1.5px solid var(--gold); width: 180px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); z-index: 10000; overflow: hidden; }
@@ -57,7 +57,6 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
     <h2 id="sub-title">INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN</h2>
   </div>
   
-  <!-- SAUBERES SPRACHMENÜ -->
   <div class="lang">
     <button class="lang-btn" id="langBtn" type="button">🌐 <span id="langLabel">Sprache</span> ▼</button>
     <div class="lang-menu" id="lm">
@@ -115,7 +114,7 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   <div style="text-align:center;margin:18px 0;color:var(--gold)">— ◆ —</div>
   <p style="text-align:center;font-size:15px;color:#333;line-height:1.5" id="dr-p1">Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.</p>
   <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:24px 0;border:1.5px solid var(--gold)">
-    <a href="./docs/" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
+    <a href="./de/RSK_Document_Package.html" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
   </div>
   
   <form id="antragForm">
@@ -141,16 +140,16 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 </section>
 
 <section id="payment" style="max-width:900px;margin:40px auto;padding:20px;">
-  <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;">Dokumenten-Download (PDF) • $5</h2>
-  <p style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;">Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15</p>
+  <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;" id="pay-title">Dokumenten-Download (PDF) • $5</h2>
+  <p style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;" id="pay-sub">Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15</p>
   <div class="payment-grid">
     <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
-      <h3 style="font-size:22px;font-weight:bold;">Mit PayPal</h3>
-      <p style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00 Schutzgebühr</p>
-      <a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:12px 30px;border-radius:999px;text-decoration:none;display:block;">Dokument für $5 kaufen</a>
+      <h3 style="font-size:22px;font-weight:bold;" id="pay-pp-title">Mit PayPal</h3>
+      <p style="color:#666;margin:10px 0 20px;font-size:14px;" id="pay-pp-sub">$5.00 Schutzgebühr</p>
+      <a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:12px 30px;border-radius:999px;text-decoration:none;display:block;" id="pay-pp-btn">Dokument für $5 kaufen</a>
     </div>
     <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
-      <h3 style="font-size:22px;font-weight:bold;">Mit Crypto (BSC)</h3>
+      <h3 style="font-size:22px;font-weight:bold;" id="pay-crypto-title">Mit Crypto (BSC)</h3>
       <p style="color:#16a34a;font-weight:600;font-size:13px;margin:5px 0 15px;">$5 USDT (BEP20) / BNB</p>
       <div style="background:#fff;padding:8px;border-radius:16px;display:inline-block;border:1px solid #eee;">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609" alt="BSC QR" style="width:200px;height:200px;">
@@ -161,14 +160,12 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 </section>
 
 <footer>
-  <p>© 2026 RSK TRUST & TRADE. All rights reserved.</p>
+  <p id="footer-copy">© 2026 RSK TRUST & TRADE. All rights reserved.</p>
 </footer>
 
-<!-- ROBUSTES JAVASCRIPT AM ENDE DES DOKUMENTS -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   
-  // 1. ELEMNETE GREIFEN
   const langBtn = document.getElementById("langBtn");
   const langMenu = document.getElementById("lm");
   const langLabel = document.getElementById("langLabel");
@@ -176,78 +173,79 @@ document.addEventListener("DOMContentLoaded", function () {
   const aboutSec = document.getElementById("about");
   const antragForm = document.getElementById("antragForm");
 
-  // 2. MENÜ ÖFFNEN / SCHLIESSEN
+  // Menü öffnen/schließen
   langBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     langMenu.classList.toggle("open");
   });
 
-  // Schließen beim Klick auf beliebige Stelle außerhalb
   document.addEventListener("click", function (e) {
     if (!langMenu.contains(e.target) && e.target !== langBtn) {
       langMenu.classList.remove("open");
     }
   });
 
-  // 3. SPRACHAUSWAHL LOGIK
+  // Vollständige Übersetzungen für alle UI-Elemente
   const translations = {
-    de: { label: "Deutsch", h1: "Integrität im globalen Handel", p1: "Diskrete Compliance für staatliche Käufer und Institutionen.", nav1: "ÜBER UNS", btn: "An WhatsApp senden 📲" },
-    en: { label: "English", h1: "Integrity in Global Trade", p1: "Discrete compliance for sovereign buyers and institutions.", nav1: "ABOUT US", btn: "Send to WhatsApp 📲" },
-    es: { label: "Español", h1: "Integridad en el Comercio Global", p1: "Cumplimiento discreto para compradores gubernamentales e instituciones.", nav1: "NOSOTROS", btn: "Enviar a WhatsApp 📲" },
-    fr: { label: "Français", h1: "Intégrité dans le commerce mondial", p1: "Conformité discrète pour les acheteurs étatiques et institutions.", nav1: "À PROPOS", btn: "Envoyer sur WhatsApp 📲" },
-    pt: { label: "Português", h1: "Integridade no Comércio Global", p1: "Conformidade discreta para compradores governamentais.", nav1: "SOBRE NÓS", btn: "Enviar para WhatsApp 📲" },
-    ru: { label: "Русский", h1: "Честность в мировой торговле", p1: "Конфиденциальный комплаенс для государственных покупателей.", nav1: "О НАС", btn: "Отправить в WhatsApp 📲" },
-    zh: { label: "中文", h1: "全球贸易中的诚信", p1: "为主权买家和机构提供合规服务。", nav1: "发送至 WhatsApp 📲", nav1: "关于我们" },
-    it: { label: "Italiano", h1: "Integrità nel commercio globale", p1: "Conformità discreta per acquirenti statali e istituzioni.", nav1: "CHI SIAMO", btn: "Invia su WhatsApp 📲" }
-  };
-
-  langMenu.querySelectorAll("div").forEach(function (option) {
-    option.addEventListener("click", function (e) {
-      e.stopPropagation();
-      const langKey = this.getAttribute("data-lang");
-      const data = translations[langKey];
-
-      if (data) {
-        langLabel.innerText = data.label;
-        document.getElementById("h1").innerText = data.h1;
-        document.getElementById("p1").innerText = data.p1;
-        nav1.innerText = data.nav1;
-        document.getElementById("btn-submit").innerText = data.btn;
-      }
-
-      langMenu.classList.remove("open");
-    });
-  });
-
-  // 4. ÜBER UNS TOGGLE
-  nav1.addEventListener("click", function () {
-    aboutSec.classList.toggle("visible");
-    if (aboutSec.classList.contains("visible")) {
-      aboutSec.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-
-  // 5. WHATSAPP FORMULAR
-  antragForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const tel = document.getElementById("tel").value;
-    const email = document.getElementById("email").value;
-    const bizType = document.getElementById("bizType").value;
-    const msg = document.getElementById("msg").value;
-
-    const text = `*Neue Anfrage über RSK Website*%0A%0A` +
-                 `*Name:* ${encodeURIComponent(name)}%0A` +
-                 `*Telefon:* ${encodeURIComponent(tel)}%0A` +
-                 `*E-Mail:* ${encodeURIComponent(email)}%0A` +
-                 `*Geschäftsart:* ${encodeURIComponent(bizType)}%0A` +
-                 `*Nachricht:* ${encodeURIComponent(msg)}`;
-
-    window.open(`https://wa.me/49123456789?text=${text}`, "_blank");
-  });
-
-});
-</script>
-</body>
-          </html>
-  
+    de: {
+      label: "Deutsch",
+      subTitle: "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN",
+      nav1: "ÜBER UNS", nav2: "LEISTUNGEN", nav3: "DOKUMENTE", nav4: "TRADE DESK", nav5: "ZAHLUNG",
+      aboutTitle: "Über RSK Trust & Trade", aboutH1: "Maximale Effizienz durch digitale Exzellenz",
+      aboutP1: "RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.",
+      aboutP1Sub: "Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.",
+      aboutH2: "Unser Open-Source-Prinzip für den Handel", aboutP2: "Wir glauben an kontinuierliche Evolution und kollektive Intelligenz...",
+      h1: "Integrität im globalen Handel", p1: "Diskrete Compliance für staatliche Käufer und Institutionen.",
+      h2: "Expertise & Sicherheit", p2: "Minimierung des operationellen Risikos bei nahtloser Abwicklung.",
+      h3: "Trade Desk & Compliance", p3: "Dokumente in 8 Sprachen - verfügbar",
+      drTitle: "Erstberatung & Transaktionssupport", drSub: "RSK – Direct Support in High-Stakes Commodity Deals.",
+      drP1: "Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.",
+      btnDocs: "📄 Download Compliance Dokumente in 8 Sprachen",
+      lblName: "Name *", phName: "Ihr vollständiger Name",
+      lblTel: "Telefon / WhatsApp *", phTel: "+49 123 456789",
+      lblEmail: "Ihre E-Mail", phEmail: "name@unternehmen.com",
+      lblBiz: "Art des Geschäfts *", phBiz: "Bitte wählen Sie die Art der Transaktion...",
+      optBiz1: "Rohstoffhandel (Kohle, Öl, Mineralien)", optBiz2: "Paymaster & Abwicklungsdienstleistungen",
+      optBiz3: "Rechtliche Beratung & Vertragsstrukturierung", optBiz4: "Sonstiges / Allgemeine Beratung",
+      lblDesc: "Angaben zur Transaktion / Beratungswunsch", phMsg: "Beschreiben Sie kurz Ihr Vorhaben...",
+      btnSubmit: "An WhatsApp senden 📲",
+      lblNote: "* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.",
+      lblFooterText: "Diskret • Vertraulich • Professionell",
+      payTitle: "Dokumenten-Download (PDF) • $5", paySub: "Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15",
+      payPpTitle: "Mit PayPal", payPpSub: "$5.00 Schutzgebühr", payPpBtn: "Dokument für $5 kaufen",
+      payCryptoTitle: "Mit Crypto (BSC)"
+    },
+    en: {
+      label: "English",
+      subTitle: "INTERNATIONAL COMMODITIES • LATAM • EUROPE • UAE • ASIA",
+      nav1: "ABOUT US", nav2: "SERVICES", nav3: "DOCUMENTS", nav4: "TRADE DESK", nav5: "PAYMENT",
+      aboutTitle: "About RSK Trust & Trade", aboutH1: "Maximum Efficiency through Digital Excellence",
+      aboutP1: "RSK Trust & Trade is a modern, virtual business service provider in international commodity trading. Our business model is lean and AI-driven, maintaining minimal overhead by foregoing physical offices.",
+      aboutP1Sub: "We pass this efficiency advantage directly to our clients, offering most compliance and specialized services free of charge.",
+      aboutH2: "Our Open-Source Trading Principle", aboutP2: "We believe in continuous evolution and collective intelligence...",
+      h1: "Integrity in Global Trade", p1: "Discrete compliance for sovereign buyers and institutions.",
+      h2: "Expertise & Security", p2: "Minimizing operational risk with seamless execution.",
+      h3: "Trade Desk & Compliance", p3: "Documents available in 8 languages",
+      drTitle: "Consultation & Transaction Support", drSub: "RSK – Direct Support in High-Stakes Commodity Deals.",
+      drP1: "We offer full transaction support. The initial consultation is free. If necessary, we consult specialized legal counsel and verified paymasters.",
+      btnDocs: "📄 Download Compliance Documents in 8 Languages",
+      lblName: "Name *", phName: "Your full name",
+      lblTel: "Phone / WhatsApp *", phTel: "+1 234 567 890",
+      lblEmail: "Your Email", phEmail: "name@company.com",
+      lblBiz: "Business Type *", phBiz: "Please select transaction type...",
+      optBiz1: "Commodity Trading (Coal, Oil, Minerals)", optBiz2: "Paymaster & Settlement Services",
+      optBiz3: "Legal Advisory & Structuring", optBiz4: "Other / General Advisory",
+      lblDesc: "Transaction Details / Consultation Request", phMsg: "Briefly describe your transaction...",
+      btnSubmit: "Send to WhatsApp 📲",
+      lblNote: "* RSK provides specialized transaction support. Strict confidentiality guaranteed.",
+      lblFooterText: "Discrete • Confidential • Professional",
+      payTitle: "Document Download (PDF) • $5", paySub: "Fee per document download | BSC (BEP20) Fee ~$0.15",
+      payPpTitle: "Via PayPal", payPpSub: "$5.00 Nominal Fee", payPpBtn: "Buy Document for $5",
+      payCryptoTitle: "Via Crypto (BSC)"
+    },
+    es: {
+      label: "Español",
+      subTitle: "COMMODITIES INTERNACIONALES • LATAM • EUROPA • EAU • ASIA",
+      nav1: "NOSOTROS", nav2: "SERVICIOS", nav3: "DOCUMENTOS", nav4: "TRADE DESK", nav5: "PAGO",
+      aboutTitle: "Sobre RSK Trust & Trade", aboutH1: "Máxima Eficiencia mediante Excelencia Digital",
+      aboutP1: "RSK Trust & Trade es un proveedor de servicios empresariales virtuales en el comercio internacional de mercancías. Reducimos costes operativos mediante un modelo digital e impulsado por
