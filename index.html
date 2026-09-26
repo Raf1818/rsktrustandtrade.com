@@ -23,13 +23,17 @@ header { display: flex; align-items: center; justify-content: space-between; pad
 .lang-menu div { padding: 10px 12px; cursor: pointer; font-size: 13px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 8px; color: #111; background: #fff; }
 .lang-menu div:hover { background: var(--parch); color: var(--navy); }
 nav { display: flex; justify-content: center; gap: 15px; padding: 12px 10px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); flex-wrap: wrap; }
-nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; }
-.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; position: relative; z-index: 1; }
-.hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
-.about-section { max-width: 900px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 35px; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
+nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; cursor: pointer; }
+
+/* Über uns: Standardmäßig ausgeblendet */
+.about-section { display: none; max-width: 900px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 35px; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
+.about-section.visible { display: block !important; }
 .about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
 .about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
 .about-section p { font-size: 14px; line-height: 1.6; color: #333; }
+
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; position: relative; z-index: 1; }
+.hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
 .card { max-width: 850px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
 .antrag-card { max-width: 850px; margin: 40px auto; padding: 30px 20px; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 22px; box-shadow: 0 18px 50px rgba(201,168,106,.18); position: relative; z-index: 1; }
 .form-group { width: 100%; margin-bottom: 16px; text-align: left; }
@@ -65,14 +69,14 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 </header>
 
 <nav>
-  <a id="nav1" href="#about">ÜBER UNS</a>
+  <a id="nav1" href="javascript:void(0)" onclick="toggleAboutSection()">ÜBER UNS</a>
   <a id="nav2" href="#hero-sec">LEISTUNGEN</a>
   <a id="nav3" href="#docs">DOKUMENTE</a>
   <a id="nav4" href="#trade-desk">TRADE DESK</a>
   <a id="nav5" href="#payment">ZAHLUNG</a>
 </nav>
 
-<!-- SEKTION: ÜBER UNS / UNTERNEHMENSPHILOSOPHIE -->
+<!-- SEKTION: ÜBER UNS (Versteckt bis Klick auf Button oben) -->
 <section id="about" class="about-section">
   <h2 id="about-title">Über RSK Trust & Trade</h2>
   
@@ -189,6 +193,7 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 <footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
 
 <script>
+// Übersetzungswörterbuch
 const T = {
   en: { 
     sub: "INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA", 
@@ -208,10 +213,10 @@ const T = {
     lbl_tel: "Phone / WhatsApp *", ph_tel: "+49 123 456 789", 
     lbl_email: "Your Email", ph_email: "name@company.com", 
     lbl_biz: "Type of Business *", ph_biz: "Please select the type of transaction...",
-    biz_opt1: "Commodity Trading (Coal, Oil, Minerals)",
-    biz_opt2: "Paymaster & Settlement Services",
-    biz_opt3: "Legal Advisory & Deal Structuring",
-    biz_opt4: "Other / General Advisory",
+    opt_biz1: "Commodity Trading (Coal, Oil, Minerals)",
+    opt_biz2: "Paymaster & Settlement Services",
+    opt_biz3: "Legal Advisory & Deal Structuring",
+    opt_biz4: "Other / General Advisory",
     lbl_desc: "Transaction Details / Request", ph_desc: "Brief description of your request...", 
     lbl_note: "* RSK provides specialized transaction support. We guarantee confidentiality.", 
     btn_submit: "Send to WhatsApp 📲", 
@@ -237,11 +242,8 @@ const T = {
     lbl_tel: "Telefon / WhatsApp *", ph_tel: "+49 123 456789", 
     lbl_email: "Ihre E-Mail", ph_email: "name@unternehmen.com", 
     lbl_biz: "Art des Geschäfts *", ph_biz: "Bitte wählen Sie die Art der Transaktion...",
-    biz_opt1: "Rohstoffhandel (Kohle, Öl, Mineralien)",
-    biz_opt2: "Paymaster & Abwicklungsdienstleistungen",
-    biz_opt3: "Rechtliche Beratung & Vertragsstrukturierung",
-    biz_opt4: "Sonstiges / Allgemeine Beratung",
-    lbl_desc: "Angaben zur Transaktion / Beratungswunsch", ph_desc: "Beschreiben Sie kurz Ihr Vorhaben...", 
-    lbl_note: "* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.", 
-    btn_submit: "An WhatsApp senden 📲", 
-    lbl_footer_text: "Diskret • V
+    opt_biz1: "Rohstoffhandel (Kohle, Öl, Mineralien)",
+    opt_biz2: "Paymaster & Abwicklungsdienstleistungen",
+    opt_biz3: "Rechtliche Beratung & Vertragsstrukturierung",
+    opt_biz4: "Sonstiges / Allgemeine Beratung",
+    lbl_desc: "Angaben zur Transaktion / Beratungswunsch", ph_desc: "Beschrei
