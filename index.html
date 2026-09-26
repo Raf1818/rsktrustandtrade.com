@@ -11,12 +11,12 @@
 html { scroll-behavior: smooth; }
 body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
 body::before { content: ""; position: fixed; inset: 0; background-image: url('./IMG-20260918-WA8261.jpg'); background-position: center 45%; background-repeat: no-repeat; background-size: 75% auto; opacity: 0.13; pointer-events: none; z-index: 0; }
-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: var(--parch); border-bottom: 1.5px solid var(--gold); position: sticky; top: 0; z-index: 1000; gap: 10px; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: var(--parch); border-bottom: 1.5px solid var(--gold); position: sticky; top: 0; z-index: 10000; gap: 10px; }
 .logo-small { width: 65px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; flex-shrink: 0; }
 .brand { flex-grow: 1; position: relative; z-index: 3; }
 .brand h1 { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 2px; color: var(--navy); line-height: 1.1; }
 .brand h2 { font-size: 8px; letter-spacing: 1px; color: var(--gold); margin-top: 3px; line-height: 1.2; width: 100%; }
-.lang { position: relative; z-index: 10000; flex-shrink: 0; }
+.lang { position: relative; z-index: 20000; flex-shrink: 0; }
 .lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 6px 10px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; white-space: nowrap; }
 .lang-menu { display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #ffffff; border: 1.5px solid var(--gold); width: 180px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); z-index: 999999!important; overflow: hidden; }
 .lang-menu.open { display: block !important; }
@@ -26,6 +26,10 @@ nav { display: flex; justify-content: center; gap: 15px; padding: 12px 10px; bor
 nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; }
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; position: relative; z-index: 1; }
 .hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
+.about-section { max-width: 900px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 35px; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
+.about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
+.about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
+.about-section p { font-size: 14px; line-height: 1.6; color: #333; }
 .card { max-width: 850px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
 .antrag-card { max-width: 850px; margin: 40px auto; padding: 30px 20px; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 22px; box-shadow: 0 18px 50px rgba(201,168,106,.18); position: relative; z-index: 1; }
 .form-group { width: 100%; margin-bottom: 16px; text-align: left; }
@@ -43,7 +47,7 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   <a href="#top"><img src="./IMG-20260918-WA8261.jpg" class="logo-small" alt="RSK Logo" onerror="this.style.display='none'"></a>
   <div class="brand">
     <h1>RSK TRUST & TRADE</h1>
-    <h2 id="sub-title">INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA</h2>
+    <h2 id="sub-title">INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN</h2>
   </div>
   <div class="lang">
     <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)">🌐 <span id="langLabel">Sprache</span> ▼</button>
@@ -68,8 +72,24 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   <a id="nav5" href="#payment">ZAHLUNG</a>
 </nav>
 
-<section class="hero" id="about">
-  <div id="hero-sec">
+<!-- SEKTION: ÜBER UNS / UNTERNEHMENSPHILOSOPHIE -->
+<section id="about" class="about-section">
+  <h2 id="about-title">Über RSK Trust & Trade</h2>
+  
+  <h3 id="about-h1">Maximale Effizienz durch digitale Exzellenz</h3>
+  <p id="about-p1">
+    RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.<br><br>
+    Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.
+  </p>
+  
+  <h3 id="about-h2">Unser Open-Source-Prinzip für den Handel</h3>
+  <p id="about-p2">
+    Wir glauben an kontinuierliche Evolution und kollektive Intelligenz. In Anlehnung an das Open-Source-Prinzip laden wir Partner, Käufer und Verkäufer ein, aktiv an der Optimierung unserer Plattform mitzuwirken. Jeder Vorschlag zur Prozessverbesserung wird von uns direkt geprüft und 1:1 umgesetzt, sofern er einen messbaren Mehrwert für alle Marktteilnehmer schafft.
+  </p>
+</section>
+
+<section class="hero" id="hero-sec">
+  <div>
     <h3 id="h1">Integrität im globalen Handel</h3>
     <p id="p1" style="margin-top:10px;color:#444;line-height:1.5">Diskrete Compliance für staatliche Käufer und Institutionen.</p>
   </div>
@@ -172,7 +192,12 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 const T = {
   en: { 
     sub: "INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA", 
-    n1: "ABOUT", n2: "SERVICES", n3: "DOCUMENTS", n4: "TRADE DESK", n5: "PAYMENT", 
+    n1: "ABOUT US", n2: "SERVICES", n3: "DOCUMENTS", n4: "TRADE DESK", n5: "PAYMENT", 
+    aboutTitle: "About RSK Trust & Trade",
+    aboutH1: "Maximum Efficiency Through Digital Excellence",
+    aboutP1: "RSK Trust & Trade is a modern, virtual business service provider in international commodity trading. Our corporate philosophy is based on a strictly lean, AI-supported business model: By deliberately dispensing with physical representative offices and outdated staffing structures, we keep our overhead costs minimal.<br><br>We pass this efficiency advantage directly on to our clients – which is why we can offer a large portion of our highly specialized services and compliance solutions free of charge.",
+    aboutH2: "Our Open-Source Principle for Trading",
+    aboutP2: "We believe in continuous evolution and collective intelligence. Inspired by the open-source principle, we invite partners, buyers, and sellers to actively participate in optimizing our platform. Every process improvement proposal is directly reviewed and implemented 1:1 if it creates measurable added value for all market participants.",
     h1: "Integrity in Global Trade", p1: "Discreet compliance for sovereign buyers and institutions.", 
     h2: "Expertise & Security", p2: "Minimizing operational risk while preserving seamless execution.", 
     h3: "Trade Desk & Compliance", p3: "Documents in 8 languages - available tomorrow", 
@@ -197,6 +222,11 @@ const T = {
   de: { 
     sub: "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN", 
     n1: "ÜBER UNS", n2: "LEISTUNGEN", n3: "DOKUMENTE", n4: "TRADE DESK", n5: "ZAHLUNG", 
+    aboutTitle: "Über RSK Trust & Trade",
+    aboutH1: "Maximale Effizienz durch digitale Exzellenz",
+    aboutP1: "RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.<br><br>Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.",
+    aboutH2: "Unser Open-Source-Prinzip für den Handel",
+    aboutP2: "Wir glauben an kontinuierliche Evolution und kollektive Intelligenz. In Anlehnung an das Open-Source-Prinzip laden wir Partner, Käufer und Verkäufer ein, aktiv an der Optimierung unserer Plattform mitzuwirken. Jeder Vorschlag zur Prozessverbesserung wird von uns direkt geprüft und 1:1 umgesetzt, sofern er einen messbaren Mehrwert für alle Marktteilnehmer schafft.",
     h1: "Integrität im globalen Handel", p1: "Diskrete Compliance für staatliche Käufer.", 
     h2: "Expertise & Sicherheit", p2: "Minimierung des Risikos.", 
     h3: "Trade Desk & Compliance", p3: "Dokumente in 8 Sprachen - ab morgen verfügbar", 
@@ -214,76 +244,4 @@ const T = {
     lbl_desc: "Angaben zur Transaktion / Beratungswunsch", ph_desc: "Beschreiben Sie kurz Ihr Vorhaben...", 
     lbl_note: "* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.", 
     btn_submit: "An WhatsApp senden 📲", 
-    lbl_footer_text: "Diskret • Vertraulich • Professionell", 
-    btn_docs: "📄 Download Compliance Dokumente", 
-    lbl: "Sprache" 
-  },
-  es: { 
-    sub: "COMMODITIES INTERNACIONALES • LATAM • EUROPA • EAU • ASIA", 
-    n1: "NOSOTROS", n2: "SERVICIOS", n3: "DOCUMENTOS", n4: "TRADE DESK", n5: "PAGO", 
-    h1: "Integridad en el Comercio Global", p1: "Cumplimiento discreto para compradores soberanos.", 
-    h2: "Pericia y Seguridad", p2: "Minimizando el riesgo operativo.", 
-    h3: "Trade Desk & Compliance", p3: "Documentos en 8 idiomas", 
-    dr_title: "Consulta Inicial y<br><span style='color:var(--gold)'>&</span> Apoyo Transaccional",
-    dr_sub: "RSK – Apoyo directo en operaciones.", 
-    dr_p1: "Ofrecemos soporte integral para su transacción. La primera consulta es totalmente gratuita. Consultamos abogados especializados y paymasters registrados si es necesario.", 
-    lbl_name: "Nombre *", ph_name: "Su nombre completo", 
-    lbl_tel: "Teléfono / WhatsApp *", ph_tel: "+34 123 456 789", 
-    lbl_email: "Su correo", ph_email: "nombre@empresa.com", 
-    lbl_biz: "Tipo de Negocio *", ph_biz: "Seleccione el tipo de transacción...",
-    biz_opt1: "Comercio de Commodities (Carbón, Petróleo, Minerales)",
-    biz_opt2: "Servicios de Paymaster y Liquidación",
-    biz_opt3: "Asesoría Legal y Estructuración de Contratos",
-    biz_opt4: "Otros / Asesoría General",
-    lbl_desc: "Detalles de la Transacción", ph_desc: "Breve descripción...", 
-    lbl_note: "* RSK ofrece apoyo especializado.", 
-    btn_submit: "Enviar a WhatsApp 📲", 
-    lbl_footer_text: "Discreto • Confidencial • Profesional", 
-    btn_docs: "📄 Descargar Documentos", 
-    lbl: "Idioma" 
-  }
-};
-
-function toggleLangMenu(e) {
-  if (e) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-  const langMenu = document.getElementById('lm');
-  langMenu.classList.toggle('open');
-}
-
-document.addEventListener('click', function(e) { 
-  const langMenu = document.getElementById('lm');
-  if (langMenu && !e.target.closest('.lang')) {
-    langMenu.classList.remove('open'); 
-  }
-});
-
-function selectLanguage(e, lang) {
-  if (e) e.stopPropagation();
-  const langMenu = document.getElementById('lm');
-  if (langMenu) langMenu.classList.remove('open');
-  
-  const data = T[lang] || T['de'];
-  
-  if (document.getElementById('sub-title')) document.getElementById('sub-title').innerText = data.sub;
-  if (document.getElementById('nav1')) document.getElementById('nav1').innerText = data.n1;
-  if (document.getElementById('nav2')) document.getElementById('nav2').innerText = data.n2;
-  if (document.getElementById('nav3')) document.getElementById('nav3').innerText = data.n3;
-  if (document.getElementById('nav4')) document.getElementById('nav4').innerText = data.n4;
-  if (document.getElementById('nav5')) document.getElementById('nav5').innerText = data.n5;
-  if (document.getElementById('h1')) document.getElementById('h1').innerText = data.h1;
-  if (document.getElementById('p1')) document.getElementById('p1').innerText = data.p1;
-  if (document.getElementById('h2')) document.getElementById('h2').innerText = data.h2;
-  if (document.getElementById('p2')) document.getElementById('p2').innerText = data.p2;
-  if (document.getElementById('h3')) document.getElementById('h3').innerText = data.h3;
-  if (document.getElementById('p3')) document.getElementById('p3').innerText = data.p3;
-  if (document.getElementById('dr-title')) document.getElementById('dr-title').innerHTML = data.dr_title;
-  if (document.getElementById('dr-sub')) document.getElementById('dr-sub').innerText = data.dr_sub;
-  if (document.getElementById('dr-p1')) document.getElementById('dr-p1').innerText = data.dr_p1;
-  
-  if (document.getElementById('lbl-name')) document.getElementById('lbl-name').innerText = data.lbl_name;
-  if (document.getElementById('name')) document.getElementById('name').placeholder = data.ph_name;
-  if (document.getElementById('lbl-tel')) document.getElementById('lbl-tel').innerText = data.lbl_tel;
-  if (document.getElementById('tel')) documen
+    lbl_footer_text: "Diskret • V
