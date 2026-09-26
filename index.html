@@ -18,8 +18,8 @@ header { display: flex; align-items: center; justify-content: space-between; pad
 .brand h2 { font-size: 8px; letter-spacing: 1px; color: var(--gold); margin-top: 3px; line-height: 1.2; width: 100%; }
 .lang { position: relative; z-index: 10000; flex-shrink: 0; }
 .lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 6px 10px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; white-space: nowrap; }
-.lang-menu { display: none; position: absolute; right: 0; top: 40px; background: #ffffff; border: 1.5px solid var(--gold); width: 200px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); z-index: 99999!important; overflow: hidden; }
-.lang-menu.open { display: block; }
+.lang-menu { display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #ffffff; border: 1.5px solid var(--gold); width: 180px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); z-index: 999999!important; overflow: hidden; }
+.lang-menu.open { display: block !important; }
 .lang-menu div { padding: 10px 12px; cursor: pointer; font-size: 13px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 8px; color: #111; background: #fff; }
 .lang-menu div:hover { background: var(--parch); color: var(--navy); }
 nav { display: flex; justify-content: center; gap: 15px; padding: 12px 10px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); flex-wrap: wrap; }
@@ -157,13 +157,16 @@ const T = {
 const langBtn = document.getElementById('langBtn');
 const langMenu = document.getElementById('lm');
 
-langBtn.addEventListener('click', (e) => { 
+langBtn.addEventListener('click', function(e) { 
+  e.preventDefault();
   e.stopPropagation(); 
   langMenu.classList.toggle('open'); 
 });
 
-document.addEventListener('click', () => { 
-  langMenu.classList.remove('open'); 
+document.addEventListener('click', function(e) { 
+  if (!e.target.closest('.lang')) {
+    langMenu.classList.remove('open'); 
+  }
 });
 
 function selectLanguage(e, lang) {
@@ -185,6 +188,4 @@ function selectLanguage(e, lang) {
   document.getElementById('p3').innerText = data.p3;
   document.getElementById('dr-sub').innerText = data.dr_sub;
   document.getElementById('dr-p1').innerText = data.dr_p1;
-  document.getElementById('lbl-name').innerText = data.lbl_name;
-  document.getElementById('name').placeholder = data.ph_name;
-  document.getE
+  document.getElementById('lbl-name').inner
