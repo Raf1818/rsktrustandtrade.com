@@ -34,7 +34,7 @@ nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px
 .about-section.visible { display: block !important; }
 .about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
 .about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
-.about-section p { font-size: 14px; line-height: 1.6; color: #333; }
+.about-section p { font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 12px; }
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; position: relative; z-index: 1; }
 .hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
 .card { max-width: 850px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
@@ -84,7 +84,8 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 <section id="about" class="about-section">
   <h2 id="about-title">Über RSK Trust & Trade</h2>
   <h3 id="about-h1">Maximale Effizienz durch digitale Exzellenz</h3>
-  <p id="about-p1">RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel...</p>
+  <p id="about-p1">RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.</p>
+  <p id="about-p1-sub">Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.</p>
   <h3 id="about-h2">Unser Open-Source-Prinzip für den Handel</h3>
   <p id="about-p2">Wir glauben an kontinuierliche Evolution und kollektive Intelligenz...</p>
 </section>
@@ -196,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fr: { label: "Français", h1: "Intégrité dans le commerce mondial", p1: "Conformité discrète pour les acheteurs étatiques et institutions.", nav1: "À PROPOS", btn: "Envoyer sur WhatsApp 📲" },
     pt: { label: "Português", h1: "Integridade no Comércio Global", p1: "Conformidade discreta para compradores governamentais.", nav1: "SOBRE NÓS", btn: "Enviar para WhatsApp 📲" },
     ru: { label: "Русский", h1: "Честность в мировой торговле", p1: "Конфиденциальный комплаенс для государственных покупателей.", nav1: "О НАС", btn: "Отправить в WhatsApp 📲" },
-    zh: { label: "中文", h1: "全球贸易中的诚信", p1: "为主权买家和机构提供合规服务。", nav1: "关于我们", btn: "发送至 WhatsApp 📲" },
+    zh: { label: "中文", h1: "全球贸易中的诚信", p1: "为主权买家和机构提供合规服务。", nav1: "发送至 WhatsApp 📲", nav1: "关于我们" },
     it: { label: "Italiano", h1: "Integrità nel commercio globale", p1: "Conformità discreta per acquirenti statali e istituzioni.", nav1: "CHI SIAMO", btn: "Invia su WhatsApp 📲" }
   };
 
@@ -248,5 +249,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 </body>
-    </html>
+          </html>
   
