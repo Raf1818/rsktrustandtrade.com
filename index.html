@@ -24,14 +24,11 @@ header { display: flex; align-items: center; justify-content: space-between; pad
 .lang-menu div:hover { background: var(--parch); color: var(--navy); }
 nav { display: flex; justify-content: center; gap: 15px; padding: 12px 10px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); flex-wrap: wrap; }
 nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; cursor: pointer; }
-
-/* Über uns: Standardmäßig ausgeblendet */
 .about-section { display: none; max-width: 900px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 35px; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
 .about-section.visible { display: block !important; }
 .about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
 .about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
 .about-section p { font-size: 14px; line-height: 1.6; color: #333; }
-
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; position: relative; z-index: 1; }
 .hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
 .card { max-width: 850px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
@@ -46,28 +43,11 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 </style>
 </head>
 <body id="top">
-
 <header>
   <a href="#top"><img src="./IMG-20260918-WA8261.jpg" class="logo-small" alt="RSK Logo" onerror="this.style.display='none'"></a>
-  <div class="brand">
-    <h1>RSK TRUST & TRADE</h1>
-    <h2 id="sub-title">INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN</h2>
-  </div>
-  <div class="lang">
-    <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)">🌐 <span id="langLabel">Sprache</span> ▼</button>
-    <div class="lang-menu" id="lm">
-      <div onclick="selectLanguage(event, 'en')">🇬🇧 English</div>
-      <div onclick="selectLanguage(event, 'es')">🇪🇸 Español</div>
-      <div onclick="selectLanguage(event, 'de')">🇩🇪 Deutsch</div>
-      <div onclick="selectLanguage(event, 'fr')">🇫🇷 Français</div>
-      <div onclick="selectLanguage(event, 'pt')">🇧🇷 Português</div>
-      <div onclick="selectLanguage(event, 'ru')">🇷🇺 Русский</div>
-      <div onclick="selectLanguage(event, 'zh')">🇨🇳 中文</div>
-      <div onclick="selectLanguage(event, 'it')">🇮🇹 Italiano</div>
-    </div>
-  </div>
+  <div class="brand"><h1>RSK TRUST & TRADE</h1><h2 id="sub-title">INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN</h2></div>
+  <div class="lang"><button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)">🌐 <span id="langLabel">Sprache</span> ▼</button><div class="lang-menu" id="lm"><div onclick="selectLanguage(event,'en')">🇬🇧 English</div><div onclick="selectLanguage(event,'es')">🇪🇸 Español</div><div onclick="selectLanguage(event,'de')">🇩🇪 Deutsch</div><div onclick="selectLanguage(event,'fr')">🇫🇷 Français</div><div onclick="selectLanguage(event,'pt')">🇧🇷 Português</div><div onclick="selectLanguage(event,'ru')">🇷🇺 Русский</div><div onclick="selectLanguage(event,'zh')">🇨🇳 中文</div><div onclick="selectLanguage(event,'it')">🇮🇹 Italiano</div></div></div>
 </header>
-
 <nav>
   <a id="nav1" href="javascript:void(0)" onclick="toggleAboutSection()">ÜBER UNS</a>
   <a id="nav2" href="#hero-sec">LEISTUNGEN</a>
@@ -75,175 +55,39 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   <a id="nav4" href="#trade-desk">TRADE DESK</a>
   <a id="nav5" href="#payment">ZAHLUNG</a>
 </nav>
-
-<!-- SEKTION: ÜBER UNS (Versteckt bis Klick auf Button oben) -->
 <section id="about" class="about-section">
   <h2 id="about-title">Über RSK Trust & Trade</h2>
-  
   <h3 id="about-h1">Maximale Effizienz durch digitale Exzellenz</h3>
-  <p id="about-p1">
-    RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.<br><br>
-    Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.
-  </p>
-  
+  <p id="about-p1">RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.<br><br>Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.</p>
   <h3 id="about-h2">Unser Open-Source-Prinzip für den Handel</h3>
-  <p id="about-p2">
-    Wir glauben an kontinuierliche Evolution und kollektive Intelligenz. In Anlehnung an das Open-Source-Prinzip laden wir Partner, Käufer und Verkäufer ein, aktiv an der Optimierung unserer Plattform mitzuwirken. Jeder Vorschlag zur Prozessverbesserung wird von uns direkt geprüft und 1:1 umgesetzt, sofern er einen messbaren Mehrwert für alle Marktteilnehmer schafft.
-  </p>
+  <p id="about-p2">Wir glauben an kontinuierliche Evolution und kollektive Intelligenz. In Anlehnung an das Open-Source-Prinzip laden wir Partner, Käufer und Verkäufer ein, aktiv an der Optimierung unserer Plattform mitzuwirken. Jeder Vorschlag zur Prozessverbesserung wird von uns direkt geprüft und 1:1 umgesetzt, sofern er einen messbaren Mehrwert für alle Marktteilnehmer schafft.</p>
 </section>
-
 <section class="hero" id="hero-sec">
-  <div>
-    <h3 id="h1">Integrität im globalen Handel</h3>
-    <p id="p1" style="margin-top:10px;color:#444;line-height:1.5">Diskrete Compliance für staatliche Käufer und Institutionen.</p>
-  </div>
-  <div>
-    <h3 id="h2">Expertise & Sicherheit</h3>
-    <p id="p2" style="margin-top:10px;color:#444;line-height:1.5">Minimierung des operationellen Risikos bei nahtloser Abwicklung.</p>
-  </div>
+  <div><h3 id="h1">Integrität im globalen Handel</h3><p id="p1" style="margin-top:10px;color:#444;line-height:1.5">Diskrete Compliance für staatliche Käufer und Institutionen.</p></div>
+  <div><h3 id="h2">Expertise & Sicherheit</h3><p id="p2" style="margin-top:10px;color:#444;line-height:1.5">Minimierung des operationellen Risikos bei nahtloser Abwicklung.</p></div>
 </section>
-
-<section id="docs">
-  <div class="card">
-    <h2 id="h3" style="font-family:'Playfair Display', serif;font-size:30px;color:var(--navy)">Trade Desk & Compliance</h2>
-    <p id="p3" style="margin-top:10px;color:#555">Dokumente in 8 Sprachen - ab morgen verfügbar</p>
-    <p style="margin-top:16px;font-size:11px;color:#888">info@rsktrustandtrade.com</p>
-  </div>
-</section>
-
+<section id="docs"><div class="card"><h2 id="h3" style="font-family:'Playfair Display', serif;font-size:30px;color:var(--navy)">Trade Desk & Compliance</h2><p id="p3" style="margin-top:10px;color:#555">Dokumente in 8 Sprachen - ab morgen verfügbar</p><p style="margin-top:16px;font-size:11px;color:#888">info@rsktrustandtrade.com</p></div></section>
 <section id="trade-desk" class="antrag-card">
-  <div style="text-align:center;margin-bottom:28px">
-    <img src="./IMG-20260918-WA8261.jpg" style="width:80px;height:auto;mix-blend-mode:multiply;" alt="RSK" onerror="this.style.display='none'">
-    <div style="font-family:'Playfair Display';font-size:28px;letter-spacing:4px;color:var(--navy);font-weight:900;margin-top:8px">RSK</div>
-    <div style="font-size:11px;letter-spacing:4px;color:var(--gold);margin-top:2px">TRUST & TRADE</div>
-    <hr style="border:none;border-top:1px solid var(--gold);margin:18px auto;width:140px;opacity:.6">
-  </div>
-  <h2 style="font-family:'Playfair Display';font-size:32px;line-height:1.2;color:var(--navy);text-align:center" id="dr-title">Erstberatung &<br><span style="color:var(--gold)">&</span> Transaktionssupport</h2>
+  <div style="text-align:center;margin-bottom:28px"><img src="./IMG-20260918-WA8261.jpg" style="width:80px;height:auto;mix-blend-mode:multiply;" alt="RSK" onerror="this.style.display='none'"><div style="font-family:'Playfair Display';font-size:28px;letter-spacing:4px;color:var(--navy);font-weight:900;margin-top:8px">RSK</div><div style="font-size:11px;letter-spacing:4px;color:var(--gold);margin-top:2px">TRUST & TRADE</div><hr style="border:none;border-top:1px solid var(--gold);margin:18px auto;width:140px;opacity:.6"></div>
+  <h2 style="font-family:'Playfair Display';font-size:32px;line-height:1.2;color:var(--navy);text-align:center" id="dr-title">Erstberatung & Transaktionssupport</h2>
   <p style="text-align:center;font-style:italic;font-size:16px;color:var(--navy);margin-top:14px;line-height:1.4" id="dr-sub">RSK – Direct Support in High-Stakes Commodity Deals.</p>
   <div style="text-align:center;margin:18px 0;color:var(--gold)">— ◆ —</div>
   <p style="text-align:center;font-size:15px;color:#333;line-height:1.5" id="dr-p1">Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.</p>
-  
-  <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:24px 0;border:1.5px solid var(--gold)">
-    <a href="./docs/" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
-  </div>
-  
+  <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:24px 0;border:1.5px solid var(--gold)"><a href="./docs/" id="btn-docs" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a></div>
   <form id="antragForm" onsubmit="sendWhatsApp(event)">
-    <div class="form-group">
-      <label for="name" id="lbl-name">Name *</label>
-      <input type="text" id="name" required placeholder="Ihr vollständiger Name">
-    </div>
-    
-    <div class="form-group">
-      <label for="tel" id="lbl-tel">Telefon / WhatsApp *</label>
-      <input type="tel" id="tel" required placeholder="+49 123 456789">
-    </div>
-    
-    <div class="form-group">
-      <label for="email" id="lbl-email">Ihre E-Mail</label>
-      <input type="email" id="email" placeholder="name@unternehmen.com">
-    </div>
-    
-    <div class="form-group">
-      <label for="bizType" id="lbl-biz">Art des Geschäfts *</label>
-      <select id="bizType" required>
-        <option value="" disabled selected id="ph-biz">Bitte wählen Sie die Art der Transaktion...</option>
-        <option value="Rohstoffhandel (Kohle, Öl, Mineralien)" id="opt-biz1">Rohstoffhandel (Kohle, Öl, Mineralien)</option>
-        <option value="Paymaster & Abwicklungsdienstleistungen" id="opt-biz2">Paymaster & Abwicklungsdienstleistungen</option>
-        <option value="Rechtliche Beratung & Vertragsstrukturierung" id="opt-biz3">Rechtliche Beratung & Vertragsstrukturierung</option>
-        <option value="Sonstiges / Allgemeine Beratung" id="opt-biz4">Sonstiges / Allgemeine Beratung</option>
-      </select>
-    </div>
-    
-    <div class="form-group">
-      <label for="msg" id="lbl-desc">Angaben zur Transaktion / Beratungswunsch</label>
-      <textarea id="msg" rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben..."></textarea>
-    </div>
-    
+    <div class="form-group"><label for="name" id="lbl-name">Name *</label><input type="text" id="name" required placeholder="Ihr vollständiger Name"></div>
+    <div class="form-group"><label for="tel" id="lbl-tel">Telefon / WhatsApp *</label><input type="tel" id="tel" required placeholder="+49 123 456789"></div>
+    <div class="form-group"><label for="email" id="lbl-email">Ihre E-Mail</label><input type="email" id="email" placeholder="name@unternehmen.com"></div>
+    <div class="form-group"><label for="bizType" id="lbl-biz">Art des Geschäfts *</label><select id="bizType" required><option value="" disabled selected id="ph-biz">Bitte wählen Sie die Art der Transaktion...</option><option value="Rohstoffhandel" id="opt-biz1">Rohstoffhandel (Kohle, Öl, Mineralien)</option><option value="Paymaster" id="opt-biz2">Paymaster & Abwicklungsdienstleistungen</option><option value="Legal" id="opt-biz3">Rechtliche Beratung & Vertragsstrukturierung</option><option value="Other" id="opt-biz4">Sonstiges / Allgemeine Beratung</option></select></div>
+    <div class="form-group"><label for="msg" id="lbl-desc">Angaben zur Transaktion / Beratungswunsch</label><textarea id="msg" rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben..."></textarea></div>
     <button type="submit" class="btn-whatsapp" id="btn-submit">An WhatsApp senden 📲</button>
   </form>
-  
   <p style="font-size:11px;color:#666;margin-top:18px;line-height:1.4;text-align:center" id="lbl-note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p>
   <p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="lbl-footer-text">Diskret • Vertraulich • Professionell</p>
 </section>
-
 <section id="payment" style="max-width:900px;margin:40px auto;padding:20px;">
   <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;">Dokumenten-Download (PDF) • $5</h2>
   <p style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;">Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15</p>
-  
   <div class="payment-grid">
-    <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
-      <h3 style="font-size:22px;font-weight:bold;">Mit PayPal</h3>
-      <p style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00 Schutzgebühr</p>
-      <a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:12px 30px;border-radius:999px;text-decoration:none;display:block;">Dokument für $5 kaufen</a>
-    </div>
-    
-    <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
-      <h3 style="font-size:22px;font-weight:bold;">Mit Crypto (BSC)</h3>
-      <p style="color:#16a34a;font-weight:600;font-size:13px;margin:5px 0 15px;">$5 USDT (BEP20) / BNB</p>
-      <div style="background:#fff;padding:8px;border-radius:16px;display:inline-block;border:1px solid #eee;">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609" alt="BSC QR" style="width:200px;height:200px;">
-      </div>
-      <p style="font-family:monospace;font-size:11px;word-break:break-all;background:#f8f8f8;padding:8px;border-radius:8px;margin:15px 0 10px;border:1px solid #eee;">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</p>
-      <button onclick="navigator.clipboard.writeText('0xa5c21334b270F1f4d7ccF06ABc935c983Db94609');this.innerText='✓ Kopiert!';setTimeout(()=>this.innerText='📋 Adresse kopieren',2000)" style="font-size:12px;background:#000;color:#fff;padding:8px 16px;border-radius:999px;width:100%;border:none;cursor:pointer;">📋 Adresse kopieren</button>
-      <a href="https://wa.me/573138734968?text=Hallo%20RSK%20Trust%2C%20ich%20habe%20mit%20BSC%20bezahlt.%20Meine%20TXID%3A%20" target="_blank" style="margin-top:12px;background:#25D366;color:#fff;font-size:13px;font-weight:bold;padding:10px 16px;border-radius:999px;display:block;text-decoration:none;">Bezahlt → WhatsApp TXID senden</a>
-    </div>
-  </div>
-</section>
-
-<footer>RSK TRUST & TRADE • info@rsktrustandtrade.com • CONFIDENTIAL</footer>
-
-<script>
-// Übersetzungswörterbuch
-const T = {
-  en: { 
-    sub: "INTERNATIONAL COMMODITIES & TRADE • LATAM • EUROPE • UAE • ASIA", 
-    n1: "ABOUT US", n2: "SERVICES", n3: "DOCUMENTS", n4: "TRADE DESK", n5: "PAYMENT", 
-    aboutTitle: "About RSK Trust & Trade",
-    aboutH1: "Maximum Efficiency Through Digital Excellence",
-    aboutP1: "RSK Trust & Trade is a modern, virtual business service provider in international commodity trading. Our corporate philosophy is based on a strictly lean, AI-supported business model: By deliberately dispensing with physical representative offices and outdated staffing structures, we keep our overhead costs minimal.<br><br>We pass this efficiency advantage directly on to our clients – which is why we can offer a large portion of our highly specialized services and compliance solutions free of charge.",
-    aboutH2: "Our Open-Source Principle for Trading",
-    aboutP2: "We believe in continuous evolution and collective intelligence. Inspired by the open-source principle, we invite partners, buyers, and sellers to actively participate in optimizing our platform. Every process improvement proposal is directly reviewed and implemented 1:1 if it creates measurable added value for all market participants.",
-    h1: "Integrity in Global Trade", p1: "Discreet compliance for sovereign buyers and institutions.", 
-    h2: "Expertise & Security", p2: "Minimizing operational risk while preserving seamless execution.", 
-    h3: "Trade Desk & Compliance", p3: "Documents in 8 languages - available tomorrow", 
-    dr_title: "Initial Consultation &<br><span style='color:var(--gold)'>&</span> Transaction Support",
-    dr_sub: "RSK – Direct Support in High-Stakes Commodity Deals.", 
-    dr_p1: "We provide support around your deal. Initial consultation is completely free of charge. Specialized lawyers and registered paymasters are consulted if requested.", 
-    lbl_name: "Name *", ph_name: "Your Full Name", 
-    lbl_tel: "Phone / WhatsApp *", ph_tel: "+49 123 456 789", 
-    lbl_email: "Your Email", ph_email: "name@company.com", 
-    lbl_biz: "Type of Business *", ph_biz: "Please select the type of transaction...",
-    opt_biz1: "Commodity Trading (Coal, Oil, Minerals)",
-    opt_biz2: "Paymaster & Settlement Services",
-    opt_biz3: "Legal Advisory & Deal Structuring",
-    opt_biz4: "Other / General Advisory",
-    lbl_desc: "Transaction Details / Request", ph_desc: "Brief description of your request...", 
-    lbl_note: "* RSK provides specialized transaction support. We guarantee confidentiality.", 
-    btn_submit: "Send to WhatsApp 📲", 
-    lbl_footer_text: "Discreet • Confidential • Professional", 
-    btn_docs: "📄 Download Compliance Documents in 8 Languages", 
-    lbl: "Language" 
-  },
-  de: { 
-    sub: "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN", 
-    n1: "ÜBER UNS", n2: "LEISTUNGEN", n3: "DOKUMENTE", n4: "TRADE DESK", n5: "ZAHLUNG", 
-    aboutTitle: "Über RSK Trust & Trade",
-    aboutH1: "Maximale Effizienz durch digitale Exzellenz",
-    aboutP1: "RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.<br><br>Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.",
-    aboutH2: "Unser Open-Source-Prinzip für den Handel",
-    aboutP2: "Wir glauben an kontinuierliche Evolution und kollektive Intelligenz. In Anlehnung an das Open-Source-Prinzip laden wir Partner, Käufer und Verkäufer ein, aktiv an der Optimierung unserer Plattform mitzuwirken. Jeder Vorschlag zur Prozessverbesserung wird von uns direkt geprüft und 1:1 umgesetzt, sofern er einen messbaren Mehrwert für alle Marktteilnehmer schafft.",
-    h1: "Integrität im globalen Handel", p1: "Diskrete Compliance für staatliche Käufer.", 
-    h2: "Expertise & Sicherheit", p2: "Minimierung des Risikos.", 
-    h3: "Trade Desk & Compliance", p3: "Dokumente in 8 Sprachen - ab morgen verfügbar", 
-    dr_title: "Erstberatung &<br><span style='color:var(--gold)'>&</span> Transaktionssupport",
-    dr_sub: "RSK – Direct Support in High-Stakes Commodity Deals.", 
-    dr_p1: "Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.", 
-    lbl_name: "Name *", ph_name: "Ihr Name", 
-    lbl_tel: "Telefon / WhatsApp *", ph_tel: "+49 123 456789", 
-    lbl_email: "Ihre E-Mail", ph_email: "name@unternehmen.com", 
-    lbl_biz: "Art des Geschäfts *", ph_biz: "Bitte wählen Sie die Art der Transaktion...",
-    opt_biz1: "Rohstoffhandel (Kohle, Öl, Mineralien)",
-    opt_biz2: "Paymaster & Abwicklungsdienstleistungen",
-    opt_biz3: "Rechtliche Beratung & Vertragsstrukturierung",
-    opt_biz4: "Sonstiges / Allgemeine Beratung",
-    lbl_desc: "Angaben zur Transaktion / Beratungswunsch", ph_desc: "Beschrei
+    <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;"><h3 style="font-size:22px;font-weight:bold;">Mit PayPal</h3><p style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00 Schutzgebühr</p><a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:12px 30px;border-radius:999px;text-decoration:none;display:block;">Dokument für $5 kaufen</a></div>
+    <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;"><h3 style="font-size:22px;font-weight:bold;">Mit Crypto (BSC)</h3><p style="color:#16a34a;font-weight:600;font-size:13px;margin:5px 0 15px;">$5 USDT (BEP20) / BNB</p><div style="background:#fff;padding:8px;border-radius:16px;display:inline-block;border:1px solid #eee;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609" alt="BSC QR" style="width:200px;height:200px;"></div><p style="font-family:monospace;font-size:11px;word-break:break-all;background:#f8f8
