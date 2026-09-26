@@ -1,0 +1,33 @@
+{
+  "header": { "subtitle": "INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN", "langLabel": "Sprache" },
+  "nav": { "about": "ÜBER UNS", "services": "LEISTUNGEN", "docs": "DOKUMENTE", "tradedesk": "TRADE DESK", "payment": "ZAHLUNG" },
+  "about": {
+    "title": "Über RSK Trust & Trade",
+    "h1": "Maximale Effizienz durch digitale Exzellenz",
+    "p1": "RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.",
+    "p1sub": "Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.",
+    "h2": "Unser Open-Source-Prinzip für den Handel",
+    "p2": "Wir glauben an kontinuierliche Evolution und kollektive Intelligenz..."
+  },
+  "hero": { "h1": "Integrität im globalen Handel", "p1": "Diskrete Compliance für staatliche Käufer und Institutionen.", "h2": "Expertise & Sicherheit", "p2": "Minimierung des operationellen Risikos bei nahtloser Abwicklung." },
+  "docs": { "title": "Trade Desk & Compliance", "p1": "Dokumente in 8 Sprachen - verfügbar" },
+  "tradedesk": {
+    "title": "Erstberatung & Transaktionssupport",
+    "subtitle": "RSK – Direct Support in High-Stakes Commodity Deals.",
+    "p1": "Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.",
+    "docsBtn": "📄 Download Compliance Dokumente in 8 Sprachen",
+    "form": {
+      "bizLabel": "Art des Geschäfts *", "bizPlaceholder": "Bitte wählen Sie die Art der Transaktion...",
+      "biz1": "Rohstoffhandel (Kohle, Öl, Mineralien)", "biz2": "Paymaster & Abwicklungsdienstleistungen",
+      "biz3": "Rechtliche Beratung & Vertragsstrukturierung", "biz4": "Sonstiges / Allgemeine Beratung",
+      "descLabel": "Angaben zur Transaktion / Beratungswunsch", "descPlaceholder": "Beschreiben Sie kurz Ihr Vorhaben...",
+      "submit": "An WhatsApp senden 📲"
+    },
+    "directContact": "Für eine direkte Kontaktaufnahme wenden Sie sich bitte an",
+    "note": "* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.",
+    "footerText": "Diskret • Vertraulich • Professionell",
+    "whatsapp": { "title": "Neue Anfrage über RSK Website", "bizType": "Geschäftsart", "msg": "Nachricht" }
+  },
+  "payment": { "title": "Dokumenten-Download (PDF) • $5", "subtitle": "Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15", "paypalTitle": "Mit PayPal", "paypalSub": "$5.00 Schutzgebühr", "paypalBtn": "Dokument für $5 kaufen", "cryptoTitle": "Mit Crypto (BSC)", "cryptoSub": "$5 USDT (BEP20) / BNB" },
+  "footer": { "text": "© 2026 RSK TRUST & TRADE. All rights reserved." }
+}
