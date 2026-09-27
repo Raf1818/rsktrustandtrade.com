@@ -17,16 +17,26 @@
     "p1": "我们在整个交易过程中为您提供支持。初步咨询完全免费。如有需要,我们会引入专业律师以及经过核实、注册的付款代理人(Paymaster)。",
     "docsBtn": "📄 下载 8 种语言的合规文件",
     "form": {
-      "bizLabel": "业务类型 *", "bizPlaceholder": "请选择交易类型……",
-      "biz1": "大宗商品贸易(煤炭、石油、矿产)", "biz2": "付款代理与结算服务",
-      "biz3": "法律咨询与合同架构", "biz4": "其他 / 一般咨询",
-      "descLabel": "交易详情 / 咨询请求", "descPlaceholder": "请简要描述您的项目……",
+      "nameLabel": "姓名 *",
+      "namePlaceholder": "请输入您的全名",
+      "telLabel": "电话 / WhatsApp *",
+      "telPlaceholder": "+86 123 456789",
+      "emailLabel": "您的邮箱",
+      "emailPlaceholder": "name@company.com",
+      "bizLabel": "业务类型 *",
+      "bizPlaceholder": "请选择交易类型……",
+      "biz1": "大宗商品贸易(煤炭、石油、矿产)",
+      "biz2": "付款代理与结算服务",
+      "biz3": "法律咨询与合同架构",
+      "biz4": "其他 / 一般咨询",
+      "descLabel": "交易详情 / 咨询请求",
+      "descPlaceholder": "请简要描述您的项目……",
       "submit": "通过 WhatsApp 发送 📲"
     },
     "directContact": "如需直接联系,请发送邮件至",
     "note": "* RSK 提供专业化的交易支持服务。我们保证信息保密。",
     "footerText": "审慎 • 保密 • 专业",
-    "whatsapp": { "title": "来自 RSK 网站的新咨询", "bizType": "业务类型", "msg": "留言" }
+    "whatsapp": { "title": "来自 RSK 网站的新咨询", "name": "姓名", "tel": "电话", "email": "邮箱", "bizType": "业务类型", "msg": "留言" }
   },
   "payment": { "title": "文件下载(PDF)• 5美元", "subtitle": "每份文件下载手续费 | BSC (BEP20) 手续费约 0.15 美元", "paypalTitle": "使用 PayPal", "paypalSub": "5.00 美元手续费", "paypalBtn": "以 5 美元购买文件", "cryptoTitle": "使用加密货币(BSC)", "cryptoSub": "5 美元 USDT(BEP20)/ BNB" },
   "footer": { "text": "© 2026 RSK TRUST & TRADE. 保留所有权利。" }
