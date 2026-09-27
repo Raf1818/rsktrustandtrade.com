@@ -28,8 +28,9 @@ header { display: flex; align-items: center; justify-content: space-between; pad
 
 nav { display: flex; justify-content: center; gap: 15px; padding: 12px 10px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); flex-wrap: wrap; }
 nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; cursor: pointer; }
-.about-section { display: none; max-width: 900px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 35px; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
-.about-section.visible { display: block !important; }
+.about-section { max-height: 0; opacity: 0; overflow: hidden; max-width: 900px; margin: 0 auto; background: var(--cream); border: 1.5px solid transparent; border-radius: 18px; box-shadow: none; position: relative; z-index: 1; transition: max-height 0.5s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+.about-section.visible { max-height: 1400px; opacity: 1; border-color: var(--gold); box-shadow: 0 12px 40px rgba(201, 168, 106,.2); margin: 40px auto; }
+.about-inner { padding: 35px; }
 .about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
 .about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
 .about-section p { font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 12px; }
@@ -79,12 +80,14 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 </nav>
 
 <section id="about" class="about-section">
+  <div class="about-inner">
   <h2 data-i18n="about.title">Über RSK Trust & Trade</h2>
   <h3 data-i18n="about.h1">Maximale Effizienz durch digitale Exzellenz</h3>
   <p data-i18n="about.p1">RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.</p>
   <p data-i18n="about.p1sub">Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.</p>
   <h3 data-i18n="about.h2">Unser Open-Source-Prinzip für den Handel</h3>
   <p data-i18n="about.p2">Wir glauben an kontinuierliche Evolution und kollektive Intelligenz...</p>
+  </div>
 </section>
 
 <section class="hero" id="hero-sec">
@@ -247,9 +250,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nav1.addEventListener("click", function () {
     aboutSec.classList.toggle("visible");
-    if (aboutSec.classList.contains("visible")) {
-      aboutSec.scrollIntoView({ behavior: "smooth" });
-    }
   });
 
   antragForm.addEventListener("submit", function (e) {
