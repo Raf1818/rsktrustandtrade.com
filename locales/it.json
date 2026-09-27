@@ -17,16 +17,26 @@
     "p1": "Vi supportiamo durante tutta la transazione. La consulenza iniziale è completamente gratuita. Se necessario, consultiamo avvocati specializzati e paymaster verificati e registrati.",
     "docsBtn": "📄 Scarica i documenti di compliance in 8 lingue",
     "form": {
-      "bizLabel": "Tipo di operazione *", "bizPlaceholder": "Seleziona il tipo di transazione...",
-      "biz1": "Commercio di materie prime (carbone, petrolio, minerali)", "biz2": "Paymaster e servizi di regolamento",
-      "biz3": "Consulenza legale e strutturazione contrattuale", "biz4": "Altro / Consulenza generale",
-      "descLabel": "Dettagli della transazione / richiesta di consulenza", "descPlaceholder": "Descrivi brevemente il tuo progetto...",
+      "nameLabel": "Nome *",
+      "namePlaceholder": "Il tuo nome completo",
+      "telLabel": "Telefono / WhatsApp *",
+      "telPlaceholder": "+39 123 456789",
+      "emailLabel": "La tua e-mail",
+      "emailPlaceholder": "nome@azienda.com",
+      "bizLabel": "Tipo di operazione *",
+      "bizPlaceholder": "Seleziona il tipo di transazione...",
+      "biz1": "Commercio di materie prime (carbone, petrolio, minerali)",
+      "biz2": "Paymaster e servizi di regolamento",
+      "biz3": "Consulenza legale e strutturazione contrattuale",
+      "biz4": "Altro / Consulenza generale",
+      "descLabel": "Dettagli della transazione / richiesta di consulenza",
+      "descPlaceholder": "Descrivi brevemente il tuo progetto...",
       "submit": "Invia via WhatsApp 📲"
     },
     "directContact": "Per un contatto diretto, scrivici a",
     "note": "* RSK offre supporto specializzato alle transazioni. Garantiamo la riservatezza.",
     "footerText": "Discreto • Riservato • Professionale",
-    "whatsapp": { "title": "Nuova richiesta dal sito RSK", "bizType": "Tipo di operazione", "msg": "Messaggio" }
+    "whatsapp": { "title": "Nuova richiesta dal sito RSK", "name": "Nome", "tel": "Telefono", "email": "E-mail", "bizType": "Tipo di operazione", "msg": "Messaggio" }
   },
   "payment": { "title": "Download documento (PDF) • $5", "subtitle": "Costo per download documento | Costo BSC (BEP20) ~$0,15", "paypalTitle": "Con PayPal", "paypalSub": "Costo di $5,00", "paypalBtn": "Acquista documento per $5", "cryptoTitle": "Con Crypto (BSC)", "cryptoSub": "$5 USDT (BEP20) / BNB" },
   "footer": { "text": "© 2026 RSK TRUST & TRADE. Tutti i diritti riservati." }
