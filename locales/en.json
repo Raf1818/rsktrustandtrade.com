@@ -1,0 +1,33 @@
+{
+  "header": { "subtitle": "INTERNATIONAL COMMODITIES • LATAM • EUROPE • UAE • ASIA", "langLabel": "Language" },
+  "nav": { "about": "ABOUT US", "services": "SERVICES", "docs": "DOCUMENTS", "tradedesk": "TRADE DESK", "payment": "PAYMENT" },
+  "about": {
+    "title": "About RSK Trust & Trade",
+    "h1": "Maximum Efficiency Through Digital Excellence",
+    "p1": "RSK Trust & Trade positions itself as a modern, virtual business service provider in international commodity trading. Our corporate philosophy is based on a consistently lean, AI-supported business model: by deliberately forgoing physical representative offices and outdated staffing structures, we keep our overhead costs to a minimum.",
+    "p1sub": "We pass this efficiency advantage directly on to our clients – which is why we can offer most of our highly specialized services and compliance support free of charge.",
+    "h2": "Our Open-Source Principle for Trading",
+    "p2": "We believe in continuous evolution and collective intelligence..."
+  },
+  "hero": { "h1": "Integrity in Global Trade", "p1": "Discreet compliance support for sovereign buyers and institutions.", "h2": "Expertise & Security", "p2": "Minimizing operational risk through seamless execution." },
+  "docs": { "title": "Trade Desk & Compliance", "p1": "Documents available in 8 languages" },
+  "tradedesk": {
+    "title": "Initial Consultation & Transaction Support",
+    "subtitle": "RSK – Direct Support in High-Stakes Commodity Deals.",
+    "p1": "We support you throughout your transaction. The initial consultation is entirely free of charge. Where needed, we consult specialized lawyers as well as verified, registered paymasters.",
+    "docsBtn": "📄 Download Compliance Documents in 8 Languages",
+    "form": {
+      "bizLabel": "Type of Business *", "bizPlaceholder": "Please select the transaction type...",
+      "biz1": "Commodity Trading (Coal, Oil, Minerals)", "biz2": "Paymaster & Settlement Services",
+      "biz3": "Legal Advice & Contract Structuring", "biz4": "Other / General Consultation",
+      "descLabel": "Transaction Details / Consultation Request", "descPlaceholder": "Briefly describe your project...",
+      "submit": "Send via WhatsApp 📲"
+    },
+    "directContact": "For direct contact, please reach out to",
+    "note": "* RSK provides specialized transaction support. We guarantee confidentiality.",
+    "footerText": "Discreet • Confidential • Professional",
+    "whatsapp": { "title": "New inquiry via RSK website", "bizType": "Business type", "msg": "Message" }
+  },
+  "payment": { "title": "Document Download (PDF) • $5", "subtitle": "Processing fee per document download | BSC (BEP20) fee ~$0.15", "paypalTitle": "With PayPal", "paypalSub": "$5.00 processing fee", "paypalBtn": "Buy document for $5", "cryptoTitle": "With Crypto (BSC)", "cryptoSub": "$5 USDT (BEP20) / BNB" },
+  "footer": { "text": "© 2026 RSK TRUST & TRADE. All rights reserved." }
+}
