@@ -1,1 +1,33 @@
-
+name: Unzip Docs
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'RSK-*-folder.zip'
+      - '.github/workflows/unzip-docs.yml'
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unzip language folders
+        run: |
+          mkdir -p docs
+          shopt -s nullglob
+          for zip in RSK-*-folder.zip; do
+            [ -f "$zip" ] || continue
+            echo "Entpacke $zip nach docs/"
+            unzip -o "$zip" -d docs/
+          done
+          echo "PDFs gesamt:"
+          find docs -name "*.pdf" | wc -l
+      - name: Cleanup & commit
+        run: |
+          rm -f RSK-*-folder.zip || true
+          git config user.name "rsk-bot"
+          git config user.email "bot@rsktrustandtrade.com"
+          git add docs/ -A
+          git diff --staged --quiet || git commit -m "Auto-unzip docs: 64 PDFs deployed"
+          git push
