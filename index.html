@@ -6,7 +6,7 @@
 <title>RSK TRUST & TRADE</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
-:root { --navy: #0a1931; --gold: #c9a86a; --parch: #f5f1e8; --cream: #fdfaf3; }
+:root { --navy: #0a1931; --gold: #c9a86a; --parch: #f5f1e8; --cream: #fdfaf3; --gold-light: #f4ead2; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { background: var(--parch); font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
@@ -16,35 +16,89 @@ header { display: flex; align-items: center; justify-content: space-between; pad
 .logo-small { width: 65px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block; flex-shrink: 0; }
 .brand { flex-grow: 1; position: relative; z-index: 1; }
 .brand h1 { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 2px; color: var(--navy); line-height: 1.1; }
-.brand h2 { font-size: 8px; letter-spacing: 1px; color: var(--gold); margin-top: 3px; line-height: 1.2; width: 100%; }
+.brand-subtitle { font-size: 8px; letter-spacing: 1px; color: var(--gold); margin-top: 3px; line-height: 1.2; width: 100%; display: block; font-weight: 600; text-transform: uppercase; }
 
 .lang { position: relative; z-index: 9999; flex-shrink: 0; }
 .lang-btn { border: 1.5px solid var(--gold); background: var(--cream); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; user-select: none; }
+.lang-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 .lang-menu { display: none; position: absolute; right: 0; top: 100%; margin-top: 6px; background: #ffffff; border: 1.5px solid var(--gold); width: 180px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); z-index: 10000; overflow: hidden; }
 .lang-menu.open { display: block !important; }
-.lang-menu div { padding: 10px 14px; cursor: pointer; font-size: 13px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 8px; color: #111; background: #fff; user-select: none; transition: background 0.2s; }
-.lang-menu div:last-child { border-bottom: none; }
-.lang-menu div:hover { background: var(--parch); color: var(--navy); }
+.lang-option { padding: 10px 14px; cursor: pointer; font-size: 13px; border-bottom: 1px solid #f0e6d3; display: flex; gap: 8px; color: #111; background: #fff; user-select: none; transition: background 0.2s; }
+.lang-option:last-child { border-bottom: none; }
+.lang-option:hover, .lang-option:focus-visible { background: var(--parch); color: var(--navy); outline: none; }
 
 nav { display: flex; justify-content: center; gap: 15px; padding: 12px 10px; border-bottom: 1px solid rgba(201, 168, 106,.3); position: relative; z-index: 2; background: var(--parch); flex-wrap: wrap; }
-nav a { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; cursor: pointer; }
-.about-section { max-height: 0; opacity: 0; overflow: hidden; max-width: 900px; margin: 0 auto; background: var(--cream); border: 1.5px solid transparent; border-radius: 18px; box-shadow: none; position: relative; z-index: 1; transition: max-height 0.5s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
-.about-section.visible { max-height: 1400px; opacity: 1; border-color: var(--gold); box-shadow: 0 12px 40px rgba(201, 168, 106,.2); margin: 40px auto; }
+nav a, .nav-btn { text-decoration: none; color: #111; font-size: 11px; letter-spacing: 1px; font-weight: 700; cursor: pointer; background: none; border: none; font-family: inherit; padding: 0; }
+.nav-btn:focus-visible, nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.about-section { max-height: 0; opacity: 0; overflow: hidden; max-width: 900px; margin: 0 auto; background: var(--cream); border: 1.5px solid transparent; border-radius: 18px; box-shadow: none; position: relative; z-index: 1; transition: max-height 0.5s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, margin 0.5s ease; }
+.about-section.visible { opacity: 1; border-color: var(--gold); box-shadow: 0 12px 40px rgba(201, 168, 106,.2); margin: 40px auto; }
 .about-inner { padding: 35px; }
 .about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
 .about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
 .about-section p { font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 12px; }
+
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; position: relative; z-index: 1; }
 .hero h3 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
+.hero p { margin-top: 10px; color: #444; line-height: 1.5; }
+
 .card { max-width: 850px; margin: 40px auto; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 12px 40px rgba(201, 168, 106,.2); position: relative; z-index: 1; }
+.card h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--navy); }
+.card p.docs-sub { margin-top: 10px; color: #555; }
+.card p.docs-contact { margin-top: 16px; font-size: 11px; color: #888; }
+.card p.docs-contact a { color: #888; text-decoration: none; }
+
 .antrag-card { max-width: 850px; margin: 40px auto; padding: 30px 20px; background: var(--cream); border: 1.5px solid var(--gold); border-radius: 22px; box-shadow: 0 18px 50px rgba(201,168,106,.18); position: relative; z-index: 1; }
+.antrag-header { text-align: center; margin-bottom: 28px; }
+.antrag-logo { width: 80px; height: auto; mix-blend-mode: multiply; }
+.antrag-brand { font-family: 'Playfair Display'; font-size: 28px; letter-spacing: 4px; color: var(--navy); font-weight: 900; margin-top: 8px; }
+.antrag-brand-sub { font-size: 11px; letter-spacing: 4px; color: var(--gold); margin-top: 2px; }
+.antrag-rule { border: none; border-top: 1px solid var(--gold); margin: 18px auto; width: 140px; opacity: .6; }
+.antrag-title { font-family: 'Playfair Display'; font-size: 32px; line-height: 1.2; color: var(--navy); text-align: center; }
+.antrag-subtitle { text-align: center; font-style: italic; font-size: 16px; color: var(--navy); margin-top: 14px; line-height: 1.4; }
+.antrag-divider { text-align: center; margin: 18px 0; color: var(--gold); }
+.antrag-p1 { text-align: center; font-size: 15px; color: #333; line-height: 1.5; }
+.docs-cta { text-align: center; background: var(--navy); padding: 14px 10px; border-radius: 10px; margin: 24px 0; border: 1.5px solid var(--gold); }
+.docs-cta a { color: var(--gold); text-decoration: none; font-weight: 700; font-size: 13px; display: block; line-height: 1.3; }
+.free-notice { background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; text-align: center; }
+.free-notice p { font-size: 13px; color: var(--navy); line-height: 1.5; font-weight: 600; }
+
 .form-group { width: 100%; margin-bottom: 16px; text-align: left; }
 .antrag-card label { font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px; color: var(--navy); width: 100%; }
 .antrag-card input, .antrag-card textarea, .antrag-card select { width: 100%; box-sizing: border-box; padding: 12px; border: 1.5px solid var(--navy); border-radius: 10px; font-size: 14px; background: #fff; display: block; font-family: inherit; color: #111; }
+.antrag-card input:focus-visible, .antrag-card textarea:focus-visible, .antrag-card select:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
 .btn-whatsapp { width: 100%; padding: 16px; background: #25D366; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; margin-top: 20px; cursor: pointer; }
+.btn-whatsapp:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+
+.contact-line { font-size: 12px; color: #444; margin-top: 20px; line-height: 1.5; text-align: center; }
+.contact-line a { color: var(--navy); font-weight: bold; text-decoration: underline; }
+.antrag-note { font-size: 11px; color: #666; margin-top: 10px; line-height: 1.4; text-align: center; }
+.antrag-footer-text { text-align: center; margin-top: 22px; font-size: 12px; letter-spacing: 2px; color: var(--gold); }
+
+.payment-section { max-width: 900px; margin: 40px auto; padding: 20px; }
+.payment-section h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 5px; }
+.payment-section .payment-subtitle { text-align: center; color: #666; font-size: 13px; margin-bottom: 25px; }
 .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.payment-box { background: #fff; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; text-align: center; border: 1px solid #eee; }
+.payment-box h3 { font-size: 22px; font-weight: bold; }
+.payment-box .pp-sub { color: #666; margin: 10px 0 20px; font-size: 14px; }
+.payment-box .pp-btn { background: #0a4fb3; color: #fff; font-weight: bold; padding: 12px 30px; border-radius: 999px; text-decoration: none; display: block; }
+.payment-box .crypto-sub { color: #16a34a; font-weight: 600; font-size: 13px; margin: 5px 0 15px; }
+.qr-wrap { background: #fff; padding: 8px; border-radius: 16px; display: inline-block; border: 1px solid #eee; }
+.qr-wrap img { width: 200px; height: 200px; }
+.wallet-address { font-family: monospace; font-size: 11px; word-break: break-all; background: #f8f8f8; padding: 8px; border-radius: 8px; margin-top: 10px; }
+
 footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px solid rgba(201, 168, 106,.4); margin-top: 50px; color: #666; position: relative; z-index: 1; }
+
 @media(max-width:700px) { .hero { grid-template-columns: 1fr; } .payment-grid { grid-template-columns: 1fr; } }
+
+/* RTL support for Arabic: mirror alignment, keep structure intact */
+html[dir="rtl"] .form-group,
+html[dir="rtl"] .about-section p,
+html[dir="rtl"] .antrag-p1,
+html[dir="rtl"] .antrag-card label { text-align: right; }
+html[dir="rtl"] .lang-menu { right: auto; left: 0; }
+html[dir="rtl"] body { font-family: 'Inter', 'Noto Sans Arabic', sans-serif; }
 </style>
 </head>
 <body id="top">
@@ -53,26 +107,28 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
   <a href="#top"><img src="./IMG-20260918-WA8261.jpg" class="logo-small" alt="RSK Logo" onerror="this.style.display='none'"></a>
   <div class="brand">
     <h1>RSK TRUST & TRADE</h1>
-    <h2 id="sub-title" data-i18n="header.subtitle">INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN</h2>
+    <span id="sub-title" class="brand-subtitle" data-i18n="header.subtitle">INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN</span>
   </div>
 
   <div class="lang">
-    <button class="lang-btn" id="langBtn" type="button">🌐 <span id="langLabel" data-i18n="header.langLabel">Sprache</span> ▼</button>
-    <div class="lang-menu" id="lm">
-      <div data-lang="de">🇩🇪 Deutsch</div>
-      <div data-lang="en">🇬🇧 English</div>
-      <div data-lang="es">🇪🇸 Español</div>
-      <div data-lang="fr">🇫🇷 Français</div>
-      <div data-lang="pt">🇧🇷 Português</div>
-      <div data-lang="ru">🇷🇺 Русский</div>
-      <div data-lang="zh">🇨🇳 中文</div>
-      <div data-lang="it">🇮🇹 Italiano</div>
+    <button class="lang-btn" id="langBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="lm">
+      🌐 <span id="langLabel" data-i18n="header.langLabel">Sprache</span> ▼
+    </button>
+    <div class="lang-menu" id="lm" role="menu" aria-label="Sprachauswahl">
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="de">🇩🇪 Deutsch</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="en">🇬🇧 English</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="es">🇪🇸 Español</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="fr">🇫🇷 Français</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="pt">🇧🇷 Português</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="ru">🇷🇺 Русский</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="zh">🇨🇳 中文</div>
+      <div class="lang-option" role="menuitem" tabindex="0" data-lang="ar">🇦🇪 العربية</div>
     </div>
   </div>
 </header>
 
 <nav>
-  <a id="nav1" href="javascript:void(0)" data-i18n="nav.about">ÜBER UNS</a>
+  <button id="nav1" class="nav-btn" type="button" aria-expanded="false" aria-controls="about" data-i18n="nav.about">ÜBER UNS</button>
   <a id="nav2" href="#hero-sec" data-i18n="nav.services">LEISTUNGEN</a>
   <a id="nav3" href="#docs" data-i18n="nav.docs">DOKUMENTE</a>
   <a id="nav4" href="#trade-desk" data-i18n="nav.tradedesk">TRADE DESK</a>
@@ -91,34 +147,52 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 </section>
 
 <section class="hero" id="hero-sec">
-  <div><h3 id="h1" data-i18n="hero.h1">Integrität im globalen Handel</h3><p id="p1" data-i18n="hero.p1" style="margin-top:10px;color:#444;line-height:1.5">Diskrete Compliance für staatliche Käufer und Institutionen.</p></div>
-  <div><h3 id="h2" data-i18n="hero.h2">Expertise & Sicherheit</h3><p id="p2" data-i18n="hero.p2" style="margin-top:10px;color:#444;line-height:1.5">Minimierung des operationellen Risikos bei nahtloser Abwicklung.</p></div>
+  <div><h3 id="hero-integrity-title" data-i18n="hero.h1">Integrität im globalen Handel</h3><p id="hero-integrity-text" data-i18n="hero.p1">Diskrete Compliance für staatliche Käufer und Institutionen.</p></div>
+  <div><h3 id="hero-expertise-title" data-i18n="hero.h2">Expertise & Sicherheit</h3><p id="hero-expertise-text" data-i18n="hero.p2">Minimierung des operationellen Risikos bei nahtloser Abwicklung.</p></div>
 </section>
 
 <section id="docs">
   <div class="card">
-    <h2 id="h3" data-i18n="docs.title" style="font-family:'Playfair Display', serif;font-size:30px;color:var(--navy)">Trade Desk & Compliance</h2>
-    <p id="p3" data-i18n="docs.p1" style="margin-top:10px;color:#555">Dokumente in 8 Sprachen - verfügbar</p>
-    <p style="margin-top:16px;font-size:11px;color:#888"><a href="mailto:info@rsktrustandtrade.com" style="color:#888;text-decoration:none;">info@rsktrustandtrade.com</a></p>
+    <h2 id="docs-title" data-i18n="docs.title">Trade Desk & Compliance</h2>
+    <p class="docs-sub" id="docs-p1" data-i18n="docs.p1">Dokumente in 8 Sprachen - verfügbar</p>
+    <p class="docs-contact"><a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a></p>
   </div>
 </section>
 
 <section id="trade-desk" class="antrag-card">
-  <div style="text-align:center;margin-bottom:28px">
-    <img src="./IMG-20260918-WA8261.jpg" style="width:80px;height:auto;mix-blend-mode:multiply;" alt="RSK" onerror="this.style.display='none'">
-    <div style="font-family:'Playfair Display';font-size:28px;letter-spacing:4px;color:var(--navy);font-weight:900;margin-top:8px">RSK</div>
-    <div style="font-size:11px;letter-spacing:4px;color:var(--gold);margin-top:2px">TRUST & TRADE</div>
-    <hr style="border:none;border-top:1px solid var(--gold);margin:18px auto;width:140px;opacity:.6">
+  <div class="antrag-header">
+    <img src="./IMG-20260918-WA8261.jpg" class="antrag-logo" alt="RSK" onerror="this.style.display='none'">
+    <div class="antrag-brand">RSK</div>
+    <div class="antrag-brand-sub">TRUST & TRADE</div>
+    <hr class="antrag-rule">
   </div>
-  <h2 style="font-family:'Playfair Display';font-size:32px;line-height:1.2;color:var(--navy);text-align:center" id="dr-title" data-i18n="tradedesk.title">Erstberatung & Transaktionssupport</h2>
-  <p style="text-align:center;font-style:italic;font-size:16px;color:var(--navy);margin-top:14px;line-height:1.4" id="dr-sub" data-i18n="tradedesk.subtitle">RSK – Direct Support in High-Stakes Commodity Deals.</p>
-  <div style="text-align:center;margin:18px 0;color:var(--gold)">— ◆ —</div>
-  <p style="text-align:center;font-size:15px;color:#333;line-height:1.5" id="dr-p1" data-i18n="tradedesk.p1">Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.</p>
-  <div style="text-align:center;background:#0a1931;padding:14px 10px;border-radius:10px;margin:24px 0;border:1.5px solid var(--gold)">
-    <a href="./docs/" id="btn-docs" data-i18n="tradedesk.docsBtn" style="color:#c9a86a;text-decoration:none;font-weight:700;font-size:13px;display:block;line-height:1.3">📄 Download Compliance Dokumente in 8 Sprachen</a>
+  <h2 class="antrag-title" id="dr-title" data-i18n="tradedesk.title">Erstberatung & Transaktionssupport</h2>
+  <p class="antrag-subtitle" id="dr-sub" data-i18n="tradedesk.subtitle">RSK – Direct Support in High-Stakes Commodity Deals.</p>
+  <div class="antrag-divider">— ◆ —</div>
+  <p class="antrag-p1" id="dr-p1" data-i18n="tradedesk.p1">Wir bieten Support rund um Ihre Transaktion. Die Erstberatung erfolgt vollkommen kostenlos. Bei Bedarf konsultieren wir spezialisierte Anwälte sowie verifizierte und registrierte Paymaster.</p>
+  <div class="docs-cta">
+    <a href="./docs/" id="btn-docs" data-i18n="tradedesk.docsBtn">📄 Download Compliance Dokumente in 8 Sprachen</a>
+  </div>
+
+  <div class="free-notice">
+    <p id="lbl-free-notice" data-i18n="tradedesk.freeNotice">Die Erstanfrage und deren erste Bearbeitung sind kostenlos. Für die weitergehende Bearbeitung Ihres Falls fallen anschließend Gebühren an.</p>
   </div>
 
   <form id="antragForm">
+    <div class="form-group">
+      <label for="inquiry" id="lbl-inquiry" data-i18n="tradedesk.form.inquiryLabel">Ihre Anfrage *</label>
+      <textarea id="inquiry" rows="6" required data-i18n-placeholder="tradedesk.form.inquiryPlaceholder" placeholder="Beschreiben Sie Ihre Compliance-Frage oder Ihr Anliegen zu Ihrem laufenden Deal..."></textarea>
+    </div>
+    <div class="form-group">
+      <label for="bizType" id="lbl-biz" data-i18n="tradedesk.form.bizLabel">Bereich Ihrer Anfrage</label>
+      <select id="bizType">
+        <option value="" disabled selected id="ph-biz" data-i18n="tradedesk.form.bizPlaceholder">Bitte wählen Sie den Bereich (optional)...</option>
+        <option value="Rohstoffhandel" id="opt-biz1" data-i18n="tradedesk.form.biz1">Rohstoffhandel (Kohle, Öl, Mineralien)</option>
+        <option value="Paymaster" id="opt-biz2" data-i18n="tradedesk.form.biz2">Paymaster & Abwicklungsdienstleistungen</option>
+        <option value="Legal" id="opt-biz3" data-i18n="tradedesk.form.biz3">Rechtliche Beratung & Vertragsstrukturierung</option>
+        <option value="Other" id="opt-biz4" data-i18n="tradedesk.form.biz4">Sonstiges / Allgemeine Beratung</option>
+      </select>
+    </div>
     <div class="form-group">
       <label for="name" id="lbl-name" data-i18n="tradedesk.form.nameLabel">Name *</label>
       <input type="text" id="name" required data-i18n-placeholder="tradedesk.form.namePlaceholder" placeholder="Ihr vollständiger Name">
@@ -131,43 +205,32 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
       <label for="email" id="lbl-email" data-i18n="tradedesk.form.emailLabel">Ihre E-Mail</label>
       <input type="email" id="email" data-i18n-placeholder="tradedesk.form.emailPlaceholder" placeholder="name@unternehmen.com">
     </div>
-    <div class="form-group">
-      <label for="bizType" id="lbl-biz" data-i18n="tradedesk.form.bizLabel">Art des Geschäfts *</label>
-      <select id="bizType" required>
-        <option value="" disabled selected id="ph-biz" data-i18n="tradedesk.form.bizPlaceholder">Bitte wählen Sie die Art der Transaktion...</option>
-        <option value="Rohstoffhandel" id="opt-biz1" data-i18n="tradedesk.form.biz1">Rohstoffhandel (Kohle, Öl, Mineralien)</option>
-        <option value="Paymaster" id="opt-biz2" data-i18n="tradedesk.form.biz2">Paymaster & Abwicklungsdienstleistungen</option>
-        <option value="Legal" id="opt-biz3" data-i18n="tradedesk.form.biz3">Rechtliche Beratung & Vertragsstrukturierung</option>
-        <option value="Other" id="opt-biz4" data-i18n="tradedesk.form.biz4">Sonstiges / Allgemeine Beratung</option>
-      </select>
-    </div>
-    <div class="form-group"><label for="msg" id="lbl-desc" data-i18n="tradedesk.form.descLabel">Angaben zur Transaktion / Beratungswunsch</label><textarea id="msg" rows="4" data-i18n-placeholder="tradedesk.form.descPlaceholder" placeholder="Beschreiben Sie kurz Ihr Vorhaben..."></textarea></div>
-    <button type="submit" class="btn-whatsapp" id="btn-submit" data-i18n="tradedesk.form.submit">An WhatsApp senden 📲</button>
+    <button type="submit" class="btn-whatsapp" id="btn-submit" data-i18n="tradedesk.form.submit">Anfrage kostenlos senden 📲</button>
   </form>
 
-  <p style="font-size:12px;color:#444;margin-top:20px;line-height:1.5;text-align:center">
-    <span id="lbl-direct-contact" data-i18n="tradedesk.directContact">Für eine direkte Kontaktaufnahme wenden Sie sich bitte an</span> <a href="mailto:info@rsktrustandtrade.com" style="color:var(--navy);font-weight:bold;text-decoration:underline;">info@rsktrustandtrade.com</a>
+  <p class="contact-line">
+    <span id="lbl-direct-contact" data-i18n="tradedesk.directContact">Für eine direkte Kontaktaufnahme wenden Sie sich bitte an</span> <a href="mailto:info@rsktrustandtrade.com">info@rsktrustandtrade.com</a>
   </p>
-  <p style="font-size:11px;color:#666;margin-top:10px;line-height:1.4;text-align:center" id="lbl-note" data-i18n="tradedesk.note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p>
-  <p style="text-align:center;margin-top:22px;font-size:12px;letter-spacing:2px;color:var(--gold)" id="lbl-footer-text" data-i18n="tradedesk.footerText">Diskret • Vertraulich • Professionell</p>
+  <p class="antrag-note" id="lbl-note" data-i18n="tradedesk.note">* RSK bietet spezialisierte Transaktionsbegleitung. Wir gewährleisten Vertraulichkeit.</p>
+  <p class="antrag-footer-text" id="lbl-footer-text" data-i18n="tradedesk.footerText">Diskret • Vertraulich • Professionell</p>
 </section>
 
-<section id="payment" style="max-width:900px;margin:40px auto;padding:20px;">
-  <h2 data-i18n="payment.title" style="text-align:center;font-family:'Playfair Display',serif;font-size:28px;margin-bottom:5px;">Dokumenten-Download (PDF) • $5</h2>
-  <p data-i18n="payment.subtitle" style="text-align:center;color:#666;font-size:13px;margin-bottom:25px;">Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15</p>
+<section id="payment" class="payment-section">
+  <h2 data-i18n="payment.title">Dokumenten-Download (PDF) • $5</h2>
+  <p class="payment-subtitle" data-i18n="payment.subtitle">Schutzgebühr pro Dokumenten-Download | BSC (BEP20) Gebühr ~$0.15</p>
   <div class="payment-grid">
-    <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
-      <h3 data-i18n="payment.paypalTitle" style="font-size:22px;font-weight:bold;">Mit PayPal</h3>
-      <p data-i18n="payment.paypalSub" style="color:#666;margin:10px 0 20px;font-size:14px;">$5.00 Schutzgebühr</p>
-      <a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" data-i18n="payment.paypalBtn" style="background:#0a4fb3;color:#fff;font-weight:bold;padding:12px 30px;border-radius:999px;text-decoration:none;display:block;">Dokument für $5 kaufen</a>
+    <div class="payment-box">
+      <h3 data-i18n="payment.paypalTitle">Mit PayPal</h3>
+      <p class="pp-sub" data-i18n="payment.paypalSub">$5.00 Schutzgebühr</p>
+      <a href="https://www.paypal.com/ncp/payment/23JD9HVB65WFY" target="_blank" class="pp-btn" data-i18n="payment.paypalBtn">Dokument für $5 kaufen</a>
     </div>
-    <div style="background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:30px;text-align:center;border:1px solid #eee;">
-      <h3 data-i18n="payment.cryptoTitle" style="font-size:22px;font-weight:bold;">Mit Crypto (BSC)</h3>
-      <p data-i18n="payment.cryptoSub" style="color:#16a34a;font-weight:600;font-size:13px;margin:5px 0 15px;">$5 USDT (BEP20) / BNB</p>
-      <div style="background:#fff;padding:8px;border-radius:16px;display:inline-block;border:1px solid #eee;">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609" alt="BSC QR" style="width:200px;height:200px;">
+    <div class="payment-box">
+      <h3 data-i18n="payment.cryptoTitle">Mit Crypto (BSC)</h3>
+      <p class="crypto-sub" data-i18n="payment.cryptoSub">$5 USDT (BEP20) / BNB</p>
+      <div class="qr-wrap">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xa5c21334b270F1f4d7ccF06ABc935c983Db94609" alt="BSC-Wallet QR-Code">
       </div>
-      <p style="font-family:monospace;font-size:11px;word-break:break-all;background:#f8f8f8;padding:8px;border-radius:8px;margin-top:10px;">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</p>
+      <p class="wallet-address">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</p>
     </div>
   </div>
 </section>
@@ -179,6 +242,12 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  // ---- Configuration ----
+  // RSK's receiving number, split into parts so it isn't a single scrapable string in the page source.
+  // Not real encryption — just raises the bar above simple text scrapers. See chat notes for details.
+  const WHATSAPP_NUMBER = ["57", "313", "873", "4968"].join("");
+  const DEFAULT_LANG = "de";
+
   const langBtn = document.getElementById("langBtn");
   const langMenu = document.getElementById("lm");
   const langLabel = document.getElementById("langLabel");
@@ -186,97 +255,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const aboutSec = document.getElementById("about");
   const antragForm = document.getElementById("antragForm");
 
-  const languageNames = { de: "Deutsch", en: "English", es: "Español", fr: "Français", pt: "Português", ru: "Русский", zh: "中文", it: "Italiano" };
+  const languageNames = { de: "Deutsch", en: "English", es: "Español", fr: "Français", pt: "Português", ru: "Русский", zh: "中文", ar: "العربية" };
+  const rtlLangs = ["ar"];
   const supportedLangs = Object.keys(languageNames);
 
   const cache = {};
   let currentDict = null;
 
+  // Defensive: works even if obj is null/undefined/partial at any depth.
   function getPath(obj, path) {
-    return path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+    if (!obj || !path) return undefined;
+    return path.split(".").reduce(function (acc, key) {
+      return (acc && typeof acc === "object" && acc[key] !== undefined) ? acc[key] : undefined;
+    }, obj);
   }
 
   function applyTranslations(dict) {
-    currentDict = dict;
+    currentDict = dict || {};
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      const val = getPath(dict, el.getAttribute("data-i18n"));
-      if (val !== undefined) el.textContent = val;
-    });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-      const val = getPath(dict, el.getAttribute("data-i18n-placeholder"));
-      if (val !== undefined) el.placeholder = val;
-    });
-  }
-
-  function loadLanguage(langKey) {
-    if (!supportedLangs.includes(langKey)) langKey = "de";
-    langLabel.innerText = languageNames[langKey];
-    document.documentElement.lang = langKey;
-    localStorage.setItem("rsk_lang", langKey);
-
-    if (cache[langKey]) {
-      applyTranslations(cache[langKey]);
-      return;
-    }
-    fetch("./locales/" + langKey + ".json")
-      .then(function (r) { return r.json(); })
-      .then(function (dict) {
-        cache[langKey] = dict;
-        applyTranslations(dict);
-      })
-      .catch(function (err) {
-        console.error("Übersetzung konnte nicht geladen werden:", langKey, err);
-      });
-  }
-
-  langBtn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    langMenu.classList.toggle("open");
-  });
-
-  document.addEventListener("click", function (e) {
-    if (!langMenu.contains(e.target) && e.target !== langBtn) {
-      langMenu.classList.remove("open");
-    }
-  });
-
-  langMenu.querySelectorAll("div").forEach(function (option) {
-    option.addEventListener("click", function (e) {
-      e.stopPropagation();
-      loadLanguage(this.getAttribute("data-lang"));
-      langMenu.classList.remove("open");
-    });
-  });
-
-  nav1.addEventListener("click", function () {
-    aboutSec.classList.toggle("visible");
-  });
-
-  antragForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const tel = document.getElementById("tel").value;
-    const email = document.getElementById("email").value;
-    const bizType = document.getElementById("bizType").value;
-    const msg = document.getElementById("msg").value;
-    const w = (currentDict && currentDict.tradedesk && currentDict.tradedesk.whatsapp) || { title: "Neue Anfrage über RSK Website", name: "Name", tel: "Telefon", email: "E-Mail", bizType: "Geschäftsart", msg: "Nachricht" };
-
-    let text = "*" + w.title + "*%0A%0A" +
-      "*" + w.name + ":* " + encodeURIComponent(name) + "%0A" +
-      "*" + w.tel + ":* " + encodeURIComponent(tel) + "%0A" +
-      "*" + w.email + ":* " + encodeURIComponent(email) + "%0A" +
-      "*" + w.bizType + ":* " + encodeURIComponent(bizType) + "%0A";
-    if (msg.trim() !== "") {
-      text += "*" + w.msg + ":* " + encodeURIComponent(msg);
-    }
-    window.open("https://wa.me/49123456789?text=" + text, "_blank");
-  });
-
-  // Startsprache: gespeicherte Wahl > Browsersprache > Deutsch
-  const saved = localStorage.getItem("rsk_lang");
-  const browserLang = (navigator.language || "de").slice(0, 2);
-  loadLanguage(saved || (supportedLangs.includes(browserLang) ? browserLang : "de"));
-});
-</script>
-</body>
-    </html>
+      const val = ge
