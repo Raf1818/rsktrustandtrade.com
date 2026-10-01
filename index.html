@@ -242,9 +242,7 @@ html[dir="rtl"] body { font-family: 'Inter', 'Noto Sans Arabic', sans-serif; }
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ---- Configuration ----
-  // RSK's receiving number, split into parts so it isn't a single scrapable string in the page source.
-  // Not real encryption — just raises the bar above simple text scrapers. See chat notes for details.
+  // ---- Konfiguration ----
   const WHATSAPP_NUMBER = ["57", "313", "873", "4968"].join("");
   const DEFAULT_LANG = "de";
 
@@ -257,12 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const languageNames = { de: "Deutsch", en: "English", es: "Español", fr: "Français", pt: "Português", ru: "Русский", zh: "中文", ar: "العربية" };
   const rtlLangs = ["ar"];
-  const supportedLangs = Object.keys(languageNames);
-
   const cache = {};
   let currentDict = null;
 
-  // Defensive: works even if obj is null/undefined/partial at any depth.
+  // Hilfsfunktion zum Auslesen verschachtelter Keys (z.B. "tradedesk.form.submit")
   function getPath(obj, path) {
     if (!obj || !path) return undefined;
     return path.split(".").reduce(function (acc, key) {
@@ -270,7 +266,113 @@ document.addEventListener("DOMContentLoaded", function () {
     }, obj);
   }
 
+  // Übersetzungen auf die Seite anwenden
   function applyTranslations(dict) {
     currentDict = dict || {};
+    
+    // Texte übersetzen
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      const val = ge
+      const key = el.getAttribute("data-i18n");
+      const val = getPath(dict, key);
+      if (val !== undefined) {
+        el.textContent = val;
+      }
+    });
+
+    // Platzhalter (Placeholder) übersetzen
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-placeholder");
+      const val = getPath(dict, key);
+      if (val !== undefined) {
+        el.placeholder = val;
+      }
+    });
+  }
+
+  // Sprache laden (Fetch von externer JSON-Datei)
+  async function loadLanguage(lang) {
+    if (!languageNames[lang]) lang = DEFAULT_LANG;
+
+    // RTL (Rechts-nach-Links) Unterstützung für Arabisch
+    if (rtlLangs.includes(lang)) {
+      document.documentElement.setAttribute("dir", "rtl");
+    } else {
+      document.documentElement.removeAttribute("dir");
+    }
+
+    document.documentElement.setAttribute("lang", lang);
+    langLabel.textContent = languageNames[lang];
+
+    if (cache[lang]) {
+      applyTranslations(cache[lang]);
+      return;
+    }
+
+    try {
+      const response = await fetch(`./lang/${lang}.json`);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const data = await response.json();
+      cache[lang] = data;
+      applyTranslations(data);
+    } catch (err) {
+      console.warn(`Sprachdatei für "${lang}" konnte nicht geladen werden.`, err);
+    }
+  }
+
+  // ---- Event-Listener ----
+
+  // 1. Sprachmenü Toggle
+  langBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const isOpen = langMenu.classList.toggle("open");
+    langBtn.setAttribute("aria-expanded", isOpen);
+  });
+
+  document.addEventListener("click", function () {
+    langMenu.classList.remove("open");
+    langBtn.setAttribute("aria-expanded", "false");
+  });
+
+  // Sprachauswahl
+  document.querySelectorAll(".lang-option").forEach(function (opt) {
+    opt.addEventListener("click", function () {
+      const selectedLang = this.getAttribute("data-lang");
+      loadLanguage(selectedLang);
+    });
+  });
+
+  // 2. "Über uns" Umschaltung
+  nav1.addEventListener("click", function () {
+    const isVisible = aboutSec.classList.toggle("visible");
+    nav1.setAttribute("aria-expanded", isVisible);
+  });
+
+  // 3. WhatsApp Formular Submit Handling
+  antragForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const inquiry = document.getElementById("inquiry").value.trim();
+    const bizType = document.getElementById("bizType").value;
+    const name = document.getElementById("name").value.trim();
+    const tel = document.getElementById("tel").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    // Nachricht formatieren
+    let text = `*Neue Anfrage über RSK Trust & Trade*\n\n`;
+    text += `*Name:* ${name}\n`;
+    text += `*Telefon:* ${tel}\n`;
+    if (email) text += `*E-Mail:* ${email}\n`;
+    if (bizType) text += `*Bereich:* ${bizType}\n`;
+    text += `\n*Anfrage:*\n${inquiry}`;
+
+    const encodedText = encodeURIComponent(text);
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+
+    // WhatsApp im neuen Tab öffnen
+    window.open(waUrl, "_blank");
+  });
+
+  // Initiale Sprache laden
+  loadLanguage(DEFAULT_LANG);
+});
+</script>
