@@ -32,7 +32,7 @@ nav a, .nav-btn { text-decoration: none; color: #111; font-size: 11px; letter-sp
 .nav-btn:focus-visible, nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
 .about-section { max-height: 0; opacity: 0; overflow: hidden; max-width: 900px; margin: 0 auto; background: var(--cream); border: 1.5px solid transparent; border-radius: 18px; box-shadow: none; position: relative; z-index: 1; transition: max-height 0.5s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, margin 0.5s ease; }
-.about-section.visible { opacity: 1; border-color: var(--gold); box-shadow: 0 12px 40px rgba(201, 168, 106,.2); margin: 40px auto; }
+.about-section.visible { opacity: 1; border-color: var(--gold); box-shadow: 0 12px 40px rgba(201, 168, 106,.2); margin: 40px auto; max-height: 2000px; }
 .about-inner { padding: 35px; }
 .about-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px; text-align: center; }
 .about-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 20px; margin-bottom: 8px; }
@@ -92,7 +92,7 @@ footer { text-align: center; padding: 26px; font-size: 11px; border-top: 1px sol
 
 @media(max-width:700px) { .hero { grid-template-columns: 1fr; } .payment-grid { grid-template-columns: 1fr; } }
 
-/* RTL support for Arabic: mirror alignment, keep structure intact */
+/* RTL support for Arabic */
 html[dir="rtl"] .form-group,
 html[dir="rtl"] .about-section p,
 html[dir="rtl"] .antrag-p1,
@@ -137,12 +137,12 @@ html[dir="rtl"] body { font-family: 'Inter', 'Noto Sans Arabic', sans-serif; }
 
 <section id="about" class="about-section">
   <div class="about-inner">
-  <h2 data-i18n="about.title">Über RSK Trust & Trade</h2>
-  <h3 data-i18n="about.h1">Maximale Effizienz durch digitale Exzellenz</h3>
-  <p data-i18n="about.p1">RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.</p>
-  <p data-i18n="about.p1sub">Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.</p>
-  <h3 data-i18n="about.h2">Unser Open-Source-Prinzip für den Handel</h3>
-  <p data-i18n="about.p2">Wir glauben an kontinuierliche Evolution und kollektive Intelligenz...</p>
+    <h2 data-i18n="about.title">Über RSK Trust & Trade</h2>
+    <h3 data-i18n="about.h1">Maximale Effizienz durch digitale Exzellenz</h3>
+    <p data-i18n="about.p1">RSK Trust & Trade versteht sich als moderner, virtueller Business-Dienstleister im internationalen Warenhandel. Unsere Unternehmensphilosophie basiert auf einem konsequent schlanken, KI-gestützten Geschäftsmodell: Durch den bewussten Verzicht auf physische Repräsentationsbüros und veraltete Personalstrukturen halten wir unsere Overhead-Kosten minimal.</p>
+    <p data-i18n="about.p1sub">Diesen Effizienzvorteil geben wir direkt an unsere Kunden weiter – daher können wir einen Großteil unserer hochspezialisierten Dienstleistungen und Compliance-Services kostenfrei anbieten.</p>
+    <h3 data-i18n="about.h2">Unser Open-Source-Prinzip für den Handel</h3>
+    <p data-i18n="about.p2">Wir glauben an kontinuierliche Evolution und kollektive Intelligenz...</p>
   </div>
 </section>
 
@@ -280,99 +280,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Platzhalter (Placeholder) übersetzen
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-      const key = el.getAttribute("data-i18n-placeholder");
-      const val = getPath(dict, key);
-      if (val !== undefined) {
-        el.placeholder = val;
-      }
-    });
-  }
-
-  // Sprache laden (Fetch von externer JSON-Datei)
-  async function loadLanguage(lang) {
-    if (!languageNames[lang]) lang = DEFAULT_LANG;
-
-    // RTL (Rechts-nach-Links) Unterstützung für Arabisch
-    if (rtlLangs.includes(lang)) {
-      document.documentElement.setAttribute("dir", "rtl");
-    } else {
-      document.documentElement.removeAttribute("dir");
-    }
-
-    document.documentElement.setAttribute("lang", lang);
-    langLabel.textContent = languageNames[lang];
-
-    if (cache[lang]) {
-      applyTranslations(cache[lang]);
-      return;
-    }
-
-    try {
-      const response = await fetch(`./lang/${lang}.json`);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
-      cache[lang] = data;
-      applyTranslations(data);
-    } catch (err) {
-      console.warn(`Sprachdatei für "${lang}" konnte nicht geladen werden.`, err);
-    }
-  }
-
-  // ---- Event-Listener ----
-
-  // 1. Sprachmenü Toggle
-  langBtn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    const isOpen = langMenu.classList.toggle("open");
-    langBtn.setAttribute("aria-expanded", isOpen);
-  });
-
-  document.addEventListener("click", function () {
-    langMenu.classList.remove("open");
-    langBtn.setAttribute("aria-expanded", "false");
-  });
-
-  // Sprachauswahl
-  document.querySelectorAll(".lang-option").forEach(function (opt) {
-    opt.addEventListener("click", function () {
-      const selectedLang = this.getAttribute("data-lang");
-      loadLanguage(selectedLang);
-    });
-  });
-
-  // 2. "Über uns" Umschaltung
-  nav1.addEventListener("click", function () {
-    const isVisible = aboutSec.classList.toggle("visible");
-    nav1.setAttribute("aria-expanded", isVisible);
-  });
-
-  // 3. WhatsApp Formular Submit Handling
-  antragForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const inquiry = document.getElementById("inquiry").value.trim();
-    const bizType = document.getElementById("bizType").value;
-    const name = document.getElementById("name").value.trim();
-    const tel = document.getElementById("tel").value.trim();
-    const email = document.getElementById("email").value.trim();
-
-    // Nachricht formatieren
-    let text = `*Neue Anfrage über RSK Trust & Trade*\n\n`;
-    text += `*Name:* ${name}\n`;
-    text += `*Telefon:* ${tel}\n`;
-    if (email) text += `*E-Mail:* ${email}\n`;
-    if (bizType) text += `*Bereich:* ${bizType}\n`;
-    text += `\n*Anfrage:*\n${inquiry}`;
-
-    const encodedText = encodeURIComponent(text);
-    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
-
-    // WhatsApp im neuen Tab öffnen
-    window.open(waUrl, "_blank");
-  });
-
-  // Initiale Sprache laden
-  loadLanguage(DEFAULT_LANG);
-});
-</script>
+ 
