@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cache = {};
   let currentDict = null;
 
-  // Hilfsfunktion zum Auslesen verschachtelter Keys (z.B. "tradedesk.form.submit")
+  // Hilfsfunktion zum Auslesen verschachtelter Keys
   function getPath(obj, path) {
     if (!obj || !path) return undefined;
     return path.split(".").reduce(function (acc, key) {
@@ -279,5 +279,91 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Platzhalter (Placeholder) übersetzen
- 
+    // Platzhalter übersetzen
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-placeholder");
+      const val = getPath(dict, key);
+      if (val !== undefined) {
+        el.placeholder = val;
+      }
+    });
+  }
+
+  // ---- Sprach-Dropdown Event handling (Mobile & Desktop) ----
+  function toggleDropdown(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const isOpen = langMenu.classList.toggle("open");
+    langBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  if (langBtn && langMenu) {
+    // Mobil & Desktop Events
+    langBtn.addEventListener("click", toggleDropdown);
+    
+    // Menü schließen bei Klick/Tipp außerhalb
+    document.addEventListener("click", function (e) {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.remove("open");
+        langBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Sprachauswahl Klick-Events
+    document.querySelectorAll(".lang-option").forEach(function (opt) {
+      opt.addEventListener("click", function () {
+        const lang = this.getAttribute("data-lang");
+        if (languageNames[lang]) {
+          langLabel.textContent = languageNames[lang];
+        }
+        
+        // RTL Unterstützung
+        if (rtlLangs.includes(lang)) {
+          document.documentElement.setAttribute("dir", "rtl");
+        } else {
+          document.documentElement.removeAttribute("dir");
+        }
+
+        langMenu.classList.remove("open");
+        langBtn.setAttribute("aria-expanded", "false");
+        
+        // Hier ggf. deine Lade-Funktion für i18n JSON aufrufen
+      });
+    });
+  }
+
+  // ---- Toggle Über Uns Sektion ----
+  if (nav1 && aboutSec) {
+    nav1.addEventListener("click", function () {
+      const isVisible = aboutSec.classList.toggle("visible");
+      nav1.setAttribute("aria-expanded", isVisible ? "true" : "false");
+    });
+  }
+
+  // ---- WhatsApp Formular Abfanganweisung ----
+  if (antragForm) {
+    antragForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const inquiry = document.getElementById("inquiry").value;
+      const bizType = document.getElementById("bizType").value;
+      const name = document.getElementById("name").value;
+      const tel = document.getElementById("tel").value;
+      const email = document.getElementById("email").value;
+
+      const msg = `*Neue Anfrage auf RSK TRUST & TRADE*\n\n` +
+                  `*Name:* ${name}\n` +
+                  `*Tel/WA:* ${tel}\n` +
+                  `*E-Mail:* ${email}\n` +
+                  `*Bereich:* ${bizType}\n\n` +
+                  `*Anfrage:* ${inquiry}`;
+
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, "_blank");
+    });
+  }
+
+});
+    </script>
+    
