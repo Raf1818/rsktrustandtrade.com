@@ -1,34 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RSK Trust & Trade - Documents</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSK TRUST & TRADE - Select Language</title>
 <style>
-@import url('https://googleapis.com');
-body{font-family:'Inter',sans-serif;background:#f5f1e8;margin:0;padding:30px 20px;text-align:center}
-h1{font-family:'Cinzel',serif;color:#0a1931;letter-spacing:2px;margin-bottom:5px}
-.sub{color:#c9a86a;font-size:10px;letter-spacing:3px;margin-bottom:30px}
-.grid{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:600px){.grid{grid-template-columns:1fr}}
-a.lang{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:#fdfaf3;border:1.5px solid #c9a86a;border-radius:12px;text-decoration:none;color:#0a1931;font-weight:700;transition:0.2s}
-a.lang:hover{background:#0a1931;color:#c9a86a;transform:translateY(-2px)}
-a.lang small{font-weight:400;font-size:9pt;opacity:0.7}
-a.home{margin-top:30px;display:inline-block;color:#0a1931;text-decoration:none;font-size:9pt;border:1px solid #c9a86a;padding:8px 16px;border-radius:20px}
-</style></head><body>
-<h1>RSK TRUST & TRADE</h1>
-<div class="sub">CORPORATE DOCUMENT PACKAGE • RSK-KYC-2026-005 • SELECT LANGUAGE</div>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
+:root { --navy: #0a1931; --gold: #c9a86a; --parch: #f5f1e8; --cream: #fdfaf3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--parch); font-family: 'Inter', sans-serif; min-height: 100vh; padding: 30px 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-<div class="grid">
-  <!-- Die Pfade gehen jetzt direkt vorwärts in deine Unterordner de/, en/, fr/ usw. -->
-  <a class="lang" href="./de/RSK_Document_Package.html?lang=DE"><span>🇩🇪 Deutsch</span><small>DE • 6 Docs ✓</small></a>
-  <a class="lang" href="./en/RSK_Document_Package.html?lang=EN"><span>🇬🇧 English</span><small>EN • 6 Docs ✓</small></a>
-  <a class="lang" href="./fr/RSK_Document_Package.html?lang=FR"><span>🇫🇷 Français</span><small>FR • 6 Docs ✓</small></a>
-  <a class="lang" href="./es/RSK_Document_Package.html?lang=ES"><span>🇪🇸 Español</span><small>ES • 6 Docs ✓</small></a>
-  <a class="lang" href="./pt/RSK_Document_Package.html?lang=PT"><span>🇵🇹 Português</span><small>PT • 6 Docs ✓</small></a>
-  <a class="lang" href="./ru/RSK_Document_Package.html?lang=RU"><span>🇷🇺 Русский</span><small>RU • 6 Docs ✓</small></a>
-  <a class="lang" href="./zh/RSK_Document_Package.html?lang=ZH"><span>🇨🇳 中文 (Mandarin)</span><small>ZH • 6 Docs ✓</small></a>
-  <a class="lang" href="./ar/RSK_Document_Package.html?lang=AR"><span>🇦🇪 العربية</span><small>AR • 6 Docs ✓</small></a>
-</div>
+.header-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--navy); letter-spacing: 3px; text-align: center; margin-bottom: 5px; text-transform: uppercase; }
+.header-sub { font-size: 10px; color: var(--gold); letter-spacing: 2px; text-align: center; margin-bottom: 30px; font-weight: 600; text-transform: uppercase; }
 
-<a class="home" href="../">← Back to rsktrustandtrade.com</a>
-</body></html>
+.lang-grid { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 14px; }
+.lang-card { background: var(--cream); border: 1.5px solid var(--gold); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #111; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(201,168,106,.1); }
+.lang-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,168,106,.25); }
+
+.lang-left { display: flex; align-items: center; gap: 12px; }
+.flag { font-size: 20px; }
+.lang-name { font-weight: 700; font-size: 16px; color: #111; }
+.doc-tag { font-size: 11px; font-weight: 600; color: #666; letter-spacing: 0.5px; }
+
+.btn-back { margin-top: 35px; border: 1px solid var(--gold); background: var(--cream); color: #333; text-decoration: none; padding: 10px 20px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+  <h1 class="header-title">TRADE</h1>
+  <p class="header-sub">CORPORATE DOCUMENT PACKAGE • RSK-KYC-2026-005 • SELECT LANGUAGE</p>
+
+  <div class="lang-grid">
+    <a href="./de/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇩🇪</span><span class="lang-name">Deutsch</span></div>
+      <span class="doc-tag">DE • 8 Docs ✓</span>
+    </a>
+
+    <a href="./en/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇬🇧</span><span class="lang-name">English</span></div>
+      <span class="doc-tag">EN • 8 Docs ✓</span>
+    </a>
+
+    <a href="./fr/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇫🇷</span><span class="lang-name">Français</span></div>
+      <span class="doc-tag">FR • 8 Docs ✓</span>
+    </a>
+
+    <a href="./es/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇪🇸</span><span class="lang-name">Español</span></div>
+      <span class="doc-tag">ES • 8 Docs ✓</span>
+    </a>
+
+    <a href="./pt/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇧🇷</span><span class="lang-name">Português</span></div>
+      <span class="doc-tag">PT • 8 Docs ✓</span>
+    </a>
+
+    <a href="./ru/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇷🇺</span><span class="lang-name">Русский</span></div>
+      <span class="doc-tag">RU • 8 Docs ✓</span>
+    </a>
+
+    <a href="./zh/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇨🇳</span><span class="lang-name">中文 (Mandarin)</span></div>
+      <span class="doc-tag">ZH • 8 Docs ✓</span>
+    </a>
+
+    <a href="./ar/" class="lang-card">
+      <div class="lang-left"><span class="flag">🇦🇪</span><span class="lang-name">العربية</span></div>
+      <span class="doc-tag">AR • 8 Docs ✓</span>
+    </a>
+  </div>
+
+  <a href="../" class="btn-back">← Back to rsktrustandtrade.com</a>
+
+</body>
+  </html>
+                                                   
