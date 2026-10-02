@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSK Priority Support | Business Compliance & Workflow</title>
+    
+    <!-- NOINDEX Schranke während der Entwicklungs- & Testphase -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="RSK Priority Support - Diskreter Live-Support & Compliance-Anfragen im internationalen Dokumenten-Workflow.">
+    
+    <!-- Tailwind CSS CDN (Feste Version für Stabilität) -->
+    <script src="https://cdn.tailwindcss.com?v=3.4.1"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-parchment: #F9F7F2;
+            --color-parchment-card: #FFFFFF;
+            --color-navy: #0A1128;
+            --color-navy-dark: #060B18;
+            --color-navy-light: #121C3B;
+            --color-gold: #C59B27;
+            --color-gold-border: #E5D5B5;
+            --color-text-dark: #1C2026;
+            --color-text-muted: #556070;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-parchment);
+            color: var(--color-text-dark);
+            overflow-x: hidden;
+        }
+
+        .font-serif-title {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .text-navy { color: var(--color-navy); }
+        .bg-navy { background-color: var(--color-navy); }
+        .text-gold { color: var(--color-gold); }
+
+        .rsk-card {
+            background-color: var(--color-parchment-card);
+            border: 1px solid var(--color-gold-border);
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px rgba(10, 17, 40, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .rsk-card:hover {
+            box-shadow: 0 10px 30px rgba(197, 155, 39, 0.12);
+            border-color: var(--color-gold);
+        }
+
+        .premium-btn {
+            background: linear-gradient(135deg, #0A1128 0%, #121C3B 100%);
+            color: #FFFFFF;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .premium-btn:hover {
+            background: linear-gradient(135deg, #121C3B 0%, #1C2B56 100%);
+            box-shadow: 0 6px 20px rgba(10, 17, 40, 0.2);
+        }
+
+        [dir="rtl"] { text-align: right; }
+
+        .chat-bubble { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-100 selection:text-navy">
+
+    <!-- HEADER / NAV (Mit embedded SVG Wappen & Absoluten Links) -->
+    <header class="sticky top-0 z-50 bg-[#F9F7F2]/95 backdrop-blur-md border-b border-[#E5D5B5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <!-- Brand Logo with Embedded SVG Wappen -->
+            <a href="https://rsktrustandtrade.com/" class="flex items-center space-x-3 rtl:space-x-reverse group">
+                <div class="w-12 h-12 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-navy fill-current" aria-hidden="true">
+                        <path d="M50 5 L85 20 V45 C85 70 50 95 50 95 C50 95 15 70 15 45 V20 Z" fill="none" stroke="#C59B27" stroke-width="4"/>
+                        <path d="M50 12 L78 25 V45 C78 65 50 86 50 86 C50 86 22 65 22 45 V25 Z" fill="none" stroke="#0A1128" stroke-width="2"/>
+                        <text x="50" y="52" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="bold" fill="#0A1128" text-anchor="middle">RSK</text>
+                        <circle cx="50" cy="66" r="3" fill="#C59B27"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-navy font-serif-title font-bold text-xl tracking-wider block leading-none group-hover:text-amber-800 transition">
+                        RSK TRUST & TRADE
+                    </span>
+                    <span class="text-amber-800/70 text-[10px] tracking-widest uppercase font-medium mt-1 block">
+                        INTERNATIONALE ROHSTOFFE • LATAM • EUROPA • VAE • ASIEN
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navigation & Language Selector -->
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                <a href="https://rsktrustandtrade.com/" class="hidden md:inline-flex items-center text-xs text-slate-600 hover:text-navy font-medium transition">
+                    <i class="fa-solid fa-arrow-left mr-1.5 rtl:rotate-180"></i> <span data-i18n="nav_back_main">Zur Hauptseite</span>
+                </a>
+                
+                <div class="relative inline-block">
+                    <select id="lang-select" aria-label="Sprache auswählen" onchange="changeLanguage(this.value)" class="bg-white text-navy text-xs sm:text-sm border border-[#E5D5B5] rounded-xl px-3 py-2 focus:outline-none focus:border-amber-600 cursor-pointer shadow-sm transition">
+                        <option value="de">🌐 Sprache (DE)</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="pt">🇵🇹 Português</option>
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="zh">🇨🇳 中文</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="ar">🇦🇪 العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Inklusive Wasserzeichen-Hintergrund) -->
+    <section class="relative py-16 sm:py-20 border-b border-[#E5D5B5] overflow-hidden">
+        <!-- SVG Wasserzeichen im Hintergrund -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+            <svg viewBox="0 0 100 100" class="w-[500px] h-[500px] text-navy fill-current">
+                <path d="M50 5 L85 20 V45 C85 70 50 95 50 95 C50 95 15 70 15 45 V20 Z" stroke="#0A1128" stroke-width="2"/>
+                <text x="50" y="58" font-family="serif" font-size="30" font-weight="bold" text-anchor="middle">RSK</text>
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-600/30 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-semibold text-amber-900 tracking-wide uppercase" data-i18n="hero_badge">Priority Support Desk</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-serif-title font-bold text-navy tracking-tight leading-tight mb-6" data-i18n="hero_title">
+                Integrität & Compliance im globalen Handel
+            </h1>
+
+            <p class="text-lg sm:text-xl text-amber-900/80 font-medium max-w-2xl mx-auto mb-4" data-i18n="hero_subtitle">
+                Live-Support & Dokumenten-Workflow für staatliche Käufer, Institutionen und Tradegeschäfte.
+            </p>
+
+            <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed mb-8" data-i18n="hero_subheadline">
+                "Minimierung des operationellen Risikos bei nahtloser Abwicklung. Sie stellen die Anfrage – wir liefern die geprüfte Lösung."
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#pricing" class="premium-btn px-8 py-3.5 rounded-xl text-sm sm:text-base shadow-md hover:scale-105 transition-all">
+                    <span data-i18n="btn_choose_plan">Tarif Auswählen</span> <i class="fa-solid fa-arrow-right ml-2 rtl:rotate-180" aria-hidden="true"></i>
+                </a>
+                <a href="#interactive-demo" class="bg-white text-navy border border-[#E5D5B5] px-8 py-3.5 rounded-xl text-sm sm:text-base hover:bg-amber-50 transition-all">
+                    <span data-i18n="btn_demo">Prozess-Demo</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS VISUALIZATION & CHAT MOCKUP -->
+    <section id="interactive-demo" class="py-16 border-b border-[#E5D5B5]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-serif-title font-bold text-navy" data-i18n="process_title">
+                    Trade Desk & Compliance Prozess
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base" data-i18n="process_desc">
+                    Reibungslose Bearbeitung von Dokumenten in 8 Sprachen – verfügbar in unter 15 Minuten.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- 3 Steps List -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="rsk-card p-5 flex items-start space-x-4 rtl:space-x-reverse">
+                        <div class="w-10 h-10 rounded-full bg-navy text-amber-400 flex items-center justify-center font-serif-title font-bold text-lg shrink-0">1</div>
+                        <div>
+                            <h3 class="font-serif-title font-bold text-navy text-base" data-i18n="step1_title">Anfrage des Kunden</h3>
+                            <p class="text-sm text-slate-600 mt-1" data-i18n="step1_desc">Übermittlung der Compliance- und Dokumenten-Anforderung mit allen Eckdaten.</p>
+                        </div>
+                    </div>
+
+                    <div class="rsk-card p-5 flex items-start space-x-4 rtl:space-x-reverse">
+                        <div class="w-10 h-10 rounded-full bg-navy text-amber-400 flex items-center justify-center font-serif-title font-bold text-lg shrink-0">2</div>
+                        <div>
+                            <h3 class="font-serif-title font-bold text-navy text-base" data-i18n="step2_title">Prüfung & Verifizierung</h3>
+                            <p class="text-sm text-slate-600 mt-1" data-i18n="step2_desc">Unsere Spezialisten prüfen Regularien und Handelsvorgaben im internationalen Kontext.</p>
+                        </div>
+                    </div>
+
+                    <div class="rsk-card p-5 flex items-start space-x-4 rtl:space-x-reverse">
+                        <div class="w-10 h-10 rounded-full bg-navy text-amber-400 flex items-center justify-center font-serif-title font-bold text-lg shrink-0">3</div>
+                        <div>
+                            <h3 class="font-serif-title font-bold text-navy text-base" data-i18n="step3_title">Geprüfte Freigabe (&lt; 15 Min)</h3>
+                            <p class="text-sm text-slate-600 mt-1" data-i18n="step3_desc">Rechtssichere Freigaben und verifizierte Dokumente direkt in Ihren Trade Desk.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Mockup Chat Box -->
+                <div class="lg:col-span-7">
+                    <div class="bg-navy rounded-2xl shadow-xl overflow-hidden border border-amber-600/30">
+                        <div class="bg-navy-dark px-6 py-4 flex items-center justify-between border-b border-gray-800">
+                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                <div class="relative">
+                                    <div class="w-9 h-9 rounded-full bg-amber-500/20 border border-amber-500/50 text-amber-400 flex items-center justify-center font-bold text-xs">RSK</div>
+                                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-navy"></span>
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-semibold">RSK Live Trade Desk</h4>
+                                    <p class="text-xs text-emerald-400" data-i18n="mockup_status">Aktiv • Antworten in real-time</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono">TICKET #8834</span>
+                        </div>
+
+                        <div id="chat-messages" class="p-6 space-y-4 min-h-[280px] text-sm bg-navy/80">
+                            <div class="chat-bubble flex items-start justify-end space-x-2">
+                                <div class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none max-w-md shadow-md">
+                                    <p class="text-xs font-semibold text-blue-200 mb-1" data-i18n="mockup_client_label">Ihre Anfrage</p>
+                                    <p data-i18n="mockup_client_msg">Benötige dringende Compliance-Prüfung für LC-Dokumente im GCC-Raum inkl. Vollmacht.</p>
+                                    <span class="text-[10px] text-blue-200 block text-right mt-1">10:42</span>
+                                </div>
+                            </div>
+
+                            <div class="chat-bubble flex justify-center">
+                                <span class="bg-navy-light text-amber-300 text-xs px-3 py-1 rounded-full border border-amber-500/20" data-i18n="mockup_system_msg">
+                                    <i class="fa-solid fa-spinner fa-spin mr-1" aria-hidden="true"></i> RSK Desk bearbeitet Ticket...
+                                </span>
+                            </div>
+
+                            <div class="chat-bubble flex items-start space-x-2 rtl:space-x-reverse">
+                                <div class="bg-navy-light border border-amber-500/40 text-slate-200 p-4 rounded-2xl rounded-tl-none max-w-md shadow-md">
+                                    <p class="text-xs font-semibold text-amber-400 mb-1">RSK Priority Agent</p>
+                                    <p data-i18n="mockup_agent_msg">Dokumentation vollständig geprüft und freigegeben. B2B-Standard erfüllt. Certificate of Conformity ist angehängt.</p>
+                                    <div class="mt-2 p-2 bg-navy rounded border border-gray-700 flex items-center justify-between text-xs">
+                                        <span class="text-slate-300"><i class="fa-solid fa-file-pdf text-red-400 mr-2" aria-hidden="true"></i>Approved_Compliance_GCC.pdf</span>
+                                        <span class="text-emerald-400 text-[10px] font-bold">VERIFIZIERT</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400 block mt-1">10:51 (9 Min)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-navy-dark px-6 py-3 text-center text-xs text-slate-400 border-t border-gray-800">
+                            <i class="fa-solid fa-shield-halved text-amber-400 mr-1" aria-hidden="true"></i> <span data-i18n="mockup_footer">Ende-zu-Ende verschlüsselter B2B-Workflow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-16 sm:py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-serif-title font-bold text-navy" data-i18n="pricing_title">
+                    Trade Desk Tarife
+                </h2>
+                <p class="text-slate-600 mt-2 text-base" data-i18n="pricing_subtitle">
+                    Wählen Sie die passende Kapazität für Ihr Handels- und Dokumentenaufkommen.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+                <!-- STARTER PLAN ($49) -->
+                <div class="rsk-card p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-serif-title font-bold text-navy" data-i18n="plan_starter_title">STARTER</h3>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-semibold rounded-full" data-i18n="starter_badge">Basis Schutz</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6" data-i18n="starter_desc">Ideal für 1–3 Deals pro Monat im Tagesgeschäft.</p>
+
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-navy">$49</span>
+                            <span class="text-slate-500 font-medium" data-i18n="per_month"> / Monat</span>
+                        </div>
+
+                        <div class="border-t border-[#E5D5B5] pt-6 mb-8">
+                            <ul class="space-y-4 text-sm text-slate-600">
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="starter_feat1">Ideal für 1–3 Deals/Monat</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="starter_feat2">50 Tickets / Compliance-Anfragen</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="starter_feat3">24h Antwortzeit im Dokumenten-Workflow</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="starter_feat4">RSK Compliance-Support an Ihrer Seite</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-3.5 px-6 rounded-xl border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-white transition duration-200 text-center" onclick="selectPlan('Starter')">
+                        <span data-i18n="btn_starter">Starter Wählen</span>
+                    </button>
+                </div>
+
+                <!-- UNLIMITED PLAN ($199) -->
+                <div class="rsk-card p-8 flex flex-col justify-between relative border-2 border-amber-600 shadow-md">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-navy text-amber-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow">
+                        <span data-i18n="unlimited_badge">Empfohlen für Trader & Teams</s
