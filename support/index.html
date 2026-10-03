@@ -121,14 +121,13 @@
                         <option value="fr">🇫🇷 Français</option>
                         <option value="zh">🇨🇳 中文</option>
                         <option value="ru">🇷🇺 Русский</option>
-                        <option value="ar">🇦🇪 العربية</option>
                     </select>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (Inklusive Wasserzeichen-Hintergrund) -->
+    <  <!-- HERO SECTION (Inklusive Wasserzeichen-Hintergrund) -->
     <section class="relative py-16 sm:py-20 border-b border-[#E5D5B5] overflow-hidden">
         <!-- SVG Wasserzeichen im Hintergrund -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
@@ -201,7 +200,7 @@
                     <div class="rsk-card p-5 flex items-start space-x-4 rtl:space-x-reverse">
                         <div class="w-10 h-10 rounded-full bg-navy text-amber-400 flex items-center justify-center font-serif-title font-bold text-lg shrink-0">3</div>
                         <div>
-                            <h3 class="font-serif-title font-bold text-navy text-base" data-i18n="step3_title">Geprüfte Freigabe (&lt; 15 Min)</h3>
+                            <h3 class="font-serif-title font-bold text-navy text-base" data-i18n="step3_title">Geprüfte Freigabe (< 15 Min)</h3>
                             <p class="text-sm text-slate-600 mt-1" data-i18n="step3_desc">Rechtssichere Freigaben und verifizierte Dokumente direkt in Ihren Trade Desk.</p>
                         </div>
                     </div>
@@ -318,4 +317,586 @@
                 <!-- UNLIMITED PLAN ($199) -->
                 <div class="rsk-card p-8 flex flex-col justify-between relative border-2 border-amber-600 shadow-md">
                     <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-navy text-amber-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow">
-                        <span data-i18n="unlimited_badge">Empfohlen für Trader & Teams</s
+                        <span data-i18n="unlimited_badge">Empfohlen für Trader & Teams</span>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <h3 class="text-xl font-serif-title font-bold text-navy" data-i18n="plan_unlimited_title">UNLIMITED</h3>
+                            <i class="fa-solid fa-crown text-amber-600" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6" data-i18n="unlimited_desc">Unbegrenzte Kapazität für hohes Handelsvolumen.</p>
+
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-navy">$199</span>
+                            <span class="text-slate-500 font-medium" data-i18n="per_month"> / Monat</span>
+                        </div>
+
+                        <div class="border-t border-[#E5D5B5] pt-6 mb-8">
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="unlimited_feat1">Unbegrenzte Tickets & Anfragen</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="unlimited_feat2">Priority SLA (< 15 Minuten Reaktion)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="unlimited_feat3">Dedicated Account Manager</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-amber-600 mr-3 rtl:ml-3" aria-hidden="true"></i>
+                                    <span data-i18n="unlimited_feat4">Direkter VIP Desk & Dokumenten-Check</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-3.5 px-6 rounded-xl premium-btn text-center" onclick="selectPlan('Unlimited')">
+                        <span data-i18n="btn_unlimited">Unlimited Wählen</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TOKEN OVERAGE SHOP -->
+            <div class="mt-16 rsk-card p-8 bg-white border border-[#E5D5B5]">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-100 px-3 py-1 rounded-full mb-3 inline-block" data-i18n="token_badge">🔋 Flexibler Nachschub</span>
+                    <h3 class="text-2xl font-serif-title font-bold text-navy" data-i18n="token_title">Kontingent aufgebraucht? Kein Stress.</h3>
+                    <p class="text-slate-600 text-sm mt-2" data-i18n="token_subtitle">Erweitern Sie Ihr Kontingent jederzeit modular ohne Tarifwechsel.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-xl bg-[#F9F7F2] border border-[#E5D5B5] text-center flex flex-col justify-between">
+                        <div>
+                            <span class="font-bold text-navy text-lg block">100 Token</span>
+                            <span class="text-slate-500 text-xs block mb-3" data-i18n="token_pkg1_sub">= 1 Extra Ticket (ca. 3.000 Zeichen)</span>
+                            <span class="text-2xl font-extrabold text-navy">$10</span>
+                        </div>
+                        <button class="mt-4 py-2 px-4 bg-navy text-white text-xs font-semibold rounded-lg hover:bg-navy-light transition" onclick="buyTokens(100)">
+                            <span data-i18n="btn_buy">Sofort Buchen</span>
+                        </button>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-amber-500/10 border-2 border-amber-600 text-center flex flex-col justify-between relative">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-600 text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase" data-i18n="token_popular">Beliebt</span>
+                        <div>
+                            <span class="font-bold text-navy text-lg block">500 Token</span>
+                            <span class="text-slate-600 text-xs block mb-3" data-i18n="token_pkg2_sub">= 5 Extra Tickets</span>
+                            <span class="text-2xl font-extrabold text-navy">$45</span>
+                        </div>
+                        <button class="mt-4 py-2 px-4 premium-btn text-xs font-semibold rounded-lg transition" onclick="buyTokens(500)">
+                            <span data-i18n="btn_buy">Sofort Buchen</span>
+                        </button>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-[#F9F7F2] border border-[#E5D5B5] text-center flex flex-col justify-between">
+                        <div>
+                            <span class="font-bold text-navy text-lg block">1.000 Token</span>
+                            <span class="text-slate-500 text-xs block mb-3" data-i18n="token_pkg3_sub">= 10 Extra Tickets</span>
+                            <span class="text-2xl font-extrabold text-navy">$80</span>
+                        </div>
+                        <button class="mt-4 py-2 px-4 bg-navy text-white text-xs font-semibold rounded-lg hover:bg-navy-light transition" onclick="buyTokens(1000)">
+                            <span data-i18n="btn_buy">Sofort Buchen</span>
+                        </button>
+                    </div>
+                </div>
+                <p class="text-center text-[11px] text-slate-500 mt-6" data-i18n="token_footer">1 Token = 30 Zeichen • Keinerlei Verfall • Übertragbar auf Folgemonat</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-16 border-t border-[#E5D5B5] bg-[#F4F0E8]/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-serif-title font-bold text-navy text-center mb-10" data-i18n="faq_title">
+                Häufig gestellte Fragen (FAQ)
+            </h2>
+
+            <div class="space-y-4">
+                <div class="rsk-card p-6">
+                    <h3 class="font-serif-title font-bold text-navy text-lg mb-2" data-i18n="faq_q1">Wie funktioniert die Entkopplung von der Hauptseite?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="faq_a1">Diese Support-Seite läuft als eigenständige Instanz. Zahlungen, Ticketings und Datenflüsse sind isoliert, um maximale Betriebssicherheit für das Kernportal zu gewährleisten.</p>
+                </div>
+
+                <div class="rsk-card p-6">
+                    <h3 class="font-serif-title font-bold text-navy text-lg mb-2" data-i18n="faq_q2">Wie schnell werden Compliance-Tickets bearbeitet?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="faq_a2">Im Unlimited-Tarif garantieren wir eine Reaktionszeit von unter 15 Minuten. Im Starter-Tarif bearbeiten wir Anfragen innerhalb von maximal 24 Stunden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Absolute Links zur Hauptdomain & entkoppelte Rechtstexte) -->
+    <footer class="bg-[#F2EFE9] text-slate-600 text-xs py-10 border-t border-[#E5D5B5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <div>
+                    <p>© 2026 RSK TRUST & TRADE. Alle Rechte vorbehalten.</p>
+                    <p class="mt-1 text-slate-500" data-i18n="footer_compliance">Diskrete Compliance für staatliche Käufer, Institutionen und Partner.</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6 font-medium text-slate-700">
+                    <a href="https://rsktrustandtrade.com/" class="hover:text-navy transition" data-i18n="nav_back_main">Zur Hauptseite</a>
+                    <a href="./support-terms.html" class="hover:text-navy transition" data-i18n="footer_terms">Support AGB</a>
+                    <a href="https://rsktrustandtrade.com/#impressum" class="hover:text-navy transition" data-i18n="footer_legal">Impressum</a>
+                    <a href="https://rsktrustandtrade.com/#datenschutz" class="hover:text-navy transition" data-i18n="footer_privacy">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC & I18N DICTIONARY -->
+    <script>
+   const translations = {
+                    "de": {
+                                "nav_back_main": "Zur Hauptseite",
+                                "hero_badge": "Priority Support Desk",
+                                "hero_title": "Integrität & Compliance im globalen Handel",
+                                "hero_subtitle": "Live-Support & Dokumenten-Workflow für staatliche Käufer, Institutionen und Tradegeschäfte.",
+                                "hero_subheadline": "\"Minimierung des operationellen Risikos bei nahtloser Abwicklung. Sie stellen die Anfrage – wir liefern die geprüfte Lösung.\"",
+                                "btn_choose_plan": "Tarif Auswählen",
+                                "btn_demo": "Prozess-Demo",
+                                "process_title": "Trade Desk & Compliance Prozess",
+                                "process_desc": "Reibungslose Bearbeitung von Dokumenten in 8 Sprachen – verfügbar in unter 15 Minuten.",
+                                "step1_title": "Anfrage des Kunden",
+                                "step1_desc": "Übermittlung der Compliance- und Dokumenten-Anforderung mit allen Eckdaten.",
+                                "step2_title": "Prüfung & Verifizierung",
+                                "step2_desc": "Unsere Spezialisten prüfen Regularien und Handelsvorgaben im internationalen Kontext.",
+                                "step3_title": "Geprüfte Freigabe (< 15 Min)",
+                                "step3_desc": "Rechtssichere Freigaben und verifizierte Dokumente direkt in Ihren Trade Desk.",
+                                "mockup_status": "Aktiv • Antworten in real-time",
+                                "mockup_client_label": "Ihre Anfrage",
+                                "mockup_client_msg": "Benötige dringende Compliance-Prüfung für LC-Dokumente im GCC-Raum inkl. Vollmacht.",
+                                "mockup_system_msg": "RSK Desk bearbeitet Ticket...",
+                                "mockup_agent_msg": "Dokumentation vollständig geprüft und freigegeben. B2B-Standard erfüllt. Certificate of Conformity ist angehängt.",
+                                "mockup_footer": "Ende-zu-Ende verschlüsselter B2B-Workflow",
+                                "pricing_title": "Trade Desk Tarife",
+                                "pricing_subtitle": "Wählen Sie die passende Kapazität für Ihr Handels- und Dokumentenaufkommen.",
+                                "plan_starter_title": "STARTER",
+                                "starter_badge": "Basis Schutz",
+                                "starter_desc": "Ideal für 1–3 Deals pro Monat im Tagesgeschäft.",
+                                "per_month": " / Monat",
+                                "starter_feat1": "Ideal für 1–3 Deals/Monat",
+                                "starter_feat2": "50 Tickets / Compliance-Anfragen",
+                                "starter_feat3": "24h Antwortzeit im Dokumenten-Workflow",
+                                "starter_feat4": "RSK Compliance-Support an Ihrer Seite",
+                                "btn_starter": "Starter Wählen",
+                                "plan_unlimited_title": "UNLIMITED",
+                                "unlimited_badge": "Empfohlen für Trader & Teams",
+                                "unlimited_desc": "Unbegrenzte Kapazität für hohes Handelsvolumen.",
+                                "unlimited_feat1": "Unbegrenzte Tickets & Anfragen",
+                                "unlimited_feat2": "Priority SLA (< 15 Minuten Reaktion)",
+                                "unlimited_feat3": "Dedicated Account Manager",
+                                "unlimited_feat4": "Direkter VIP Desk & Dokumenten-Check",
+                                "btn_unlimited": "Unlimited Wählen",
+                                "token_badge": "🔋 Flexibler Nachschub",
+                                "token_title": "Kontingent aufgebraucht? Kein Stress.",
+                                "token_subtitle": "Erweitern Sie Ihr Kontingent jederzeit modular ohne Tarifwechsel.",
+                                "token_pkg1_sub": "= 1 Extra Ticket (ca. 3.000 Zeichen)",
+                                "token_pkg2_sub": "= 5 Extra Tickets",
+                                "token_pkg3_sub": "= 10 Extra Tickets",
+                                "token_popular": "Beliebt",
+                                "btn_buy": "Sofort Buchen",
+                                "token_footer": "1 Token = 30 Zeichen • Keinerlei Verfall • Übertragbar auf Folgemonat",
+                                "faq_title": "Häufig gestellte Fragen (FAQ)",
+                                "faq_q1": "Wie funktioniert die Entkopplung von der Hauptseite?",
+                                "faq_a1": "Diese Support-Seite läuft als eigenständige Instanz. Zahlungen, Ticketings und Datenflüsse sind isoliert, um maximale Betriebssicherheit für das Kernportal zu gewährleisten.",
+                                "faq_q2": "Wie schnell werden Compliance-Tickets bearbeitet?",
+                                "faq_a2": "Im Unlimited-Tarif garantieren wir eine Reaktionszeit von unter 15 Minuten. Im Starter-Tarif bearbeiten wir Anfragen innerhalb von maximal 24 Stunden.",
+                                "footer_compliance": "Diskrete Compliance für staatliche Käufer, Institutionen und Partner.",
+                                "footer_terms": "Support AGB",
+                                "footer_legal": "Impressum",
+                                "footer_privacy": "Datenschutz"
+                    },
+                    "en": {
+                                "nav_back_main": "Back to Main Site",
+                                "hero_badge": "Priority Support Desk",
+                                "hero_title": "Integrity & Compliance in Global Trade",
+                                "hero_subtitle": "Live Support & Document Workflow for Sovereign Buyers, Institutions, and Trade Operations.",
+                                "hero_subheadline": "\"Minimizing operational risk while maintaining seamless execution. You state the request – we deliver the verified solution.\"",
+                                "btn_choose_plan": "Select Plan",
+                                "btn_demo": "Process Demo",
+                                "process_title": "Trade Desk & Compliance Process",
+                                "process_desc": "Seamless document processing in 8 languages – available in under 15 minutes.",
+                                "step1_title": "Customer Request",
+                                "step1_desc": "Submit compliance and document requirements with key transaction details.",
+                                "step2_title": "Review & Verification",
+                                "step2_desc": "Our specialists verify regulations and trade requirements in an international context.",
+                                "step3_title": "Verified Release (< 15 Min)",
+                                "step3_desc": "Legally compliant approvals and verified documents directly to your Trade Desk.",
+                                "mockup_status": "Active • Real-time responses",
+                                "mockup_client_label": "Your Request",
+                                "mockup_client_msg": "Need urgent compliance check for LC documents in the GCC region including POA.",
+                                "mockup_system_msg": "RSK Desk processing ticket...",
+                                "mockup_agent_msg": "Documentation fully reviewed and approved. B2B standards met. Certificate of Conformity attached.",
+                                "mockup_footer": "End-to-End Encrypted B2B Workflow",
+                                "pricing_title": "Trade Desk Plans",
+                                "pricing_subtitle": "Select the appropriate capacity for your trade and document volume.",
+                                "plan_starter_title": "STARTER",
+                                "starter_badge": "Basic Protection",
+                                "starter_desc": "Ideal for 1–3 deals per month in daily operations.",
+                                "per_month": " / month",
+                                "starter_feat1": "Ideal for 1–3 deals/month",
+                                "starter_feat2": "50 Tickets / Compliance Requests",
+                                "starter_feat3": "24h Response Time for Document Workflows",
+                                "starter_feat4": "RSK Compliance Support at your side",
+                                "btn_starter": "Choose Starter",
+                                "plan_unlimited_title": "UNLIMITED",
+                                "unlimited_badge": "Recommended for Traders & Teams",
+                                "unlimited_desc": "Unlimited capacity for high trade volumes.",
+                                "unlimited_feat1": "Unlimited Tickets & Requests",
+                                "unlimited_feat2": "Priority SLA (< 15 Minutes Response)",
+                                "unlimited_feat3": "Dedicated Account Manager",
+                                "unlimited_feat4": "Direct VIP Desk & Document Verification",
+                                "btn_unlimited": "Choose Unlimited",
+                                "token_badge": "🔋 Flexible Top-Up",
+                                "token_title": "Quota Exceeded? No Stress.",
+                                "token_subtitle": "Extend your quota modularly at any time without changing plans.",
+                                "token_pkg1_sub": "= 1 Extra Ticket (approx. 3,000 chars)",
+                                "token_pkg2_sub": "= 5 Extra Tickets",
+                                "token_pkg3_sub": "= 10 Extra Tickets",
+                                "token_popular": "Popular",
+                                "btn_buy": "Buy Now",
+                                "token_footer": "1 Token = 30 Characters • No Expiration • Rollover to Next Month",
+                                "faq_title": "Frequently Asked Questions (FAQ)",
+                                "faq_q1": "How does decoupled hosting work?",
+                                "faq_a1": "This support page runs as an independent instance. Payments, ticketing, and data flows are isolated to ensure maximum operational safety for the core portal.",
+                                "faq_q2": "How fast are compliance tickets processed?",
+                                "faq_a2": "Under the Unlimited plan, we guarantee a response time under 15 minutes. Under the Starter plan, tickets are handled within 24 hours.",
+                                "footer_compliance": "Discrete compliance for sovereign buyers, institutions, and partners.",
+                                "footer_terms": "Support Terms",
+                                "footer_legal": "Legal Notice",
+                                "footer_privacy": "Privacy Policy"
+                    },
+                    "es": {
+                                "nav_back_main": "Volver a la página principal",
+                                "hero_badge": "Mesa de Soporte Prioritario",
+                                "hero_title": "Integridad y Cumplimiento en el Comercio Global",
+                                "hero_subtitle": "Soporte en vivo y flujo de documentos para compradores estatales, instituciones y operaciones comerciales.",
+                                "hero_subheadline": "\"Minimización del riesgo operativo con una ejecución fluida. Usted realiza la solicitud – nosotros entregamos la solución verificada.\"",
+                                "btn_choose_plan": "Seleccionar Plan",
+                                "btn_demo": "Demo del Proceso",
+                                "process_title": "Mesa de Comercio y Proceso de Cumplimiento",
+                                "process_desc": "Procesamiento fluido de documentos en 8 idiomas – respuesta en menos de 15 minutos.",
+                                "step1_title": "Consulta del Cliente",
+                                "step1_desc": "Envío de requisitos de cumplimiento y documentación con todos los datos clave.",
+                                "step2_title": "Auditoría y Verificación",
+                                "step2_desc": "Nuestros especialistas revisan las normativas y requisitos comerciales en el contexto internacional.",
+                                "step3_title": "Aprobación Verificada (&lt; 15 Min)",
+                                "step3_desc": "Aprobaciones legalmente válidas y documentos verificados directamente en su Mesa de Comercio.",
+                                "mockup_status": "Activo • Respuestas en tiempo real",
+                                "mockup_client_label": "Su Solicitud",
+                                "mockup_client_msg": "Se requiere revisión urgente de cumplimiento para documentos de LC en la región del GCC, incluido el poder notarial.",
+                                "mockup_system_msg": "El equipo RSK está procesando el ticket...",
+                                "mockup_agent_msg": "Documentación auditada y aprobada por completo. Cumple con el estándar B2B. Se adjunta Certificado de Conformidad.",
+                                "mockup_footer": "Flujo de trabajo B2B cifrado de extremo a extremo",
+                                "pricing_title": "Planes para Mesa de Comercio",
+                                "pricing_subtitle": "Seleccione la capacidad adecuada para su volumen de operaciones y documentos.",
+                                "plan_starter_title": "INICIAL",
+                                "starter_badge": "Protección Básica",
+                                "starter_desc": "Ideal para 1–3 operaciones al mes en el día a día.",
+                                "per_month": " / mes",
+                                "starter_feat1": "Ideal para 1–3 operaciones/mes",
+                                "starter_feat2": "50 Tickets / Consultas de Cumplimiento",
+                                "starter_feat3": "Tiempo de respuesta de 24h en flujo documental",
+                                "starter_feat4": "Soporte de Cumplimiento RSK a su lado",
+                                "btn_starter": "Elegir Inicial",
+                                "unlimited_badge": "Recomendado para Traders y Equipos",
+                                "plan_unlimited_title": "ILIMITADO",
+                                "unlimited_desc": "Capacidad ilimitada para comerciantes de commodities activos y estructuras comerciales.",
+                                "unlimited_feat1": "Operaciones y volumen de transacción ilimitados",
+                                "unlimited_feat2": "Tickets de cumplimiento y consultas ilimitados",
+                                "unlimited_feat3": "< 15 min. Tiempo de respuesta express prioritario",
+                                "unlimited_feat4": "Oficial de Cumplimiento RSK dedicado y acceso directo a mesa",
+                                "btn_unlimited": "Elegir Ilimitado",
+                                "token_badge": "🔋 Recarga Flexible",
+                                "token_title": "¿Cupo Agotado? Sin Problema.",
+                                "token_subtitle": "Amplíe su cupo de forma modular en cualquier momento sin cambiar de plan.",
+                                "token_pkg1_sub": "= 1 Ticket Extra (aprox. 3.000 caracteres)",
+                                "btn_buy": "Comprar Ahora",
+                                "token_popular": "Popular",
+                                "token_pkg2_sub": "= 5 Tickets Extra",
+                                "token_pkg3_sub": "= 10 Tickets Extra",
+                                "token_footer": "1 Token = 30 Caracteres • Sin Caducidad • Transferible al Mes Siguiente",
+                                "faq_title": "Preguntas Frecuentes (FAQ)",
+                                "faq_q1": "¿Cómo funciona el alojamiento desacoplado?",
+                                "faq_a1": "Esta página de soporte funciona como una instancia independiente. Los pagos, el sistema de tickets y los flujos de datos están aislados para garantizar la máxima seguridad operativa del portal principal.",
+                                "faq_q2": "¿Qué tan rápido se procesan los tickets de cumplimiento?",
+                                "faq_a2": "En el plan Unlimited garantizamos un tiempo de respuesta inferior a 15 minutos. En el plan Starter, las solicitudes se atienden en un máximo de 24 horas.",
+                                "footer_compliance": "Cumplimiento discreto para compradores estatales, instituciones y socios.",
+                                "footer_terms": "Términos de Soporte",
+                                "footer_legal": "Aviso Legal",
+                                "footer_privacy": "Política de Privacidad"
+                    },
+                    "pt": {
+                                "nav_back_main": "Voltar à Página Principal",
+                                "hero_badge": "Suporte Prioritário",
+                                "hero_title": "Integridade e Conformidade no Comércio Global",
+                                "hero_subtitle": "Suporte ao vivo e fluxo de documentos para compradores estatais, instituições e negócios comerciais.",
+                                "hero_subheadline": "\"Minimização do risco operacional com execução contínua. Você faz a solicitação – nós entregamos a solução verificada.\"",
+                                "btn_choose_plan": "Selecionar Plano",
+                                "btn_demo": "Demonstração do Processo",
+                                "process_title": "Mesa de Negócios e Processo de Conformidade",
+                                "process_desc": "Processamento ágil de documentos em 8 idiomas – resposta em menos de 15 minutos.",
+                                "step1_title": "Consulta do Cliente",
+                                "step1_desc": "Envio de requisitos de conformidade e documentação com todos os dados essenciais.",
+                                "step2_title": "Auditoria e Verificação",
+                                "step2_desc": "Nossos especialistas revisam regulamentos e exigências comerciais no contexto internacional.",
+                                "step3_title": "Aprovação Verificada (&lt; 15 Min)",
+                                "step3_desc": "Aprovações jurídicas válidas e documentos verificados diretamente na sua Mesa de Negócios.",
+                                "mockup_status": "Ativo • Respostas em tempo real",
+                                "mockup_client_label": "Sua Solicitação",
+                                "mockup_client_msg": "Análise urgente de conformidade necessária para documentos de LC na região do GCC, incluindo procuração.",
+                                "mockup_system_msg": "A equipe RSK está processando o ticket...",
+                                "mockup_agent_msg": "Documentação auditada e aprovada com sucesso. Padrão B2B atendido. Certificado de Conformidade anexado.",
+                                "mockup_footer": "Fluxo de trabalho B2B criptografado de ponta a ponta",
+                                "pricing_title": "Planos da Mesa de Negócios",
+                                "pricing_subtitle": "Escolha a capacidade adequada ao seu volume de negócios e documentos.",
+                                "plan_starter_title": "INICIAL",
+                                "starter_badge": "Proteção Básica",
+                                "starter_desc": "Ideal para 1–3 negócios por mês nas operações diárias.",
+                                "per_month": " / mês",
+                                "starter_feat1": "Ideal para 1–3 negócios/mês",
+                                "starter_feat2": "50 Tickets / Solicitações de Conformidade",
+                                "starter_feat3": "Tempo de resposta de 24h no fluxo documental",
+                                "starter_feat4": "Suporte de Conformi  
+                                    "btn_starter": "Escolher Inicial",
+                                "unlimited_badge": "Recomendado para Traders e Equipes",
+                                "plan_unlimited_title": "ILIMITADO",
+                                "unlimited_desc": "Capacidade ilimitada para comerciantes ativos de commodities e estruturas de negócios.",
+                                "unlimited_feat1": "Negócios e volume de transações ilimitados",
+                                "unlimited_feat2": "Tickets de conformidade e consultas ilimitados",
+                                "unlimited_feat3": "< 15 min. Tempo de resposta expressa prioritário",
+                                "unlimited_feat4": "Oficial de Conformidade RSK dedicado e acesso direto à mesa",
+                                "btn_unlimited": "Escolher Ilimitado",
+                                "token_badge": "🔋 Recarga Flexível",
+                                "token_title": "Cota Esgotada? Sem Estresse.",
+                                "token_subtitle": "Amplie sua cota de forma modular a qualquer momento sem trocar de plano.",
+                                "token_pkg1_sub": "= 1 Ticket Extra (aprox. 3.000 caracteres)",
+                                "btn_buy": "Comprar Agora",
+                                "token_popular": "Popular",
+                                "token_pkg2_sub": "= 5 Tickets Extras",
+                                "token_pkg3_sub": "= 10 Tickets Extras",
+                                "token_footer": "1 Token = 30 Caracteres • Sem Expiração • Transferível para o Mês Seguinte",
+                                "faq_title": "Perguntas Frequentes (FAQ)",
+                                "faq_q1": "Como funciona a hospedagem desacoplada?",
+                                "faq_a1": "Esta página de suporte funciona como uma instância independente. Pagamentos, sistema de tickets e fluxos de dados são isolados para garantir máxima segurança operacional ao portal principal.",
+                                "faq_q2": "Com que rapidez os tickets de conformidade são processados?",
+                                "faq_a2": "No plano Unlimited garantimos tempo de resposta inferior a 15 minutos. No plano Starter, as solicitações são atendidas em até 24 horas.",
+                                "footer_compliance": "Conformidade discreta para compradores estatais, instituições e parceiros.",
+                                "footer_terms": "Termos de Suporte",
+                                "footer_legal": "Aviso Legal",
+                                "footer_privacy": "Política de Privacidade"
+                    },
+                    "fr": {
+                                "nav_back_main": "Retour à la page principale",
+                                "hero_badge": "Bureau de Support Prioritaire",
+                                "hero_title": "Intégrité et Conformité dans le Commerce Global",
+                                "hero_subtitle": "Support en direct et gestion documentaire pour acheteurs étatiques, institutions et transactions commerciales.",
+                                "hero_subheadline": "\"Minimisation du risque opérationnel avec une exécution fluide. Vous formulez la demande – nous fournissons la solution vérifiée.\"",
+                                "btn_choose_plan": "Choisir un Forfait",
+                                "btn_demo": "Démonstration du Processus",
+                                "process_title": "Bureau des Transactions & Processus de Conformité",
+                                "process_desc": "Traitement fluide des documents en 8 langues – réponse en moins de 15 minutes.",
+                                "step1_title": "Demande du Client",
+                                "step1_desc": "Transmission des exigences de conformité et de documentation avec toutes les données clés.",
+                                "step2_title": "Examen et Vérification",
+                                "step2_desc": "Nos spécialistes examinent les réglementations et normes commerciales à l'échelle internationale.",
+                                "step3_title": "Validation Vérifiée (&lt; 15 Min)",
+                                "step3_desc": "Validations juridiquement sûres et documents vérifiés envoyés directement à votre Bureau des Transactions.",
+                                "mockup_status": "Actif • Réponses en temps réel",
+                                "mockup_client_label": "Votre Demande",
+                                "mockup_client_msg": "Examen de conformité urgent requis pour documents LC dans la zone GCC, procuration incluse.",
+                                "mockup_system_msg": "Le bureau RSK traite le ticket...",
+                                "mockup_agent_msg": "Documentation entièrement vérifiée et approuvée. Conforme aux normes B2B. Certificat de Conformité joint.",
+                                "mockup_footer": "Flux de travail B2B chiffré de bout en bout",
+                                "pricing_title": "Tarifs du Bureau des Transactions",
+                                "pricing_subtitle": "Choisissez la capacité adaptée à votre volume de transactions et de documents.",
+                                "plan_starter_title": "STARTER",
+                                "starter_badge": "Protection de Base",
+                                "starter_desc": "Idéal pour 1 à 3 transactions par mois au quotidien.",
+                                "per_month": " / mois",
+                                "starter_feat1": "Idéal pour 1–3 transactions/mois",
+                                "starter_feat2": "50 Tickets / Demandes de Conformité",
+                                "starter_feat3": "Délai de traitement de 24h dans la gestion documentaire",
+                                "starter_feat4": "Support de Conformité RSK à vos côtés",
+                                "btn_starter": "Choisir Starter",
+                                "unlimited_badge": "Recommandé pour Traders & Équipes",
+                                "plan_unlimited_title": "ILLIMITÉ",
+                                "unlimited_desc": "Capacité illimitée pour les négociants en matières premières et structures commerciales.",
+                                "unlimited_feat1": "Transactions et volume de négociations illimités",
+                                "unlimited_feat2": "Tickets de conformité et demandes illimités",
+                                "unlimited_feat3": "< 15 min. Temps de réponse express prioritaire",
+                                "unlimited_feat4": "Responsable Conformité RSK dédié & accès direct au desk",
+                                "btn_unlimited": "Choisir Illimité",
+                                "token_badge": "🔋 Recharge Flexible",
+                                "token_title": "Quota Épuisé ? Pas de Stress.",
+                                "token_subtitle": "Augmentez votre quota de façon modulaire à tout moment sans changer de forfait.",
+                                "token_pkg1_sub": "= 1 Ticket Supplémentaire (env. 3 000 caractères)",
+                                "btn_buy": "Acheter Maintenant",
+                                "token_popular": "Populaire",
+                                "token_pkg2_sub": "= 5 Tickets Supplémentaires",
+                                "token_pkg3_sub": "= 10 Tickets Supplémentaires",
+                                "token_footer": "1 Token = 30 Caractères • Sans Expiration • Reportable au Mois Suivant",
+                                "faq_title": "Questions Fréquentes (FAQ)",
+                                "faq_q1": "Comment fonctionne l'hébergement découplé ?",
+                                "faq_a1": "Cette page de support fonctionne comme une instance indépendante. Les paiements, la billetterie et les flux de données sont isolés afin de garantir une sécurité opérationnelle maximale pour le portail principal.",
+                                "faq_q2": "À quelle vitesse les tickets de conformité sont-ils traités ?",
+                                "faq_a2": "Avec le forfait Unlimited, nous garantissons un temps de réponse inférieur à 15 minutes. Avec le forfait Starter, les demandes sont traitées sous 24 heures maximum.",
+                                "footer_compliance": "Conformité discrète pour acheteurs étatiques, institutions et partenaires.",
+                                "footer_terms": "Conditions de Support",
+                                "footer_legal": "Mentions Légales",
+                                "footer_privacy": "Politique de Confidentialité"
+                    },
+                    "zh": {
+                                "nav_back_main": "返回主页",
+                                "hero_badge": "优先支持服务台",
+                                "hero_title": "全球贸易中的诚信与合规",
+                                "hero_subtitle": "为主权买家、机构和贸易业务提供实时支持和文档工作流服务。",
+                                "hero_subheadline": "“在无缝执行中规避运营风险。您提出需求，我们交付经核实的解决方案。”",
+                                "btn_choose_plan": "选择套餐",
+                                "btn_demo": "流程演示",
+                                "process_title": "贸易服务台与合规流程",
+                                "process_desc": "支持8种语言的高效文档处理 – 15分钟内快速响应。",
+                                "step1_title": "客户需求",
+                                "step1_desc": "提交包含核心数据的合规与文档审核需求。",
+                                "step2_title": "审查与核实",
+                                "step2_desc": "我们的专家在国际背景下审核法规与贸易规范。",
+                                "step3_title": "核准放行 (&lt; 15分钟)",
+                                "step3_desc": "合规放行与已核实的文档直接交付至您的贸易服务台。",
+                                "mockup_status": "在线 • 实时响应",
+                                "mockup_client_label": "您的请求",
+                                "mockup_client_msg": "海湾合作委员会 (GCC) 地区的信用证 (LC) 文件及授权委托书需要紧急合规审查。",
+                                "mockup_system_msg": "RSK 服务台正在处理工单...",
+                                "mockup_agent_msg": "文件已全面审查并批准。符合 B2B 标准。已附上合规证书。",
+                                "mockup_footer": "端到端加密的 B2B 工作流",
+                                "pricing_title": "贸易服务台套餐",
+                                "pricing_subtitle": "根据您的贸易量和文档需求选择合适的方案。",
+                                "plan_starter_title": "基础版 (STARTER)",
+                                "starter_badge": "基础保障",
+                                "starter_desc": "非常适合每月处理 1-3 笔日常交易。",
+                                "per_month": " / 月",
+                                "starter_feat1": "适合每月 1–3 笔交易",
+                                "starter_feat2": "50 个工单 / 合规咨询",
+                                "starter_feat3": "文档工作流 24 小时内响应",
+                                "starter_feat4": "RSK 合规团队全程协助",
+                                "btn_starter": "选择基础版",
+                                "unlimited_badge": "交易员与团队首选推荐",
+                                "plan_unlimited_title": "无限版 (UNLIMITED)",
+                                "unlimited_desc": "为活跃的大宗商品交易员和贸易架构提供无限制支持。",
+                                "unlimited_feat1": "无限制交易笔数与交易金额",
+                                "unlimited_feat2": "无限制合规工单与咨询数量",
+                                "unlimited_feat3": "< 15分钟 优先极速响应时间",
+                                "unlimited_feat4": "专属 RSK 合规官与交易台直接接入",
+                                "btn_unlimited": "选择无限版",
+                                "token_badge": "🔋 灵活充值",
+                                "token_title": "额度用完？别担心。",
+                                "token_subtitle": "无需更改套餐，随时按需模块化扩展您的额度。",
+                                "token_pkg1_sub": "= 1 张额外工单（约3,000字符）",
+                                "btn_buy": "立即购买",
+                                "token_popular": "热门",
+                                "token_pkg2_sub": "= 5 张额外工单",
+                                "token_pkg3_sub": "= 10 张额外工单",
+                                "token_footer": "1 代币 = 30 字符 • 无有效期 • 可结转至下月",
+                                "faq_title": "常见问题 (FAQ)",
+                                "faq_q1": "独立托管是如何运作的？",
+                                "faq_a1": "本支持页面作为独立实例运行。支付、工单和数据流均相互隔离，以确保核心平台的最大运营安全性。",
+                                "faq_q2": "合规工单处理速度有多快？",
+                                "faq_a2": "在无限版套餐下，我们保证15分钟内响应。在入门版套餐下，请求将在最多24小时内处理。",
+                                "footer_compliance": "为主权买家、机构和合作伙伴提供低调合规服务。",
+                                "footer_terms": "支持条款",
+                                "footer_legal": "法律声明",
+                                "footer_privacy": "隐私政策"
+                    },
+                    "ru": {
+                                "nav_back_main": "На главную страницу",
+                                "hero_badge": "Служба приоритетной поддержки",
+                                "hero_title": "Надежность и комплаенс в мировой торговле",
+                                "hero_subtitle": "Онлайн-поддержка и документооборот для государственных покупателей, институтов и торговых сделок.",
+                                "hero_subheadline": "«Минимизация операционных рисков при бесперебойном исполнении. Вы делаете запрос — мы предоставляем проверенное решение.»",
+                                "btn_choose_plan": "Выбрать тариф",
+                                "btn_demo": "Демонстрация процесса",
+                                "process_title": "Торговый отдел и комплаенс-процесс",
+                                "process_desc": "Быстрая обработка документов на 8 языках — ответ менее чем за 15 минут.",
+                                "step1_title": "Запрос клиента",
+                                "step1_desc": "Передача требований по комплаенсу и документации со всеми ключевыми данными.",
+                                "step2_title": "Проверка и верификация",
+                                "step2_desc": "Наши специалисты проверяют нормативные акты и торговые требования в международном контексте.",
+                                "step3_title": "Проверенное одобрение (&lt; 15 мин)",
+                                "step3_desc": "Юридически защищенные согласования и проверенные документы прямо в ваш торговый отдел.",
+                                "mockup_status": "Активно • Ответы в режиме реального времени",
+                                "mockup_client_label": "Ваш запрос",
+                                "mockup_client_msg": "Требуется срочная проверка комплаенса аккредитивных документов (LC) в регионе ССАГПЗ, включая доверенность.",
+                                "mockup_system_msg": "RSK Desk обрабатывает заявку...",
+                                "mockup_agent_msg": "Документация полностью проверена и утверждена. Стандарт B2B соблюден. Сертификат соответствия прикреплен.",
+                                "mockup_footer": "Сквозное зашифрованное B2B-взаимодействие",
+                                "pricing_title": "Тарифы торгового отдела",
+                                "pricing_subtitle": "Выберите подходящий объем для вашей торговли и документооборота.",
+                                "plan_starter_title": "БАЗОВЫЙ (STARTER)",
+                                "starter_badge": "Базовая защита",
+                                "starter_desc": "Идеально подходит для 1–3 сделок в месяц.",
+                                "per_month": " / месяц",
+                                "starter_feat1": "Идеально для 1–3 сделок/месяц",
+                                "starter_feat2": "50 тикетов / запросов по комплаенсу",
+                                "starter_feat3": "24ч время ответа в документообороте",
+                                "starter_feat4": "Комплаенс-поддержка RSK на вашей стороне",
+                                "btn_starter": "Выбрать Базовый",
+                                "unlimited_badge": "Рекомендуется трейдерам и командам",
+                                "plan_unlimited_title": "БЕЗЛИМИТНЫЙ (UNLIMITED)",
+                                "unlimited_desc": "Неограниченная емкость для активных трейдеров сырьевых товаров и торговых структур.",
+                                "unlimited_feat1": "Неограниченное количество сделок и объем транзакций",
+                                "unlimited_feat2": "Неограниченное количество тикетов и запросов по комплаенсу",
+                                "unlimited_feat3": "< 15 мин. Приоритетное экспресс-время ответа",
+                                "unlimited_feat4": "Выделенный офицер RSK по комплаенсу и прямой доступ к отделу",
+                                "btn_unlimited": "Выбрать Безлимитный",
+                                "token_badge": "🔋 Гибкое Пополнение",
+                                "token_title": "Лимит Исчерпан? Без Паники.",
+                                "token_subtitle": "Расширяйте свой лимит в любое время модульно, без смены тарифа.",
+                                "token_pkg1_sub": "= 1 дополнительный тикет (ок. 3000 символов)",
+                                "btn_buy": "Купить Сейчас",
+                                "token_popular": "Популярно",
+                                "token_pkg2_sub": "= 5 дополнительных тикетов",
+                                "token_pkg3_sub": "= 10 дополнительных тикетов",
+                                "token_footer": "1 токен = 30 символов • Без срока действия • Переносится на следующий месяц",
+                                "faq_title": "Часто задаваемые вопросы (FAQ)",
+                                "faq_q1": "Как работает размещение на отдельном сервере?",
+                                "faq_a1": "Эта страница поддержки работает как независимый экземпляр. Платежи, тикеты и потоки данных изолированы для обеспечения максимальной операционной безопасности основного портала.",
+                                "faq_q2": "Как быстро обрабатываются тикеты по комплаенсу?",
+                                "faq_a2": "В тарифе Unlimited мы гарантируем время ответа менее 15 минут. В тарифе Starter заявки обрабатываются максимум за 24 часа.",
+                                "footer_compliance": "Конфиденциальный комплаенс для государственных покупателей, учреждений и партнёров.",
+                                "footer_terms": "Условия поддержки",
+                                "footer_legal": "Юридическая информация",
+                                "footer_privacy": "Политика конфиденциальности"
+                    }
+        };
+
+        function changeLanguage(lang) {
+            const dict = translations[lang] || translations['en'];
+            
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerText = dict[key];
+                }
+            });
+        }
+
+        function selectPlan(planName) {
+            alert(`Vielen Dank! Sie haben den Tarif "${planName}" gewählt. Sie werden zum separaten Support-Checkout weitergeleitet...`);
+        }
+
+        function buyTokens(amount) {
+            alert(`Sie buchen ${amount} Token. Sie werden zur Zahlungsabwicklung weitergeleitet...`);
+        }
+    </script>
+</body>
+</html>
