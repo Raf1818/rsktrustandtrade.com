@@ -36,30 +36,6 @@
             background-color: var(--color-parchment);
             color: var(--color-text-dark);
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Hintergrund-Wasserzeichen */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image: url('./rsk-logo.jpg');
-            background-position: center 45%;
-            background-repeat: no-repeat;
-            background-size: min(65vw, 450px) auto;
-            opacity: 0.06;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Stil für das Header-Logo */
-        .header-brand-logo {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-            mix-blend-mode: multiply;
-            display: block;
         }
 
         .font-serif-title {
@@ -106,14 +82,19 @@
 </head>
 <body class="antialiased selection:bg-amber-100 selection:text-navy">
 
-    <!-- HEADER / NAV (Mit echtem Logo Bild & Absoluten Links) -->
+    <!-- HEADER / NAV (Mit embedded SVG Wappen & Absoluten Links) -->
     <header class="sticky top-0 z-50 bg-[#F9F7F2]/95 backdrop-blur-md border-b border-[#E5D5B5]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             
-            <!-- Brand Logo mit rsk-logo.jpg -->
+            <!-- Brand Logo with Embedded SVG Wappen -->
             <a href="https://rsktrustandtrade.com/" class="flex items-center space-x-3 rtl:space-x-reverse group">
-                <div class="flex items-center justify-center shrink-0">
-                    <img src="./rsk-logo.jpg" alt="RSK Trust & Trade Logo" class="header-brand-logo">
+                <div class="w-12 h-12 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-navy fill-current" aria-hidden="true">
+                        <path d="M50 5 L85 20 V45 C85 70 50 95 50 95 C50 95 15 70 15 45 V20 Z" fill="none" stroke="#C59B27" stroke-width="4"/>
+                        <path d="M50 12 L78 25 V45 C78 65 50 86 50 86 C50 86 22 65 22 45 V25 Z" fill="none" stroke="#0A1128" stroke-width="2"/>
+                        <text x="50" y="52" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="bold" fill="#0A1128" text-anchor="middle">RSK</text>
+                        <circle cx="50" cy="66" r="3" fill="#C59B27"/>
+                    </svg>
                 </div>
                 <div>
                     <span class="text-navy font-serif-title font-bold text-xl tracking-wider block leading-none group-hover:text-amber-800 transition">
@@ -147,8 +128,16 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Inklusive Wasserzeichen-Hintergrund) -->
     <section class="relative py-16 sm:py-20 border-b border-[#E5D5B5] overflow-hidden">
+        <!-- SVG Wasserzeichen im Hintergrund -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+            <svg viewBox="0 0 100 100" class="w-[500px] h-[500px] text-navy fill-current">
+                <path d="M50 5 L85 20 V45 C85 70 50 95 50 95 C50 95 15 70 15 45 V20 Z" stroke="#0A1128" stroke-width="2"/>
+                <text x="50" y="58" font-family="serif" font-size="30" font-weight="bold" text-anchor="middle">RSK</text>
+            </svg>
+        </div>
+
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-600/30 mb-6">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -329,12 +318,4 @@
                 <!-- UNLIMITED PLAN ($199) -->
                 <div class="rsk-card p-8 flex flex-col justify-between relative border-2 border-amber-600 shadow-md">
                     <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-navy text-amber-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow">
-                        <span data-i18n="unlimited_badge">Empfohlen für Trader & Teams</span>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-center mb-4 mt-2">
-                            <h3 class="text-xl font-serif-title font-bold text-navy" data-i18n="plan_unlimited_title">UNLIMITED</h3>
-                            <span class="px-3 py-1 bg-amber-500/20 text-amber-900 text-xs font-bold rounded-full" data-i18n="unlimited_tag">Full Access</span>
-                        </div>
-    
+                        <span data-i18n="unlimited_badge">Empfohlen für Trader & Teams</s
