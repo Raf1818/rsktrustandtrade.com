@@ -3,113 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSK Trust & Trade – Paquete de Documentos (ES)</title>
+<title>RSK TRUST & TRADE – Paquete de documentos (ES)</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
-:root{--navy:#0a1931;--gold:#c9a86a;--parch:#f5f1e8;--cream:#fdfaf3;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--parch);font-family:'Inter',sans-serif;color:#222;}
-header{text-align:center;padding:34px 20px 22px;border-bottom:1.5px solid var(--gold);background:var(--parch);}
-header h1{font-family:'Playfair Display',serif;font-size:26px;letter-spacing:2px;color:var(--navy);}
-header .sub{color:var(--gold);font-size:10px;letter-spacing:3px;margin-top:6px;text-transform:uppercase;}
-main{max-width:960px;margin:0 auto;padding:30px 18px 50px;}
-.intro{text-align:center;max-width:640px;margin:0 auto 30px;color:#444;font-size:14px;line-height:1.6;}
-.bundle{max-width:720px;margin:0 auto 36px;background:var(--navy);border:1.5px solid var(--gold);border-radius:18px;padding:26px 28px;text-align:center;color:#fff;}
-.bundle h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:8px;}
-.bundle p{font-size:13px;color:#e8e4d8;margin-bottom:16px;}
-.bundle .price{font-size:22px;font-weight:700;color:#fff;margin-bottom:16px;}
-.bundle .price small{font-size:12px;color:var(--gold);text-decoration:line-through;margin-right:8px;font-weight:400;}
-.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:12px 26px;border-radius:999px;text-decoration:none;font-size:13px;}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:640px){.grid{grid-template-columns:1fr;}}
-.card{background:var(--cream);border:1.5px solid #e0d6b8;border-radius:14px;padding:20px 20px 18px;}
-.card .code{font-size:10px;letter-spacing:1.5px;color:var(--gold);font-weight:700;text-transform:uppercase;}
-.card h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin:4px 0 8px;}
-.card p{font-size:12.5px;color:#555;line-height:1.5;margin-bottom:14px;min-height:38px;}
-.card .row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-.card .price{font-weight:700;color:var(--navy);font-size:14px;}
-.card a.dl{background:var(--navy);color:var(--gold);font-weight:700;font-size:12px;padding:9px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;}
-.card a.dl:hover{opacity:.88;}
-.note{max-width:720px;margin:36px auto 0;text-align:center;font-size:11.5px;color:#777;line-height:1.6;}
-.home{display:block;text-align:center;margin-top:28px;color:var(--navy);font-size:11px;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:8px 18px;width:fit-content;margin-left:auto;margin-right:auto;}
-footer{text-align:center;padding:24px;font-size:10.5px;color:#888;border-top:1px solid rgba(201,168,106,.4);}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
+:root{--navy:#0a1931;--gold:#c9a86a;--parch:#f5f1e8;--cream:#fdfaf3}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--parch);font-family:'Inter',sans-serif;min-height:100vh;padding:30px 15px;display:flex;flex-direction:column;align-items:center}
+h1{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:5px}
+.sub{font-size:10px;color:var(--gold);letter-spacing:2px;font-weight:600;text-transform:uppercase;text-align:center;margin-bottom:24px}
+.list{width:100%;max-width:480px;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.doc{background:var(--cream);border:1.5px solid var(--gold);border-radius:14px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#111}
+.doc span{font-size:11px;color:#666;font-weight:400;text-align:right;margin-left:10px}
+.rsk-open{background:var(--navy);color:var(--gold);border:0;border-radius:10px;padding:14px;font-weight:800;font-size:15px;cursor:pointer;width:100%;max-width:480px}
+.back{margin-top:30px;border:1px solid var(--gold);background:var(--cream);color:#333;text-decoration:none;padding:10px 20px;border-radius:20px;font-size:12px;font-weight:600}
+.rsk-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,25,49,.9);padding:15px;overflow-y:auto;justify-content:center;align-items:flex-start}
+.rsk-modal.rsk-show{display:flex}
+.rsk-box{position:relative;background:var(--cream);max-width:480px;width:100%;margin:20px auto;border-radius:16px;padding:24px;border:3px solid var(--gold);color:#333}
+.rsk-box h2{margin:0 0 4px;color:var(--navy);font-family:'Playfair Display',serif;font-size:22px}
+.rsk-sub{margin:0 0 14px;font-size:13px;color:#666}
+.rsk-x{position:absolute;right:12px;top:8px;background:none;border:0;font-size:28px;cursor:pointer;color:var(--navy)}
+.rsk-step{margin:14px 0 8px;color:var(--navy)}
+.rsk-opt{display:block;border:2px solid var(--navy);border-radius:10px;padding:12px;margin-bottom:8px;font-size:14px;cursor:pointer;color:var(--navy);font-weight:600}
+.rsk-opt input{margin-right:8px}
+.rsk-sel{width:100%;margin:2px 0 10px;padding:10px;border:1.5px solid var(--gold);border-radius:8px;font-size:14px;background:#fff}
+.rsk-msg{font-size:13px;line-height:1.5;margin:10px 0}
+.rsk-ok{background:#fff;border:2px solid var(--gold);border-radius:10px;padding:12px;text-align:center}
+.rsk-ok a{display:block;background:var(--navy);color:var(--gold);text-decoration:none;font-weight:800;padding:12px;border-radius:8px;margin:8px 0}
+.rsk-err{color:#a11;font-weight:600}
+.rsk-crypto{background:var(--navy);border-radius:10px;padding:12px;margin:12px 0}
+.rsk-label{font-size:11px;color:var(--gold);margin-bottom:6px}
+.rsk-crypto code{display:block;background:#fff;color:#000;padding:8px;border-radius:6px;font-size:11px;word-break:break-all;text-align:center}
+.rsk-copy{margin-top:8px;width:100%;background:var(--gold);color:var(--navy);border:0;border-radius:6px;padding:8px;font-weight:700;cursor:pointer}
+.rsk-warn{font-size:10px;color:#bbb;margin-top:6px;text-align:center}
+.rsk-note{font-size:12px;line-height:1.5;margin:0 0 10px}
 </style>
 </head>
 <body>
+  <h1>RSK Trust &amp; Trade</h1>
+  <p class="sub">Paquete de documentos · Español</p>
 
-<header>
-  <img src="../../IMG-20260918-WA8261.jpg" alt="RSK Trust & Trade" style="width:70px;height:auto;mix-blend-mode:multiply;display:block;margin:0 auto 10px;" onerror="this.style.display='none'">
-  <h1>RSK TRUST & TRADE</h1>
-  <div class="sub">Paquete de Documentos Corporativos · Español · RSK-KYC-2026-005</div>
-</header>
-
-<main>
-  <p class="intro">Ocho documentos estandarizados de comercio internacional, listos para completar y firmar. Cada PDF sigue el mismo diseño profesional con marca de agua y código de referencia. Descárguelos individualmente o adquiera el paquete completo a continuación.</p>
-
-  <div class="bundle">
-    <h2>Paquete Completo · Los 8 Documentos</h2>
-    <p>KYC · NCNDA · IMFPA · SPA · SCO/FCO · POP · LOI/BCL · RWA — un archivo ZIP</p>
-    <div class="price"><small>$40</small>$32 <span style="font-size:12px;font-weight:400;color:#cbb98a;">(ahorre 20%)</span></div>
-    <a class="btn" href="./RSK-Document-Package-ES.zip">⬇ Descargar Paquete Completo (ZIP)</a>
+  <div class="list">
+    <div class="doc">KYC <span>Conozca a su cliente</span></div>
+    <div class="doc">NCNDA <span>No elusión y confidencialidad</span></div>
+    <div class="doc">IMFPA <span>Acuerdo de protección de comisiones</span></div>
+    <div class="doc">SPA <span>Contrato de compraventa</span></div>
+    <div class="doc">SCO / FCO <span>Oferta corporativa suave / completa</span></div>
+    <div class="doc">POP <span>Prueba de producto</span></div>
+    <div class="doc">LOI / BCL <span>Carta de intención / Carta de respaldo bancario</span></div>
+    <div class="doc">RWA <span>Listo, dispuesto y capaz</span></div>
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <div class="code">RSK-KYC-01</div>
-      <h3>KYC</h3>
-      <p>Cuestionario de debida diligencia de la contraparte: empresa, beneficiarios finales, referencia bancaria, declaraciones de cumplimiento.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-KYC-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-NCNDA-02</div>
-      <h3>NCNDA</h3>
-      <p>Acuerdo de No Elusión y No Divulgación que protege los contactos y la información confidencial.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-NCNDA-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-IMFPA-03</div>
-      <h3>IMFPA</h3>
-      <p>Acuerdo Marco Irrevocable de Protección de Comisiones para intermediarios, mediante un agente pagador.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-IMFPA-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-SPA-04</div>
-      <h3>SPA</h3>
-      <p>Contrato de Compraventa: producto, precio, entrega, pago, inspección y condiciones de incumplimiento.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-SPA-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-SCO-05</div>
-      <h3>SCO / FCO</h3>
-      <p>Oferta Corporativa Suave o Plena del vendedor, con sección de aceptación del comprador hacia el SPA.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-SCO-FCO-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-POP-06</div>
-      <h3>POP</h3>
-      <p>Prueba de Producto: declaración del vendedor sobre existencia, titularidad y disponibilidad del producto.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-POP-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-LOI-07</div>
-      <h3>LOI / BCL</h3>
-      <p>Carta de Intención del comprador más una plantilla de Carta de Confort Bancaria para su banco.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-LOI-BCL-ES.pdf">Descargar PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-RWA-08</div>
-      <h3>RWA</h3>
-      <p>Declaración de Listo, Dispuesto y en Condiciones: un compromiso vinculante de ejecutar la operación.</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-RWA-ES.pdf">Descargar PDF</a></div>
+  <button class="rsk-open" type="button" data-rsk-open>Vista previa y comprar</button>
+
+  <div id="rskModal" class="rsk-modal" role="dialog" aria-modal="true" aria-labelledby="rskTitle">
+    <div class="rsk-box">
+      <button class="rsk-x" type="button" data-rsk-close aria-label="Cerrar">&times;</button>
+      <h2 id="rskTitle">Documentos de Trade Finance</h2>
+      <p class="rsk-sub">PDF de diseño profesional · Español</p>
+
+      <p class="rsk-step"><b>1. Elija</b></p>
+      <label class="rsk-opt"><input type="radio" name="rskProd" value="package" checked>Paquete completo, los 8 documentos – $32 <small>(en lugar de $40)</small></label>
+      <label class="rsk-opt"><input type="radio" name="rskProd" value="single">Documento individual – $5</label>
+      <select id="rskDoc" class="rsk-sel">
+        <option value="KYC">KYC</option>
+        <option value="NCNDA">NCNDA</option>
+        <option value="IMFPA">IMFPA</option>
+        <option value="SPA">SPA</option>
+        <option value="SCO-FCO">SCO / FCO</option>
+        <option value="POP">POP</option>
+        <option value="LOI-BCL">LOI / BCL</option>
+        <option value="RWA">RWA</option>
+      </select>
+
+      <p class="rsk-step"><b>2. Pague con PayPal</b></p>
+      <div id="rskPaypal"></div>
+      <div id="rskResult" class="rsk-msg"></div>
+
+      <div class="rsk-crypto">
+        <div class="rsk-label">O con cripto: solo USDT o USDC en la red BNB Smart Chain (BEP20)</div>
+        <code id="rskWallet">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</code>
+        <button type="button" class="rsk-copy" data-rsk-copy data-done="Copiado ✓">Copiar dirección</button>
+        <div class="rsk-warn">Otras monedas o redes se pierden y no se pueden reembolsar.</div>
+      </div>
+      <p class="rsk-note"><b>¿Pagó con cripto?</b> Escriba a docs@rsktrustandtrade.com o por WhatsApp al +57 313 873 4968 con el hash de la transacción, el/los documento(s) y el idioma. Entrega normalmente en 45 minutos tras la verificación, lun–sáb 08:00–20:00 COT.</p>
+      <p class="rsk-note">¿Pagó con PayPal y no recibió su enlace? Contáctenos con el ID de su transacción de PayPal.</p>
     </div>
   </div>
 
-  <p class="note">Plantillas de uso comercial general, no constituyen asesoramiento jurídico. Haga que un abogado las revise antes de firmar. Pago: PayPal o cripto (BSC/USDT) en la sección de pago del sitio principal, o contáctenos directamente.</p>
+  <a href="../index.html" class="back">← Volver a la selección de idioma</a>
 
-  <a class="home" href="../../">← Back to rsktrustandtrade.com</a>
-</main>
+<script src="https://www.paypal.com/sdk/js?client-id=BAANegVvORNgK4H3NYPNj_hAag4KUBjqAXaRgI1_MMewybB23RqoaBDHc1k_kctQ6me4f4kLPCUk7ipq_U&currency=USD&intent=capture"></script>
+<script>
+(function(){
+  var API="https://rsk-pay.sieghard23.workers.dev";
+  var LANG="es";
+  var m=document.getElementById('rskModal');
+  var result=document.getElementById('rskResult');
+  var docSel=document.getElementById('rskDoc');
 
-<footer>© 2026 RSK TRUST & TRADE. All rights reserved. info@rsktrustandtrade.com</footer>
+  function selection(){
+    var p=document.querySelector('input[name=rskProd]:checked').value;
+    return p==='package'?{product:'package',lang:LANG}:{product:'single',lang:LANG,doc:docSel.value};
+  }
+  function syncDoc(){
+    docSel.style.display=document.querySelector('input[name=rskProd]:checked').value==='single'?'block':'none';
+  }
+  document.querySelectorAll('input[name=rskProd]').forEach(function(r){r.addEventListener('change',syncDoc);});
+  syncDoc();
 
+  document.querySelectorAll('[data-rsk-open]').forEach(function(b){
+    b.addEventListener('click',function(){m.classList.add('rsk-show');});
+  });
+  m.querySelector('[data-rsk-close]').addEventListener('click',function(){m.classList.remove('rsk-show');});
+  m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('rsk-show');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')m.classList.remove('rsk-show');});
+  m.querySelector('[data-rsk-copy]').addEventListener('click',function(){
+    var t=document.getElementById('rskWallet').innerText,btn=this;
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){btn.textContent=btn.getAttribute('data-done');});}
+  });
+
+  function showError(text){
+    result.innerHTML='';
+    var p=document.createElement('p');
+    p.className='rsk-err';
+    p.textContent=text;
+    result.appendChild(p);
+  }
+
+  if(window.paypal){
+    paypal.Buttons({
+      style:{layout:'vertical',color:'gold',shape:'rect',label:'paypal'},
+      createOrder:function(){
+        result.textContent='';
+        return fetch(API+'/create-order',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(selection())
+        }).then(function(r){return r.json();}).then(function(d){
+          if(!d.id){throw new Error('order');}
+          return d.id;
+        });
+      },
+      onApprove:function(data){
+        return fetch(API+'/capture-order',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({orderID:data.orderID})
+        }).then(function(r){return r.json();}).then(function(d){
+          if(d.download){
+            result.innerHTML='';
+            var box=document.createElement('div');
+            box.className='rsk-ok';
+            var t=document.createElement('div');
+            t.textContent='Pago recibido. ¡Gracias!';
+            var a=document.createElement('a');
+            a.href=d.download;
+            a.textContent='Descargar ahora';
+            var s=document.createElement('div');
+            s.textContent='Guarde el archivo ahora. Este enlace es válido durante 24 horas.';
+            box.appendChild(t);box.appendChild(a);box.appendChild(s);
+            result.appendChild(box);
+          }else{
+            showError('No se pudo confirmar el pago. Contáctenos con el ID de su transacción de PayPal.');
+          }
+        });
+      },
+      onError:function(){
+        showError('Algo salió mal. No se le ha cobrado a menos que PayPal lo haya confirmado. Inténtelo de nuevo o contáctenos.');
+      }
+    }).render('#rskPaypal');
+  }else{
+    showError('No se pudo cargar PayPal. Recargue la página.');
+  }
+})();
+</script>
 </body>
-</html>
+  </html>
