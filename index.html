@@ -123,6 +123,13 @@ nav a, .nav-btn { color: var(--navy); }
 .card p.docs-contact a { color: #555; font-weight: 600; }
 .card, .antrag-card { background: rgba(255, 253, 248, 0.82); }
 .card, .antrag-card, .about-section.visible { border: 2px solid var(--gold); box-shadow: 0 10px 30px rgba(10,25,49,.14); }
+.antrag-intro{font-size:15px;line-height:1.55;color:var(--ink);text-align:center;margin:0 0 22px}
+.btn-send{width:100%;padding:16px;background:var(--navy);color:var(--gold);border:1.5px solid var(--gold);border-radius:10px;font-size:16px;font-weight:bold;margin-top:20px;cursor:pointer}
+.btn-send:disabled{opacity:.6;cursor:wait}
+.antrag-card .consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.4;font-weight:400;margin-top:4px}
+.antrag-card .consent input{width:auto;flex:none;margin-top:2px;padding:0;display:inline-block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-status{margin-top:14px;text-align:center;font-size:14px;font-weight:600;color:var(--navy)}
 </style>
 </head>
 <body id="top">
@@ -202,6 +209,8 @@ nav a, .nav-btn { color: var(--navy); }
     <p id="lbl-free-notice" data-i18n="tradedesk.freeNotice">Die Erstanfrage und deren erste Bearbeitung sind kostenlos. Für die weitergehende Bearbeitung Ihres Falls fallen anschließend Gebühren an.</p>
   </div>
 
+  <p class="antrag-intro" id="lbl-intro" data-i18n="tradedesk.intro">Sie sind Käufer oder Verkäufer im Rohstoffhandel, suchen seriöse Geschäftspartner oder benötigen eine erste Beratung? Beschreiben Sie hier kurz Ihr Anliegen. Unser Team steht Ihnen mit fundiertem Rat zur Seite.</p>
+
   <form id="antragForm">
     <div class="form-group">
       <label for="inquiry" id="lbl-inquiry" data-i18n="tradedesk.form.inquiryLabel">Ihre Anfrage *</label>
@@ -229,7 +238,12 @@ nav a, .nav-btn { color: var(--navy); }
       <label for="email" id="lbl-email" data-i18n="tradedesk.form.emailLabel">Ihre E-Mail</label>
       <input type="email" id="email" data-i18n-placeholder="tradedesk.form.emailPlaceholder" placeholder="name@unternehmen.com">
     </div>
-    <button type="submit" class="btn-whatsapp" id="btn-submit" data-i18n="tradedesk.form.submit">Anfrage kostenlos senden 📲</button>
+    <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form-group">
+      <label class="consent" for="consent"><input type="checkbox" id="consent" required><span data-i18n="tradedesk.form.consent">Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Bitte keine Passwörter, Kontodaten oder Ausweisnummern angeben.</span></label>
+    </div>
+    <button type="submit" class="btn-send" id="btn-submit" data-i18n="tradedesk.form.submit">Anfrage kostenlos senden</button>
+    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
   </form>
 
   <p class="contact-line">
@@ -267,9 +281,8 @@ nav a, .nav-btn { color: var(--navy); }
 document.addEventListener("DOMContentLoaded", function () {
 
   // ---- Configuration ----
-  // RSK's receiving number, split into parts so it isn't a single scrapable string in the page source.
-  // Not real encryption — just raises the bar above simple text scrapers. See chat notes for details.
-  const WHATSAPP_NUMBER = ["57", "313", "873", "4968"].join("");
+  const WORKER_URL = "https://rsk-desk.sieghard23.workers.dev";
+  const SESSION_ID = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
   const DEFAULT_LANG = "de";
 
   const langBtn = document.getElementById("langBtn");
@@ -294,14 +307,102 @@ document.addEventListener("DOMContentLoaded", function () {
     }, obj);
   }
 
+  // Ergänzende Texte (haben Vorrang vor den locales/*.json und füllen deren Lücken)
+  const EXTRA = {
+    "de": {
+      "tradedesk.intro": "Sie sind Käufer oder Verkäufer im Rohstoffhandel, suchen seriöse Geschäftspartner oder benötigen eine erste Beratung? Beschreiben Sie hier kurz Ihr Anliegen. Unser Team steht Ihnen mit fundiertem Rat zur Seite.",
+      "tradedesk.freeNotice": "Die Erstanfrage und deren erste Bearbeitung sind kostenlos. Für die weitergehende Bearbeitung Ihres Falls fallen anschließend Gebühren an.",
+      "tradedesk.form.inquiryLabel": "Ihre Anfrage *",
+      "tradedesk.form.inquiryPlaceholder": "Beschreiben Sie kurz Ihr Anliegen oder Ihre Compliance-Frage...",
+      "tradedesk.form.submit": "Anfrage kostenlos senden",
+      "tradedesk.form.consent": "Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Bitte keine Passwörter, Kontodaten oder Ausweisnummern angeben.",
+      "tradedesk.form.statusOk": "Vielen Dank. Ihre Anfrage wurde übermittelt, das RSK-Team meldet sich bei Ihnen.",
+      "tradedesk.form.statusError": "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@rsktrustandtrade.com."
+    },
+    "es": {
+      "tradedesk.intro": "¿Es usted comprador o vendedor en el comercio de materias primas, busca socios comerciales serios o necesita una primera asesoría? Describa aquí brevemente su consulta. Nuestro equipo le acompañará con asesoramiento profesional.",
+      "tradedesk.freeNotice": "La consulta inicial y su primer tratamiento son gratuitos. Para la gestión posterior de su caso se aplicarán tarifas.",
+      "tradedesk.form.inquiryLabel": "Su consulta *",
+      "tradedesk.form.inquiryPlaceholder": "Describa brevemente su consulta o su duda de cumplimiento...",
+      "tradedesk.form.submit": "Enviar consulta gratis",
+      "tradedesk.form.consent": "Acepto que mis datos se guarden para tramitar mi consulta. No introduzca contraseñas, datos bancarios ni números de documentos de identidad.",
+      "tradedesk.form.statusOk": "Muchas gracias. Su consulta ha sido enviada y el equipo de RSK se pondrá en contacto con usted.",
+      "tradedesk.form.statusError": "No se pudo enviar la consulta. Inténtelo de nuevo o escriba a info@rsktrustandtrade.com."
+    },
+    "en": {
+      "tradedesk.intro": "Are you a buyer or seller in commodity trading, looking for reliable business partners, or in need of initial advice? Briefly describe your request here. Our team will support you with sound guidance.",
+      "tradedesk.freeNotice": "The initial inquiry and its first processing are free of charge. Further processing of your case will be subject to fees.",
+      "tradedesk.form.inquiryLabel": "Your inquiry *",
+      "tradedesk.form.inquiryPlaceholder": "Briefly describe your request or compliance question...",
+      "tradedesk.form.submit": "Send inquiry free of charge",
+      "tradedesk.form.consent": "I agree that my details are stored to process my inquiry. Please do not enter passwords, bank details or ID numbers.",
+      "tradedesk.form.statusOk": "Thank you. Your inquiry has been sent and the RSK team will get back to you.",
+      "tradedesk.form.statusError": "The inquiry could not be sent. Please try again or write to info@rsktrustandtrade.com."
+    },
+    "fr": {
+      "tradedesk.intro": "Vous êtes acheteur ou vendeur dans le négoce de matières premières, vous recherchez des partenaires commerciaux fiables ou souhaitez un premier conseil ? Décrivez brièvement votre demande ici. Notre équipe vous accompagnera avec des conseils avisés.",
+      "tradedesk.freeNotice": "La demande initiale et son premier traitement sont gratuits. Le traitement ultérieur de votre dossier sera soumis à des frais.",
+      "tradedesk.form.inquiryLabel": "Votre demande *",
+      "tradedesk.form.inquiryPlaceholder": "Décrivez brièvement votre demande ou votre question de conformité...",
+      "tradedesk.form.submit": "Envoyer la demande gratuitement",
+      "tradedesk.form.consent": "J'accepte que mes données soient enregistrées pour traiter ma demande. Merci de ne saisir ni mots de passe, ni coordonnées bancaires, ni numéros de pièce d'identité.",
+      "tradedesk.form.statusOk": "Merci. Votre demande a été transmise, l'équipe RSK vous répondra.",
+      "tradedesk.form.statusError": "La demande n'a pas pu être envoyée. Veuillez réessayer ou écrire à info@rsktrustandtrade.com."
+    },
+    "pt": {
+      "tradedesk.intro": "Você é comprador ou vendedor no comércio de commodities, procura parceiros comerciais confiáveis ou precisa de uma primeira consultoria? Descreva aqui brevemente a sua solicitação. Nossa equipe oferecerá orientação profissional.",
+      "tradedesk.freeNotice": "A solicitação inicial e o seu primeiro tratamento são gratuitos. O tratamento posterior do seu caso estará sujeito a taxas.",
+      "tradedesk.form.inquiryLabel": "Sua solicitação *",
+      "tradedesk.form.inquiryPlaceholder": "Descreva brevemente sua solicitação ou dúvida de compliance...",
+      "tradedesk.form.submit": "Enviar solicitação gratuitamente",
+      "tradedesk.form.consent": "Concordo que meus dados sejam armazenados para processar minha solicitação. Não insira senhas, dados bancários nem números de documentos.",
+      "tradedesk.form.statusOk": "Obrigado. Sua solicitação foi enviada e a equipe RSK entrará em contato.",
+      "tradedesk.form.statusError": "Não foi possível enviar a solicitação. Tente novamente ou escreva para info@rsktrustandtrade.com."
+    },
+    "ru": {
+      "tradedesk.intro": "Вы покупатель или продавец на рынке сырьевых товаров, ищете надёжных деловых партнёров или нуждаетесь в первичной консультации? Кратко опишите здесь ваш запрос. Наша команда окажет вам профессиональную поддержку и консультацию.",
+      "tradedesk.freeNotice": "Первичный запрос и его первая обработка бесплатны. За дальнейшую обработку вашего дела взимается плата.",
+      "tradedesk.form.inquiryLabel": "Ваш запрос *",
+      "tradedesk.form.inquiryPlaceholder": "Кратко опишите ваш запрос или вопрос по комплаенсу...",
+      "tradedesk.form.submit": "Отправить запрос бесплатно",
+      "tradedesk.form.consent": "Я согласен(на) на сохранение моих данных для обработки запроса. Не вводите пароли, банковские реквизиты и номера документов.",
+      "tradedesk.form.statusOk": "Спасибо. Ваш запрос отправлен, команда RSK свяжется с вами.",
+      "tradedesk.form.statusError": "Не удалось отправить запрос. Попробуйте ещё раз или напишите на info@rsktrustandtrade.com."
+    },
+    "zh": {
+      "tradedesk.intro": "您是大宗商品贸易的买方或卖方，正在寻找可靠的商业伙伴，或需要初步咨询？请在此简要描述您的需求，我们的团队将为您提供专业的建议与支持。",
+      "tradedesk.freeNotice": "首次咨询及其初步处理免费。后续案件处理将收取费用。",
+      "tradedesk.form.inquiryLabel": "您的咨询 *",
+      "tradedesk.form.inquiryPlaceholder": "请简要描述您的需求或合规问题...",
+      "tradedesk.form.submit": "免费提交咨询",
+      "tradedesk.form.consent": "我同意为处理我的咨询而保存我的信息。请勿输入密码、银行账户信息或证件号码。",
+      "tradedesk.form.statusOk": "谢谢。您的咨询已提交，RSK 团队将与您联系。",
+      "tradedesk.form.statusError": "咨询未能发送。请重试，或发送邮件至 info@rsktrustandtrade.com。"
+    },
+    "ar": {
+      "tradedesk.intro": "هل أنتم مشترون أو بائعون في تجارة السلع الأساسية، وتبحثون عن شركاء تجاريين موثوقين أو تحتاجون إلى استشارة أولية؟ اصفوا طلبكم هنا باختصار، وسيقدّم لكم فريقنا المشورة المهنية والدعم.",
+      "tradedesk.freeNotice": "الاستفسار الأولي ومعالجته الأولى مجانيان. وتُطبَّق رسوم على المعالجة اللاحقة لقضيتكم.",
+      "tradedesk.form.inquiryLabel": "استفساركم *",
+      "tradedesk.form.inquiryPlaceholder": "اصفوا طلبكم أو سؤالكم حول الامتثال باختصار...",
+      "tradedesk.form.submit": "إرسال الاستفسار مجانًا",
+      "tradedesk.form.consent": "أوافق على حفظ بياناتي لمعالجة استفساري. يُرجى عدم إدخال كلمات المرور أو بيانات الحسابات المصرفية أو أرقام الهويات.",
+      "tradedesk.form.statusOk": "شكرًا لكم. تم إرسال استفساركم وسيتواصل معكم فريق RSK.",
+      "tradedesk.form.statusError": "تعذّر إرسال الاستفسار. يُرجى المحاولة مجددًا أو مراسلتنا على info@rsktrustandtrade.com."
+    }
+  };
+  function tr(key) {
+    const ex = EXTRA[document.documentElement.lang] || EXTRA.en;
+    return ex[key] !== undefined ? ex[key] : getPath(currentDict, key);
+  }
+
   function applyTranslations(dict) {
     currentDict = dict || {};
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      const val = getPath(currentDict, el.getAttribute("data-i18n"));
+      const val = tr(el.getAttribute("data-i18n"));
       if (val !== undefined) el.textContent = val;
     });
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-      const val = getPath(currentDict, el.getAttribute("data-i18n-placeholder"));
+      const val = tr(el.getAttribute("data-i18n-placeholder"));
       if (val !== undefined) el.placeholder = val;
     });
   }
@@ -400,34 +501,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ---- WhatsApp submit: build plain text template once, encode once ----
-  antragForm.addEventListener("submit", function (e) {
+  // ---- Formular: Versand an den RSK-Desk-Worker ----
+  antragForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const inquiry = document.getElementById("inquiry").value;
-    const name = document.getElementById("name").value;
-    const tel = document.getElementById("tel").value;
-    const email = document.getElementById("email").value;
-    const bizType = document.getElementById("bizType").value;
-
-    const w = getPath(currentDict, "tradedesk.whatsapp") || {
-      title: "Neue Anfrage über RSK Website", name: "Name", tel: "Telefon",
-      email: "E-Mail", bizType: "Bereich", msg: "Anfrage"
-    };
-
-    const lines = [
-      w.title,
-      "",
-      w.msg + ": " + inquiry,
-      "",
-      w.name + ": " + name,
-      w.tel + ": " + tel,
-      w.email + ": " + email
-    ];
-    if (bizType.trim() !== "") lines.push(w.bizType + ": " + bizType);
-
-    const messageText = lines.join("\n");
-    const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(messageText);
-    window.open(waUrl, "_blank");
+    const btn = document.getElementById("btn-submit");
+    const status = document.getElementById("formStatus");
+    btn.disabled = true;
+    status.textContent = "…";
+    try {
+      const res = await fetch(WORKER_URL + "/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: document.getElementById("inquiry").value,
+          name: document.getElementById("name").value,
+          phone: document.getElementById("tel").value,
+          email: document.getElementById("email").value,
+          businessType: document.getElementById("bizType").value,
+          lang: document.documentElement.lang,
+          sessionId: SESSION_ID,
+          consent: document.getElementById("consent").checked,
+          website: document.getElementById("website").value
+        })
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      status.textContent = tr("tradedesk.form.statusOk");
+      antragForm.reset();
+    } catch (err) {
+      status.textContent = tr("tradedesk.form.statusError");
+    }
+    btn.disabled = false;
   });
 
   // Startsprache: gespeicherte Wahl > Browsersprache > Deutsch
@@ -437,4 +540,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 </body>
-</html>
+        </html>
+  
