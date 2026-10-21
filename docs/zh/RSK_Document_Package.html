@@ -1,115 +1,206 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSK Trust & Trade – 文件套装（中文）</title>
+<title>RSK TRUST & TRADE</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
-:root{--navy:#0a1931;--gold:#c9a86a;--parch:#f5f1e8;--cream:#fdfaf3;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--parch);font-family:'Inter',sans-serif;color:#222;}
-header{text-align:center;padding:34px 20px 22px;border-bottom:1.5px solid var(--gold);background:var(--parch);}
-header h1{font-family:'Playfair Display',serif;font-size:26px;letter-spacing:2px;color:var(--navy);}
-header .sub{color:var(--gold);font-size:10px;letter-spacing:3px;margin-top:6px;text-transform:uppercase;}
-main{max-width:960px;margin:0 auto;padding:30px 18px 50px;}
-.intro{text-align:center;max-width:640px;margin:0 auto 30px;color:#444;font-size:14px;line-height:1.6;}
-.bundle{max-width:720px;margin:0 auto 36px;background:var(--navy);border:1.5px solid var(--gold);border-radius:18px;padding:26px 28px;text-align:center;color:#fff;}
-.bundle h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:8px;}
-.bundle p{font-size:13px;color:#e8e4d8;margin-bottom:16px;}
-.bundle .price{font-size:22px;font-weight:700;color:#fff;margin-bottom:16px;}
-.bundle .price small{font-size:12px;color:var(--gold);text-decoration:line-through;margin-right:8px;font-weight:400;}
-.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:12px 26px;border-radius:999px;text-decoration:none;font-size:13px;}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:640px){.grid{grid-template-columns:1fr;}}
-.card{background:var(--cream);border:1.5px solid #e0d6b8;border-radius:14px;padding:20px 20px 18px;}
-.card .code{font-size:10px;letter-spacing:1.5px;color:var(--gold);font-weight:700;text-transform:uppercase;}
-.card h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin:4px 0 8px;}
-.card p{font-size:12.5px;color:#555;line-height:1.5;margin-bottom:14px;min-height:38px;}
-.card .row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-.card .price{font-weight:700;color:var(--navy);font-size:14px;}
-.card a.dl{background:var(--navy);color:var(--gold);font-weight:700;font-size:12px;padding:9px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;}
-.card a.dl:hover{opacity:.88;}
-.note{max-width:720px;margin:36px auto 0;text-align:center;font-size:11.5px;color:#777;line-height:1.6;}
-.home{display:block;text-align:center;margin-top:28px;color:var(--navy);font-size:11px;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:8px 18px;width:fit-content;margin-left:auto;margin-right:auto;}
-footer{text-align:center;padding:24px;font-size:10.5px;color:#888;border-top:1px solid rgba(201,168,106,.4);}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600&display=swap');
+:root{--navy:#0a1931;--gold:#c9a86a;--parch:#f5f1e8;--cream:#fdfaf3}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--parch);font-family:'Inter',sans-serif;min-height:100vh;padding:30px 15px;display:flex;flex-direction:column;align-items:center}
+h1{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:5px}
+.sub{font-size:10px;color:var(--gold);letter-spacing:2px;font-weight:600;text-transform:uppercase;text-align:center;margin-bottom:24px}
+.list{width:100%;max-width:480px;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.doc{background:var(--cream);border:1.5px solid var(--gold);border-radius:14px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:600;color:#111}
+.doc span{font-size:11px;color:#666;font-weight:400;text-align:end}
+.rsk-open{background:var(--navy);color:var(--gold);border:0;border-radius:10px;padding:14px;font-weight:800;font-size:15px;cursor:pointer;width:100%;max-width:480px}
+.back{margin-top:30px;border:1px solid var(--gold);background:var(--cream);color:#333;text-decoration:none;padding:10px 20px;border-radius:20px;font-size:12px;font-weight:600}
+.rsk-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,25,49,.9);padding:15px;overflow-y:auto;justify-content:center;align-items:flex-start}
+.rsk-modal.rsk-show{display:flex}
+.rsk-box{position:relative;background:var(--cream);max-width:480px;width:100%;margin:20px auto;border-radius:16px;padding:24px;border:3px solid var(--gold);color:#333}
+.rsk-box h2{margin:0 0 4px;color:var(--navy);font-family:'Playfair Display',serif;font-size:22px}
+.rsk-sub{margin:0 0 14px;font-size:13px;color:#666}
+.rsk-x{position:absolute;inset-inline-end:12px;top:8px;background:none;border:0;font-size:28px;cursor:pointer;color:var(--navy)}
+.rsk-step{margin:14px 0 8px;color:var(--navy)}
+.rsk-opt{display:block;border:2px solid var(--navy);border-radius:10px;padding:12px;margin-bottom:8px;font-size:14px;cursor:pointer;color:var(--navy);font-weight:600}
+.rsk-opt input{margin-inline-end:8px}
+.rsk-sel{width:100%;margin:2px 0 10px;padding:10px;border:1.5px solid var(--gold);border-radius:8px;font-size:14px;background:#fff}
+.rsk-msg{font-size:13px;line-height:1.5;margin:10px 0}
+.rsk-ok{background:#fff;border:2px solid var(--gold);border-radius:10px;padding:12px;text-align:center}
+.rsk-ok a{display:block;background:var(--navy);color:var(--gold);text-decoration:none;font-weight:800;padding:12px;border-radius:8px;margin:8px 0}
+.rsk-err{color:#a11;font-weight:600}
+.rsk-crypto{background:var(--navy);border-radius:10px;padding:12px;margin:12px 0}
+.rsk-label{font-size:11px;color:var(--gold);margin-bottom:6px}
+.rsk-crypto code{display:block;background:#fff;color:#000;padding:8px;border-radius:6px;font-size:11px;word-break:break-all;text-align:center;direction:ltr}
+.rsk-copy{margin-top:8px;width:100%;background:var(--gold);color:var(--navy);border:0;border-radius:6px;padding:8px;font-weight:700;cursor:pointer}
+.rsk-warn{font-size:10px;color:#bbb;margin-top:6px;text-align:center}
+.rsk-note{font-size:12px;line-height:1.5;margin:0 0 10px}
 </style>
 </head>
 <body>
+  <h1 id="tTitle">RSK Trust &amp; Trade</h1>
+  <p class="sub" id="tSub"></p>
 
-<header>
-  <img src="../../IMG-20260918-WA8261.jpg" alt="RSK Trust & Trade" style="width:70px;height:auto;mix-blend-mode:multiply;display:block;margin:0 auto 10px;" onerror="this.style.display='none'">
-  <h1>RSK TRUST & TRADE</h1>
-  <div class="sub">企业文件套装 · 中文 · RSK-KYC-2026-005</div>
-</header>
+  <div class="list" id="docList"></div>
 
-<main>
-  <p class="intro">八份标准化国际贸易文件，随时可填写和签署。每份PDF均采用统一的专业排版，附带水印及参考编号。可单独下载，或在下方购买完整套装。</p>
+  <button class="rsk-open" type="button" id="btnOpen"></button>
 
-  <div class="bundle">
-    <h2>完整套装 · 全部8份文件</h2>
-    <p>KYC · NCNDA · IMFPA · SPA · SCO/FCO · POP · LOI/BCL · RWA — 单个ZIP文件</p>
-    <div class="price"><small>$40</small>$32 <span style="font-size:12px;font-weight:400;color:#cbb98a;">（节省20%）</span></div>
-    <a class="btn" href="./RSK-Document-Package-ZH.zip">⬇ 下载完整套装（ZIP）</a>
-  </div>
+  <div id="rskModal" class="rsk-modal" role="dialog" aria-modal="true" aria-labelledby="rskTitle">
+    <div class="rsk-box">
+      <button class="rsk-x" type="button" id="btnClose">&times;</button>
+      <h2 id="rskTitle"></h2>
+      <p class="rsk-sub" id="tModalSub"></p>
 
-  <div class="grid">
-    <div class="card">
-      <div class="code">RSK-KYC-01</div>
-      <h3>KYC</h3>
-      <p>交易对手尽职调查问卷：公司信息、最终受益人、银行资信证明、合规声明。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-KYC-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-NCNDA-02</div>
-      <h3>NCNDA</h3>
-      <p>反规避及保密协议，用于保护联系人及保密信息。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-NCNDA-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-IMFPA-03</div>
-      <h3>IMFPA</h3>
-      <p>不可撤销佣金保障总协议，通过付款代理人为中间人提供保障。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-IMFPA-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-SPA-04</div>
-      <h3>SPA</h3>
-      <p>销售购买协议：产品、价格、交付、付款、检验及违约条款。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-SPA-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-SCO-05</div>
-      <h3>SCO / FCO</h3>
-      <p>卖方软性或完全公司报价函，附买方接受条款，作为迈向SPA的一步。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-SCO-FCO-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-POP-06</div>
-      <h3>POP</h3>
-      <p>产品证明：卖方就产品存在、所有权及可供性作出的声明。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-POP-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-LOI-07</div>
-      <h3>LOI / BCL</h3>
-      <p>买方意向书，附银行资信证明函模板供其开户银行出具。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-LOI-BCL-ZH.pdf">下载PDF</a></div>
-    </div>
-    <div class="card">
-      <div class="code">RSK-RWA-08</div>
-      <h3>RWA</h3>
-      <p>随时准备履行声明（RWA）：对执行交易作出的具约束力承诺。</p>
-      <div class="row"><span class="price">$5</span><a class="dl" href="./RSK-RWA-ZH.pdf">下载PDF</a></div>
+      <p class="rsk-step"><b id="tS1"></b></p>
+      <label class="rsk-opt"><input type="radio" name="rskProd" value="package" checked><span id="tPkg"></span></label>
+      <label class="rsk-opt"><input type="radio" name="rskProd" value="single"><span id="tSingle"></span></label>
+      <select id="rskDoc" class="rsk-sel">
+        <option value="KYC">KYC</option>
+        <option value="NCNDA">NCNDA</option>
+        <option value="IMFPA">IMFPA</option>
+        <option value="SPA">SPA</option>
+        <option value="SCO-FCO">SCO / FCO</option>
+        <option value="POP">POP</option>
+        <option value="LOI-BCL">LOI / BCL</option>
+        <option value="RWA">RWA</option>
+      </select>
+
+      <p class="rsk-step"><b id="tS2"></b></p>
+      <div id="rskPaypal"></div>
+      <div id="rskResult" class="rsk-msg"></div>
+
+      <div class="rsk-crypto">
+        <div class="rsk-label" id="tCrypto"></div>
+        <code id="rskWallet">0xa5c21334b270F1f4d7ccF06ABc935c983Db94609</code>
+        <button type="button" class="rsk-copy" id="btnCopy"></button>
+        <div class="rsk-warn" id="tWarn"></div>
+      </div>
+      <p class="rsk-note" id="tCryptoNote"></p>
+      <p class="rsk-note" id="tPpNote"></p>
     </div>
   </div>
 
-  <p class="note">本模板供一般商业用途，不构成法律意见。签署前请咨询律师审阅。付款方式：可通过主页付款区域的PayPal或加密货币（BSC/USDT），或直接与我们联系。</p>
+  <a href="../index.html" class="back" id="tBack"></a>
 
-  <a class="home" href="../../">← Back to rsktrustandtrade.com</a>
-</main>
+<script src="https://www.paypal.com/sdk/js?client-id=BAANegVvORNgK4H3NYPNj_hAag4KUBjqAXaRgI1_MMewybB23RqoaBDHc1k_kctQ6me4f4kLPCUk7ipq_U&currency=USD&intent=capture"></script>
+<script>
+(function(){
+  var API="https://rsk-pay.sieghard23.workers.dev";
+  var CODES=['de','en','fr','es','pt','ru','zh','ar'];
 
-<footer>© 2026 RSK TRUST & TRADE. All rights reserved. info@rsktrustandtrade.com</footer>
+  // Sprache: ?lang=de, sonst Ordnername im Pfad (/de/...), sonst en
+  var q=new URLSearchParams(location.search).get('lang');
+  var pm=location.pathname.match(/\/(de|en|fr|es|pt|ru|zh|ar)\//);
+  var LANG=(q&&CODES.indexOf(q)>-1)?q:(pm?pm[1]:'en');
 
+  var T={
+  en:{n:'English',sub:'Document Package · English',open:'Preview & buy',title:'Trade Finance Documents',msub:'Professionally designed PDFs · English',s1:'1. Choose',pkg:'Full package, all 8 documents – $32 (instead of $40)',single:'Single document – $5',s2:'2. Pay with PayPal',crypto:'Or crypto: USDT or USDC only, on BNB Smart Chain (BEP20)',copy:'Copy address',copied:'Copied ✓',warn:'Other coins or networks will be lost and cannot be refunded.',cnote:'Paid with crypto? Email docs@rsktrustandtrade.com or WhatsApp +57 313 873 4968 with your TX hash, the document(s) you want and your language. Delivery usually within 45 minutes after verification, Mon–Sat 08:00–20:00 COT.',ppnote:'Paid with PayPal but did not get your link? Contact us with your PayPal transaction ID.',ok:'Payment received. Thank you!',dl:'Download now',save:'Save the file now. This link works for 24 hours.',e1:'Payment could not be confirmed. Please contact us with your PayPal transaction ID.',e2:'Something went wrong. You have not been charged unless PayPal confirmed it. Please try again or contact us.',e3:'PayPal could not be loaded. Please reload the page.',back:'← Back to language selection',
+    d:['Know Your Customer','Non-Circumvention & NDA','Fee Protection Agreement','Sale & Purchase Agreement','Soft / Full Corporate Offer','Proof of Product','Letter of Intent / Bank Comfort Letter','Ready, Willing and Able']},
+  de:{n:'Deutsch',sub:'Dokumentenpaket · Deutsch',open:'Ansehen & kaufen',title:'Trade-Finance-Dokumente',msub:'Professionell gestaltete PDFs · Deutsch',s1:'1. Auswahl',pkg:'Komplettpaket, alle 8 Dokumente – $32 (statt $40)',single:'Einzeldokument – $5',s2:'2. Mit PayPal bezahlen',crypto:'Oder Krypto: nur USDT oder USDC, auf BNB Smart Chain (BEP20)',copy:'Adresse kopieren',copied:'Kopiert ✓',warn:'Andere Coins oder Netzwerke gehen verloren und können nicht erstattet werden.',cnote:'Mit Krypto bezahlt? Senden Sie eine E-Mail an docs@rsktrustandtrade.com oder eine WhatsApp an +57 313 873 4968 mit Ihrem TX-Hash, den gewünschten Dokumenten und Ihrer Sprache. Lieferung in der Regel innerhalb von 45 Minuten nach Prüfung, Mo–Sa 08:00–20:00 Uhr (COT).',ppnote:'Mit PayPal bezahlt, aber keinen Link erhalten? Kontaktieren Sie uns mit Ihrer PayPal-Transaktions-ID.',ok:'Zahlung erhalten. Vielen Dank!',dl:'Jetzt herunterladen',save:'Speichern Sie die Datei jetzt. Dieser Link ist 24 Stunden gültig.',e1:'Die Zahlung konnte nicht bestätigt werden. Bitte kontaktieren Sie uns mit Ihrer PayPal-Transaktions-ID.',e2:'Etwas ist schiefgelaufen. Es wurde nichts abgebucht, sofern PayPal die Zahlung nicht bestätigt hat. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.',e3:'PayPal konnte nicht geladen werden. Bitte laden Sie die Seite neu.',back:'← Zurück zur Sprachauswahl',
+    d:['Sorgfaltsprüfung des Kunden','Umgehungs- & Geheimhaltungsschutz','Provisionsschutzvereinbarung','Kaufvertrag','Soft / Full Corporate Offer','Produktnachweis','Absichtserklärung / Bankbestätigung','Bereit, willens und fähig']},
+  fr:{n:'Français',sub:'Dossier de documents · Français',open:'Aperçu et achat',title:'Documents de financement du commerce',msub:'PDF professionnels · Français',s1:'1. Choisir',pkg:'Pack complet, les 8 documents – 32 $ (au lieu de 40 $)',single:'Document unique – 5 $',s2:'2. Payer avec PayPal',crypto:'Ou crypto : USDT ou USDC uniquement, sur BNB Smart Chain (BEP20)',copy:'Copier l\'adresse',copied:'Copié ✓',warn:'Les autres cryptos ou réseaux seront perdus et ne peuvent pas être remboursés.',cnote:'Payé en crypto ? Écrivez à docs@rsktrustandtrade.com ou par WhatsApp au +57 313 873 4968 avec votre hash de transaction, le ou les documents souhaités et votre langue. Livraison généralement sous 45 minutes après vérification, lun–sam 08h00–20h00 (COT).',ppnote:'Payé avec PayPal mais sans lien reçu ? Contactez-nous avec votre identifiant de transaction PayPal.',ok:'Paiement reçu. Merci !',dl:'Télécharger',save:'Enregistrez le fichier maintenant. Ce lien est valable 24 heures.',e1:'Le paiement n\'a pas pu être confirmé. Contactez-nous avec votre identifiant de transaction PayPal.',e2:'Une erreur est survenue. Vous n\'avez pas été débité sauf confirmation de PayPal. Réessayez ou contactez-nous.',e3:'PayPal n\'a pas pu être chargé. Rechargez la page.',back:'← Retour au choix de la langue',
+    d:['Connaissance du client','Non-contournement et confidentialité','Protection des commissions','Contrat de vente','Offre corporative soft / ferme','Preuve de produit','Lettre d\'intention / Lettre de confort bancaire','Prêt, disposé et apte']},
+  es:{n:'Español',sub:'Paquete de documentos · Español',open:'Ver y comprar',title:'Documentos de financiación comercial',msub:'PDF de diseño profesional · Español',s1:'1. Elegir',pkg:'Paquete completo, los 8 documentos – $32 (en lugar de $40)',single:'Documento individual – $5',s2:'2. Pagar con PayPal',crypto:'O cripto: solo USDT o USDC, en BNB Smart Chain (BEP20)',copy:'Copiar dirección',copied:'Copiado ✓',warn:'Otras monedas o redes se perderán y no se pueden reembolsar.',cnote:'¿Pagó con cripto? Escriba a docs@rsktrustandtrade.com o por WhatsApp al +57 313 873 4968 con su hash de transacción, los documentos que desea y su idioma. Entrega normalmente en 45 minutos tras la verificación, lun–sáb 08:00–20:00 (COT).',ppnote:'¿Pagó con PayPal pero no recibió el enlace? Contáctenos con su ID de transacción de PayPal.',ok:'Pago recibido. ¡Gracias!',dl:'Descargar ahora',save:'Guarde el archivo ahora. Este enlace es válido por 24 horas.',e1:'No se pudo confirmar el pago. Contáctenos con su ID de transacción de PayPal.',e2:'Algo salió mal. No se le ha cobrado a menos que PayPal lo haya confirmado. Inténtelo de nuevo o contáctenos.',e3:'No se pudo cargar PayPal. Recargue la página.',back:'← Volver a la selección de idioma',
+    d:['Conozca a su cliente','No elusión y confidencialidad','Protección de comisiones','Contrato de compraventa','Oferta corporativa suave / firme','Prueba de producto','Carta de intención / Carta de confort bancaria','Listo, dispuesto y capaz']},
+  pt:{n:'Português',sub:'Pacote de documentos · Português',open:'Ver e comprar',title:'Documentos de financiamento comercial',msub:'PDFs de design profissional · Português',s1:'1. Escolher',pkg:'Pacote completo, os 8 documentos – $32 (em vez de $40)',single:'Documento individual – $5',s2:'2. Pagar com PayPal',crypto:'Ou cripto: somente USDT ou USDC, na BNB Smart Chain (BEP20)',copy:'Copiar endereço',copied:'Copiado ✓',warn:'Outras moedas ou redes serão perdidas e não podem ser reembolsadas.',cnote:'Pagou com cripto? Envie e-mail para docs@rsktrustandtrade.com ou WhatsApp para +57 313 873 4968 com o hash da transação, os documentos desejados e o seu idioma. Entrega normalmente em até 45 minutos após a verificação, seg–sáb 08:00–20:00 (COT).',ppnote:'Pagou com PayPal mas não recebeu o link? Fale conosco com o ID da transação do PayPal.',ok:'Pagamento recebido. Obrigado!',dl:'Baixar agora',save:'Salve o arquivo agora. Este link é válido por 24 horas.',e1:'Não foi possível confirmar o pagamento. Fale conosco com o ID da transação do PayPal.',e2:'Algo deu errado. Você não foi cobrado, a menos que o PayPal tenha confirmado. Tente novamente ou fale conosco.',e3:'Não foi possível carregar o PayPal. Recarregue a página.',back:'← Voltar à seleção de idioma',
+    d:['Conheça seu cliente','Não circunvenção e confidencialidade','Proteção de comissões','Contrato de compra e venda','Oferta corporativa soft / firme','Prova de produto','Carta de intenção / Carta de conforto bancária','Pronto, disposto e apto']},
+  ru:{n:'Русский',sub:'Пакет документов · Русский',open:'Просмотр и покупка',title:'Документы для торгового финансирования',msub:'PDF профессионального дизайна · Русский',s1:'1. Выбор',pkg:'Полный пакет, все 8 документов – $32 (вместо $40)',single:'Один документ – $5',s2:'2. Оплата через PayPal',crypto:'Или криптовалютой: только USDT или USDC в сети BNB Smart Chain (BEP20)',copy:'Копировать адрес',copied:'Скопировано ✓',warn:'Другие монеты или сети будут потеряны, возврат невозможен.',cnote:'Оплатили криптовалютой? Напишите на docs@rsktrustandtrade.com или в WhatsApp +57 313 873 4968: укажите хеш транзакции, нужные документы и язык. Доставка обычно в течение 45 минут после проверки, пн–сб 08:00–20:00 (COT).',ppnote:'Оплатили через PayPal, но не получили ссылку? Свяжитесь с нами, указав ID транзакции PayPal.',ok:'Платёж получен. Спасибо!',dl:'Скачать',save:'Сохраните файл сейчас. Ссылка действует 24 часа.',e1:'Не удалось подтвердить платёж. Свяжитесь с нами, указав ID транзакции PayPal.',e2:'Произошла ошибка. Деньги не списаны, если PayPal не подтвердил платёж. Повторите попытку или свяжитесь с нами.',e3:'Не удалось загрузить PayPal. Обновите страницу.',back:'← Назад к выбору языка',
+    d:['Знай своего клиента','Защита от обхода и NDA','Защита комиссионных','Договор купли-продажи','Мягкое / полное корпоративное предложение','Подтверждение наличия товара','Письмо о намерениях / банковское гарантийное письмо','Готов, желает и способен']},
+  zh:{n:'中文',sub:'文件包 · 中文',open:'预览并购买',title:'贸易融资文件',msub:'专业设计的 PDF · 中文',s1:'1. 选择',pkg:'全套 8 份文件 – $32（原价 $40）',single:'单份文件 – $5',s2:'2. 使用 PayPal 支付',crypto:'或使用加密货币：仅限 BNB Smart Chain (BEP20) 上的 USDT 或 USDC',copy:'复制地址',copied:'已复制 ✓',warn:'其他币种或网络的转账将丢失，无法退款。',cnote:'已用加密货币付款？请将交易哈希、所需文件和语言发送至 docs@rsktrustandtrade.com 或 WhatsApp +57 313 873 4968。核实后通常在 45 分钟内发送，周一至周六 08:00–20:00（哥伦比亚时间）。',ppnote:'已通过 PayPal 付款但未收到链接？请提供 PayPal 交易 ID 联系我们。',ok:'已收到付款，谢谢！',dl:'立即下载',save:'请立即保存文件。此链接 24 小时内有效。',e1:'无法确认付款。请提供 PayPal 交易 ID 联系我们。',e2:'出现错误。除非 PayPal 已确认，否则不会扣款。请重试或联系我们。',e3:'无法加载 PayPal，请刷新页面。',back:'← 返回语言选择',
+    d:['了解您的客户','防绕行与保密协议','佣金保护协议','买卖合同','软性 / 正式公司报盘','产品证明','意向书 / 银行安慰函','准备就绪、愿意且有能力']},
+  ar:{n:'العربية',sub:'حزمة المستندات · العربية',open:'معاينة وشراء',title:'مستندات تمويل التجارة',msub:'ملفات PDF بتصميم احترافي · العربية',s1:'1. اختر',pkg:'الحزمة الكاملة، كل المستندات الثمانية – 32$ (بدلًا من 40$)',single:'مستند واحد – 5$',s2:'2. ادفع عبر PayPal',crypto:'أو بالعملات الرقمية: USDT أو USDC فقط على شبكة BNB Smart Chain (BEP20)',copy:'نسخ العنوان',copied:'تم النسخ ✓',warn:'ستُفقد العملات أو الشبكات الأخرى ولا يمكن استردادها.',cnote:'دفعت بالعملات الرقمية؟ راسلنا على docs@rsktrustandtrade.com أو واتساب +57 313 873 4968 مع معرّف المعاملة (TX hash) والمستندات المطلوبة ولغتك. يتم التسليم عادةً خلال 45 دقيقة بعد التحقق، من الاثنين إلى السبت 08:00–20:00 (توقيت كولومبيا).',ppnote:'دفعت عبر PayPal ولم يصلك الرابط؟ تواصل معنا مع معرّف معاملة PayPal.',ok:'تم استلام الدفع. شكرًا لك!',dl:'تحميل الآن',save:'احفظ الملف الآن. هذا الرابط صالح لمدة 24 ساعة.',e1:'تعذّر تأكيد الدفع. تواصل معنا مع معرّف معاملة PayPal.',e2:'حدث خطأ. لن يتم خصم أي مبلغ ما لم يؤكد PayPal ذلك. حاول مرة أخرى أو تواصل معنا.',e3:'تعذّر تحميل PayPal. أعد تحميل الصفحة.',back:'→ العودة إلى اختيار اللغة',
+    d:['اعرف عميلك','عدم التجاوز والسرية','حماية العمولات','عقد البيع والشراء','عرض الشركة المبدئي / النهائي','إثبات المنتج','خطاب نوايا / خطاب ضمان مصرفي','جاهز وراغب وقادر']}
+  };
+  var t=T[LANG];
+  var ABBR=['KYC','NCNDA','IMFPA','SPA','SCO / FCO','POP','LOI / BCL','RWA'];
+
+  function $(id){return document.getElementById(id);}
+  document.documentElement.lang=LANG;
+  document.documentElement.dir=(LANG==='ar')?'rtl':'ltr';
+  document.title='RSK TRUST & TRADE – '+t.sub;
+  $('tSub').textContent=t.sub;
+  $('btnOpen').textContent=t.open;
+  $('rskTitle').textContent=t.title;
+  $('tModalSub').textContent=t.msub;
+  $('tS1').textContent=t.s1;
+  $('tPkg').textContent=t.pkg;
+  $('tSingle').textContent=t.single;
+  $('tS2').textContent=t.s2;
+  $('tCrypto').textContent=t.crypto;
+  $('btnCopy').textContent=t.copy;
+  $('btnClose').setAttribute('aria-label','×');
+  $('tWarn').textContent=t.warn;
+  $('tCryptoNote').textContent=t.cnote;
+  $('tPpNote').textContent=t.ppnote;
+  $('tBack').textContent=t.back;
+  ABBR.forEach(function(a,i){
+    var d=document.createElement('div');d.className='doc';
+    var s=document.createElement('span');s.textContent=t.d[i];
+    d.appendChild(document.createTextNode(a));d.appendChild(s);
+    $('docList').appendChild(d);
+  });
+
+  var m=$('rskModal'),result=$('rskResult'),docSel=$('rskDoc');
+
+  function selection(){
+    var p=document.querySelector('input[name=rskProd]:checked').value;
+    return p==='package'?{product:'package',lang:LANG}:{product:'single',lang:LANG,doc:docSel.value};
+  }
+  function syncDoc(){
+    docSel.style.display=document.querySelector('input[name=rskProd]:checked').value==='single'?'block':'none';
+  }
+  document.querySelectorAll('input[name=rskProd]').forEach(function(r){r.addEventListener('change',syncDoc);});
+  syncDoc();
+
+  $('btnOpen').addEventListener('click',function(){m.classList.add('rsk-show');});
+  $('btnClose').addEventListener('click',function(){m.classList.remove('rsk-show');});
+  m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('rsk-show');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')m.classList.remove('rsk-show');});
+  $('btnCopy').addEventListener('click',function(){
+    var btn=this;
+    if(navigator.clipboard){navigator.clipboard.writeText($('rskWallet').innerText).then(function(){btn.textContent=t.copied;});}
+  });
+
+  function showError(text){
+    result.innerHTML='';
+    var p=document.createElement('p');p.className='rsk-err';p.textContent=text;
+    result.appendChild(p);
+  }
+
+  if(window.paypal){
+    paypal.Buttons({
+      style:{layout:'vertical',color:'gold',shape:'rect',label:'paypal'},
+      createOrder:function(){
+        result.textContent='';
+        return fetch(API+'/create-order',{
+          method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(selection())
+        }).then(function(r){return r.json();}).then(function(d){
+          if(!d.id){throw new Error('order');}
+          return d.id;
+        });
+      },
+      onApprove:function(data){
+        return fetch(API+'/capture-order',{
+          method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({orderID:data.orderID})
+        }).then(function(r){return r.json();}).then(function(d){
+          if(d.download){
+            result.innerHTML='';
+            var box=document.createElement('div');box.className='rsk-ok';
+            var a1=document.createElement('div');a1.textContent=t.ok;
+            var a=document.createElement('a');a.href=d.download;a.textContent=t.dl;
+            var s=document.createElement('div');s.textContent=t.save;
+            box.appendChild(a1);box.appendChild(a);box.appendChild(s);
+            result.appendChild(box);
+          }else{showError(t.e1);}
+        });
+      },
+      onError:function(){showError(t.e2);}
+    }).render('#rskPaypal');
+  }else{showError(t.e3);}
+})();
+</script>
 </body>
 </html>
